@@ -52,10 +52,6 @@ p{margin:0}
 .head{max-width:720px;margin:0 auto clamp(36px,5vw,56px)}
 .head p{margin-top:16px}
 
-.tag{display:inline-flex;align-items:center;gap:8px;background:var(--blue-soft);color:var(--blue-dark);
-  font-size:13px;font-weight:600;padding:7px 15px;border-radius:999px;margin-bottom:20px}
-.tag.green{background:var(--green-soft);color:#0B7C50}
-
 /* butonlar */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:15px 30px;border-radius:999px;
   font-family:"Poppins",sans-serif;font-weight:600;font-size:16px;transition:.2s ease;white-space:nowrap;border:2px solid transparent}
