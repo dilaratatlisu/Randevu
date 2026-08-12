@@ -440,7 +440,8 @@ body.custom-cursor,body.custom-cursor a,body.custom-cursor button,body.custom-cu
 .tcursor.show{opacity:1}
 .tcursor.spin{animation:tcursor-spin 2.2s linear infinite}
 @keyframes tcursor-spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
-.tcorner{position:absolute;width:12px;height:12px;border:0 solid var(--blue)}
+.tcorner{position:absolute;width:12px;height:12px;border:0 solid var(--blue);transition:width .2s ease,height .2s ease}
+.tcursor.spin .tcorner{width:8px;height:8px}
 .tcorner.tl{top:0;left:0;border-top-width:2px;border-left-width:2px;border-top-left-radius:3px}
 .tcorner.tr{top:0;right:0;border-top-width:2px;border-right-width:2px;border-top-right-radius:3px}
 .tcorner.bl{bottom:0;left:0;border-bottom-width:2px;border-left-width:2px;border-bottom-left-radius:3px}

@@ -208,7 +208,7 @@
     document.body.appendChild(tc);
     document.body.classList.add("custom-cursor");
 
-    var IDLE=40, PAD=8;
+    var IDLE=26, PAD=8;
     var mx=innerWidth/2, my=innerHeight/2, px=mx, py=my, started=false;
     var locked=false, lockedEl=null;
 
