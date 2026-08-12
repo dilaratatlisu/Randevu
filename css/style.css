@@ -73,8 +73,8 @@ p{margin:0}
 .nav{position:sticky;top:0;z-index:80;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 .nav-in{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad);height:72px;display:flex;align-items:center;gap:26px}
 .brand{display:flex;align-items:center;gap:10px;font-family:"Poppins",sans-serif;font-weight:700;font-size:20px;letter-spacing:-.02em}
-.brand-mark{width:32px;height:32px;border-radius:10px;background:linear-gradient(140deg,var(--blue),#5B8BFF);
-  display:grid;place-items:center;color:#fff;font-size:15px;font-weight:700;flex:none}
+.brand-logo{height:30px;width:auto;display:block}
+.brand-logo-mark{height:26px;width:auto;display:block;flex:none}
 .nav-menu{display:none;gap:24px;margin-left:14px;flex:1}
 .nav-menu a{font-size:15.5px;color:var(--ink-2);font-weight:500}
 .nav-menu a:hover{color:var(--blue)}
