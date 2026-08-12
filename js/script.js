@@ -12,14 +12,6 @@
     a.addEventListener("click",function(){nav.classList.remove("open");hamb.setAttribute("aria-expanded","false");});
   });
 
-  /* ışınlanma: hedefe kayarak git, vardığında bölüm pop-in ile belirir */
-  function playTeleport(target){
-    if(!target||reduce)return;
-    target.classList.remove("teleport-in");
-    void target.offsetWidth;
-    target.classList.add("teleport-in");
-  }
-
   function animateScrollTo(top,cb){
     var startY=window.scrollY, delta=top-startY;
     if(reduce||Math.abs(delta)<2){window.scrollTo(0,top);if(cb)cb();return;}
@@ -45,7 +37,7 @@
       if(!target)return;
       e.preventDefault();
       var top=Math.max(0,Math.round(target.getBoundingClientRect().top+window.scrollY-navH));
-      animateScrollTo(top,function(){playTeleport(target);});
+      animateScrollTo(top);
     });
   });
 
@@ -74,7 +66,7 @@
       idx = Math.max(0, Math.min(stops.length - 1, idx));
       var target = stops[idx];
       var top = Math.max(0, Math.round(target.getBoundingClientRect().top + window.scrollY - navH));
-      animateScrollTo(top,function(){playTeleport(target);});
+      animateScrollTo(top);
     }
 
     window.addEventListener("wheel", function(e){
