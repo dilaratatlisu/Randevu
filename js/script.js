@@ -12,20 +12,67 @@
     a.addEventListener("click",function(){nav.classList.remove("open");hamb.setAttribute("aria-expanded","false");});
   });
 
-  /* ışınlanma: sayfa içi linkler yumuşak kaymadan atlar, hedef bölüm pop-in ile belirir */
+  /* ışınlanma: hedefe anında atla, bölüm pop-in ile belirir */
+  function playTeleport(target){
+    if(!target||reduce)return;
+    target.classList.remove("teleport-in");
+    void target.offsetWidth;
+    target.classList.add("teleport-in");
+  }
+
   document.querySelectorAll('a[href^="#"]').forEach(function(a){
     a.addEventListener("click",function(){
       var id=a.getAttribute("href").slice(1);
       if(!id)return;
       var target=document.getElementById(id);
-      if(!target||reduce)return;
-      requestAnimationFrame(function(){
-        target.classList.remove("teleport-in");
-        void target.offsetWidth;
-        target.classList.add("teleport-in");
-      });
+      if(!target)return;
+      requestAnimationFrame(function(){playTeleport(target);});
     });
   });
+
+  /* tek kaydırma = sonraki bölüm: fare tekerleğiyle her hamle bir sonraki/önceki
+     bölümün başına anında atlar (masaüstü fare kullanıcıları için) */
+  (function(){
+    var pointerFine = matchMedia("(pointer: fine)").matches;
+    if(!pointerFine)return;
+    var navH = 72;
+    var stops = [].slice.call(document.querySelectorAll("main > section, main > .strip"));
+    var foot = document.querySelector(".foot");
+    if(foot)stops.push(foot);
+    if(stops.length < 2)return;
+
+    var locked = false;
+
+    function currentIndex(){
+      var y = window.scrollY + navH + 2;
+      var idx = 0;
+      for(var i=0;i<stops.length;i++){
+        if(stops[i].offsetTop <= y)idx = i;
+      }
+      return idx;
+    }
+
+    function goTo(idx){
+      idx = Math.max(0, Math.min(stops.length - 1, idx));
+      var target = stops[idx];
+      var top = Math.max(0, Math.round(target.getBoundingClientRect().top + window.scrollY - navH));
+      window.scrollTo(0, top);
+      playTeleport(target);
+    }
+
+    window.addEventListener("wheel", function(e){
+      if(window.innerWidth < 980)return; /* dar ekranlarda normal kaydırma serbest kalsın */
+      if(locked){e.preventDefault();return;}
+      var dir = e.deltaY > 0 ? 1 : -1;
+      var idx = currentIndex();
+      var next = idx + dir;
+      if(next < 0 || next > stops.length - 1)return; /* baştan/sondan taşma yok, normal davransın */
+      e.preventDefault();
+      locked = true;
+      goTo(next);
+      setTimeout(function(){locked = false;}, reduce ? 250 : 650);
+    }, {passive:false});
+  })();
 
   /* görünürlük animasyonu */
   var io=new IntersectionObserver(function(es){
