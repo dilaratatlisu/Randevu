@@ -12,7 +12,7 @@
     a.addEventListener("click",function(){nav.classList.remove("open");hamb.setAttribute("aria-expanded","false");});
   });
 
-  /* ışınlanma: hedefe anında atla, bölüm pop-in ile belirir */
+  /* ışınlanma: hedefe kayarak git, vardığında bölüm pop-in ile belirir */
   function playTeleport(target){
     if(!target||reduce)return;
     target.classList.remove("teleport-in");
@@ -20,22 +20,40 @@
     target.classList.add("teleport-in");
   }
 
+  function animateScrollTo(top,cb){
+    var startY=window.scrollY, delta=top-startY;
+    if(reduce||Math.abs(delta)<2){window.scrollTo(0,top);if(cb)cb();return;}
+    var duration=520, startTime=null;
+    function ease(t){return t<0.5?2*t*t:1-Math.pow(-2*t+2,2)/2;}
+    function step(ts){
+      if(!startTime)startTime=ts;
+      var p=Math.min((ts-startTime)/duration,1);
+      window.scrollTo(0,Math.round(startY+delta*ease(p)));
+      if(p<1)requestAnimationFrame(step);
+      else if(cb)cb();
+    }
+    requestAnimationFrame(step);
+  }
+
+  var navH=72;
+
   document.querySelectorAll('a[href^="#"]').forEach(function(a){
-    a.addEventListener("click",function(){
+    a.addEventListener("click",function(e){
       var id=a.getAttribute("href").slice(1);
       if(!id)return;
       var target=document.getElementById(id);
       if(!target)return;
-      requestAnimationFrame(function(){playTeleport(target);});
+      e.preventDefault();
+      var top=Math.max(0,Math.round(target.getBoundingClientRect().top+window.scrollY-navH));
+      animateScrollTo(top,function(){playTeleport(target);});
     });
   });
 
   /* tek kaydırma = sonraki bölüm: fare tekerleğiyle her hamle bir sonraki/önceki
-     bölümün başına anında atlar (masaüstü fare kullanıcıları için) */
+     bölüme kayarak gider (masaüstü fare kullanıcıları için) */
   (function(){
     var pointerFine = matchMedia("(pointer: fine)").matches;
     if(!pointerFine)return;
-    var navH = 72;
     var stops = [].slice.call(document.querySelectorAll("main > section, main > .strip"));
     var foot = document.querySelector(".foot");
     if(foot)stops.push(foot);
@@ -56,8 +74,7 @@
       idx = Math.max(0, Math.min(stops.length - 1, idx));
       var target = stops[idx];
       var top = Math.max(0, Math.round(target.getBoundingClientRect().top + window.scrollY - navH));
-      window.scrollTo(0, top);
-      playTeleport(target);
+      animateScrollTo(top,function(){playTeleport(target);});
     }
 
     window.addEventListener("wheel", function(e){
@@ -70,7 +87,7 @@
       e.preventDefault();
       locked = true;
       goTo(next);
-      setTimeout(function(){locked = false;}, reduce ? 250 : 650);
+      setTimeout(function(){locked = false;}, reduce ? 250 : 700);
     }, {passive:false});
   })();
 
