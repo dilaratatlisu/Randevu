@@ -295,7 +295,7 @@ p{margin:0}
   30%{transform:translateY(-4px);opacity:1}
 }
 
-#chatbot.section-sm{padding:clamp(24px,4vw,44px) 0}
+#chatbot.section-sm{padding:clamp(36px,5vw,56px) 0 clamp(24px,4vw,44px)}
 #chatbot .band{padding:clamp(20px,3.5vw,36px)}
 #chatbot .head{margin-bottom:24px}
 #chatbot .head .lead{font-size:16px;line-height:1.55}
