@@ -242,6 +242,15 @@ p{margin:0}
 .ico-pink{background:var(--pink-soft)}
 .ico-lilac{background:var(--lilac-soft)}
 
+.feat-link{display:flex;flex-direction:column}
+.feat-link:hover{border-color:var(--blue)}
+.feat-link h3{transition:color .2s ease}
+.feat-link:hover h3{color:var(--blue)}
+.feat-link p{flex:1}
+.feat-more{display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-size:14px;font-weight:600;color:var(--blue)}
+.feat-more i{font-style:normal;transition:transform .2s ease}
+.feat-link:hover .feat-more i{transform:translateX(4px)}
+
 /* =============== 3 ADIM =============== */
 .step{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(24px,2.6vw,30px);display:flex;flex-direction:column;gap:16px}
 .step-n{width:34px;height:34px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;
