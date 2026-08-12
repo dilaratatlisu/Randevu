@@ -185,7 +185,7 @@ p{margin:0}
 }
 
 /* =============== ŞERİT =============== */
-.strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#FBFCFE;padding:26px 0}
+.strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#FBFCFE;padding:26px 0;margin-top:22px}
 .strip-in{display:flex;flex-wrap:wrap;gap:14px 34px;align-items:center;justify-content:center}
 .strip-in a{font-size:14.5px;color:var(--muted);display:flex;align-items:center;gap:9px;font-weight:500;transition:color .2s ease}
 .strip-in a::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--blue);opacity:.5;transition:opacity .2s ease,transform .2s ease}
@@ -271,16 +271,16 @@ p{margin:0}
 
 /* =============== SOHBET =============== */
 .chat{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--shadow);overflow:hidden;max-width:400px}
-.chat-top{display:flex;align-items:center;gap:10px;padding:11px 14px;background:var(--green);color:#fff}
-.chat-top .av{width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.22);display:grid;place-items:center;font-size:13px}
+.chat-top{display:flex;align-items:center;gap:10px;padding:9px 14px;background:var(--green);color:#fff}
+.chat-top .av{width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.22);display:grid;place-items:center;font-size:12px}
 .chat-top b{font-family:"Poppins",sans-serif;font-size:14px;font-weight:600;display:block}
 .chat-top small{opacity:.85;font-size:11.5px}
-.chat-body{padding:14px;display:grid;gap:8px;background:#F6F8FA}
-.msg{max-width:84%;padding:9px 13px;font-size:13.5px;line-height:1.45;border-radius:14px}
+.chat-body{padding:12px;display:grid;gap:6px;background:#F6F8FA}
+.msg{max-width:84%;padding:7px 12px;font-size:13px;line-height:1.4;border-radius:14px}
 .msg.in{background:#fff;border:1px solid var(--line);border-bottom-left-radius:5px;justify-self:start}
 .msg.out{background:#DCF6E4;border-bottom-right-radius:5px;justify-self:end}
-.msg small{display:block;font-size:11px;color:var(--muted);margin-top:4px}
-.chat-note{display:flex;align-items:center;gap:8px;padding:10px 14px;border-top:1px solid var(--line);background:#fff;font-size:12.5px;color:var(--muted)}
+.msg small{display:block;font-size:10.5px;color:var(--muted);margin-top:3px}
+.chat-note{display:flex;align-items:center;gap:8px;padding:8px 14px;border-top:1px solid var(--line);background:#fff;font-size:12px;color:var(--muted)}
 
 .chat-step{opacity:0;transform:translateY(8px) scale(.97);transition:opacity .35s ease,transform .35s ease}
 .chat-step.shown{opacity:1;transform:none}
@@ -295,17 +295,17 @@ p{margin:0}
   30%{transform:translateY(-4px);opacity:1}
 }
 
-#chatbot.section-sm{padding:clamp(36px,5vw,56px) 0 clamp(24px,4vw,44px)}
-#chatbot .band{padding:clamp(20px,3.5vw,36px)}
-#chatbot .head{margin-bottom:24px}
-#chatbot .head .lead{font-size:16px;line-height:1.55}
-#chatbot .ticks{margin:20px 0 24px;gap:16px}
-#chatbot .tick{font-size:16px}
-#chatbot .grid-2{margin-top:22px !important;gap:16px}
-#chatbot .grid-2 .card{padding:22px}
-#chatbot .grid-2 .ico{margin-bottom:14px}
-#chatbot .grid-2 h3{font-size:19px}
-#chatbot .grid-2 p{font-size:15px}
+#chatbot.section-sm{padding:clamp(32px,4.5vw,48px) 0 clamp(18px,3vw,32px)}
+#chatbot .band{padding:clamp(16px,3vw,28px)}
+#chatbot .head{margin-bottom:18px}
+#chatbot .head .lead{font-size:15.5px;line-height:1.5}
+#chatbot .ticks{margin:16px 0 20px;gap:13px}
+#chatbot .tick{font-size:15px}
+#chatbot .grid-2{margin-top:18px !important;gap:16px}
+#chatbot .grid-2 .card{padding:18px}
+#chatbot .grid-2 .ico{margin-bottom:12px}
+#chatbot .grid-2 h3{font-size:18px}
+#chatbot .grid-2 p{font-size:14.5px}
 
 /* =============== ZİNCİR =============== */
 .flow{display:grid;gap:12px;grid-template-columns:repeat(2,1fr)}
