@@ -92,16 +92,17 @@ p{margin:0}
 .drawer a{display:block;padding:14px 0;border-bottom:1px solid var(--line);color:var(--ink-2);font-weight:500}
 
 /* =============== HERO =============== */
-.hero{background:linear-gradient(180deg,#F6F9FF 0%,#FFFFFF 100%);padding:clamp(48px,7vw,84px) 0 clamp(60px,7vw,90px);position:relative;overflow:hidden}
-.hero-in{display:grid;gap:clamp(40px,5vw,56px);align-items:center}
+.hero{background:linear-gradient(180deg,#F6F9FF 0%,#FFFFFF 100%);padding:clamp(28px,4.5vw,56px) 0 clamp(36px,5vw,60px);position:relative;overflow:hidden}
+.hero-in{display:grid;gap:clamp(40px,5vw,56px);align-items:start}
 @media(min-width:980px){.hero-in{grid-template-columns:minmax(0,1fr) minmax(0,1.02fr)}}
-.hero h1{margin-bottom:20px}
+.hero h1{margin-bottom:16px}
 .hero .lead{max-width:520px}
-.hero .cta-pair{margin-top:30px}
-.hero-trust{display:flex;align-items:center;gap:12px;margin-top:26px;flex-wrap:wrap}
+.hero .ticks{margin:16px 0 20px}
+.hero .cta-pair{margin-top:22px}
+.hero-trust{display:flex;align-items:center;gap:12px;margin-top:18px;flex-wrap:wrap}
 .stars{color:#F5A623;letter-spacing:2px;font-size:15px}
 .hero-trust span{font-size:14.5px;color:var(--muted)}
-.hero-badges{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap}
+.hero-badges{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
 .store{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:12px;padding:9px 15px;font-size:13.5px;color:var(--ink-2);background:#fff}
 .store b{font-family:"Poppins",sans-serif;font-size:14px;font-weight:600;color:var(--ink)}
 
