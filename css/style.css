@@ -429,19 +429,19 @@ main>section:last-child{margin-bottom:0}
 :focus-visible{outline:3px solid var(--blue);outline-offset:2px;border-radius:6px}
 ::selection{background:var(--blue);color:#fff}
 
-/* =============== ÖZEL İMLEÇ =============== */
-/* Arka planla fark alan (mix-blend-mode) esnek bir imleç: her renk zeminde
-   otomatik kontrast oluşturur, hızlı hareket edince yönüne göre esner/uzar,
-   tıklanabilir öğelerde büyür. Butonlar ayrıca imlece doğru hafifçe çekilir
-   (mıknatıs efekti). */
+/* =============== ÖZEL İMLEÇ: HEDEF KİLİDİ =============== */
+/* Boşta dört köşeli küçük bir reticül imleci yavaşça döndürür; tıklanabilir
+   bir öğenin üstüne gelince dönme durur, dört köşe o öğenin gerçek
+   kenarlarına "kilitlenip" çerçeveler; öğeden ayrılınca tekrar boşta döner. */
 body.custom-cursor,body.custom-cursor a,body.custom-cursor button,body.custom-cursor .card{cursor:none}
-.cursor-x{position:fixed;top:0;left:0;width:20px;height:20px;margin:-10px 0 0 -10px;border-radius:50%;
-  background:#fff;mix-blend-mode:difference;pointer-events:none;z-index:9999;opacity:0;
-  transition:width .3s cubic-bezier(.34,1.56,.64,1),height .3s cubic-bezier(.34,1.56,.64,1),
-  margin .3s cubic-bezier(.34,1.56,.64,1),opacity .2s ease}
-.cursor-x.show{opacity:1}
-.cursor-x.hover{width:52px;height:52px;margin:-26px 0 0 -26px}
-
-.btn{--mx:0px;--my:0px;transform:translate(var(--mx),var(--my))}
-.btn-primary:hover{background:var(--blue-dark);transform:translate(var(--mx),var(--my)) translateY(-2px);box-shadow:0 12px 26px rgba(44,107,242,.32)}
-.btn-white:hover{transform:translate(var(--mx),var(--my)) translateY(-2px)}
+.tcursor{position:fixed;pointer-events:none;z-index:9999;opacity:0;
+  transition:opacity .2s ease,left .2s cubic-bezier(.2,.9,.3,1.2),top .2s cubic-bezier(.2,.9,.3,1.2),
+  width .2s cubic-bezier(.2,.9,.3,1.2),height .2s cubic-bezier(.2,.9,.3,1.2)}
+.tcursor.show{opacity:1}
+.tcursor.spin{animation:tcursor-spin 2.2s linear infinite}
+@keyframes tcursor-spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+.tcorner{position:absolute;width:12px;height:12px;border:0 solid var(--blue)}
+.tcorner.tl{top:0;left:0;border-top-width:2px;border-left-width:2px;border-top-left-radius:3px}
+.tcorner.tr{top:0;right:0;border-top-width:2px;border-right-width:2px;border-top-right-radius:3px}
+.tcorner.bl{bottom:0;left:0;border-bottom-width:2px;border-left-width:2px;border-bottom-left-radius:3px}
+.tcorner.br{bottom:0;right:0;border-bottom-width:2px;border-right-width:2px;border-bottom-right-radius:3px}

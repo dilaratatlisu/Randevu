@@ -196,49 +196,69 @@
     counters.forEach(function(el){countIo.observe(el);});
   }
 
-  /* özel imleç: arka planla fark alan, hızlı harekette yönüne göre esneyen
-     tek bir daire; tıklanabilir öğelerde büyür. Butonlar ayrıca imlece
-     doğru hafifçe kayar (mıknatıs efekti). */
+  /* özel imleç: hedef kilidi. Boşta küçük dört köşeli bir reticül fareyi
+     yumuşakça takip edip yavaşça döner; tıklanabilir bir öğenin üstüne
+     gelince döner durur, dört köşe o öğenin kenarlarına kilitlenip
+     çerçeveler (kaydırma sırasında da takip eder). */
   if(matchMedia("(pointer: fine)").matches && !reduce){
-    var cx=document.createElement("div"); cx.className="cursor-x";
-    document.body.appendChild(cx);
+    var tc=document.createElement("div"); tc.className="tcursor spin";
+    ["tl","tr","bl","br"].forEach(function(c){
+      var s=document.createElement("span"); s.className="tcorner "+c; tc.appendChild(s);
+    });
+    document.body.appendChild(tc);
     document.body.classList.add("custom-cursor");
 
+    var IDLE=40, PAD=8;
     var mx=innerWidth/2, my=innerHeight/2, px=mx, py=my, started=false;
+    var locked=false, lockedEl=null;
+
+    function setIdleRect(x,y){
+      tc.style.left=(x-IDLE/2)+"px";
+      tc.style.top=(y-IDLE/2)+"px";
+      tc.style.width=IDLE+"px";
+      tc.style.height=IDLE+"px";
+    }
+    function setLockedRect(el){
+      var r=el.getBoundingClientRect();
+      tc.style.left=(r.left-PAD)+"px";
+      tc.style.top=(r.top-PAD)+"px";
+      tc.style.width=(r.width+PAD*2)+"px";
+      tc.style.height=(r.height+PAD*2)+"px";
+    }
+
     document.addEventListener("mousemove",function(e){
       mx=e.clientX; my=e.clientY;
-      if(!started){started=true;px=mx;py=my;cx.classList.add("show");}
+      if(!started){started=true;px=mx;py=my;setIdleRect(px,py);tc.classList.add("show");}
     },{passive:true});
-    document.addEventListener("mouseleave",function(){cx.classList.remove("show");});
-    document.addEventListener("mouseenter",function(){cx.classList.add("show");});
+    document.addEventListener("mouseleave",function(){tc.classList.remove("show");});
+    document.addEventListener("mouseenter",function(){tc.classList.add("show");});
 
-    function cursorLoop(){
-      var dx=mx-px, dy=my-py;
-      px+=dx*0.2; py+=dy*0.2;
-      var dist=Math.min(Math.sqrt(dx*dx+dy*dy),120);
-      var stretch=dist/120*0.35;
-      var angle=(dist>1)?Math.atan2(dy,dx)*180/Math.PI:0;
-      cx.style.transform="translate("+px+"px,"+py+"px) rotate("+angle+"deg) scale("+(1+stretch)+","+(1-stretch*0.6)+")";
-      requestAnimationFrame(cursorLoop);
+    function loop(){
+      if(!locked){
+        px+=(mx-px)*0.25;
+        py+=(my-py)*0.25;
+        setIdleRect(px,py);
+      }
+      requestAnimationFrame(loop);
     }
-    requestAnimationFrame(cursorLoop);
+    requestAnimationFrame(loop);
 
     document.querySelectorAll("a,button,.card,input,textarea,select").forEach(function(el){
-      el.addEventListener("mouseenter",function(){cx.classList.add("hover");});
-      el.addEventListener("mouseleave",function(){cx.classList.remove("hover");});
-    });
-
-    /* mıknatıs: butonlar imlece doğru hafifçe çekilir */
-    document.querySelectorAll(".btn").forEach(function(el){
-      el.addEventListener("mousemove",function(e){
-        var r=el.getBoundingClientRect();
-        el.style.setProperty("--mx",((e.clientX-r.left-r.width/2)*0.3)+"px");
-        el.style.setProperty("--my",((e.clientY-r.top-r.height/2)*0.3)+"px");
+      el.addEventListener("mouseenter",function(){
+        locked=true; lockedEl=el;
+        tc.classList.remove("spin");
+        setLockedRect(el);
       });
       el.addEventListener("mouseleave",function(){
-        el.style.setProperty("--mx","0px");
-        el.style.setProperty("--my","0px");
+        locked=false; lockedEl=null;
+        tc.classList.add("spin");
+        px=mx; py=my;
+        setIdleRect(px,py);
       });
     });
+
+    addEventListener("scroll",function(){
+      if(locked&&lockedEl)setLockedRect(lockedEl);
+    },{passive:true});
   }
 })();
