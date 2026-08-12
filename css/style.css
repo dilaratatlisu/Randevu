@@ -38,7 +38,7 @@ a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 
 h1,h2,h3,h4{font-family:"Poppins",system-ui,sans-serif;font-weight:600;letter-spacing:-.022em;line-height:1.14;margin:0;color:var(--ink)}
-h1{font-size:clamp(30px,4.4vw,48px);letter-spacing:-.03em}
+h1{font-size:clamp(32px,4.8vw,52px);letter-spacing:-.03em}
 h2{font-size:clamp(28px,4vw,44px)}
 h3{font-size:clamp(19px,2vw,23px);line-height:1.25}
 p{margin:0}
@@ -92,19 +92,19 @@ p{margin:0}
 .drawer a{display:block;padding:14px 0;border-bottom:1px solid var(--line);color:var(--ink-2);font-weight:500}
 
 /* =============== HERO =============== */
-.hero{background:linear-gradient(180deg,#F6F9FF 0%,#FFFFFF 100%);padding:clamp(40px,6vw,68px) 0 clamp(18px,2.5vw,28px);position:relative;overflow:hidden}
+.hero{background:linear-gradient(180deg,#F6F9FF 0%,#FFFFFF 100%);padding:clamp(48px,7vw,80px) 0 clamp(28px,3.5vw,40px);position:relative;overflow:hidden}
 .hero-in{display:grid;gap:clamp(28px,4vw,48px);align-items:start}
 @media(min-width:980px){.hero-in{grid-template-columns:minmax(0,1fr) minmax(0,1.02fr)}}
-.hero h1{margin-bottom:8px}
-.hero .lead{max-width:520px;font-size:15px;line-height:1.48}
-.hero .ticks{margin:10px 0 14px;gap:7px}
-.hero .tick{font-size:13.5px}
-.hero .tick i{width:17px;height:17px;font-size:9.5px;margin-top:1px}
-.hero .cta-pair{margin-top:12px}
-.hero-trust{display:flex;align-items:center;gap:12px;margin-top:10px;flex-wrap:wrap}
+.hero h1{margin-bottom:12px}
+.hero .lead{max-width:520px;font-size:16px;line-height:1.55}
+.hero .ticks{margin:14px 0 18px;gap:10px}
+.hero .tick{font-size:14.5px}
+.hero .tick i{width:18px;height:18px;font-size:10px;margin-top:1px}
+.hero .cta-pair{margin-top:16px}
+.hero-trust{display:flex;align-items:center;gap:12px;margin-top:14px;flex-wrap:wrap}
 .stars{color:#F5A623;letter-spacing:2px;font-size:15px}
 .hero-trust span{font-size:13px;color:var(--muted)}
-.hero-badges{display:flex;gap:10px;margin-top:8px;flex-wrap:wrap}
+.hero-badges{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
 .store{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:12px;padding:9px 15px;font-size:13.5px;color:var(--ink-2);background:#fff}
 .store b{font-family:"Poppins",sans-serif;font-size:14px;font-weight:600;color:var(--ink)}
 
