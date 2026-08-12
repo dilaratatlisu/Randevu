@@ -52,6 +52,7 @@
   if(chatDemo){
     var steps=[].slice.call(chatDemo.querySelectorAll(".chat-step"));
     var typing1=document.getElementById("typing-1"), typing2=document.getElementById("typing-2");
+    var chatBody=chatDemo.querySelector(".chat-body");
     var played=false;
     var chatIo=new IntersectionObserver(function(es){
       es.forEach(function(e){
@@ -61,6 +62,17 @@
         if(reduce){
           steps.forEach(function(s){s.classList.add("shown");});
           return;
+        }
+        /* pembe arka planın büyüyüp küçülmemesi için kart yüksekliğini baştan sabitle
+           (en kötü durumu, yani tüm mesajlar + yazıyor balonları aynı anda açıkken ölç) */
+        if(chatBody){
+          steps.forEach(function(s){s.classList.add("shown");});
+          typing1.classList.add("shown");
+          typing2.classList.add("shown");
+          chatBody.style.minHeight=chatBody.getBoundingClientRect().height+"px";
+          steps.forEach(function(s){s.classList.remove("shown");});
+          typing1.classList.remove("shown");
+          typing2.classList.remove("shown");
         }
         var t=400;
         setTimeout(function(){steps[0].classList.add("shown");},t); t+=700;
