@@ -196,47 +196,48 @@
     counters.forEach(function(el){countIo.observe(el);});
   }
 
-  /* özel imleç: nokta anında takip eder, halka geriden yumuşakça gelir,
-     tıklanabilir öğelerin üstünde büyür */
+  /* özel imleç: arka planla fark alan, hızlı harekette yönüne göre esneyen
+     tek bir daire; tıklanabilir öğelerde büyür. Butonlar ayrıca imlece
+     doğru hafifçe kayar (mıknatıs efekti). */
   if(matchMedia("(pointer: fine)").matches && !reduce){
-    var dot=document.createElement("div"); dot.className="cursor-dot";
-    var ring=document.createElement("div"); ring.className="cursor-ring";
-    document.body.appendChild(dot);
-    document.body.appendChild(ring);
+    var cx=document.createElement("div"); cx.className="cursor-x";
+    document.body.appendChild(cx);
     document.body.classList.add("custom-cursor");
 
-    var mx=innerWidth/2, my=innerHeight/2, rx=mx, ry=my, started=false;
+    var mx=innerWidth/2, my=innerHeight/2, px=mx, py=my, started=false;
     document.addEventListener("mousemove",function(e){
       mx=e.clientX; my=e.clientY;
-      dot.style.transform="translate("+mx+"px,"+my+"px) translate(-50%,-50%)";
-      if(!started){
-        started=true;
-        rx=mx; ry=my;
-        dot.classList.add("show");
-        ring.classList.add("show");
-      }
+      if(!started){started=true;px=mx;py=my;cx.classList.add("show");}
     },{passive:true});
-    document.addEventListener("mouseleave",function(){
-      dot.classList.remove("show");
-      ring.classList.remove("show");
-    });
+    document.addEventListener("mouseleave",function(){cx.classList.remove("show");});
+    document.addEventListener("mouseenter",function(){cx.classList.add("show");});
 
-    function ringLoop(){
-      rx+=(mx-rx)*0.18;
-      ry+=(my-ry)*0.18;
-      ring.style.transform="translate("+rx+"px,"+ry+"px) translate(-50%,-50%)";
-      requestAnimationFrame(ringLoop);
+    function cursorLoop(){
+      var dx=mx-px, dy=my-py;
+      px+=dx*0.2; py+=dy*0.2;
+      var dist=Math.min(Math.sqrt(dx*dx+dy*dy),120);
+      var stretch=dist/120*0.35;
+      var angle=(dist>1)?Math.atan2(dy,dx)*180/Math.PI:0;
+      cx.style.transform="translate("+px+"px,"+py+"px) rotate("+angle+"deg) scale("+(1+stretch)+","+(1-stretch*0.6)+")";
+      requestAnimationFrame(cursorLoop);
     }
-    requestAnimationFrame(ringLoop);
+    requestAnimationFrame(cursorLoop);
 
     document.querySelectorAll("a,button,.card,input,textarea,select").forEach(function(el){
-      el.addEventListener("mouseenter",function(){
-        ring.classList.add("hover");
-        dot.classList.add("hover");
+      el.addEventListener("mouseenter",function(){cx.classList.add("hover");});
+      el.addEventListener("mouseleave",function(){cx.classList.remove("hover");});
+    });
+
+    /* mıknatıs: butonlar imlece doğru hafifçe çekilir */
+    document.querySelectorAll(".btn").forEach(function(el){
+      el.addEventListener("mousemove",function(e){
+        var r=el.getBoundingClientRect();
+        el.style.setProperty("--mx",((e.clientX-r.left-r.width/2)*0.3)+"px");
+        el.style.setProperty("--my",((e.clientY-r.top-r.height/2)*0.3)+"px");
       });
       el.addEventListener("mouseleave",function(){
-        ring.classList.remove("hover");
-        dot.classList.remove("hover");
+        el.style.setProperty("--mx","0px");
+        el.style.setProperty("--my","0px");
       });
     });
   }
