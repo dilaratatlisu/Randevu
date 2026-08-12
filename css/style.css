@@ -243,7 +243,7 @@ p{margin:0}
 .ico-pink{background:var(--pink-soft)}
 .ico-lilac{background:var(--lilac-soft)}
 
-.feat-link{display:flex;flex-direction:column}
+.feat-link{display:flex;flex-direction:column;position:relative}
 .feat-link:hover{border-color:var(--blue)}
 .feat-link h3{transition:color .2s ease}
 .feat-link:hover h3{color:var(--blue)}
@@ -251,6 +251,13 @@ p{margin:0}
 .feat-more{display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-size:14px;font-weight:600;color:var(--blue)}
 .feat-more i{font-style:normal;transition:transform .2s ease}
 .feat-link:hover .feat-more i{transform:translateX(4px)}
+
+.feat-featured{border:2px solid var(--blue);box-shadow:0 10px 24px rgba(44,107,242,.14)}
+.feat-featured:hover{box-shadow:0 14px 30px rgba(44,107,242,.2)}
+.feat-badge{position:absolute;top:-14px;left:24px;background:var(--blue);color:#fff;font-size:11.5px;font-weight:600;
+  padding:5px 13px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 10px rgba(44,107,242,.35)}
+.feat-stat{margin-top:14px;padding:10px 12px;background:var(--blue-soft);border-radius:10px;font-size:13px;color:var(--blue-dark)}
+.feat-stat b{font-weight:700}
 
 /* =============== 3 ADIM =============== */
 .step{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(24px,2.6vw,30px);display:flex;flex-direction:column;gap:16px}
@@ -288,9 +295,17 @@ p{margin:0}
   30%{transform:translateY(-4px);opacity:1}
 }
 
-#chatbot .head{margin-bottom:28px}
-#chatbot .ticks{margin:14px 0 18px}
-#chatbot .band{padding:clamp(28px,4.5vw,56px)}
+#chatbot.section-sm{padding:clamp(24px,4vw,44px) 0}
+#chatbot .band{padding:clamp(20px,3.5vw,36px)}
+#chatbot .head{margin-bottom:18px}
+#chatbot .head .lead{font-size:14.5px;line-height:1.45}
+#chatbot .ticks{margin:10px 0 12px;gap:6px}
+#chatbot .tick{font-size:13.5px}
+#chatbot .grid-2{margin-top:12px !important;gap:12px}
+#chatbot .grid-2 .card{padding:16px}
+#chatbot .grid-2 .ico{width:38px;height:38px;font-size:17px;margin-bottom:10px}
+#chatbot .grid-2 h3{font-size:16.5px;margin-bottom:5px}
+#chatbot .grid-2 p{font-size:13.5px}
 
 /* =============== ZİNCİR =============== */
 .flow{display:grid;gap:12px;grid-template-columns:repeat(2,1fr)}
