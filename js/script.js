@@ -46,4 +46,58 @@
     var o=document.querySelector(".item.open");
     if(o){var a=o.querySelector(".a");a.style.maxHeight=a.scrollHeight+"px";}
   });
+
+  /* sohbet demosu: mesajlar sırayla, aralarda "yazıyor" balonu */
+  var chatDemo=document.getElementById("chat-demo");
+  if(chatDemo){
+    var steps=[].slice.call(chatDemo.querySelectorAll(".chat-step"));
+    var typing1=document.getElementById("typing-1"), typing2=document.getElementById("typing-2");
+    var played=false;
+    var chatIo=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(!e.isIntersecting||played)return;
+        played=true;
+        chatIo.disconnect();
+        if(reduce){
+          steps.forEach(function(s){s.classList.add("shown");});
+          return;
+        }
+        var t=400;
+        setTimeout(function(){steps[0].classList.add("shown");},t); t+=700;
+        setTimeout(function(){typing1.classList.add("shown");},t); t+=900;
+        setTimeout(function(){typing1.classList.remove("shown");steps[1].classList.add("shown");},t); t+=700;
+        setTimeout(function(){steps[2].classList.add("shown");},t); t+=600;
+        setTimeout(function(){typing2.classList.add("shown");},t); t+=900;
+        setTimeout(function(){typing2.classList.remove("shown");steps[3].classList.add("shown");},t);
+      });
+    },{threshold:.4});
+    chatIo.observe(chatDemo);
+  }
+
+  /* sayaç animasyonu */
+  var counters=[].slice.call(document.querySelectorAll(".count-up"));
+  if(counters.length){
+    var fmtTR=function(n){return Math.round(n).toLocaleString("tr-TR");};
+    var countIo=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(!e.isIntersecting)return;
+        countIo.unobserve(e.target);
+        var el=e.target, target=parseFloat(el.getAttribute("data-count"))||0;
+        var isTR=el.getAttribute("data-format")==="tr";
+        if(reduce){el.textContent=isTR?fmtTR(target):target;return;}
+        var start=null, dur=900;
+        function step(ts){
+          if(!start)start=ts;
+          var p=Math.min((ts-start)/dur,1);
+          var eased=1-Math.pow(1-p,3);
+          var val=target*eased;
+          el.textContent=isTR?fmtTR(val):Math.round(val);
+          if(p<1)requestAnimationFrame(step);
+          else el.textContent=isTR?fmtTR(target):target;
+        }
+        requestAnimationFrame(step);
+      });
+    },{threshold:.4});
+    counters.forEach(function(el){countIo.observe(el);});
+  }
 })();

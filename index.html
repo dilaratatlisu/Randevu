@@ -89,10 +89,10 @@
             <span class="dash-date">12 Ağustos Çarşamba ⌄</span>
           </div>
           <div class="dash-stats">
-            <div class="stat"><span class="lbl">Bugünkü randevu</span><span class="val">6</span><span class="chg">%12 ↑</span></div>
-            <div class="stat"><span class="lbl">Yeni müşteri</span><span class="val">3</span><span class="chg">%8 ↑</span></div>
-            <div class="stat"><span class="lbl">Ciro</span><span class="val">₺6.850</span><span class="chg">%15 ↑</span></div>
-            <div class="stat"><span class="lbl">Tahsilat</span><span class="val">₺4.850</span><span class="chg">%10 ↑</span></div>
+            <div class="stat"><span class="lbl">Bugünkü randevu</span><span class="val"><span class="count-up" data-count="6">0</span></span><span class="chg">%12 ↑</span></div>
+            <div class="stat"><span class="lbl">Yeni müşteri</span><span class="val"><span class="count-up" data-count="3">0</span></span><span class="chg">%8 ↑</span></div>
+            <div class="stat"><span class="lbl">Ciro</span><span class="val">₺<span class="count-up" data-count="6850" data-format="tr">0</span></span><span class="chg">%15 ↑</span></div>
+            <div class="stat"><span class="lbl">Tahsilat</span><span class="val">₺<span class="count-up" data-count="4850" data-format="tr">0</span></span><span class="chg">%10 ↑</span></div>
           </div>
           <div class="dash-grid">
             <div class="dash-card">
@@ -121,47 +121,51 @@
 </section>
 
 <!-- ================= CHATBOT ================= -->
-<section class="section" id="chatbot">
+<section class="section-sm" id="chatbot">
   <div class="wrap">
-    <div class="head center">
-      <h2 data-r>Siz işinizi yapın, mesajlara Adapptiv baksın 💬</h2>
-      <p class="lead" data-r>Asistan hizmetleri anlatır, fiyat söyler, boş saatleri kontrol eder ve
-        randevuyu gerçekten takvime yazar. Gerektiğinde bir dokunuşla konuşmayı siz devralırsınız.</p>
-    </div>
-    <div class="split">
-      <div class="split-media" data-r>
-        <div class="chat">
-          <div class="chat-top">
-            <span class="av">A</span>
-            <span><b>Adapptiv Asistan</b><small>çevrimiçi</small></span>
-          </div>
-          <div class="chat-body">
-            <div class="msg in">Merhaba, cumartesi için yeriniz var mı?</div>
-            <div class="msg out">Merhaba! Cumartesi 14:30 ve 16:00 boş. Bu hizmet 2 saat sürüyor, 1.400 ₺.
-              Hangisini ayırayım?</div>
-            <div class="msg in">14:30 uygun</div>
-            <div class="msg out">Ayırdım ✅ Cumartesi 14:30, Merve ile randevunuz oluşturuldu.<small>Randevu takvime eklendi</small></div>
-          </div>
-          <div class="chat-note">🔔 Bu konuşma panelde görünüyor — istediğiniz an devralabilirsiniz.</div>
-        </div>
+    <div class="band band-pink">
+      <div class="head center">
+        <h2 data-r>Siz işinizi yapın, mesajlara Adapptiv baksın 💬</h2>
+        <p class="lead" data-r>Asistan hizmetleri anlatır, fiyat söyler, boş saatleri kontrol eder ve
+          randevuyu gerçekten takvime yazar. Gerektiğinde bir dokunuşla konuşmayı siz devralırsınız.</p>
       </div>
-      <div>
-        <div class="ticks" data-r>
-          <div class="tick"><i>✓</i><span>Kayıtlı müşteriyi tanır, yeni gelene otomatik kart açar</span></div>
-          <div class="tick"><i>✓</i><span>Sadece sizin girdiğiniz hizmet, fiyat ve çalışma saatlerini kullanır</span></div>
-          <div class="tick"><i>✓</i><span>Randevu yazarken çakışma kontrolü yapar</span></div>
-          <div class="tick"><i>✓</i><span>Panelde: bugün kaç görüşme, kaç randevu, kaç yeni müşteri, kaç konuşma sizi bekliyor</span></div>
-        </div>
-        <div class="grid-2" style="margin-top:18px">
-          <div class="card" data-r>
-            <div class="ico ico-green">📈</div>
-            <h3>Bugün 38 görüşme</h3>
-            <p>11 randevu oluşturdu, 6 yeni müşteri kartı açtı.</p>
+      <div class="split">
+        <div class="split-media" data-r>
+          <div class="chat" id="chat-demo">
+            <div class="chat-top">
+              <span class="av">A</span>
+              <span><b>Adapptiv Asistan</b><small>çevrimiçi</small></span>
+            </div>
+            <div class="chat-body">
+              <div class="msg in chat-step">Merhaba, cumartesi için yeriniz var mı?</div>
+              <div class="typing" id="typing-1"><span></span><span></span><span></span></div>
+              <div class="msg out chat-step">Merhaba! Cumartesi 14:30 ve 16:00 boş. Bu hizmet 2 saat sürüyor, 1.400 ₺.
+                Hangisini ayırayım?</div>
+              <div class="msg in chat-step">14:30 uygun</div>
+              <div class="typing" id="typing-2"><span></span><span></span><span></span></div>
+              <div class="msg out chat-step">Ayırdım ✅ Cumartesi 14:30, Merve ile randevunuz oluşturuldu.<small>Randevu takvime eklendi</small></div>
+            </div>
+            <div class="chat-note">🔔 Bu konuşma panelde görünüyor — istediğiniz an devralabilirsiniz.</div>
           </div>
-          <div class="card" data-r>
-            <div class="ico ico-amber">✋</div>
-            <h3>2 konuşma sizde</h3>
-            <p>Asistan emin olamadığı iki konuşmayı size bıraktı.</p>
+        </div>
+        <div>
+          <div class="ticks" data-r>
+            <div class="tick"><i>✓</i><span>Kayıtlı müşteriyi tanır, yeni gelene otomatik kart açar</span></div>
+            <div class="tick"><i>✓</i><span>Sadece sizin girdiğiniz hizmet, fiyat ve çalışma saatlerini kullanır</span></div>
+            <div class="tick"><i>✓</i><span>Randevu yazarken çakışma kontrolü yapar</span></div>
+            <div class="tick"><i>✓</i><span>Panelde: bugün kaç görüşme, kaç randevu, kaç yeni müşteri, kaç konuşma sizi bekliyor</span></div>
+          </div>
+          <div class="grid-2" style="margin-top:18px">
+            <div class="card" data-r>
+              <div class="ico ico-green">📈</div>
+              <h3>Bugün <span class="count-up" data-count="38">0</span> görüşme</h3>
+              <p>11 randevu oluşturdu, 6 yeni müşteri kartı açtı.</p>
+            </div>
+            <div class="card" data-r>
+              <div class="ico ico-amber">✋</div>
+              <h3><span class="count-up" data-count="2">0</span> konuşma sizde</h3>
+              <p>Asistan emin olamadığı iki konuşmayı size bıraktı.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -179,11 +183,11 @@
           Adapptiv, reklamdan gelen kişiyi randevuya, randevuyu tahsilata kadar takip eder.</p>
       </div>
       <div class="flow">
-        <div class="flow-item" data-r><div class="lbl">Reklam harcaması</div><div class="val">₺12.400</div></div>
-        <div class="flow-item" data-r><div class="lbl">Gelen mesaj</div><div class="val">318</div></div>
-        <div class="flow-item" data-r><div class="lbl">Oluşan randevu</div><div class="val">96</div></div>
-        <div class="flow-item" data-r><div class="lbl">Gerçekleşen</div><div class="val">81</div></div>
-        <div class="flow-item win" data-r><div class="lbl">Tahsil edilen</div><div class="val">₺148.600</div></div>
+        <div class="flow-item" data-r><div class="lbl">Reklam harcaması</div><div class="val">₺<span class="count-up" data-count="12400" data-format="tr">0</span></div></div>
+        <div class="flow-item" data-r><div class="lbl">Gelen mesaj</div><div class="val"><span class="count-up" data-count="318">0</span></div></div>
+        <div class="flow-item" data-r><div class="lbl">Oluşan randevu</div><div class="val"><span class="count-up" data-count="96">0</span></div></div>
+        <div class="flow-item" data-r><div class="lbl">Gerçekleşen</div><div class="val"><span class="count-up" data-count="81">0</span></div></div>
+        <div class="flow-item win" data-r><div class="lbl">Tahsil edilen</div><div class="val">₺<span class="count-up" data-count="148600" data-format="tr">0</span></div></div>
       </div>
       <div class="attr">
         <div class="attr-card bad" data-r>
