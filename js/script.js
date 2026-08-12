@@ -42,11 +42,13 @@
   });
 
   /* tek kaydırma = sonraki bölüm: fare tekerleğiyle her hamle bir sonraki/önceki
-     bölüme kayarak gider (masaüstü fare kullanıcıları için) */
+     bölüme kayarak gider (masaüstü fare kullanıcıları için). Şerit ayrı bir durak
+     değil, hero'nun devamı sayılır. Ekrandan uzun bölümlerde önce içeriği normal
+     kaydırmaya izin verilir, bölümün tamamı görülünce bir sonrakine geçilir. */
   (function(){
     var pointerFine = matchMedia("(pointer: fine)").matches;
     if(!pointerFine)return;
-    var stops = [].slice.call(document.querySelectorAll("main > section, main > .strip"));
+    var stops = [].slice.call(document.querySelectorAll("main > section"));
     var foot = document.querySelector(".foot");
     if(foot)stops.push(foot);
     if(stops.length < 2)return;
@@ -74,6 +76,16 @@
       if(locked){e.preventDefault();return;}
       var dir = e.deltaY > 0 ? 1 : -1;
       var idx = currentIndex();
+      var current = stops[idx];
+      var rect = current.getBoundingClientRect();
+
+      if(dir > 0 && rect.bottom > window.innerHeight + 4){
+        return; /* mevcut bölümün altı henüz görünmüyor, önce onu normal kaydır */
+      }
+      if(dir < 0 && rect.top < navH - 4){
+        return; /* mevcut bölümün üstü henüz görünmüyor, önce onu normal kaydır */
+      }
+
       var next = idx + dir;
       if(next < 0 || next > stops.length - 1)return; /* baştan/sondan taşma yok, normal davransın */
       e.preventDefault();
@@ -182,5 +194,50 @@
       });
     },{threshold:.4});
     counters.forEach(function(el){countIo.observe(el);});
+  }
+
+  /* özel imleç: nokta anında takip eder, halka geriden yumuşakça gelir,
+     tıklanabilir öğelerin üstünde büyür */
+  if(matchMedia("(pointer: fine)").matches && !reduce){
+    var dot=document.createElement("div"); dot.className="cursor-dot";
+    var ring=document.createElement("div"); ring.className="cursor-ring";
+    document.body.appendChild(dot);
+    document.body.appendChild(ring);
+    document.body.classList.add("custom-cursor");
+
+    var mx=innerWidth/2, my=innerHeight/2, rx=mx, ry=my, started=false;
+    document.addEventListener("mousemove",function(e){
+      mx=e.clientX; my=e.clientY;
+      dot.style.transform="translate("+mx+"px,"+my+"px) translate(-50%,-50%)";
+      if(!started){
+        started=true;
+        rx=mx; ry=my;
+        dot.classList.add("show");
+        ring.classList.add("show");
+      }
+    },{passive:true});
+    document.addEventListener("mouseleave",function(){
+      dot.classList.remove("show");
+      ring.classList.remove("show");
+    });
+
+    function ringLoop(){
+      rx+=(mx-rx)*0.18;
+      ry+=(my-ry)*0.18;
+      ring.style.transform="translate("+rx+"px,"+ry+"px) translate(-50%,-50%)";
+      requestAnimationFrame(ringLoop);
+    }
+    requestAnimationFrame(ringLoop);
+
+    document.querySelectorAll("a,button,.card,input,textarea,select").forEach(function(el){
+      el.addEventListener("mouseenter",function(){
+        ring.classList.add("hover");
+        dot.classList.add("hover");
+      });
+      el.addEventListener("mouseleave",function(){
+        ring.classList.remove("hover");
+        dot.classList.remove("hover");
+      });
+    });
   }
 })();

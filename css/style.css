@@ -428,3 +428,14 @@ main>section,main>.strip{margin-bottom:clamp(10px,2vw,20px)}
 main>section:last-child{margin-bottom:0}
 :focus-visible{outline:3px solid var(--blue);outline-offset:2px;border-radius:6px}
 ::selection{background:var(--blue);color:#fff}
+
+/* =============== ÖZEL İMLEÇ =============== */
+body.custom-cursor,body.custom-cursor a,body.custom-cursor button,body.custom-cursor .card{cursor:none}
+.cursor-dot,.cursor-ring{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;border-radius:50%;opacity:0;will-change:transform}
+.cursor-dot{width:7px;height:7px;background:var(--blue);transition:opacity .2s ease,background .2s ease,width .2s ease,height .2s ease}
+.cursor-ring{width:32px;height:32px;border:1.5px solid rgba(44,107,242,.45);
+  transition:width .25s cubic-bezier(.34,1.56,.64,1),height .25s cubic-bezier(.34,1.56,.64,1),
+  border-color .25s ease,background .25s ease,opacity .2s ease}
+.cursor-dot.show,.cursor-ring.show{opacity:1}
+.cursor-ring.hover{width:56px;height:56px;background:rgba(44,107,242,.08);border-color:var(--blue)}
+.cursor-dot.hover{width:0;height:0}
