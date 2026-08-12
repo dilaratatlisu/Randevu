@@ -12,6 +12,21 @@
     a.addEventListener("click",function(){nav.classList.remove("open");hamb.setAttribute("aria-expanded","false");});
   });
 
+  /* ışınlanma: sayfa içi linkler yumuşak kaymadan atlar, hedef bölüm pop-in ile belirir */
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener("click",function(){
+      var id=a.getAttribute("href").slice(1);
+      if(!id)return;
+      var target=document.getElementById(id);
+      if(!target||reduce)return;
+      requestAnimationFrame(function(){
+        target.classList.remove("teleport-in");
+        void target.offsetWidth;
+        target.classList.add("teleport-in");
+      });
+    });
+  });
+
   /* görünürlük animasyonu */
   var io=new IntersectionObserver(function(es){
     es.forEach(function(e){

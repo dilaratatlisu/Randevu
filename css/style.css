@@ -27,7 +27,7 @@
 }
 
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:auto}
 body{
   margin:0;background:var(--white);color:var(--ink);
   font-family:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
@@ -420,6 +420,15 @@ p{margin:0}
   *{animation:none !important;transition:none !important}
   [data-r]{opacity:1;transform:none}
   html{scroll-behavior:auto}
+}
+
+/* =============== IŞINLANMA (anchor linkleri) =============== */
+main>section,main>.strip{margin-bottom:clamp(10px,2vw,20px)}
+main>section:last-child{margin-bottom:0}
+.teleport-in{animation:teleport-pop .5s cubic-bezier(.34,1.56,.64,1)}
+@keyframes teleport-pop{
+  0%{opacity:0;transform:scale(.94) translateY(10px)}
+  100%{opacity:1;transform:scale(1) translateY(0)}
 }
 :focus-visible{outline:3px solid var(--blue);outline-offset:2px;border-radius:6px}
 ::selection{background:var(--blue);color:#fff}
