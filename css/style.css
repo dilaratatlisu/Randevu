@@ -88,19 +88,19 @@ p{margin:0}
 .drawer a{display:block;padding:14px 0;border-bottom:1px solid var(--line);color:var(--ink-2);font-weight:500}
 
 /* =============== HERO =============== */
-.hero{background:linear-gradient(180deg,#F6F9FF 0%,#FFFFFF 100%);padding:clamp(16px,2.5vw,28px) 0 clamp(20px,3vw,32px);position:relative;overflow:hidden}
+.hero{background:linear-gradient(180deg,#F6F9FF 0%,#FFFFFF 100%);padding:clamp(40px,6vw,68px) 0 clamp(18px,2.5vw,28px);position:relative;overflow:hidden}
 .hero-in{display:grid;gap:clamp(28px,4vw,48px);align-items:start}
 @media(min-width:980px){.hero-in{grid-template-columns:minmax(0,1fr) minmax(0,1.02fr)}}
-.hero h1{margin-bottom:10px}
-.hero .lead{max-width:520px;font-size:15.5px;line-height:1.5}
-.hero .ticks{margin:12px 0 16px;gap:8px}
-.hero .tick{font-size:14px}
-.hero .tick i{width:18px;height:18px;font-size:10px;margin-top:1px}
-.hero .cta-pair{margin-top:14px}
-.hero-trust{display:flex;align-items:center;gap:12px;margin-top:12px;flex-wrap:wrap}
+.hero h1{margin-bottom:8px}
+.hero .lead{max-width:520px;font-size:15px;line-height:1.48}
+.hero .ticks{margin:10px 0 14px;gap:7px}
+.hero .tick{font-size:13.5px}
+.hero .tick i{width:17px;height:17px;font-size:9.5px;margin-top:1px}
+.hero .cta-pair{margin-top:12px}
+.hero-trust{display:flex;align-items:center;gap:12px;margin-top:10px;flex-wrap:wrap}
 .stars{color:#F5A623;letter-spacing:2px;font-size:15px}
 .hero-trust span{font-size:13px;color:var(--muted)}
-.hero-badges{display:flex;gap:10px;margin-top:10px;flex-wrap:wrap}
+.hero-badges{display:flex;gap:10px;margin-top:8px;flex-wrap:wrap}
 .store{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:12px;padding:9px 15px;font-size:13.5px;color:var(--ink-2);background:#fff}
 .store b{font-family:"Poppins",sans-serif;font-size:14px;font-weight:600;color:var(--ink)}
 
@@ -258,17 +258,21 @@ p{margin:0}
 .mini-row b{font-weight:600;color:var(--ink)}
 
 /* =============== SOHBET =============== */
-.chat{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--shadow);overflow:hidden;max-width:420px}
-.chat-top{display:flex;align-items:center;gap:11px;padding:14px 17px;background:var(--green);color:#fff}
-.chat-top .av{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.22);display:grid;place-items:center;font-size:15px}
-.chat-top b{font-family:"Poppins",sans-serif;font-size:15px;font-weight:600;display:block}
-.chat-top small{opacity:.85;font-size:12.5px}
-.chat-body{padding:18px;display:grid;gap:10px;background:#F6F8FA}
-.msg{max-width:84%;padding:11px 15px;font-size:14.5px;line-height:1.5;border-radius:16px}
+.chat{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--shadow);overflow:hidden;max-width:400px}
+.chat-top{display:flex;align-items:center;gap:10px;padding:11px 14px;background:var(--green);color:#fff}
+.chat-top .av{width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.22);display:grid;place-items:center;font-size:13px}
+.chat-top b{font-family:"Poppins",sans-serif;font-size:14px;font-weight:600;display:block}
+.chat-top small{opacity:.85;font-size:11.5px}
+.chat-body{padding:14px;display:grid;gap:8px;background:#F6F8FA}
+.msg{max-width:84%;padding:9px 13px;font-size:13.5px;line-height:1.45;border-radius:14px}
 .msg.in{background:#fff;border:1px solid var(--line);border-bottom-left-radius:5px;justify-self:start}
 .msg.out{background:#DCF6E4;border-bottom-right-radius:5px;justify-self:end}
-.msg small{display:block;font-size:11.5px;color:var(--muted);margin-top:5px}
-.chat-note{display:flex;align-items:center;gap:9px;padding:13px 17px;border-top:1px solid var(--line);background:#fff;font-size:13.5px;color:var(--muted)}
+.msg small{display:block;font-size:11px;color:var(--muted);margin-top:4px}
+.chat-note{display:flex;align-items:center;gap:8px;padding:10px 14px;border-top:1px solid var(--line);background:#fff;font-size:12.5px;color:var(--muted)}
+
+#chatbot.section{padding:clamp(40px,6vw,72px) 0}
+#chatbot .head{margin-bottom:28px}
+#chatbot .ticks{margin:14px 0 18px}
 
 /* =============== ZİNCİR =============== */
 .flow{display:grid;gap:12px;grid-template-columns:repeat(2,1fr)}
