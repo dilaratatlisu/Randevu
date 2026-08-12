@@ -297,15 +297,15 @@ p{margin:0}
 
 #chatbot.section-sm{padding:clamp(24px,4vw,44px) 0}
 #chatbot .band{padding:clamp(20px,3.5vw,36px)}
-#chatbot .head{margin-bottom:18px}
-#chatbot .head .lead{font-size:14.5px;line-height:1.45}
-#chatbot .ticks{margin:10px 0 12px;gap:6px}
-#chatbot .tick{font-size:13.5px}
-#chatbot .grid-2{margin-top:12px !important;gap:12px}
-#chatbot .grid-2 .card{padding:16px}
-#chatbot .grid-2 .ico{width:38px;height:38px;font-size:17px;margin-bottom:10px}
-#chatbot .grid-2 h3{font-size:16.5px;margin-bottom:5px}
-#chatbot .grid-2 p{font-size:13.5px}
+#chatbot .head{margin-bottom:24px}
+#chatbot .head .lead{font-size:16px;line-height:1.55}
+#chatbot .ticks{margin:20px 0 24px;gap:16px}
+#chatbot .tick{font-size:16px}
+#chatbot .grid-2{margin-top:22px !important;gap:16px}
+#chatbot .grid-2 .card{padding:22px}
+#chatbot .grid-2 .ico{margin-bottom:14px}
+#chatbot .grid-2 h3{font-size:19px}
+#chatbot .grid-2 p{font-size:15px}
 
 /* =============== ZİNCİR =============== */
 .flow{display:grid;gap:12px;grid-template-columns:repeat(2,1fr)}
