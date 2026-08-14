@@ -501,20 +501,9 @@ body.splash-lock {
   margin-left: auto
 }
 
-.nav-login {
-  display: none;
-  font-size: 15.5px;
-  font-weight: 500;
-  color: var(--ink-2)
-}
-
 @media(min-width:1000px) {
   .nav-menu {
     display: flex
-  }
-
-  .nav-login {
-    display: inline
   }
 }
 

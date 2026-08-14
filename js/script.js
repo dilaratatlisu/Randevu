@@ -88,14 +88,17 @@
 
   /* hero pano: sayfanın en üstünde 3 boyutlu eğik durur, aşağı kaydırmaya
      başlayınca kaydırma miktarına bağlı olarak düzelip hafifçe büyür
-     (aceternity "container scroll animation" mantığı) */
+     (aceternity "container scroll animation" mantığı); üstüne, sürekli
+     hafifçe sağa sola dönen yavaş bir sallanma bineer */
   (function(){
     var heroDash=document.querySelector(".dash-stage .dash");
     if(!heroDash||reduce||!matchMedia("(min-width:860px)").matches)return;
     var dist=460;
+    var t0=Date.now();
     (function loop(){
       var p=Math.max(0,Math.min(1,scrollY/dist));
-      var rotX=6-p*6, rotY=-10+p*10, rotZ=1-p*1, scale=1+p*0.035;
+      var sway=Math.sin((Date.now()-t0)/1000*1.8)*4; /* hafif sağa-sola dönme */
+      var rotX=6-p*6, rotY=-10+p*10+sway, rotZ=1-p*1, scale=1+p*0.035;
       heroDash.style.transform="rotateX("+rotX+"deg) rotateY("+rotY+"deg) rotateZ("+rotZ+"deg) scale("+scale+")";
       requestAnimationFrame(loop);
     })();
