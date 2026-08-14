@@ -1,636 +1,729 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Adapptiv | Randevu ile çalışan tüm işletmeler için işletme yönetimi</title>
-<meta name="description" content="Randevu, müşteri, WhatsApp chatbot, reklam ve muhasebe tek uygulamada. Randevu ile çalışan her işletme için Adapptiv." />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Adapptiv | Randevu ile çalışan tüm işletmeler için işletme yönetimi</title>
+  <meta name="description"
+    content="Randevu, müşteri, WhatsApp chatbot, reklam ve muhasebe tek uygulamada. Randevu ile çalışan her işletme için Adapptiv." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
 
-<!-- ================= NAV ================= -->
-<header class="nav" id="nav">
-  <div class="nav-in">
-    <a href="#top" class="brand"><img src="assets/logo.png" alt="Adapptiv" class="brand-logo"></a>
-    <nav class="nav-menu">
-      <a href="#ozellikler">Özellikler</a>
-      <a href="#chatbot">Chatbot</a>
-      <a href="#reklam">Reklam &amp; gelir</a>
-      <a href="#sektorler">Sektörler</a>
-      <a href="#fiyat">Fiyatlar</a>
-    </nav>
-    <div class="nav-right">
-      <a href="#" class="nav-login">Giriş yap</a>
-      <a href="#fiyat" class="btn btn-primary btn-sm">Ücretsiz başla</a>
-      <button class="hamb" id="hamb" aria-label="Menü" aria-expanded="false"><span></span><span></span><span></span></button>
+<body> <!-- ================= SPLASH ================= -->
+  <div class="splash" id="splash" aria-hidden="true">
+    <div class="splash-logo-wrap"> <img src="assets/logo-mark.png" alt="" class="splash-logo"> <span
+        class="splash-ring"></span> </div> <span class="splash-word">Adapptiv</span>
+  </div> <!-- ================= NAV ================= -->
+  <header class="nav" id="nav">
+    <div class="nav-in"> <a href="#top" class="brand"><img src="assets/logo.png" alt="Adapptiv" class="brand-logo"></a>
+      <nav class="nav-menu"> <a href="#ozellikler">Özellikler</a> <a href="#chatbot">Chatbot</a> <a
+          href="#reklam">Reklam &amp; gelir</a> <a href="#sektorler">Sektörler</a> <a href="#fiyat">Fiyatlar</a> </nav>
+      <div class="nav-right"> <a href="#" class="nav-login">Giriş yap</a> <a href="#fiyat"
+          class="btn btn-primary btn-sm">Ücretsiz başla</a> <button class="hamb" id="hamb" aria-label="Menü"
+          aria-expanded="false"><span></span><span></span><span></span></button> </div>
     </div>
-  </div>
-  <div class="drawer" id="drawer">
-    <a href="#ozellikler">Özellikler</a>
-    <a href="#chatbot">Chatbot</a>
-    <a href="#reklam">Reklam &amp; gelir</a>
-    <a href="#sektorler">Sektörler</a>
-    <a href="#fiyat">Fiyatlar</a>
-    <a href="#">Giriş yap</a>
-  </div>
-</header>
-
-<main id="top">
-
-<!-- ================= HERO ================= -->
-<section class="hero">
-  <div class="wrap hero-in">
-    <div>
-      <h1 data-r>İşletmenizin tamamı tek uygulamada</h1>
-      <p class="lead" data-r>Randevu takviminden müşteri geçmişine, mesajlara otomatik cevap veren asistandan
-        reklamınızın gerçek getirisine kadar — işletmenizi çalıştıran her şey tek uygulamada, telefonunuzda ve
-        bilgisayarınızda aynı anda.</p>
-      <div class="ticks" data-r>
-        <div class="tick"><i>✓</i><span>Randevu, müşteri kartı ve ekip takvimi aynı ekranda, çakışma yapmadan</span></div>
-        <div class="tick"><i>✓</i><span>WhatsApp ve Instagram'a otomatik cevap veren asistan randevuyu kendisi oluşturur</span></div>
-        <div class="tick"><i>✓</i><span>Reklamdan gelen kişiden tahsilata, cirodan net kâra kadar her adım görünür</span></div>
-      </div>
-      <div class="cta-pair" data-r>
-        <a href="#fiyat" class="btn btn-primary btn-sm">Ücretsiz başla</a>
-        <a href="#demo" class="btn btn-outline btn-sm">Demo izle</a>
-      </div>
-      <div class="hero-trust" data-r>
-        <span class="stars">★★★★★</span>
-        <span>Kurulum bir öğleden sonra sürer · Kredi kartı istemiyoruz</span>
-      </div>
-      <div class="hero-badges" data-r>
-        <span class="store">📱 <span>İndir <b>App Store</b></span></span>
-        <span class="store">🤖 <span>İndir <b>Google Play</b></span></span>
-      </div>
-    </div>
-
-    <div class="dash-stage" data-r>
-      <div class="dash">
-        <aside class="dash-side">
-          <span class="dash-logo">A</span>
-          <span class="dash-ico active">🏠</span>
-          <span class="dash-ico">📅</span>
-          <span class="dash-ico">👥</span>
-          <span class="dash-ico">💬</span>
-          <span class="dash-ico">📣</span>
-          <span class="dash-ico">🧾</span>
-          <span class="dash-ico">⚙️</span>
-        </aside>
-        <div class="dash-main">
-          <div class="dash-head">
-            <div>
-              <b>Merhaba 👋</b>
-              <small>Bugünkü özetiniz</small>
+    <div class="drawer" id="drawer"> <a href="#ozellikler">Özellikler</a> <a href="#chatbot">Chatbot</a> <a
+        href="#reklam">Reklam &amp; gelir</a> <a href="#sektorler">Sektörler</a> <a href="#fiyat">Fiyatlar</a> <a
+        href="#">Giriş yap</a> </div>
+  </header>
+  <main id="top"> <!-- ================= HERO ================= -->
+    <section class="hero">
+      <div class="wrap hero-in">
+        <div>
+          <h1 class="typewriter" id="hero-h1">İşletmenizin <span class="pointer-hl" id="hero-hl"
+              data-trigger="manual">tamamı</span> tek uygulamada</h1>
+          <p class="lead" data-r>Randevu takviminden müşteri geçmişine, mesajlara otomatik cevap veren asistandan
+            reklamınızın gerçek getirisine kadar — işletmenizi çalıştıran her şey tek uygulamada, telefonunuzda ve
+            bilgisayarınızda aynı anda.</p>
+          <div class="ticks" data-r>
+            <div class="tick"><i>✓</i><span>Randevu, müşteri kartı ve ekip takvimi aynı ekranda, çakışma yapmadan</span>
             </div>
-            <span class="dash-date">12 Ağustos Çarşamba ⌄</span>
+            <div class="tick"><i>✓</i><span>WhatsApp ve Instagram'a otomatik cevap veren asistan randevuyu kendisi
+                oluşturur</span></div>
+            <div class="tick"><i>✓</i><span>Reklamdan gelen kişiden tahsilata, cirodan net kâra kadar her adım
+                görünür</span></div>
           </div>
-          <div class="dash-stats">
-            <div class="stat"><span class="lbl">Bugünkü randevu</span><span class="val"><span class="count-up" data-count="6">0</span></span><span class="chg">%12 ↑</span></div>
-            <div class="stat"><span class="lbl">Yeni müşteri</span><span class="val"><span class="count-up" data-count="3">0</span></span><span class="chg">%8 ↑</span></div>
-            <div class="stat"><span class="lbl">Ciro</span><span class="val">₺<span class="count-up" data-count="6850" data-format="tr">0</span></span><span class="chg">%15 ↑</span></div>
-            <div class="stat"><span class="lbl">Tahsilat</span><span class="val">₺<span class="count-up" data-count="4850" data-format="tr">0</span></span><span class="chg">%10 ↑</span></div>
-          </div>
-          <div class="dash-grid">
-            <div class="dash-card">
-              <div class="dash-card-head"><b>Günlük randevular</b><span style="color:var(--blue)">Tümünü gör</span></div>
-              <div class="appt"><span class="time">09:30</span><span class="who">İlk görüşme<small>Elif · 45 dk</small></span><span class="badge b-done">Tamamlandı</span></div>
-              <div class="appt"><span class="time">11:00</span><span class="who">Danışmanlık seansı<small>Merve · 2 sa</small></span><span class="badge b-done">Tamamlandı</span></div>
-              <div class="appt"><span class="time">13:00</span><span class="who">Bakım seansı<small>Ayşe · 1 sa</small></span><span class="badge b-ok">Onaylandı</span></div>
-              <div class="appt"><span class="time">14:30</span><span class="who">Kontrol randevusu<small>Zeynep · 20 dk</small></span><span class="badge b-no">Gelmedi</span></div>
-            </div>
-            <div>
-              <div class="dash-card">
-                <div class="dash-card-head"><b>WhatsApp &amp; Instagram</b></div>
-                <div class="dash-big"><span class="e">💬</span><div><b>24</b><small>Otomatik yanıt</small></div></div>
+          <div class="cta-pair" data-r> <span class="nova-glow-wrap"> <a href="#fiyat"
+                class="btn btn-primary btn-sm magnetic-btn" id="hero-cta">Ücretsiz başla</a> </span> <a href="#demo"
+              class="btn btn-outline btn-sm fluid-glass-btn" id="demo-cta">Demo izle</a> </div>
+          <div class="hero-trust" data-r> <span class="stars">★★★★★</span> <span>Kurulum bir öğleden sonra sürer · Kredi
+              kartı istemiyoruz</span> </div>
+          <div class="hero-badges" data-r> <span class="store">📱 <span>İndir <b>App Store</b></span></span> <span
+              class="store">🤖 <span>İndir <b>Google Play</b></span></span> </div>
+        </div>
+        <div class="dash-stage" data-r>
+          <div class="dash">
+            <aside class="dash-side"> <span class="dash-logo">A</span> <span class="dash-ico active">🏠</span> <span
+                class="dash-ico">📅</span> <span class="dash-ico">👥</span> <span class="dash-ico">💬</span> <span
+                class="dash-ico">📣</span> <span class="dash-ico">🧾</span> <span class="dash-ico">⚙️</span> </aside>
+            <div class="dash-main">
+              <div class="dash-head">
+                <div> <b>Merhaba 👋</b> <small>Bugünkü özetiniz</small> </div> <span class="dash-date">12 Ağustos
+                  Çarşamba ⌄</span>
               </div>
-              <div class="dash-card">
-                <div class="dash-card-head"><b>Reklam &amp; Gelir</b><span>Bu ay ⌄</span></div>
-                <div class="dash-big"><div><b>₺68.540</b><small class="up">%18 ↑</small></div></div>
-                <div class="mini-bars"><span style="height:35%"></span><span style="height:48%"></span><span style="height:40%"></span><span style="height:62%"></span><span style="height:55%"></span><span style="height:78%"></span><span style="height:100%"></span></div>
+              <div class="dash-stats">
+                <div class="stat"><span class="lbl">Bugünkü randevu</span><span class="val"><span class="count-up"
+                      data-count="6">0</span></span><span class="chg">%12 ↑</span></div>
+                <div class="stat"><span class="lbl">Yeni müşteri</span><span class="val"><span class="count-up"
+                      data-count="3">0</span></span><span class="chg">%8 ↑</span></div>
+                <div class="stat"><span class="lbl">Ciro</span><span class="val">₺<span class="count-up"
+                      data-count="6850" data-format="tr">0</span></span><span class="chg">%15 ↑</span></div>
+                <div class="stat"><span class="lbl">Tahsilat</span><span class="val">₺<span class="count-up"
+                      data-count="4850" data-format="tr">0</span></span><span class="chg">%10 ↑</span></div>
+              </div>
+              <div class="dash-grid">
+                <div class="dash-card">
+                  <div class="dash-card-head"><b>Günlük randevular</b><span style="color:var(--blue)">Tümünü gör</span>
+                  </div>
+                  <div class="appt"><span class="time">09:30</span><span class="who">İlk görüşme<small>Elif · 45
+                        dk</small></span><span class="badge b-done">Tamamlandı</span></div>
+                  <div class="appt"><span class="time">11:00</span><span class="who">Danışmanlık seansı<small>Merve · 2
+                        sa</small></span><span class="badge b-done">Tamamlandı</span></div>
+                  <div class="appt"><span class="time">13:00</span><span class="who">Bakım seansı<small>Ayşe · 1
+                        sa</small></span><span class="badge b-ok">Onaylandı</span></div>
+                  <div class="appt"><span class="time">14:30</span><span class="who">Kontrol randevusu<small>Zeynep · 20
+                        dk</small></span><span class="badge b-no">Gelmedi</span></div>
+                </div>
+                <div>
+                  <div class="dash-card">
+                    <div class="dash-card-head"><b>WhatsApp &amp; Instagram</b></div>
+                    <div class="dash-big"><span class="e">💬</span>
+                      <div><b>24</b><small>Otomatik yanıt</small></div>
+                    </div>
+                  </div>
+                  <div class="dash-card">
+                    <div class="dash-card-head"><b>Reklam &amp; Gelir</b><span>Bu ay ⌄</span></div>
+                    <div class="dash-big">
+                      <div><b>₺68.540</b><small class="up">%18 ↑</small></div>
+                    </div>
+                    <div class="mini-bars"><span style="height:35%"></span><span style="height:48%"></span><span
+                        style="height:40%"></span><span style="height:62%"></span><span style="height:55%"></span><span
+                        style="height:78%"></span><span style="height:100%"></span></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section> <!-- ================= ŞERİT ================= -->
+    <div class="strip">
+      <div class="wrap strip-in"> <a href="#ozellikler">Randevu takvimi</a> <a href="#musteri">Müşteri kartı</a> <a
+          href="#chatbot">WhatsApp &amp; Instagram</a> <a href="#reklam">Meta reklamları</a> <a
+          href="#muhasebe">Muhasebe</a> <a href="#ekip">Ekip &amp; prim</a> </div>
+    </div> 
+    
+    <!-- ================= MACBOOK SCROLL: WEB PANELİ ================= -->
+  <section class="section mac-section">
 
-<!-- ================= ŞERİT ================= -->
-<div class="strip">
-  <div class="wrap strip-in">
-    <a href="#ozellikler">Randevu takvimi</a>
-    <a href="#musteri">Müşteri kartı</a>
-    <a href="#chatbot">WhatsApp &amp; Instagram</a>
-    <a href="#reklam">Meta reklamları</a>
-    <a href="#muhasebe">Muhasebe</a>
-    <a href="#ekip">Ekip &amp; prim</a>
-  </div>
-</div>
+    <div class="mac-track" id="mac-track">
 
-<!-- ================= CHATBOT ================= -->
-<section class="section-sm" id="chatbot">
-  <div class="wrap">
-    <div class="band band-pink">
-      <div class="head center">
-        <h2 data-r>Siz işinizi yapın, mesajlara Adapptiv baksın 💬</h2>
-        <p class="lead" data-r>Asistan hizmetleri anlatır, fiyat söyler, boş saatleri kontrol eder ve
-          randevuyu gerçekten takvime yazar. Gerektiğinde bir dokunuşla konuşmayı siz devralırsınız.</p>
+      <div class="mac-title" id="mac-title">
+        <h2 class="letters-3d" data-text="Bilgisayarınızdan da tam kontrol">
+          Bilgisayarınızdan da tam kontrol
+        </h2>
+
+        <p class="lead">
+          Telefonda öğrendiğiniz her düğme, web panelinde de birebir aynı yerde durur.
+        </p>
       </div>
-      <div class="split">
-        <div class="split-media" data-r>
-          <div class="chat" id="chat-demo">
-            <div class="chat-top">
-              <span class="av">A</span>
-              <span><b>Adapptiv Asistan</b><small>çevrimiçi</small></span>
-            </div>
-            <div class="chat-body">
-              <div class="msg in chat-step">Merhaba, cumartesi için yeriniz var mı?</div>
-              <div class="typing" id="typing-1"><span></span><span></span><span></span></div>
-              <div class="msg out chat-step">Merhaba! Cumartesi 14:30 ve 16:00 boş. Bu hizmet 2 saat sürüyor, 1.400 ₺.
-                Hangisini ayırayım?</div>
-              <div class="msg in chat-step">14:30 uygun</div>
-              <div class="typing" id="typing-2"><span></span><span></span><span></span></div>
-              <div class="msg out chat-step">Ayırdım ✅ Cumartesi 14:30, Merve ile randevunuz oluşturuldu.<small>Randevu takvime eklendi</small></div>
-            </div>
-            <div class="chat-note">🔔 Bu konuşma panelde görünüyor — istediğiniz an devralabilirsiniz.</div>
+
+
+      <!-- STICKY MACBOOK -->
+      <div class="mac-sticky" id="mac-sticky">
+
+        <div class="mac-stage" id="mac-stage">
+
+          <img
+            src="assets/mac-mockup.png"
+            alt="Adapptiv web paneli, dizüstü bilgisayarda"
+            class="mac-bg"
+            id="mac-bg"
+          >
+
+          <img
+            src="assets/mac-flat.png"
+            alt="Adapptiv web paneli"
+            class="mac-panel"
+            id="mac-panel"
+          >
+
+        </div>
+
+      </div>
+
+
+      <!-- MACBOOK ANİMASYONU BİTTİKTEN SONRA -->
+      <div class="mac-bottom-text" id="mac-bottom-text">
+
+        <span class="mac-after-badge">
+          WEB PANELİ
+        </span>
+
+        <h2>
+          İşletmenizi bilgisayarınızdan da tek ekrandan yönetin.
+        </h2>
+
+        <p>
+          Randevularınızı, müşterilerinizi, mesajlarınızı ve gelirinizi
+          aynı panel üzerinden takip edin.
+        </p>
+
+        <div class="mac-after-actions">
+
+          <a
+            href="#fiyat"
+            class="btn btn-primary magnetic-btn"
+          >
+            Ücretsiz başla
+          </a>
+
+          <a
+            href="#demo"
+            class="btn btn-outline"
+          >
+            Nasıl çalışıyor?
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+ <!-- ================= CHATBOT ================= -->
+    <section class="section-sm" id="chatbot">
+      <div class="wrap">
+        <div class="band band-pink">
+          <div class="head center">
+            <h2 data-r>Siz işinizi yapın, mesajlara <span class="hero-hl" id="pointer-hl">Adapptiv</span> baksın 💬</h2>
+            <p class="lead" data-r>Asistan hizmetleri anlatır, fiyat söyler, boş saatleri kontrol eder ve randevuyu
+              gerçekten takvime yazar. Gerektiğinde bir dokunuşla konuşmayı siz devralırsınız.</p>
           </div>
+          <div class="split">
+            <div class="split-media" data-r>
+              <div class="chat" id="chat-demo">
+                <div class="chat-top"> <span class="av">A</span> <span><b>Adapptiv
+                      Asistan</b><small>çevrimiçi</small></span> </div>
+                <div class="chat-body">
+                  <div class="msg in chat-step">Merhaba, cumartesi için yeriniz var mı?</div>
+                  <div class="typing" id="typing-1"><span></span><span></span><span></span></div>
+                  <div class="msg out chat-step">Merhaba! Cumartesi 14:30 ve 16:00 boş. Bu hizmet 2 saat sürüyor, 1.400
+                    ₺. Hangisini ayırayım?</div>
+                  <div class="msg in chat-step">14:30 uygun</div>
+                  <div class="typing" id="typing-2"><span></span><span></span><span></span></div>
+                  <div class="msg out chat-step">Ayırdım ✅ Cumartesi 14:30, Merve ile randevunuz
+                    oluşturuldu.<small>Randevu takvime eklendi</small></div>
+                </div>
+                <div class="chat-note">🔔 Bu konuşma panelde görünüyor — istediğiniz an devralabilirsiniz.</div>
+              </div>
+            </div>
+            <div>
+              <div class="ticks ticks-seq" id="chatbot-ticks" data-r>
+                <div class="tick"><i>✓</i><span>Kayıtlı müşteriyi tanır, yeni gelene otomatik kart açar</span></div>
+                <div class="tick"><i>✓</i><span>Sadece sizin girdiğiniz hizmet, fiyat ve çalışma saatlerini
+                    kullanır</span></div>
+                <div class="tick"><i>✓</i><span>Randevu yazarken çakışma kontrolü yapar</span></div>
+                <div class="tick"><i>✓</i><span>Panelde: bugün kaç görüşme, kaç randevu, kaç yeni müşteri, kaç konuşma
+                    sizi bekliyor</span></div>
+              </div>
+              <div class="grid-2" style="margin-top:18px">
+                <div class="card" data-r>
+                  <div class="ico ico-green">📈</div>
+                  <h3>Bugün <span class="count-up" data-count="38">0</span> görüşme</h3>
+                  <p>11 randevu oluşturdu, 6 yeni müşteri kartı açtı.</p>
+                </div>
+                <div class="card" data-r>
+                  <div class="ico ico-amber">✋</div>
+                  <h3><span class="count-up" data-count="2">0</span> konuşma sizde</h3>
+                  <p>Asistan emin olamadığı iki konuşmayı size bıraktı.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> <!-- ================= REKLAM → GELİR ================= -->
+    <section class="section-sm" id="reklam">
+      <div class="wrap">
+        <div class="band band-green">
+          <div class="head center" style="margin-bottom:34px">
+            <h2 class="anim-blur-in">Reklamın gerçekten kazandırdığı para</h2>
+            <p class="lead" data-r>Görüntüleme ve tıklama iyi fakat müşteri gelmiyor. Adapptiv, reklamdan gelen kişiyi
+              randevuya, randevuyu tahsilata kadar takip eder.</p>
+          </div>
+          <div class="flow">
+            <div class="flow-item" data-r>
+              <div class="lbl">Reklam harcaması</div>
+              <div class="val">₺<span class="count-up" data-count="12400" data-format="tr">0</span></div>
+            </div>
+            <div class="flow-item" data-r>
+              <div class="lbl">Gelen mesaj</div>
+              <div class="val"><span class="count-up" data-count="318">0</span></div>
+            </div>
+            <div class="flow-item" data-r>
+              <div class="lbl">Oluşan randevu</div>
+              <div class="val"><span class="count-up" data-count="96">0</span></div>
+            </div>
+            <div class="flow-item" data-r>
+              <div class="lbl">Gerçekleşen</div>
+              <div class="val"><span class="count-up" data-count="81">0</span></div>
+            </div>
+            <div class="flow-item win" data-r>
+              <div class="lbl">Tahsil edilen</div>
+              <div class="val">₺<span class="count-up" data-count="148600" data-format="tr">0</span></div>
+            </div>
+          </div>
+          <div class="attr">
+            <div class="attr-card bad" data-r> <span class="lbl">Diğer paneller</span>
+              <div class="big">₺0,00</div>
+              <p>Ölçüm kurulu değilken de bir sayı basar. Siz de çalışan kampanyayı kapatırsınız.</p>
+            </div>
+            <div class="attr-card good" data-r> <span class="lbl">Adapptiv</span>
+              <div class="big">İzlenemedi</div>
+              <p>Bağlantı eksikse açıkça söyler ve neyin eksik olduğunu gösterir. Gördüğünüz sayıya güvenirsiniz.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> <!-- ================= ÖZELLİK KARTLARI ================= -->
+    <section class="section-sm">
+      <div class="wrap">
+        <div class="head center">
+          <h2 class="anim-wipe">Uygulamanın içinde neler var?</h2>
+          <p class="lead" data-r>Her modülün ne yaptığını aşağıda görün — detayına gitmek için karta tıklamanız yeterli.
+          </p>
+        </div>
+        <div class="grid-3 focus-grid"> <a href="#ozellikler" class="card feat-link focus-card" data-r>
+            <div class="ico ico-blue">📅</div>
+            <h3>Randevu takvimi</h3>
+            <p>Kim, kaçta, hangi hizmet için geliyor anında görünür. Çakışma otomatik engellenir; bekliyor, onaylandı,
+              tamamlandı, iptal ve gelmedi durumlarıyla takip edersiniz.</p> <span class="feat-more">Detayına git
+              <i>→</i></span>
+          </a> <a href="#musteri" class="card feat-link focus-card" data-r>
+            <div class="ico ico-lilac">🗂️</div>
+            <h3>Müşteri kartı</h3>
+            <p>Toplam harcama, son ziyaret, paket takibi ve geldiği kanal — her müşterinin geçmişi tek ekranda birikir.
+            </p> <span class="feat-more">Detayına git <i>→</i></span>
+          </a> <a href="#chatbot" class="card feat-link feat-featured focus-card" data-r> <span class="feat-badge">🔥 En
+              popüler</span>
+            <div class="ico ico-green">💬</div>
+            <h3>WhatsApp &amp; Instagram</h3>
+            <p>Mesajlara otomatik cevap veren asistan fiyat ve saat söyler, randevuyu kendisi takvime yazar.</p>
+            <div class="feat-stat">Bugün <b>38</b> görüşmeyi otomatik yanıtladı</div> <span class="feat-more">Detayına
+              git <i>→</i></span>
+          </a> <a href="#reklam" class="card feat-link feat-featured focus-card" data-r> <span class="feat-badge">📈
+              Yüksek ROI</span>
+            <div class="ico ico-amber">📣</div>
+            <h3>Meta reklamları</h3>
+            <p>Reklamdan gelen kişiyi randevuya, randevuyu tahsilata kadar izleyin; reklamın gerçek getirisini görün.
+            </p>
+            <div class="feat-stat">Reklamdan <b>₺148.600</b> tahsilat takip edildi</div> <span
+              class="feat-more">Detayına git <i>→</i></span>
+          </a> <a href="#muhasebe" class="card feat-link focus-card" data-r>
+            <div class="ico ico-pink">🧾</div>
+            <h3>Muhasebe</h3>
+            <p>Vergi ve prim oranını bir kez girin; ciro, gider ve net kâr otomatik hesaplansın, dilediğinizde PDF rapor
+              indirin.</p> <span class="feat-more">Detayına git <i>→</i></span>
+          </a> <a href="#ekip" class="card feat-link focus-card" data-r>
+            <div class="ico ico-blue">👥</div>
+            <h3>Ekip &amp; prim</h3>
+            <p>Çalışma saatleri, izinler ve prim hakedişi tek panelde; kimin hangi hizmeti verdiği otomatik eşleşir.</p>
+            <span class="feat-more">Detayına git <i>→</i></span>
+          </a> </div>
+      </div>
+    </section> <!-- ================= 4 FAYDA ================= -->
+    <section class="section">
+      <div class="wrap">
+        <div class="head center">
+          <h2 class="anim-scatter">Defteri kapatın, telefonu bırakın</h2>
+          <p class="lead" data-r>Randevu WhatsApp'ta, ciro Excel'de, reklam ayrı panelde olmasın. Adapptiv hepsini
+            birbirine bağlar.</p>
+        </div>
+        <div class="grid-4 focus-grid">
+          <div class="card focus-card" data-r>
+            <div class="ico ico-blue">📅</div>
+            <h3>Çakışma olmaz</h3>
+            <p>Aynı çalışana aynı saate ikinci randevu açılamaz. Günlük, haftalık ve liste görünümü bir arada.</p>
+          </div>
+          <div class="card focus-card" data-r>
+            <div class="ico ico-pink">🚫</div>
+            <h3>Gelmeyen müşteriyi tespit edin</h3>
+            <p>"İptal" ile "gelmedi" aynı kategoriye girmez. Sık gelmeyen müşteriyi sayılarla fark edersiniz.</p>
+          </div>
+          <div class="card focus-card" data-r>
+            <div class="ico ico-green">💬</div>
+            <h3>Mesajlara asistan bakar</h3>
+            <p>WhatsApp ve Instagram'a fiyat, saat ve müsaitlik cevabını Adapptiv verir. Randevuyu takvime kendi yazar.
+            </p>
+          </div>
+          <div class="card focus-card" data-r>
+            <div class="ico ico-amber">💰</div>
+            <h3>Ciro kasadan hesaplanır</h3>
+            <p>Liste fiyatından değil, gerçekten tahsil edilen tutardan. İndirim ve kısmi ödeme olduğu gibi yansır.</p>
+          </div>
+        </div>
+      </div>
+    </section> <!-- ================= SPLIT: RANDEVU ================= -->
+    <section class="section-sm" id="ozellikler">
+      <div class="wrap">
+        <div class="band band-blue split">
+          <div>
+            <h2 class="anim-typewriter">Günün tamamı tek ekranda</h2>
+            <p class="lead" data-r>Kim, kaçta, hangi hizmet için geliyor — açtığınız anda görürsünüz. Kapatmayı
+              unuttuğunuz randevuları Adapptiv size hatırlatır.</p>
+            <div class="ticks" data-r>
+              <div class="tick"><i>✓</i><span>Beş durum: bekliyor, onaylandı, tamamlandı, iptal, gelmedi</span></div>
+              <div class="tick"><i>✓</i><span>Çalışan bazlı takvim, çakışma engelli</span></div>
+              <div class="tick"><i>✓</i><span>Süresi geçmiş randevular için otomatik uyarı</span></div>
+            </div> <a href="#fiyat" class="btn btn-primary" data-r>Takvimi deneyin</a>
+          </div>
+          <div class="split-media" data-r>
+            <div class="app">
+              <div class="app-top"><span class="app-title">Haftalık görünüm</span><span class="app-pill">Elif</span>
+              </div>
+              <div class="app-body">
+                <div class="appt"><span class="time">Pzt</span><span class="who">7 randevu<small>1
+                      gelmedi</small></span><span class="badge b-ok">Dolu</span></div>
+                <div class="appt"><span class="time">Sal</span><span class="who">5 randevu<small>Öğleden sonra
+                      boş</small></span><span class="badge b-wait">Yer var</span></div>
+                <div class="appt"><span class="time">Çar</span><span class="who">İzinli<small>Yeniden atama
+                      önerildi</small></span><span class="badge b-no">Kapalı</span></div>
+                <div class="appt"><span class="time">Per</span><span class="who">9 randevu<small>Tam
+                      dolu</small></span><span class="badge b-done">Dolu</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> <!-- ================= SPLIT: MÜŞTERİ ================= -->
+    <section class="section-sm" id="musteri">
+      <div class="wrap">
+        <div class="band band-lilac split flip">
+          <div>
+            <h2 class="anim-line-reveal">Müşteriyi etiketlemeyi siz düşünmeyin</h2>
+            <p class="lead" data-r>Toplam harcama, son ziyaret, en çok aldığı hizmet, tercih ettiği çalışan. Sadık
+              müşteri, borçlu ya da kaybedilme riski etiketleri bu verilerden kendiliğinden çıkar.</p>
+            <div class="ticks" data-r>
+              <div class="tick"><i>✓</i><span>Paket takibi: 6 seanslık paketin kaçı yapıldı, kaç kaldı</span></div>
+              <div class="tick"><i>✓</i><span>Müşteri hangi kanaldan geldi: reklam, chatbot ya da doğrudan</span></div>
+              <div class="tick"><i>✓</i><span>Ortalama ziyaret aralığı — kim gecikti, görünür</span></div>
+            </div>
+          </div>
+          <div class="split-media" data-r>
+            <div class="app">
+              <div class="app-top"><span class="app-title">Müşteri · Selin K.</span><span class="app-pill">Sadık
+                  müşteri</span></div>
+              <div class="app-body">
+                <div class="appt"><span class="who">Toplam harcama</span><span class="badge b-done">₺18.400</span></div>
+                <div class="appt"><span class="who">Randevu<small>Son ziyaret 11 gün önce</small></span><span
+                    class="badge b-ok">27</span></div>
+                <div class="appt"><span class="who">En çok aldığı<small>Tercih ettiği: Merve</small></span><span
+                    class="badge b-ok">Danışmanlık</span></div>
+                <div class="appt"><span class="who">Bakım paketi<small>2 seans kaldı</small></span><span
+                    class="badge b-wait">4 / 6</span></div>
+              </div>
+              <div class="app-foot"><span class="k">Geldiği kanal</span><span class="v"
+                  style="font-size:15px;color:var(--blue)">Instagram reklamı</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> <!-- ================= MUHASEBE ================= -->
+    <section class="section" id="muhasebe">
+      <div class="wrap split flip">
+        <div>
+          <h2 class="anim-blur-in">Ay sonunda hesap makinesi çıkarmayın</h2>
+          <p class="lead" data-r>Vergi ve prim oranını bir kez girersiniz. Toplam cirodan net kâra kadar döküm otomatik
+            çıkar, dilediğinizde PDF olarak indirirsiniz.</p>
+          <div class="ticks" data-r>
+            <div class="tick"><i>✓</i><span>Tek seferlik ve aylık tekrarlayan giderler</span></div>
+            <div class="tick"><i>✓</i><span>Ödendi, ödenmedi, vadesi geçti takibi</span></div>
+            <div class="tick"><i>✓</i><span>Hizmet bazlı ve dönemsel raporlar</span></div>
+          </div>
+        </div>
+        <div class="split-media" data-r>
+          <div class="app">
+            <div class="app-top"><span class="app-title">Temmuz özeti</span><span class="app-pill">PDF indir</span>
+            </div>
+            <div class="app-body">
+              <div class="appt"><span class="who">Toplam ciro<small>gerçek tahsilat</small></span><span
+                  class="badge b-ok">₺148.600</span></div>
+              <div class="appt"><span class="who">Vergi sonrası</span><span class="badge b-ok">₺126.310</span></div>
+              <div class="appt"><span class="who">Prim sonrası</span><span class="badge b-ok">₺101.048</span></div>
+              <div class="appt"><span class="who">Giderler<small>3 kalem vadesi geçti</small></span><span
+                  class="badge b-no">−₺16.818</span></div>
+            </div>
+            <div class="app-foot"><span class="k">Net kâr</span><span class="v">₺84.230</span></div>
+          </div>
+        </div>
+      </div>
+    </section> <!-- ================= EKİP ================= -->
+    <section class="section-sm" id="ekip">
+      <div class="wrap">
+        <div class="band band-amber split">
+          <div>
+            <h2 class="anim-wipe">Çalışanları birbiriyle yarıştırmıyoruz</h2>
+            <p class="lead" data-r>Adapptiv'de "en iyi çalışan" tablosu yok. Herkesin kendi sayıları ayrı durur:
+              tamamlanan, iptal ve gelmedi randevu sayısı, prim hakedişi. Yorumu siz yaparsınız.</p>
+            <div class="ticks" data-r>
+              <div class="tick"><i>✓</i><span>Çalışma saatleri, izin günleri, toplu resmî tatil tanımı</span></div>
+              <div class="tick"><i>✓</i><span>İzin çakıştığında otomatik yeniden atama önerisi</span></div>
+              <div class="tick"><i>✓</i><span>Hangi çalışanın hangi hizmeti verdiği tek tek eşleşir</span></div>
+            </div>
+          </div>
+          <div class="split-media" data-r>
+            <div class="staff">
+              <div class="staff-head">Temmuz · çalışan istatistikleri</div>
+              <div class="staff-row"><span class="av">EY</span><span class="nm">Elif Y.<small>38 tamamlandı · 3 iptal ·
+                    2 gelmedi</small></span><span class="pr">₺4.100</span></div>
+              <div class="staff-row"><span class="av">MK</span><span class="nm">Merve K.<small>29 tamamlandı · 2 iptal ·
+                    1 gelmedi</small></span><span class="pr">₺3.250</span></div>
+              <div class="staff-row"><span class="av">AS</span><span class="nm">Ayşe S.<small>24 tamamlandı · 5 iptal ·
+                    4 gelmedi</small></span><span class="pr">₺2.700</span></div>
+              <div class="staff-row"><span class="av">ZD</span><span class="nm">Zeynep D.<small>21 tamamlandı · 1 iptal
+                    · 0 gelmedi</small></span><span class="pr">₺2.310</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> <!-- ================= 3 ADIM ================= -->
+    <section class="section" id="demo">
+      <div class="wrap">
+        <div class="head center">
+          <h2 class="stagger-text" data-text="3 adımda kurulum 🏆">3 adımda kurulum 🏆</h2>
+          <p class="lead" data-r>Kurulumu birlikte yapıyoruz. Sizden istediğimiz tek şey hizmet listeniz ve çalışma
+            saatleriniz.</p>
+        </div>
+        <div class="grid-3">
+          <div class="step" data-r> <span class="step-n">1</span>
+            <h3>Hizmetleri ve ekibi girin</h3>
+            <p>Hizmet, süre, fiyat ve kimin verdiği. Chatbot da cevaplarını buradan alır.</p>
+            <div class="mini">
+              <div class="mini-row"><span>Danışmanlık · 45 dk</span><b>₺450</b></div>
+              <div class="mini-row"><span>Bakım seansı · 2 sa</span><b>₺1.400</b></div>
+              <div class="mini-row"><span>Kontrol randevusu · 1 sa</span><b>₺900</b></div>
+            </div>
+          </div>
+          <div class="step" data-r> <span class="step-n">2</span>
+            <h3>WhatsApp ve Instagram'ı bağlayın</h3>
+            <p>Bağlantıyı biz kuruyoruz. O andan itibaren gelen mesajlara asistan cevap verir.</p>
+            <div class="mini">
+              <div class="mini-row"><span>WhatsApp Business</span><b style="color:var(--green)">Bağlı</b></div>
+              <div class="mini-row"><span>Instagram DM</span><b style="color:var(--green)">Bağlı</b></div>
+              <div class="mini-row"><span>Meta reklam hesabı</span><b style="color:var(--blue)">Bağla</b></div>
+            </div>
+          </div>
+          <div class="step" data-r> <span class="step-n">3</span>
+            <h3>Telefonunuzdan takip edin</h3>
+            <p>Android, iOS ve web paneli birebir aynı. Telefonda öğrendiğiniz düğme bilgisayarda da aynı yerde.</p>
+            <div class="mini">
+              <div class="mini-row"><span>Bugünkü randevu</span><b>6</b></div>
+              <div class="mini-row"><span>Bekleyen konuşma</span><b>2</b></div>
+              <div class="mini-row"><span>Bugün tahsilat</span><b style="color:var(--green)">₺4.850</b></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> <!-- ================= BAĞLANTILAR ================= -->
+    <section class="section-sm">
+      <div class="wrap">
+        <div class="head center">
+          <h2 class="anim-scatter">Zaten kullandığınız yerlere bağlanır</h2>
+          <p class="lead" data-r>Yeni bir şey öğrenmenize gerek yok. Müşteriniz size nereden yazıyorsa Adapptiv oradan
+            cevap verir.</p>
+        </div>
+        <div class="conns">
+          <div class="conn" data-r><span class="e">💚</span>
+            <div><b>WhatsApp</b>
+              <p>Randevu, fiyat ve saat sorularına otomatik cevap.</p>
+            </div>
+          </div>
+          <div class="conn" data-r><span class="e">📷</span>
+            <div><b>Instagram</b>
+              <p>DM'den gelen mesajlar aynı gelen kutusunda.</p>
+            </div>
+          </div>
+          <div class="conn" data-r><span class="e">📣</span>
+            <div><b>Meta reklamları</b>
+              <p>Harcama ve dönüşüm her gün kendi güncellenir.</p>
+            </div>
+          </div>
+          <div class="conn" data-r><span class="e">📱</span>
+            <div><b>Android &amp; iOS</b>
+              <p>Mağazadan indirilen gerçek mobil uygulama.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> <!-- ================= SEKTÖRLER ================= -->
+    <section class="section" id="sektorler">
+      <div class="wrap">
+        <div class="head center">
+          <h2 class="anim-typewriter">Kimler kullanıyor?</h2>
+          <p class="lead" data-r>Adapptiv, 1–15 kişilik ekiplerle çalışan, tek ya da birkaç şubeli işletmeler için
+            tasarlandı.</p>
+        </div>
+        <div class="sectors">
+          <div class="sector" data-r><span class="e">💇‍♀️</span><span>Kuaför &amp; güzellik</span></div>
+          <div class="sector" data-r><span class="e">🏥</span><span>Klinik &amp; sağlık</span></div>
+          <div class="sector" data-r><span class="e">💪</span><span>Spor &amp; fitness</span></div>
+          <div class="sector" data-r><span class="e">🚗</span><span>Oto servis</span></div>
+          <div class="sector" data-r><span class="e">📚</span><span>Eğitim &amp; kurs</span></div>
+          <div class="sector" data-r><span class="e">⚖️</span><span>Danışmanlık &amp; hukuk</span></div>
+        </div>
+      </div>
+    </section> <!-- ================= FİYAT ================= -->
+    <!-- NOT: fiyat rakamları örnek. Kendi paket yapınızla değiştirin. -->
+    <section class="section-sm" id="fiyat">
+      <div class="wrap">
+        <div class="head center">
+          <h2 class="anim-line-reveal">Planınız hangisi?</h2>
+          <p class="lead" data-r>Tek şubeyle başlayın, büyüdükçe genişletin. İstediğiniz zaman iptal edebilirsiniz.</p>
+        </div>
+        <div class="plans">
+          <div class="plan" data-r>
+            <h3>Başlangıç</h3>
+            <p class="sub">Tek şube, 3 çalışana kadar</p>
+            <div class="price">₺0<small> / ilk 14 gün</small></div>
+            <p class="sub">Sonrasında ₺X / ay</p>
+            <ul>
+              <li><i>✓</i>Sınırsız randevu ve müşteri kartı</li>
+              <li><i>✓</i>Müşteri kartı ve paket takibi</li>
+              <li><i>✓</i>Muhasebe ve PDF rapor</li>
+              <li><i>✓</i>Android, iOS ve web paneli</li>
+            </ul> <a href="#" class="btn btn-outline">Ücretsiz başla</a>
+          </div>
+          <div class="plan hi" data-r> <span class="plan-flag">En çok tercih edilen</span>
+            <h3>Pro</h3>
+            <p class="sub">Sınırsız çalışan, çoklu şube</p>
+            <div class="price">₺X<small> / ay</small></div>
+            <p class="sub">Yıllık ödemede 2 ay hediye</p>
+            <ul>
+              <li><i>✓</i>Başlangıç'taki her şey</li>
+              <li><i>✓</i>WhatsApp &amp; Instagram AI asistan</li>
+              <li><i>✓</i>Meta reklam entegrasyonu ve gelir takibi</li>
+              <li><i>✓</i>Çoklu şube ve rol bazlı yetki</li>
+              <li><i>✓</i>Öncelikli destek</li>
+            </ul> <a href="#" class="btn btn-primary">Pro'yu başlat</a>
+          </div>
+        </div>
+        <p class="plan-note">Daha büyük bir zincir mi işletiyorsunuz? <a href="#"
+            style="color:var(--blue);font-weight:600">Bizimle konuşun</a>.</p>
+      </div>
+    </section> <!-- ================= SSS ================= -->
+    <section class="section">
+      <div class="wrap">
+        <div class="head center">
+          <h2 class="anim-blur-in">Sık sorulan sorular</h2>
+        </div>
+        <div class="faq" id="faq">
+          <div class="item"> <button class="q">Mevcut müşteri listemi aktarabilir miyim? <i>+</i></button>
+            <div class="a">
+              <p>Evet. Excel dosyanızı ya da telefon rehberinizi tek seferde yükleyebilirsiniz. Geçmiş randevu ve
+                harcama bilgisi varsa o da aktarılır; yoksa müşteri kartları kullandıkça kendiliğinden dolar.</p>
+            </div>
+          </div>
+          <div class="item"> <button class="q">Chatbot yanlış bir şey söylerse ne olur? <i>+</i></button>
+            <div class="a">
+              <p>Asistan yalnızca sizin girdiğiniz hizmet, fiyat ve çalışma saatlerini kullanır; kendi kafasından fiyat
+                söylemez. Her konuşmayı panelden görürsünüz ve istediğiniz an "devral" diyip yazışmayı kendiniz
+                sürdürebilirsiniz.</p>
+            </div>
+          </div>
+          <div class="item"> <button class="q">Reklam vermiyorum, yine de işime yarar mı? <i>+</i></button>
+            <div class="a">
+              <p>Yarar. Reklam entegrasyonu isteğe bağlı. Randevu, müşteri kartı, chatbot, muhasebe ve ekip yönetimi
+                reklam bağlamadan da tam çalışır. Sonradan reklam vermeye başlarsanız hesabınızı bağlarsınız, takip
+                oradan devam eder.</p>
+            </div>
+          </div>
+          <div class="item"> <button class="q">Teknik bilgim yok, kurulumu kim yapıyor? <i>+</i></button>
+            <div class="a">
+              <p>Kurulumu biz yapıyoruz. Siz hizmet listenizi, çalışma saatlerinizi ve ekibinizi söylüyorsunuz;
+                WhatsApp, Instagram ve reklam hesabı bağlantılarını birlikte tamamlıyoruz. Sonrasında kullandığınız tek
+                şey uygulama.</p>
+            </div>
+          </div>
+          <div class="item"> <button class="q">Birden fazla şubem var, hepsi tek hesapta mı? <i>+</i></button>
+            <div class="a">
+              <p>Evet. Her şubenin takvimi, ekibi ve muhasebesi ayrı tutulur; işletme sahibi hepsini tek yerden görür.
+                Çalışanlar yalnızca kendi şubelerini ve kendi yetkileri dahilindeki bilgileri görür.</p>
+            </div>
+          </div>
+          <div class="item"> <button class="q">Verilerim bana mı ait? <i>+</i></button>
+            <div class="a">
+              <p>Evet. Müşteri listeniz, randevularınız ve muhasebe kayıtlarınız size aittir; istediğiniz zaman dışa
+                aktarabilirsiniz. Ayrılmak isterseniz verilerinizi yanınızda götürürsünüz.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> <!-- ================= KAPANIŞ ================= -->
+    <section class="section-sm">
+      <div class="wrap">
+        <div class="final" data-r>
+          <h2 class="stagger-text">Bu akşam kasayı elle toplamayın</h2>
+          <p>Adapptiv'i 14 gün ücretsiz deneyin. Kurulumda yanınızdayız, kredi kartı istemiyoruz.</p>
+          <div class="cta-pair" style="justify-content:center"> <a href="#" class="btn btn-white">Ücretsiz başla</a> <a
+              href="#" class="btn btn-outline"
+              style="background:transparent;color:#fff;border-color:rgba(255,255,255,.45)">Demo talep et</a> </div>
+        </div>
+      </div>
+    </section>
+  </main> <!-- ================= FOOTER ================= -->
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <div class="brand"><img src="assets/logo-mark.png" alt="" class="brand-logo-mark">Adapptiv</div>
+          <p class="foot-about">Randevu ile çalışan her işletme için randevu, müşteri, chatbot, reklam ve muhasebe
+            yönetimi. Tek uygulama.</p>
+          <p style="margin-top:16px"><a href="mailto:merhaba@adapptiv.app">merhaba@adapptiv.app</a></p>
         </div>
         <div>
-          <div class="ticks" data-r>
-            <div class="tick"><i>✓</i><span>Kayıtlı müşteriyi tanır, yeni gelene otomatik kart açar</span></div>
-            <div class="tick"><i>✓</i><span>Sadece sizin girdiğiniz hizmet, fiyat ve çalışma saatlerini kullanır</span></div>
-            <div class="tick"><i>✓</i><span>Randevu yazarken çakışma kontrolü yapar</span></div>
-            <div class="tick"><i>✓</i><span>Panelde: bugün kaç görüşme, kaç randevu, kaç yeni müşteri, kaç konuşma sizi bekliyor</span></div>
-          </div>
-          <div class="grid-2" style="margin-top:18px">
-            <div class="card" data-r>
-              <div class="ico ico-green">📈</div>
-              <h3>Bugün <span class="count-up" data-count="38">0</span> görüşme</h3>
-              <p>11 randevu oluşturdu, 6 yeni müşteri kartı açtı.</p>
-            </div>
-            <div class="card" data-r>
-              <div class="ico ico-amber">✋</div>
-              <h3><span class="count-up" data-count="2">0</span> konuşma sizde</h3>
-              <p>Asistan emin olamadığı iki konuşmayı size bıraktı.</p>
-            </div>
-          </div>
+          <h4>Ürün</h4>
+          <ul>
+            <li><a href="#ozellikler">Randevu</a></li>
+            <li><a href="#ozellikler">Müşteri kartı</a></li>
+            <li><a href="#chatbot">AI asistan</a></li>
+            <li><a href="#reklam">Reklam takibi</a></li>
+            <li><a href="#fiyat">Fiyatlar</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Sektörler</h4>
+          <ul>
+            <li><a href="#sektorler">Kuaför &amp; güzellik</a></li>
+            <li><a href="#sektorler">Klinik &amp; sağlık</a></li>
+            <li><a href="#sektorler">Spor &amp; fitness</a></li>
+            <li><a href="#sektorler">Oto servis</a></li>
+            <li><a href="#sektorler">Eğitim &amp; kurs</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Destek</h4>
+          <ul>
+            <li><a href="#demo">Kurulum</a></li>
+            <li><a href="#">Yardım merkezi</a></li>
+            <li><a href="#">İletişim</a></li>
+            <li><a href="#">Kullanım koşulları</a></li>
+            <li><a href="#">Gizlilik</a></li>
+          </ul>
         </div>
       </div>
+      <div class="foot-bottom"> <span>© 2026 Adapptiv</span> <span>Android · iOS · Web paneli</span> </div>
     </div>
-  </div>
-</section>
-
-<!-- ================= REKLAM → GELİR ================= -->
-<section class="section-sm" id="reklam">
-  <div class="wrap">
-    <div class="band band-green">
-      <div class="head center" style="margin-bottom:34px">
-        <h2 data-r>Reklamın gerçekten kazandırdığı para</h2>
-        <p class="lead" data-r>Görüntüleme ve tıklama iyi fakat müşteri gelmiyor.
-          Adapptiv, reklamdan gelen kişiyi randevuya, randevuyu tahsilata kadar takip eder.</p>
-      </div>
-      <div class="flow">
-        <div class="flow-item" data-r><div class="lbl">Reklam harcaması</div><div class="val">₺<span class="count-up" data-count="12400" data-format="tr">0</span></div></div>
-        <div class="flow-item" data-r><div class="lbl">Gelen mesaj</div><div class="val"><span class="count-up" data-count="318">0</span></div></div>
-        <div class="flow-item" data-r><div class="lbl">Oluşan randevu</div><div class="val"><span class="count-up" data-count="96">0</span></div></div>
-        <div class="flow-item" data-r><div class="lbl">Gerçekleşen</div><div class="val"><span class="count-up" data-count="81">0</span></div></div>
-        <div class="flow-item win" data-r><div class="lbl">Tahsil edilen</div><div class="val">₺<span class="count-up" data-count="148600" data-format="tr">0</span></div></div>
-      </div>
-      <div class="attr">
-        <div class="attr-card bad" data-r>
-          <span class="lbl">Diğer paneller</span>
-          <div class="big">₺0,00</div>
-          <p>Ölçüm kurulu değilken de bir sayı basar. Siz de çalışan kampanyayı kapatırsınız.</p>
-        </div>
-        <div class="attr-card good" data-r>
-          <span class="lbl">Adapptiv</span>
-          <div class="big">İzlenemedi</div>
-          <p>Bağlantı eksikse açıkça söyler ve neyin eksik olduğunu gösterir. Gördüğünüz sayıya güvenirsiniz.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= ÖZELLİK KARTLARI ================= -->
-<section class="section-sm">
-  <div class="wrap">
-    <div class="head center">
-      <h2 data-r>Uygulamanın içinde neler var?</h2>
-      <p class="lead" data-r>Her modülün ne yaptığını aşağıda görün — detayına gitmek için karta tıklamanız yeterli.</p>
-    </div>
-    <div class="grid-3">
-      <a href="#ozellikler" class="card feat-link" data-r>
-        <div class="ico ico-blue">📅</div>
-        <h3>Randevu takvimi</h3>
-        <p>Kim, kaçta, hangi hizmet için geliyor anında görünür. Çakışma otomatik engellenir; bekliyor, onaylandı, tamamlandı, iptal ve gelmedi durumlarıyla takip edersiniz.</p>
-        <span class="feat-more">Detayına git <i>→</i></span>
-      </a>
-      <a href="#musteri" class="card feat-link" data-r>
-        <div class="ico ico-lilac">🗂️</div>
-        <h3>Müşteri kartı</h3>
-        <p>Toplam harcama, son ziyaret, paket takibi ve geldiği kanal — her müşterinin geçmişi tek ekranda birikir.</p>
-        <span class="feat-more">Detayına git <i>→</i></span>
-      </a>
-      <a href="#chatbot" class="card feat-link feat-featured" data-r>
-        <span class="feat-badge">🔥 En popüler</span>
-        <div class="ico ico-green">💬</div>
-        <h3>WhatsApp &amp; Instagram</h3>
-        <p>Mesajlara otomatik cevap veren asistan fiyat ve saat söyler, randevuyu kendisi takvime yazar.</p>
-        <div class="feat-stat">Bugün <b>38</b> görüşmeyi otomatik yanıtladı</div>
-        <span class="feat-more">Detayına git <i>→</i></span>
-      </a>
-      <a href="#reklam" class="card feat-link feat-featured" data-r>
-        <span class="feat-badge">📈 Yüksek ROI</span>
-        <div class="ico ico-amber">📣</div>
-        <h3>Meta reklamları</h3>
-        <p>Reklamdan gelen kişiyi randevuya, randevuyu tahsilata kadar izleyin; reklamın gerçek getirisini görün.</p>
-        <div class="feat-stat">Reklamdan <b>₺148.600</b> tahsilat takip edildi</div>
-        <span class="feat-more">Detayına git <i>→</i></span>
-      </a>
-      <a href="#muhasebe" class="card feat-link" data-r>
-        <div class="ico ico-pink">🧾</div>
-        <h3>Muhasebe</h3>
-        <p>Vergi ve prim oranını bir kez girin; ciro, gider ve net kâr otomatik hesaplansın, dilediğinizde PDF rapor indirin.</p>
-        <span class="feat-more">Detayına git <i>→</i></span>
-      </a>
-      <a href="#ekip" class="card feat-link" data-r>
-        <div class="ico ico-blue">👥</div>
-        <h3>Ekip &amp; prim</h3>
-        <p>Çalışma saatleri, izinler ve prim hakedişi tek panelde; kimin hangi hizmeti verdiği otomatik eşleşir.</p>
-        <span class="feat-more">Detayına git <i>→</i></span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ================= 4 FAYDA ================= -->
-<section class="section">
-  <div class="wrap">
-    <div class="head center">
-      <h2 data-r>Defteri kapatın, telefonu bırakın</h2>
-      <p class="lead" data-r>Randevu WhatsApp'ta, ciro Excel'de, reklam ayrı panelde olmasın.
-        Adapptiv hepsini birbirine bağlar.</p>
-    </div>
-    <div class="grid-4">
-      <div class="card" data-r>
-        <div class="ico ico-blue">📅</div>
-        <h3>Çakışma olmaz</h3>
-        <p>Aynı çalışana aynı saate ikinci randevu açılamaz. Günlük, haftalık ve liste görünümü bir arada.</p>
-      </div>
-      <div class="card" data-r>
-        <div class="ico ico-pink">🚫</div>
-        <h3>Gelmeyen müşteriyi tespit edin</h3>
-        <p>"İptal" ile "gelmedi" aynı kategoriye girmez. Sık gelmeyen müşteriyi sayılarla fark edersiniz.</p>
-      </div>
-      <div class="card" data-r>
-        <div class="ico ico-green">💬</div>
-        <h3>Mesajlara asistan bakar</h3>
-        <p>WhatsApp ve Instagram'a fiyat, saat ve müsaitlik cevabını Adapptiv verir. Randevuyu takvime kendi yazar.</p>
-      </div>
-      <div class="card" data-r>
-        <div class="ico ico-amber">💰</div>
-        <h3>Ciro kasadan hesaplanır</h3>
-        <p>Liste fiyatından değil, gerçekten tahsil edilen tutardan. İndirim ve kısmi ödeme olduğu gibi yansır.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= SPLIT: RANDEVU ================= -->
-<section class="section-sm" id="ozellikler">
-  <div class="wrap">
-    <div class="band band-blue split">
-      <div>
-        <h2 data-r>Günün tamamı tek ekranda</h2>
-        <p class="lead" data-r>Kim, kaçta, hangi hizmet için geliyor — açtığınız anda görürsünüz.
-          Kapatmayı unuttuğunuz randevuları Adapptiv size hatırlatır.</p>
-        <div class="ticks" data-r>
-          <div class="tick"><i>✓</i><span>Beş durum: bekliyor, onaylandı, tamamlandı, iptal, gelmedi</span></div>
-          <div class="tick"><i>✓</i><span>Çalışan bazlı takvim, çakışma engelli</span></div>
-          <div class="tick"><i>✓</i><span>Süresi geçmiş randevular için otomatik uyarı</span></div>
-        </div>
-        <a href="#fiyat" class="btn btn-primary" data-r>Takvimi deneyin</a>
-      </div>
-      <div class="split-media" data-r>
-        <div class="app">
-          <div class="app-top"><span class="app-title">Haftalık görünüm</span><span class="app-pill">Elif</span></div>
-          <div class="app-body">
-            <div class="appt"><span class="time">Pzt</span><span class="who">7 randevu<small>1 gelmedi</small></span><span class="badge b-ok">Dolu</span></div>
-            <div class="appt"><span class="time">Sal</span><span class="who">5 randevu<small>Öğleden sonra boş</small></span><span class="badge b-wait">Yer var</span></div>
-            <div class="appt"><span class="time">Çar</span><span class="who">İzinli<small>Yeniden atama önerildi</small></span><span class="badge b-no">Kapalı</span></div>
-            <div class="appt"><span class="time">Per</span><span class="who">9 randevu<small>Tam dolu</small></span><span class="badge b-done">Dolu</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= SPLIT: MÜŞTERİ ================= -->
-<section class="section-sm" id="musteri">
-  <div class="wrap">
-    <div class="band band-lilac split flip">
-      <div>
-        <h2 data-r>Müşteriyi etiketlemeyi siz düşünmeyin</h2>
-        <p class="lead" data-r>Toplam harcama, son ziyaret, en çok aldığı hizmet, tercih ettiği çalışan.
-          Sadık müşteri, borçlu ya da kaybedilme riski etiketleri bu verilerden kendiliğinden çıkar.</p>
-        <div class="ticks" data-r>
-          <div class="tick"><i>✓</i><span>Paket takibi: 6 seanslık paketin kaçı yapıldı, kaç kaldı</span></div>
-          <div class="tick"><i>✓</i><span>Müşteri hangi kanaldan geldi: reklam, chatbot ya da doğrudan</span></div>
-          <div class="tick"><i>✓</i><span>Ortalama ziyaret aralığı — kim gecikti, görünür</span></div>
-        </div>
-      </div>
-      <div class="split-media" data-r>
-        <div class="app">
-          <div class="app-top"><span class="app-title">Müşteri · Selin K.</span><span class="app-pill">Sadık müşteri</span></div>
-          <div class="app-body">
-            <div class="appt"><span class="who">Toplam harcama</span><span class="badge b-done">₺18.400</span></div>
-            <div class="appt"><span class="who">Randevu<small>Son ziyaret 11 gün önce</small></span><span class="badge b-ok">27</span></div>
-            <div class="appt"><span class="who">En çok aldığı<small>Tercih ettiği: Merve</small></span><span class="badge b-ok">Danışmanlık</span></div>
-            <div class="appt"><span class="who">Bakım paketi<small>2 seans kaldı</small></span><span class="badge b-wait">4 / 6</span></div>
-          </div>
-          <div class="app-foot"><span class="k">Geldiği kanal</span><span class="v" style="font-size:15px;color:var(--blue)">Instagram reklamı</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= MUHASEBE ================= -->
-<section class="section" id="muhasebe">
-  <div class="wrap split flip">
-    <div>
-      <h2 data-r>Ay sonunda hesap makinesi çıkarmayın</h2>
-      <p class="lead" data-r>Vergi ve prim oranını bir kez girersiniz. Toplam cirodan net kâra kadar
-        döküm otomatik çıkar, dilediğinizde PDF olarak indirirsiniz.</p>
-      <div class="ticks" data-r>
-        <div class="tick"><i>✓</i><span>Tek seferlik ve aylık tekrarlayan giderler</span></div>
-        <div class="tick"><i>✓</i><span>Ödendi, ödenmedi, vadesi geçti takibi</span></div>
-        <div class="tick"><i>✓</i><span>Hizmet bazlı ve dönemsel raporlar</span></div>
-      </div>
-    </div>
-    <div class="split-media" data-r>
-      <div class="app">
-        <div class="app-top"><span class="app-title">Temmuz özeti</span><span class="app-pill">PDF indir</span></div>
-        <div class="app-body">
-          <div class="appt"><span class="who">Toplam ciro<small>gerçek tahsilat</small></span><span class="badge b-ok">₺148.600</span></div>
-          <div class="appt"><span class="who">Vergi sonrası</span><span class="badge b-ok">₺126.310</span></div>
-          <div class="appt"><span class="who">Prim sonrası</span><span class="badge b-ok">₺101.048</span></div>
-          <div class="appt"><span class="who">Giderler<small>3 kalem vadesi geçti</small></span><span class="badge b-no">−₺16.818</span></div>
-        </div>
-        <div class="app-foot"><span class="k">Net kâr</span><span class="v">₺84.230</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= EKİP ================= -->
-<section class="section-sm" id="ekip">
-  <div class="wrap">
-    <div class="band band-amber split">
-      <div>
-        <h2 data-r>Çalışanları birbiriyle yarıştırmıyoruz</h2>
-        <p class="lead" data-r>Adapptiv'de "en iyi çalışan" tablosu yok. Herkesin kendi sayıları ayrı durur:
-          tamamlanan, iptal ve gelmedi randevu sayısı, prim hakedişi. Yorumu siz yaparsınız.</p>
-        <div class="ticks" data-r>
-          <div class="tick"><i>✓</i><span>Çalışma saatleri, izin günleri, toplu resmî tatil tanımı</span></div>
-          <div class="tick"><i>✓</i><span>İzin çakıştığında otomatik yeniden atama önerisi</span></div>
-          <div class="tick"><i>✓</i><span>Hangi çalışanın hangi hizmeti verdiği tek tek eşleşir</span></div>
-        </div>
-      </div>
-      <div class="split-media" data-r>
-        <div class="staff">
-          <div class="staff-head">Temmuz · çalışan istatistikleri</div>
-          <div class="staff-row"><span class="av">EY</span><span class="nm">Elif Y.<small>38 tamamlandı · 3 iptal · 2 gelmedi</small></span><span class="pr">₺4.100</span></div>
-          <div class="staff-row"><span class="av">MK</span><span class="nm">Merve K.<small>29 tamamlandı · 2 iptal · 1 gelmedi</small></span><span class="pr">₺3.250</span></div>
-          <div class="staff-row"><span class="av">AS</span><span class="nm">Ayşe S.<small>24 tamamlandı · 5 iptal · 4 gelmedi</small></span><span class="pr">₺2.700</span></div>
-          <div class="staff-row"><span class="av">ZD</span><span class="nm">Zeynep D.<small>21 tamamlandı · 1 iptal · 0 gelmedi</small></span><span class="pr">₺2.310</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= 3 ADIM ================= -->
-<section class="section" id="demo">
-  <div class="wrap">
-    <div class="head center">
-      <h2 data-r>3 adımda kurulum 🏆</h2>
-      <p class="lead" data-r>Kurulumu birlikte yapıyoruz. Sizden istediğimiz tek şey hizmet listeniz ve çalışma saatleriniz.</p>
-    </div>
-    <div class="grid-3">
-      <div class="step" data-r>
-        <span class="step-n">1</span>
-        <h3>Hizmetleri ve ekibi girin</h3>
-        <p>Hizmet, süre, fiyat ve kimin verdiği. Chatbot da cevaplarını buradan alır.</p>
-        <div class="mini">
-          <div class="mini-row"><span>Danışmanlık · 45 dk</span><b>₺450</b></div>
-          <div class="mini-row"><span>Bakım seansı · 2 sa</span><b>₺1.400</b></div>
-          <div class="mini-row"><span>Kontrol randevusu · 1 sa</span><b>₺900</b></div>
-        </div>
-      </div>
-      <div class="step" data-r>
-        <span class="step-n">2</span>
-        <h3>WhatsApp ve Instagram'ı bağlayın</h3>
-        <p>Bağlantıyı biz kuruyoruz. O andan itibaren gelen mesajlara asistan cevap verir.</p>
-        <div class="mini">
-          <div class="mini-row"><span>WhatsApp Business</span><b style="color:var(--green)">Bağlı</b></div>
-          <div class="mini-row"><span>Instagram DM</span><b style="color:var(--green)">Bağlı</b></div>
-          <div class="mini-row"><span>Meta reklam hesabı</span><b style="color:var(--blue)">Bağla</b></div>
-        </div>
-      </div>
-      <div class="step" data-r>
-        <span class="step-n">3</span>
-        <h3>Telefonunuzdan takip edin</h3>
-        <p>Android, iOS ve web paneli birebir aynı. Telefonda öğrendiğiniz düğme bilgisayarda da aynı yerde.</p>
-        <div class="mini">
-          <div class="mini-row"><span>Bugünkü randevu</span><b>6</b></div>
-          <div class="mini-row"><span>Bekleyen konuşma</span><b>2</b></div>
-          <div class="mini-row"><span>Bugün tahsilat</span><b style="color:var(--green)">₺4.850</b></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= BAĞLANTILAR ================= -->
-<section class="section-sm">
-  <div class="wrap">
-    <div class="head center">
-      <h2 data-r>Zaten kullandığınız yerlere bağlanır 🤝</h2>
-      <p class="lead" data-r>Yeni bir şey öğrenmenize gerek yok. Müşteriniz size nereden yazıyorsa Adapptiv oradan cevap verir.</p>
-    </div>
-    <div class="conns">
-      <div class="conn" data-r><span class="e">💚</span><div><b>WhatsApp</b><p>Randevu, fiyat ve saat sorularına otomatik cevap.</p></div></div>
-      <div class="conn" data-r><span class="e">📷</span><div><b>Instagram</b><p>DM'den gelen mesajlar aynı gelen kutusunda.</p></div></div>
-      <div class="conn" data-r><span class="e">📣</span><div><b>Meta reklamları</b><p>Harcama ve dönüşüm her gün kendi güncellenir.</p></div></div>
-      <div class="conn" data-r><span class="e">📱</span><div><b>Android &amp; iOS</b><p>Mağazadan indirilen gerçek mobil uygulama.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= SEKTÖRLER ================= -->
-<section class="section" id="sektorler">
-  <div class="wrap">
-    <div class="head center">
-      <h2 data-r>Kimler kullanıyor</h2>
-      <p class="lead" data-r>Adapptiv, 1–15 kişilik ekiplerle çalışan, tek ya da birkaç şubeli işletmeler için tasarlandı.</p>
-    </div>
-    <div class="sectors">
-      <div class="sector" data-r><span class="e">💇‍♀️</span><span>Kuaför &amp; güzellik</span></div>
-      <div class="sector" data-r><span class="e">🏥</span><span>Klinik &amp; sağlık</span></div>
-      <div class="sector" data-r><span class="e">💪</span><span>Spor &amp; fitness</span></div>
-      <div class="sector" data-r><span class="e">🚗</span><span>Oto servis</span></div>
-      <div class="sector" data-r><span class="e">📚</span><span>Eğitim &amp; kurs</span></div>
-      <div class="sector" data-r><span class="e">⚖️</span><span>Danışmanlık &amp; hukuk</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= FİYAT ================= -->
-<!-- NOT: fiyat rakamları örnek. Kendi paket yapınızla değiştirin. -->
-<section class="section-sm" id="fiyat">
-  <div class="wrap">
-    <div class="head center">
-      <h2 data-r>Planınız hangisi?</h2>
-      <p class="lead" data-r>Tek şubeyle başlayın, büyüdükçe genişletin. İstediğiniz zaman iptal edebilirsiniz.</p>
-    </div>
-    <div class="plans">
-      <div class="plan" data-r>
-        <h3>Başlangıç</h3>
-        <p class="sub">Tek şube, 3 çalışana kadar</p>
-        <div class="price">₺0<small> / ilk 14 gün</small></div>
-        <p class="sub">Sonrasında ₺X / ay</p>
-        <ul>
-          <li><i>✓</i>Sınırsız randevu ve müşteri kartı</li>
-          <li><i>✓</i>Müşteri kartı ve paket takibi</li>
-          <li><i>✓</i>Muhasebe ve PDF rapor</li>
-          <li><i>✓</i>Android, iOS ve web paneli</li>
-        </ul>
-        <a href="#" class="btn btn-outline">Ücretsiz başla</a>
-      </div>
-      <div class="plan hi" data-r>
-        <span class="plan-flag">En çok tercih edilen</span>
-        <h3>Pro</h3>
-        <p class="sub">Sınırsız çalışan, çoklu şube</p>
-        <div class="price">₺X<small> / ay</small></div>
-        <p class="sub">Yıllık ödemede 2 ay hediye</p>
-        <ul>
-          <li><i>✓</i>Başlangıç'taki her şey</li>
-          <li><i>✓</i>WhatsApp &amp; Instagram AI asistan</li>
-          <li><i>✓</i>Meta reklam entegrasyonu ve gelir takibi</li>
-          <li><i>✓</i>Çoklu şube ve rol bazlı yetki</li>
-          <li><i>✓</i>Öncelikli destek</li>
-        </ul>
-        <a href="#" class="btn btn-primary">Pro'yu başlat</a>
-      </div>
-    </div>
-    <p class="plan-note">Daha büyük bir zincir mi işletiyorsunuz? <a href="#" style="color:var(--blue);font-weight:600">Bizimle konuşun</a>.</p>
-  </div>
-</section>
-
-<!-- ================= SSS ================= -->
-<section class="section">
-  <div class="wrap">
-    <div class="head center"><h2 data-r>Sık sorulan sorular</h2></div>
-    <div class="faq" id="faq">
-      <div class="item">
-        <button class="q">Mevcut müşteri listemi aktarabilir miyim? <i>+</i></button>
-        <div class="a"><p>Evet. Excel dosyanızı ya da telefon rehberinizi tek seferde yükleyebilirsiniz. Geçmiş randevu ve harcama bilgisi varsa o da aktarılır; yoksa müşteri kartları kullandıkça kendiliğinden dolar.</p></div>
-      </div>
-      <div class="item">
-        <button class="q">Chatbot yanlış bir şey söylerse ne olur? <i>+</i></button>
-        <div class="a"><p>Asistan yalnızca sizin girdiğiniz hizmet, fiyat ve çalışma saatlerini kullanır; kendi kafasından fiyat söylemez. Her konuşmayı panelden görürsünüz ve istediğiniz an "devral" diyip yazışmayı kendiniz sürdürebilirsiniz.</p></div>
-      </div>
-      <div class="item">
-        <button class="q">Reklam vermiyorum, yine de işime yarar mı? <i>+</i></button>
-        <div class="a"><p>Yarar. Reklam entegrasyonu isteğe bağlı. Randevu, müşteri kartı, chatbot, muhasebe ve ekip yönetimi reklam bağlamadan da tam çalışır. Sonradan reklam vermeye başlarsanız hesabınızı bağlarsınız, takip oradan devam eder.</p></div>
-      </div>
-      <div class="item">
-        <button class="q">Teknik bilgim yok, kurulumu kim yapıyor? <i>+</i></button>
-        <div class="a"><p>Kurulumu biz yapıyoruz. Siz hizmet listenizi, çalışma saatlerinizi ve ekibinizi söylüyorsunuz; WhatsApp, Instagram ve reklam hesabı bağlantılarını birlikte tamamlıyoruz. Sonrasında kullandığınız tek şey uygulama.</p></div>
-      </div>
-      <div class="item">
-        <button class="q">Birden fazla şubem var, hepsi tek hesapta mı? <i>+</i></button>
-        <div class="a"><p>Evet. Her şubenin takvimi, ekibi ve muhasebesi ayrı tutulur; işletme sahibi hepsini tek yerden görür. Çalışanlar yalnızca kendi şubelerini ve kendi yetkileri dahilindeki bilgileri görür.</p></div>
-      </div>
-      <div class="item">
-        <button class="q">Verilerim bana mı ait? <i>+</i></button>
-        <div class="a"><p>Evet. Müşteri listeniz, randevularınız ve muhasebe kayıtlarınız size aittir; istediğiniz zaman dışa aktarabilirsiniz. Ayrılmak isterseniz verilerinizi yanınızda götürürsünüz.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= KAPANIŞ ================= -->
-<section class="section-sm">
-  <div class="wrap">
-    <div class="final" data-r>
-      <h2>Bu akşam kasayı elle toplamayın</h2>
-      <p>Adapptiv'i 14 gün ücretsiz deneyin. Kurulumda yanınızdayız, kredi kartı istemiyoruz.</p>
-      <div class="cta-pair" style="justify-content:center">
-        <a href="#" class="btn btn-white">Ücretsiz başla</a>
-        <a href="#" class="btn btn-outline" style="background:transparent;color:#fff;border-color:rgba(255,255,255,.45)">Demo talep et</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-</main>
-
-<!-- ================= FOOTER ================= -->
-<footer class="foot">
-  <div class="wrap">
-    <div class="foot-grid">
-      <div>
-        <div class="brand"><img src="assets/logo-mark.png" alt="" class="brand-logo-mark">Adapptiv</div>
-        <p class="foot-about">Randevu ile çalışan her işletme için randevu, müşteri, chatbot, reklam ve muhasebe yönetimi. Tek uygulama.</p>
-        <p style="margin-top:16px"><a href="mailto:merhaba@adapptiv.app">merhaba@adapptiv.app</a></p>
-      </div>
-      <div>
-        <h4>Ürün</h4>
-        <ul>
-          <li><a href="#ozellikler">Randevu</a></li>
-          <li><a href="#ozellikler">Müşteri kartı</a></li>
-          <li><a href="#chatbot">AI asistan</a></li>
-          <li><a href="#reklam">Reklam takibi</a></li>
-          <li><a href="#fiyat">Fiyatlar</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Sektörler</h4>
-        <ul>
-          <li><a href="#sektorler">Kuaför &amp; güzellik</a></li>
-          <li><a href="#sektorler">Klinik &amp; sağlık</a></li>
-          <li><a href="#sektorler">Spor &amp; fitness</a></li>
-          <li><a href="#sektorler">Oto servis</a></li>
-          <li><a href="#sektorler">Eğitim &amp; kurs</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Destek</h4>
-        <ul>
-          <li><a href="#demo">Kurulum</a></li>
-          <li><a href="#">Yardım merkezi</a></li>
-          <li><a href="#">İletişim</a></li>
-          <li><a href="#">Kullanım koşulları</a></li>
-          <li><a href="#">Gizlilik</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="foot-bottom">
-      <span>© 2026 Adapptiv</span>
-      <span>Android · iOS · Web paneli</span>
-    </div>
-  </div>
-</footer>
-
-<script src="js/script.js"></script>
+  </footer>
+  <script src="js/script.js"></script>
 </body>
+
 </html>
