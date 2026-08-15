@@ -642,6 +642,7 @@ body.splash-lock {
 #hero-hl-text {
   display: inline-block;
   white-space: nowrap;
+  color: var(--blue);
 }
 
 
