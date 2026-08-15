@@ -599,45 +599,52 @@ body.splash-lock {
   margin-bottom: 12px
 }
 
-/* daktilo efekti: harfler sırayla belirir, sonunda yanıp sönen imleç */
-.typewriter .tw-ch {
-  opacity: 0
-}
-
-.typewriter .tw-ch.tw-shown {
-  opacity: 1
-}
-
-.typewriter .tw-cursor {
+#hero-hl-text {
   display: inline-block;
-  width: 3px;
-  margin-left: 2px;
-  background: var(--blue);
-  vertical-align: -.08em;
-  opacity: 0;
-  animation: tw-blink 1s step-end infinite
+  white-space: nowrap;
 }
 
-.typewriter .tw-cursor.tw-on {
-  opacity: 1
+.hero-line-one,
+.hero-line-two {
+  display: block;
 }
 
-.typewriter .tw-cursor.tw-off {
-  opacity: 0;
-  animation: none
+.hero-line-one {
+  white-space: nowrap;
 }
 
-@keyframes tw-blink {
+.hero-line-two {
+  white-space: nowrap;
+}
 
-  0%,
-  100% {
-    opacity: 1
+#hero-hl-text {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .hero-line-one,
+  .hero-line-two {
+    white-space: normal;
   }
-
-  50% {
-    opacity: 0
-  }
 }
+
+.hero-line-one,
+.hero-line-two {
+  display: block;
+}
+
+.hero-line-one,
+.hero-line-two {
+  white-space: nowrap;
+}
+
+#hero-hl-text {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+
 
 @media(prefers-reduced-motion:reduce) {
   .typewriter .tw-ch {
@@ -649,39 +656,7 @@ body.splash-lock {
   }
 }
 
-/* "tamamı" kelimesinin arkasında beliren fosforlu kalem vurgusu (daktilo bitince tetiklenir) */
-/* "blur highlight": vurgu bir bulanık ışıltı olarak belirir, sonra netleşir (reactbits "Blur Highlight" mantığı) — kelimenin kendi rengi hiç değişmez */
-.hero-hl {
-  position: relative;
-  z-index: 0;
-  display: inline-block;
-  color: inherit
-}
 
-.hero-hl::before {
-  content: "";
-  position: absolute;
-  inset: -3px -9px;
-  background: var(--blue-soft);
-  border-radius: 8px;
-  z-index: -1;
-  opacity: 0;
-  filter: blur(10px);
-  transform: scale(.82);
-  transition: opacity .5s ease, filter .5s ease, transform .5s cubic-bezier(.65, 0, .35, 1)
-}
-
-.hero-hl.hl-show::before {
-  opacity: 1;
-  filter: blur(0px);
-  transform: scale(1)
-}
-
-@media(prefers-reduced-motion:reduce) {
-  .hero-hl::before {
-    transition: none
-  }
-}
 
 .hero .lead {
   max-width: 520px;
@@ -1309,6 +1284,11 @@ body.splash-lock {
   text-align: center;
   overflow-wrap: normal;
   word-break: normal;
+}
+
+.letters-3d .l3d-word {
+  display: inline-block;
+  white-space: nowrap;
 }
 
 .letters-3d .l3d-ch {
@@ -2321,6 +2301,10 @@ body.splash-lock {
 
 .attr-card.good .big {
   color: var(--green)
+}
+
+.attr-card.good .lbl {
+  color: var(--blue)
 }
 
 .attr-card p {

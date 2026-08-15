@@ -5,55 +5,72 @@
   /* daktilo efekti: h1 içindeki her karakter (vurgulanacak "tamamı"
      kelimesi dahil) ayrı bir span'e bölünüp sırayla görünür kılınır;
      yazma bitince "tamamı" kelimesinin arkasında kalem vurgusu belirir */
-  var startTypewriter=function(){};
-  (function(){
-    var h1=document.getElementById("hero-h1");
-    if(!h1)return;
-    var hlWord=document.getElementById("hero-hl");
-    var chars=[];
-    function wrap(node){
-      [].slice.call(node.childNodes).forEach(function(n){
-        if(n.nodeType===3){
-          var frag=document.createDocumentFragment();
-          n.textContent.split("").forEach(function(ch){
-            var s=document.createElement("span");
-            s.className="tw-ch";
-            s.textContent=ch;
-            frag.appendChild(s);
-            chars.push(s);
-          });
-          node.replaceChild(frag,n);
-        }else if(n.nodeType===1){
-          wrap(n);
-        }
-      });
-    }
-    wrap(h1);
-    var cursor=document.createElement("span");
-    cursor.className="tw-cursor tw-on";
-    h1.appendChild(cursor);
+  
 
-    startTypewriter=function(){
-      if(reduce){
-        chars.forEach(function(c){c.classList.add("tw-shown");});
-        if(hlWord)hlWord.classList.add("ph-show");
-        cursor.classList.add("tw-off");
+     var startTypewriter = function () {
+  var textEl = document.getElementById("hero-hl-text");
+
+  if (!textEl) return;
+
+  var words = [
+    "tamamı",
+    "randevuları",
+    "müşterileri",
+    "ekibi",
+    "satışları"
+  ];
+
+  var wordIndex = 0;
+  var charIndex = 0;
+  var deleting = false;
+
+  var typingSpeed = 75;
+  var deletingSpeed = 45;
+  var pauseAfterTyping = 1800;
+  var pauseAfterDeleting = 250;
+
+  function tick() {
+    var currentWord = words[wordIndex];
+
+    if (!deleting) {
+      charIndex++;
+
+      textEl.textContent = currentWord.slice(0, charIndex);
+
+      if (charIndex >= currentWord.length) {
+        deleting = true;
+
+        setTimeout(tick, pauseAfterTyping);
         return;
       }
-      var i=0;
-      function step(){
-        if(i<chars.length){
-          chars[i].classList.add("tw-shown");
-          i++;
-          setTimeout(step, 26+Math.random()*30);
-        }else{
-          if(hlWord)hlWord.classList.add("ph-show");
-          setTimeout(function(){cursor.classList.add("tw-off");}, 900);
-        }
+
+      setTimeout(tick, typingSpeed);
+      return;
+    }
+
+    charIndex--;
+
+    textEl.textContent = currentWord.slice(0, charIndex);
+
+    if (charIndex <= 0) {
+      charIndex = 0;
+      deleting = false;
+
+      wordIndex++;
+
+      if (wordIndex >= words.length) {
+        wordIndex = 0;
       }
-      setTimeout(step, 350);
-    };
-  })();
+
+      setTimeout(tick, pauseAfterDeleting);
+      return;
+    }
+
+    setTimeout(tick, deletingSpeed);
+  }
+
+  setTimeout(tick, 350);
+};
 
   /* açılış ekranı: logo animasyonla belirir, sayfa hazır olunca (en az bir
      süre gösterildikten sonra) kaybolur */
@@ -1425,7 +1442,7 @@
      mantığı, tek bir başlıkta kullanılıyor) */
   document.querySelectorAll(".letters-3d").forEach(function(h){
 
-  var text = h.textContent;
+  var text = h.textContent.trim().replace(/\s+/g," ");
 
   h.textContent = "";
 
@@ -1435,23 +1452,40 @@
   );
 
   var i = 0;
+  var words = text.split(" ");
 
-  text.split("").forEach(function(ch){
+  words.forEach(function(word, wIdx){
 
-    var span =
+    var wordSpan =
       document.createElement("span");
 
-    span.className =
-      "l3d-ch";
+    wordSpan.className =
+      "l3d-word";
 
-    span.style.setProperty(
-      "--i",
-      ch === " " ? i : i++
-    );
+    word.split("").forEach(function(ch){
 
-    span.textContent = ch;
+      var span =
+        document.createElement("span");
 
-    h.appendChild(span);
+      span.className =
+        "l3d-ch";
+
+      span.style.setProperty(
+        "--i",
+        i++
+      );
+
+      span.textContent = ch;
+
+      wordSpan.appendChild(span);
+
+    });
+
+    h.appendChild(wordSpan);
+
+    if(wIdx < words.length - 1){
+      h.appendChild(document.createTextNode(" "));
+    }
 
   });
 
@@ -1790,21 +1824,7 @@
     });
   })();
 
-  /* "Adapptiv" kelimesinin arkasında beliren fosforlu kalem vurgusu
-     (reactbits "Hero Highlight" mantığı) — sayfaya gelince tetiklenir */
-  (function(){
-    var hlEls=[].slice.call(document.querySelectorAll(".hero-hl"));
-    if(!hlEls.length)return;
-    var hlIo=new IntersectionObserver(function(es){
-      es.forEach(function(e){
-        if(!e.isIntersecting)return;
-        hlIo.unobserve(e.target);
-        e.target.classList.add("hl-show");
-      });
-    },{threshold:.7});
-    hlEls.forEach(function(el){hlIo.observe(el);});
-  })();
-
+  
   /* özel imleç: hedef kilidi. Boşta küçük dört köşeli bir reticül fareyi
      yumuşakça takip edip yavaşça döner; tıklanabilir bir öğenin üstüne
      gelince döner durur, dört köşe o öğenin kenarlarına kilitlenip
@@ -1871,3 +1891,5 @@
     },{passive:true});
   }
 })();
+
+
