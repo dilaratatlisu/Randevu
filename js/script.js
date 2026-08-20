@@ -1376,6 +1376,7 @@
      değil, hero'nun devamı sayılır. Ekrandan uzun bölümlerde önce içeriği normal
      kaydırmaya izin verilir, bölümün tamamı görülünce bir sonrakine geçilir. */
   (function(){
+    if(document.body.classList.contains("legal-page"))return;
     var pointerFine = matchMedia("(pointer: fine)").matches;
     if(!pointerFine)return;
     var stops = [].slice.call(document.querySelectorAll("main > section"));
