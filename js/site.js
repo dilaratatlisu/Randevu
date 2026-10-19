@@ -1,5 +1,6 @@
-// Adapptiv tanitim sitesi: menu, kaydirinca gorunme, sohbet ornegi, fiyat secimi.
-// Kaydirma dinleyicisi yok; hepsi IntersectionObserver ile.
+// Adapptiv tanitim sitesi: tema, menu, kaydirinca gorunme, donen baslik, sohbet
+// ornegi, sayac, kurulum isigi, entegrasyon kablolari, fiyat secimi, ozel imlec.
+// Gorunme islerinin hepsi IntersectionObserver ile.
 ;(function () {
   document.documentElement.classList.remove('no-js')
 
@@ -28,7 +29,41 @@
     })
   }
 
-  // Kaydirinca gorunme
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches
+
+  // Tema: varsayilan acik; secim hatirlanir (ilk boyama oncesi <head> ayarlar)
+  var root = document.documentElement
+  var themeMeta = document.querySelector('meta[name="theme-color"]')
+  var themeBtns = document.querySelectorAll('.theme-btn')
+  var syncTheme = function () {
+    var dark = root.getAttribute('data-theme') === 'dark'
+    themeBtns.forEach(function (b) {
+      b.setAttribute('aria-pressed', String(dark))
+      b.setAttribute('aria-label', dark ? 'Açık temaya geç' : 'Koyu temaya geç')
+    })
+    if (themeMeta) themeMeta.setAttribute('content', dark ? '#0b1120' : '#f4f6f9')
+  }
+  themeBtns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var dark = root.getAttribute('data-theme') !== 'dark'
+      if (dark) root.setAttribute('data-theme', 'dark')
+      else root.removeAttribute('data-theme')
+      try {
+        localStorage.setItem('adapptiv-tema', dark ? 'koyu' : 'acik')
+      } catch (e) {}
+      syncTheme()
+    })
+  })
+  syncTheme()
+
+  // Kaydirinca gorunme. Odak kutulari gorundukten sonra hizli gecislere doner.
+  var settle = function (el) {
+    if (!el.classList.contains('focus-card')) return
+    var i = parseFloat(getComputedStyle(el).getPropertyValue('--i')) || 0
+    setTimeout(function () {
+      el.classList.add('is-settled')
+    }, reduce ? 0 : 950 + i * 80)
+  }
   var reveals = document.querySelectorAll('.reveal')
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(
@@ -36,6 +71,7 @@
         entries.forEach(function (e) {
           if (e.isIntersecting) {
             e.target.classList.add('is-in')
+            settle(e.target)
             io.unobserve(e.target)
           }
         })
@@ -48,7 +84,142 @@
   } else {
     reveals.forEach(function (el) {
       el.classList.add('is-in')
+      settle(el)
     })
+  }
+
+  // Giris basligi: donen kelime (eski siteden)
+  var hlText = document.getElementById('hero-hl-text')
+  if (hlText && !reduce) {
+    var words = ['tamamı', 'randevuları', 'müşterileri', 'ekibi', 'satışları']
+    var wi = 0
+    var ci = words[0].length
+    var deleting = true
+    var tick = function () {
+      var w = words[wi]
+      if (!deleting) {
+        ci++
+        hlText.textContent = w.slice(0, ci)
+        if (ci >= w.length) {
+          deleting = true
+          return setTimeout(tick, 1800)
+        }
+        return setTimeout(tick, 75)
+      }
+      ci--
+      hlText.textContent = w.slice(0, ci)
+      if (ci <= 0) {
+        ci = 0
+        deleting = false
+        wi = (wi + 1) % words.length
+        return setTimeout(tick, 250)
+      }
+      setTimeout(tick, 45)
+    }
+    setTimeout(tick, 2200)
+  }
+
+  // Sayilar gorununce sifirdan yukari sayar
+  var counters = document.querySelectorAll('.count-up')
+  var runCount = function (el) {
+    var to = Number(el.dataset.count) || 0
+    if (reduce) {
+      el.textContent = String(to)
+      return
+    }
+    var t0 = performance.now()
+    var dur = 1300
+    var step = function (now) {
+      var p = Math.min(1, (now - t0) / dur)
+      el.textContent = String(Math.round(to * (1 - Math.pow(1 - p, 3))))
+      if (p < 1) requestAnimationFrame(step)
+    }
+    requestAnimationFrame(step)
+  }
+  if ('IntersectionObserver' in window) {
+    var cio = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            runCount(e.target)
+            cio.unobserve(e.target)
+          }
+        })
+      },
+      { threshold: 0.6 },
+    )
+    counters.forEach(function (el) {
+      cio.observe(el)
+    })
+  } else {
+    counters.forEach(runCount)
+  }
+
+  // Kurulum adimlari: gorununce turuncu isik akmaya baslar
+  var steps = document.querySelector('.steps')
+  if (steps && 'IntersectionObserver' in window) {
+    new IntersectionObserver(
+      function (entries) {
+        steps.classList.toggle('is-on', entries[0].isIntersecting)
+      },
+      { threshold: 0.3 },
+    ).observe(steps)
+  }
+
+  // Entegrasyon: kutulardan merkeze kavisli kablolar
+  var hub = document.querySelector('.hub')
+  var core = hub && hub.querySelector('.hub-core')
+  if (hub && core) {
+    var NS = 'http://www.w3.org/2000/svg'
+    var svg = document.createElementNS(NS, 'svg')
+    svg.setAttribute('class', 'hub-wires')
+    svg.setAttribute('aria-hidden', 'true')
+    hub.insertBefore(svg, hub.firstChild)
+    var drawWires = function () {
+      var hr = hub.getBoundingClientRect()
+      var cr = core.getBoundingClientRect()
+      var cx = cr.left + cr.width / 2 - hr.left
+      var cy = cr.top + cr.height / 2 - hr.top
+      svg.setAttribute('viewBox', '0 0 ' + hr.width + ' ' + hr.height)
+      svg.textContent = ''
+      hub.querySelectorAll('.node').forEach(function (n, i) {
+        var r = n.getBoundingClientRect()
+        var left = r.right < cr.left
+        var x = (left ? r.right : r.left) - hr.left
+        var y = r.top + r.height / 2 - hr.top
+        var mx = (x + cx) / 2
+        var d = 'M' + x + ' ' + y + ' C' + mx + ' ' + y + ' ' + mx + ' ' + cy + ' ' + cx + ' ' + cy
+        ;['wire', 'wire-glow'].forEach(function (cls) {
+          var p = document.createElementNS(NS, 'path')
+          p.setAttribute('d', d)
+          p.setAttribute('class', cls)
+          p.setAttribute('pathLength', '100')
+          if (cls === 'wire-glow') p.style.animationDelay = i * 0.9 + 's'
+          svg.appendChild(p)
+        })
+      })
+    }
+    drawWires()
+    if ('ResizeObserver' in window) new ResizeObserver(drawWires).observe(hub)
+    else addEventListener('resize', drawWires)
+  }
+
+  // Telefonda yana kayan bento: alttaki noktalar hangi kartta oldugunu gosterir
+  var bento = document.querySelector('.bento')
+  var dots = document.querySelectorAll('.bento-hint i')
+  if (bento && dots.length) {
+    bento.addEventListener(
+      'scroll',
+      function () {
+        var first = bento.firstElementChild
+        var w = first ? first.getBoundingClientRect().width + 12 : 1
+        var idx = Math.round(bento.scrollLeft / w)
+        dots.forEach(function (d, i) {
+          d.classList.toggle('on', i === idx)
+        })
+      },
+      { passive: true },
+    )
   }
 
   // Sohbet ornegi: bolum gorununce bir kez oynar
@@ -88,4 +259,114 @@
 
   var year = document.querySelector('[data-year]')
   if (year) year.textContent = String(new Date().getFullYear())
+
+  // Ozel imlec: hedef kilidi (eski siteden). Bosta kucuk dort koseli bir
+  // retikul fareyi yumusakca takip edip doner; tiklanabilir bir ogenin ustune
+  // gelince durur, dort kose o ogenin kenarlarina kilitlenir.
+  if (matchMedia('(pointer: fine)').matches && !reduce) {
+    var tc = document.createElement('div')
+    tc.className = 'tcursor spin'
+    ;['tl', 'tr', 'bl', 'br'].forEach(function (c) {
+      var s = document.createElement('span')
+      s.className = 'tcorner ' + c
+      tc.appendChild(s)
+    })
+    document.body.appendChild(tc)
+    document.body.classList.add('custom-cursor')
+
+    var IDLE = 26
+    var PAD = 8
+    var mx = innerWidth / 2
+    var my = innerHeight / 2
+    var px = mx
+    var py = my
+    var started = false
+    var locked = false
+    var lockedEl = null
+
+    var setIdleRect = function (x, y) {
+      tc.style.left = x - IDLE / 2 + 'px'
+      tc.style.top = y - IDLE / 2 + 'px'
+      tc.style.width = IDLE + 'px'
+      tc.style.height = IDLE + 'px'
+    }
+    var setLockedRect = function (el) {
+      var r = el.getBoundingClientRect()
+      tc.style.left = r.left - PAD + 'px'
+      tc.style.top = r.top - PAD + 'px'
+      tc.style.width = r.width + PAD * 2 + 'px'
+      tc.style.height = r.height + PAD * 2 + 'px'
+    }
+
+    document.addEventListener(
+      'mousemove',
+      function (e) {
+        mx = e.clientX
+        my = e.clientY
+        if (!started) {
+          started = true
+          px = mx
+          py = my
+          setIdleRect(px, py)
+          tc.classList.add('show')
+        }
+      },
+      { passive: true },
+    )
+    document.addEventListener('mouseleave', function () {
+      tc.classList.remove('show')
+    })
+    document.addEventListener('mouseenter', function () {
+      tc.classList.add('show')
+    })
+
+    var loop = function () {
+      if (!locked) {
+        px += (mx - px) * 0.25
+        py += (my - py) * 0.25
+        setIdleRect(px, py)
+      }
+      requestAnimationFrame(loop)
+    }
+    requestAnimationFrame(loop)
+
+    // kutu kalkma animasyonu bitince cerceve yeni boyuta oturur
+    var relock
+    document.querySelectorAll('a, button, summary, .focus-card, .tile, .plan, .node, input, textarea, select').forEach(function (el) {
+      el.addEventListener('mouseenter', function (e) {
+        e.stopPropagation()
+        locked = true
+        lockedEl = el
+        tc.classList.remove('spin')
+        setLockedRect(el)
+        clearTimeout(relock)
+        relock = setTimeout(function () {
+          if (lockedEl === el) setLockedRect(el)
+        }, 240)
+      })
+      el.addEventListener('mouseleave', function () {
+        // ic ice ogelerde (kutu icindeki baglanti) dis ogeye geri kilitlen
+        var parent = el.parentElement && el.parentElement.closest('.focus-card, .tile, .plan, .node')
+        if (parent && parent.matches(':hover')) {
+          lockedEl = parent
+          setLockedRect(parent)
+          return
+        }
+        locked = false
+        lockedEl = null
+        tc.classList.add('spin')
+        px = mx
+        py = my
+        setIdleRect(px, py)
+      })
+    })
+
+    addEventListener(
+      'scroll',
+      function () {
+        if (locked && lockedEl) setLockedRect(lockedEl)
+      },
+      { passive: true },
+    )
+  }
 })()
