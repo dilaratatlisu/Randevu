@@ -35,7 +35,7 @@
       <div class="wrap">
         <a href="/index.html" class="back-link">← Ana sayfaya dön</a>
         <h1>Gizlilik ve Kişisel Verilerin Korunması Politikası</h1>
-        <p class="meta">Yürürlük Tarihi: 20.08.2026 · Son Güncelleme: 20.08.2026</p>
+        <p class="meta">Yürürlük Tarihi: 20.08.2026 · Son Güncelleme: 19.10.2026</p>
       </div>
     </section>
 
@@ -75,7 +75,7 @@
         <table>
           <tbody>
             <tr><th scope="row">Ürün / Marka</th><td>Adapptiv</td></tr>
-            <tr><th scope="row">Ürün Adresi</th><td><a href="https://adapptiv.app">https://adapptiv.app</a></td></tr>
+            <tr><th scope="row">Hizmet</th><td>Web paneli ve Android/iOS uygulaması</td></tr>
             <tr><th scope="row">İşletme Sahibi</th><td>Hacı Yağız</td></tr>
             <tr><th scope="row">Şirket Türü</th><td>Şahıs İşletmesi</td></tr>
             <tr><th scope="row">Vergi Dairesi</th><td>19 Mayıs Vergi Dairesi</td></tr>
@@ -141,7 +141,10 @@
           <tbody>
             <tr><td>Ad, soyad, telefon, e-posta</td><td>İşletme tarafından panele girilir veya mesajlaşma üzerinden alınır</td></tr>
             <tr><td>Randevu tarihi, hizmet, personel, durum, iptal ve gelmeme bilgisi</td><td>Panel, mobil uygulama, mesajlaşma botu</td></tr>
-            <tr><td>Hizmet geçmişi, müşteri notu, tercihler, segment bilgisi</td><td>İşletme tarafından girilir veya sistem tarafından üretilir</td></tr>
+            <tr><td>Hizmet geçmişi, müşteri notu, doğum günü, etiketler, tercihler, segment bilgisi</td><td>İşletme tarafından girilir veya sistem tarafından üretilir</td></tr>
+            <tr><td>İşletmenin tanımladığı ek alanlar (ör. alerji, cilt tipi). Sağlık bilgisi içeren alanlar özel nitelikli kişisel veridir ve yalnızca müşterinin açık rızasıyla girilmelidir</td><td>İşletme tarafından girilir</td></tr>
+            <tr><td>Müşteri dosyaları: işlem öncesi/sonrası fotoğraflar, onam formları, belgeler (herkese açık değildir)</td><td>İşletme tarafından yüklenir</td></tr>
+            <tr><td>Potansiyel müşteri kayıtları, sadakat kartı ödül kullanımları, memnuniyet anketi puanı ve yorumu</td><td>İşletme tarafından girilir; anket yanıtını müşteri kendisi verir</td></tr>
             <tr><td>WhatsApp ve Instagram mesaj içerikleri, gönderim tarihleri, iletişim durumu</td><td>Meta platformlarından webhook aracılığıyla</td></tr>
             <tr><td>Tahsilat ve ödeme kayıtları</td><td>İşletme tarafından girilir</td></tr>
           </tbody>
@@ -158,7 +161,7 @@
         <li>CRM ve müşteri ilişkileri yönetimi hizmetlerinin sağlanması</li>
         <li>WhatsApp ve Instagram üzerinden gelen müşteri mesajlarının alınması, yanıtlanması ve panelde görüntülenmesi</li>
         <li>Yapay zekâ destekli otomatik yanıt ve randevu işlemlerinin yürütülmesi</li>
-        <li>Meta reklam performansının randevu ve gelir verileriyle ilişkilendirilerek analiz edilmesi</li>
+        <li>İşletmenin bağladığı Meta reklam hesabının performansının (harcama, gösterim, tıklama, getiri) işletmeye raporlanması</li>
         <li>Muhasebe, kasa ve tahsilat yönetiminin sağlanması</li>
         <li>Kampanya ve müşteri segmentlerinin oluşturulması</li>
         <li>Raporlama ve istatistik hizmetlerinin sunulması</li>
@@ -199,6 +202,8 @@
         <li>Bağlantı kurulduktan sonra işletmenin telefonundan elle gönderdiği mesajların kopyaları (bunlar panelde
           konuşmanın eksiksiz görünmesi için kaydedilir)</li>
       </ul>
+      <p>İşletme bir müşteriye telefonundan kendisi yazdığında, yapay zekâ asistanı o müşteriyle konuşmayı işletmeye
+        bırakır ve aynı anda yanıt vermez.</p>
       <p>Grup sohbetleri aktarılmaz ve işlenmez. Geçmiş aktarımı onayı işletme tarafından bağlantı sırasında WhatsApp
         uygulamasından verilir; onay verilmezse geçmiş veri aktarılmaz ve yalnızca bağlantı sonrası mesajlar
         işlenir.</p>
@@ -209,8 +214,8 @@
         mesaj alamaz ve gönderemez. Daha önce aktarılmış mesajların silinmesi için bkz. Bölüm 13.</p>
 
       <h2 id="s6">6. Instagram Entegrasyonu</h2>
-      <p>Adapptiv, işletmenin Instagram profesyonel hesabına gelen doğrudan mesajları (DM) ve yorumları panele
-        taşıyabilir ve bunlara yanıt verebilir.</p>
+      <p>Adapptiv, işletmenin Instagram profesyonel hesabına gelen doğrudan mesajları (DM) panele taşıyabilir ve
+        bunlara yanıt verebilir. Gönderi yorumları işlenmez.</p>
 
       <h3>6.1. Kullanılan izinler ve alınan veriler</h3>
       <div class="table-wrap">
@@ -221,11 +226,10 @@
           <tbody>
             <tr><td><code>instagram_business_basic</code></td><td>Bağlanan Instagram işletme hesabının kullanıcı adı, kimliği ve profil fotoğrafını almak</td></tr>
             <tr><td><code>instagram_business_manage_messages</code></td><td>Gelen doğrudan mesajları almak ve yanıtlamak</td></tr>
-            <tr><td><code>instagram_business_manage_comments</code></td><td>Gönderi yorumlarını okumak ve yanıtlamak</td></tr>
           </tbody>
         </table>
       </div>
-      <p>Bu izinler kapsamında işlenen veriler: mesaj ve yorum içerikleri, gönderen kullanıcının Instagram kullanıcı
+      <p>Bu izinler kapsamında işlenen veriler: mesaj içerikleri, gönderen kullanıcının Instagram kullanıcı
         adı ve platforma özgü kimliği, profil fotoğrafı, mesaj kimlikleri ve zaman damgaları.</p>
 
       <h3>6.2. Kısıtlar</h3>
@@ -236,11 +240,11 @@
 
       <h2 id="s7">7. Meta Reklam Verileri</h2>
       <p>İşletmenin yetkilendirmesi hâlinde Adapptiv, işletmenin Meta reklam hesaplarından performans verilerini
-        okuyabilir. Bu kapsamda kampanya, reklam seti ve reklam bilgileri; harcama, gösterim, erişim ve tıklama
-        metrikleri; lead ve dönüşüm kayıtları işlenir.</p>
-      <p>Adapptiv bu verileri, reklamdan gelen müşterilerin randevu ve tahsilat sonuçlarıyla ilişkilendirerek reklam
-        yatırımının gerçek getirisini işletmeye raporlamak için kullanır. Reklam hesabı bağlantısı isteğe bağlıdır ve
-        panelden istendiği zaman kaldırılabilir.</p>
+        okuyabilir. Bu kapsamda reklam hesabının adı ile harcama, gösterim, tıklama ve getiri (ROAS) gibi toplu
+        performans metrikleri işlenir; reklamı gören kişilere ait kişisel veri alınmaz.</p>
+      <p>Adapptiv bu verileri yalnızca reklam performansını işletmeye raporlamak için kullanır. Reklam hesabı
+        bağlantısı isteğe bağlıdır ve panelden istendiği zaman kaldırılabilir; erişim anahtarı veritabanında şifreli
+        saklanır.</p>
 
       <h2 id="s8">8. Meta Platform Verilerinin Kullanımına İlişkin Taahhütlerimiz</h2>
       <p>Meta platformlarından (WhatsApp, Instagram, Meta reklam hizmetleri) elde edilen verilerle ilgili olarak
@@ -258,11 +262,13 @@
 
       <h2 id="s9">9. Yapay Zekâ Hizmetleri</h2>
       <p>Adapptiv, müşteri mesajlarını anlamak ve otomatik yanıt üretmek için yapay zekâ kullanır. Yapay zekâ; gelen
-        mesajın amacını çözümlemek, randevu oluşturmak, değiştirmek veya iptal etmek, müşteri geçmişini
-        değerlendirmek, segment oluşturmak ve işletmeye analiz sunmak amacıyla çalıştırılır.</p>
+        mesajın amacını çözümlemek, randevu oluşturmak, değiştirmek veya iptal etmek, işletmeye kampanya metni önermek
+        ve isimsiz toplu istatistiklerle işletme analizi sunmak amacıyla çalıştırılır.</p>
       <p><strong>Kullanılan sağlayıcı:</strong> Mesaj çözümleme ve yanıt üretimi için OpenAI hizmetleri
-        kullanılmaktadır. Bu kapsamda mesaj metni ve randevu bağlamı için gerekli asgari bilgi sağlayıcıya iletilir.
-        Sağlayıcıyla yapılan sözleşme uyarınca bu veriler model eğitiminde kullanılmaz.</p>
+        kullanılmaktadır. Bu kapsamda yalnızca mesaj metni, müşterinin adı ve randevu için gerekli işletme bilgileri
+        (hizmetler, saatler) sağlayıcıya iletilir. <strong>Müşteri notları, sağlık bilgileri, etiketler, işletmenin
+        tanımladığı özel alanlar ve müşteri dosyaları yapay zekâ sağlayıcısına gönderilmez.</strong> Sağlayıcının
+        API koşulları uyarınca bu veriler model eğitiminde kullanılmaz.</p>
       <p>Sağlayıcı değişikliği hâlinde bu politika güncellenir ve güncel sağlayıcı burada belirtilir.</p>
       <p>Yapay zekâ tarafından üretilen yanıt ve analizler otomatik olarak oluşturulur; her durumda hatasız veya
         eksiksiz olacağı garanti edilmez. İşletme, otomatik yanıtları panelden devralarak konuşmayı elle
@@ -276,12 +282,13 @@
             <tr><th>Sağlayıcı</th><th>Hizmet</th><th>Konum</th></tr>
           </thead>
           <tbody>
-            <tr><td>Supabase</td><td>Veritabanı, kimlik doğrulama, dosya depolama</td><td>AB / ABD</td></tr>
-            <tr><td>OpenAI</td><td>Mesaj çözümleme ve yanıt üretimi</td><td>ABD</td></tr>
+            <tr><td>Supabase</td><td>Veritabanı, kimlik doğrulama, dosya depolama, sunucu fonksiyonları</td><td>AB (Almanya)</td></tr>
+            <tr><td>OpenAI</td><td>Mesaj çözümleme ve yanıt üretimi, kampanya metni önerisi, işletme analizi</td><td>ABD</td></tr>
             <tr><td>Meta Platforms</td><td>WhatsApp ve Instagram mesajlaşma, reklam verileri</td><td>ABD / AB</td></tr>
-            <tr><td>Sunucu ve altyapı sağlayıcısı</td><td>Otomasyon katmanının barındırılması</td><td>AB</td></tr>
-            <tr><td>Ödeme hizmet sağlayıcısı</td><td>Abonelik tahsilatı</td><td>Türkiye</td></tr>
-            <tr><td>E-posta ve SMS sağlayıcıları</td><td>Bildirim gönderimi</td><td>Türkiye / AB</td></tr>
+            <tr><td>Resend</td><td>Hesap doğrulama ve şifre sıfırlama e-postaları</td><td>AB (İrlanda)</td></tr>
+            <tr><td>Google Firebase</td><td>Uygulama bildirimlerinin telefona iletilmesi</td><td>ABD</td></tr>
+            <tr><td>Cloudflare</td><td>Formlarda otomatik (bot) gönderimleri engelleme, alan adı altyapısı</td><td>ABD / küresel</td></tr>
+            <tr><td>Apple, Google ve abonelik altyapısı sağlayıcısı</td><td>Uygulama içi abonelik tahsilatı</td><td>ABD / AB</td></tr>
           </tbody>
         </table>
       </div>
@@ -291,9 +298,10 @@
       <h2 id="s11">11. Yurt Dışına Veri Aktarımı</h2>
       <p>Yukarıda belirtilen sağlayıcıların bir kısmı yurt dışında bulunduğundan, hizmetin sunulması için kişisel
         verilerin yurt dışına aktarılması gerekmektedir.</p>
-      <p>Bu aktarımlar KVKK m.9 kapsamında, aktarımın yapıldığı sağlayıcılarla imzalanan <strong>standart sözleşme
-        hükümleri</strong> esas alınarak gerçekleştirilir. Standart sözleşme bulunmayan hâllerde, aktarım yalnızca
-        ilgili kişinin açık rızasına dayanılarak veya Kanun'da öngörülen diğer istisnalar çerçevesinde yapılır.</p>
+      <p>Ana veritabanı ve dosyalar Almanya'da (AB), e-postalar İrlanda'da (AB) işlenir; yukarıda ABD olarak
+        belirtilen sağlayıcılara da veri aktarılır. Bu sağlayıcılarla, verilerin yalnızca hizmetin sunulması amacıyla
+        ve gizlilik ile güvenlik yükümlülükleri altında işlenmesini öngören <strong>veri işleme sözleşmeleri</strong>
+        kapsamında çalışılır. Sağlayıcılara yalnızca ilgili işlem için gereken veri gönderilir.</p>
 
       <h2 id="s12">12. Veri Saklama Süreleri</h2>
       <div class="table-wrap">
@@ -302,13 +310,15 @@
             <tr><th>Veri</th><th>Saklama Süresi</th></tr>
           </thead>
           <tbody>
-            <tr><td>Panel kullanıcısı hesap bilgileri</td><td>Hesap aktif olduğu sürece + kapanıştan sonra 90 gün</td></tr>
-            <tr><td>Müşteri kartları ve randevu kayıtları</td><td>Hesap aktif olduğu sürece + kapanıştan sonra 90 gün</td></tr>
-            <tr><td>WhatsApp ve Instagram mesaj içerikleri</td><td>Alındığı tarihten itibaren 24 ay</td></tr>
-            <tr><td>WhatsApp geçmiş senkronizasyonuyla aktarılan yazışmalar</td><td>Aktarım tarihinden itibaren 24 ay</td></tr>
-            <tr><td>Muhasebe, fatura ve tahsilat kayıtları</td><td>10 yıl (TTK m.82 ve VUK uyarınca)</td></tr>
-            <tr><td>Güvenlik ve erişim kayıtları (log)</td><td>12 ay</td></tr>
-            <tr><td>Silinme talebi kayıtları</td><td>3 yıl (talebin karşılandığının ispatı için)</td></tr>
+            <tr><td>Panel kullanıcısı hesap bilgileri</td><td>Hesap aktif olduğu sürece; hesap silindiğinde kalıcı olarak silinir</td></tr>
+            <tr><td>Müşteri kartları, randevu, dosya, anket ve diğer işletme kayıtları</td><td>İşletme silene ya da hesap kapanana kadar; işletme bir müşteriyi KVKK kapsamında sildiğinde o müşteriye ait kayıtlar silinir veya anonimleştirilir</td></tr>
+            <tr><td>Yapay zekâ asistanı yazışmaları (WhatsApp ve Instagram, geçmiş senkronizasyonuyla aktarılanlar dahil)</td><td>180 gün</td></tr>
+            <tr><td>Gönderilen hatırlatma ve kampanya mesajlarının kaydı</td><td>365 gün</td></tr>
+            <tr><td>Meta'dan gelen ham bildirim kayıtları</td><td>30 gün</td></tr>
+            <tr><td>İşletmenin muhasebe ve tahsilat kayıtları</td><td>İşletmenin kendi yasal saklama yükümlülüğüne tabidir</td></tr>
+            <tr><td>Adapptiv'in kendi abonelik fatura kayıtları</td><td>10 yıl (TTK m.82 ve VUK uyarınca)</td></tr>
+            <tr><td>Kötüye kullanım önleme kayıtları (IP adresinin geri döndürülemez özeti)</td><td>2–7 gün</td></tr>
+            <tr><td>Silme talebi kayıtları</td><td>İşlendikten sonra 1 yıl</td></tr>
           </tbody>
         </table>
       </div>
@@ -318,7 +328,7 @@
       <h2 id="s13">13. Verilerin Silinmesi ve Hesap Kapatma</h2>
 
       <h3>13.1. Silme talebi</h3>
-      <p>Kişisel verilerinizin silinmesini talep etmek için <a href="/veri-silme">adapptiv.app/veri-silme</a>
+      <p>Kişisel verilerinizin silinmesini talep etmek için <a href="/veri-silme">Veri Silme Talebi sayfası</a>
         adresindeki adımları izleyebilir veya <a href="mailto:info@adapptivdigital.com">info@adapptivdigital.com</a>
         adresine yazabilirsiniz. Talepler en geç <strong>30 gün</strong> içinde sonuçlandırılır ve sonuç size
         bildirilir.</p>
@@ -335,8 +345,9 @@
       </ul>
 
       <h3>13.3. Hesap kapatma</h3>
-      <p>Adapptiv hesabınızı kapattığınızda, işletmenize ait tüm veriler Bölüm 12'de belirtilen süreler sonunda
-        silinir. Kapatmadan önce verilerinizin dışa aktarımını talep edebilirsiniz.</p>
+      <p>Hesabınızı uygulamada <strong>Ayarlar → Hesabımı sil</strong> adımıyla kapatabilirsiniz. İşletmenin tek
+        yöneticisi hesabını sildiğinde işletmeye ait tüm veriler kalıcı olarak silinir. Kapatmadan önce
+        <strong>Ayarlar → Verilerimi indir</strong> ile verilerinizi Excel olarak indirebilirsiniz.</p>
 
       <h2 id="s14">14. Veri Güvenliği</h2>
       <p>Adapptiv, kişisel verilerin güvenliği için aşağıdaki teknik ve idari tedbirleri uygular:</p>
@@ -345,9 +356,10 @@
         <li>Meta ve diğer üçüncü taraf erişim token'larının veritabanında AES-256-GCM ile şifreli saklanması</li>
         <li>Veritabanı düzeyinde satır bazlı erişim denetimi (RLS) ile işletmeler arası veri yalıtımı</li>
         <li>Rol bazlı yetkilendirme ve asgari yetki ilkesi</li>
-        <li>Erişim ve işlem kayıtlarının tutulması</li>
-        <li>Düzenli yedekleme</li>
-        <li>Yönetici hesaplarında çok faktörlü kimlik doğrulama</li>
+        <li>Randevu ve ödeme işlemlerinde olay kayıtlarının tutulması</li>
+        <li>İşletmeler arası yalıtımın düzenli otomatik güvenlik testleriyle denetlenmesi</li>
+        <li>Telefon uygulamasında oturum anahtarının işletim sisteminin güvenli deposunda saklanması</li>
+        <li>Müşteri dosyalarının herkese kapalı, işletmeye özel depolama alanında tutulması</li>
         <li>Personelin gizlilik yükümlülüğü altında olması</li>
       </ul>
 
@@ -396,7 +408,7 @@
         <table>
           <tbody>
             <tr><th scope="row">E-posta</th><td><a href="mailto:info@adapptivdigital.com">info@adapptivdigital.com</a></td></tr>
-            <tr><th scope="row">Silme talebi formu</th><td><a href="/veri-silme">adapptiv.app/veri-silme</a></td></tr>
+            <tr><th scope="row">Silme talebi formu</th><td><a href="/veri-silme">Veri Silme Talebi sayfası</a></td></tr>
             <tr><th scope="row">Adres</th><td>Büyükkolpınar Mah. Şehit Can Şencan Cad. No: 23 İç Kapı No: 1, Atakum / Samsun</td></tr>
             <tr><th scope="row">Telefon</th><td>0541 253 27 38</td></tr>
           </tbody>
@@ -408,10 +420,10 @@
         Adapptiv'e ulaşan bu tür talepler ilgili işletmeye yönlendirilir.</p>
 
       <h2 id="s19">19. Çerezler</h2>
-      <p>Adapptiv internet sitesinde ve web panelinde; oturumun sürdürülmesi, güvenliğin sağlanması, performans
-        ölçümü ve kullanıcı deneyiminin geliştirilmesi amacıyla çerezler ve benzeri teknolojiler kullanılır.</p>
-      <p>Zorunlu çerezler hizmetin çalışması için gereklidir ve devre dışı bırakılamaz. Zorunlu olmayan çerezler için
-        kullanıcı tercihi alınır ve bu tercih istendiği zaman değiştirilebilir.</p>
+      <p>Adapptiv internet sitesinde ve web panelinde reklam, analiz veya izleme çerezi kullanılmaz. Web paneli
+        yalnızca oturumunuzu sürdürmek için tarayıcınızın yerel deposunu kullanır; bu zorunludur ve çıkış yaptığınızda
+        silinir.</p>
+      <p>İleride zorunlu olmayan bir çerez eklenirse önce bu politika güncellenir ve kullanıcı tercihi alınır.</p>
 
       <h2 id="s20">20. Politika Değişiklikleri</h2>
       <p>Adapptiv; mevzuat, teknik altyapı veya hizmet kapsamında meydana gelen değişiklikler nedeniyle bu politikayı
@@ -423,7 +435,7 @@
       <div class="table-wrap">
         <table>
           <tbody>
-            <tr><th scope="row">Ürün</th><td>Adapptiv — <a href="https://adapptiv.app">https://adapptiv.app</a></td></tr>
+            <tr><th scope="row">Ürün</th><td>Adapptiv — Web paneli ve Android/iOS uygulaması</td></tr>
             <tr><th scope="row">İşletme Sahibi</th><td>Hacı Yağız</td></tr>
             <tr><th scope="row">Vergi Dairesi / No</th><td>19 Mayıs Vergi Dairesi / 9270715681</td></tr>
             <tr><th scope="row">Adres</th><td>Büyükkolpınar Mah. Şehit Can Şencan Cad. No: 23 İç Kapı No: 1, Atakum / Samsun</td></tr>
@@ -449,7 +461,7 @@
           <div class="brand"><img src="/assets/logo-mark.png" alt="" class="brand-logo-mark">Adapptiv</div>
           <p class="foot-about">Randevu ile çalışan her işletme için randevu, müşteri, chatbot, reklam ve muhasebe
             yönetimi. Tek uygulama.</p>
-          <p style="margin-top:16px"><a href="mailto:merhaba@adapptiv.app">merhaba@adapptiv.app</a></p>
+          <p style="margin-top:16px"><a href="mailto:info@adapptivdigital.com">info@adapptivdigital.com</a></p>
         </div>
         <div>
           <h4>Ürün</h4>

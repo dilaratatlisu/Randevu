@@ -13,7 +13,6 @@
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
-  <link rel="canonical" href="https://adapptivdigital.com/veri-silme">
 </head>
 
 <body class="legal-page">
@@ -48,9 +47,10 @@
         <ul>
           <li><a href="#tr">🇹🇷 Türkçe</a></li>
           <li><a href="#tr-kim">Kim, neyi silebilir?</a></li>
-          <li><a href="#tr-yontem1">Yöntem 1 — Panel üzerinden</a></li>
-          <li><a href="#tr-yontem2">Yöntem 2 — E-posta ile</a></li>
-          <li><a href="#tr-yontem3">Yöntem 3 — Posta ile</a></li>
+          <li><a href="#tr-yontem1">Yöntem 1 — Uygulama üzerinden</a></li>
+          <li><a href="#tr-form">Yöntem 2 — Talep formu</a></li>
+          <li><a href="#tr-yontem2">Yöntem 3 — E-posta ile</a></li>
+          <li><a href="#tr-yontem3">Yöntem 4 — Posta ile</a></li>
           <li><a href="#tr-meta">Meta bağlantısını kaldırdığınızda</a></li>
           <li><a href="#tr-silinemeyen">Silinemeyen veriler</a></li>
           <li><a href="#en">🇬🇧 English</a></li>
@@ -72,22 +72,37 @@
       <p>En hızlı yol doğrudan o işletmeye başvurmanızdır. Yine de bize yazabilirsiniz — talebinizi ilgili işletmeye
         iletiriz ve işletmenin onayıyla silme işlemini gerçekleştiririz.</p>
 
-      <h3 id="tr-yontem1">Yöntem 1 — Panel üzerinden (işletme kullanıcıları için)</h3>
+      <h3 id="tr-yontem1">Yöntem 1 — Uygulama üzerinden (işletme kullanıcıları için)</h3>
       <ol>
         <li>Adapptiv web paneline veya mobil uygulamaya giriş yapın</li>
-        <li><strong>Ayarlar → Hesap → Verilerimi Sil</strong> adımlarını izleyin</li>
-        <li>Silmek istediğiniz kapsamı seçin:
-          <ul>
-            <li>Yalnızca WhatsApp / Instagram mesaj geçmişi</li>
-            <li>Yalnızca müşteri ve randevu kayıtları</li>
-            <li>Hesabın tamamı (hesap kapatma)</li>
-          </ul>
-        </li>
-        <li>Talebi onaylayın</li>
+        <li><strong>Ayarlar → Hesabımı sil</strong> adımını izleyin ve onaylayın</li>
       </ol>
-      <p>Talebiniz kaydedilir ve size e-posta ile bir onay gönderilir.</p>
+      <p>İşletmenin tek yöneticisi hesabını sildiğinde işletmeye ait tüm veriler (müşteriler, randevular, mesaj
+        geçmişi dahil) <strong>hemen ve kalıcı olarak</strong> silinir. Silmeden önce <strong>Ayarlar → Verilerimi
+        indir</strong> ile verilerinizi Excel olarak indirebilirsiniz.</p>
+      <p>İşletme olarak tek bir müşterinizin verilerini silmek için: müşteri kartında <strong>Kişisel verilerini sil
+        (KVKK)</strong>.</p>
 
-      <h3 id="tr-yontem2">Yöntem 2 — E-posta ile</h3>
+      <h3 id="tr-form">Yöntem 2 — Talep formu (uygulamaya giremiyorsanız veya bir işletmenin müşterisiyseniz)</h3>
+      <form class="deletion-form" data-lang="tr" novalidate>
+        <label for="kind-tr">Talep türü</label>
+        <select id="kind-tr" name="kind">
+          <option value="account">Adapptiv hesabımı silin</option>
+          <option value="customer">Bir işletmenin müşterisiyim, verilerimi silin</option>
+        </select>
+        <label for="contact-tr">E-posta veya telefon</label>
+        <input id="contact-tr" name="contact" maxlength="254" autocomplete="email" required>
+        <label for="name-tr">Ad soyad (isteğe bağlı)</label>
+        <input id="name-tr" name="full_name" maxlength="120" autocomplete="name">
+        <label for="biz-tr">İşletme adı (bir işletmenin müşterisiyseniz zorunlu)</label>
+        <input id="biz-tr" name="business_name" maxlength="120">
+        <label for="note-tr">Not (isteğe bağlı)</label>
+        <textarea id="note-tr" name="note" rows="3" maxlength="1000"></textarea>
+        <button type="submit" class="btn btn-primary">Silme talebini gönder</button>
+        <p class="deletion-msg" role="status"></p>
+      </form>
+
+      <h3 id="tr-yontem2">Yöntem 3 — E-posta ile</h3>
       <p><a href="mailto:info@adapptivdigital.com">info@adapptivdigital.com</a> adresine aşağıdaki bilgilerle bir
         e-posta gönderin:</p>
       <ul>
@@ -99,7 +114,7 @@
       </ul>
       <p>Kimlik doğrulaması için sizinle iletişime geçebiliriz.</p>
 
-      <h3 id="tr-yontem3">Yöntem 3 — Posta ile</h3>
+      <h3 id="tr-yontem3">Yöntem 4 — Posta ile</h3>
       <p>Büyükkolpınar Mah. Şehit Can Şencan Cad. No: 23 İç Kapı No: 1, Atakum / Samsun</p>
 
       <h3 id="tr-meta">Meta bağlantısını kaldırdığınızda ne oluyor?</h3>
@@ -107,8 +122,8 @@
       <ul>
         <li>Erişim token'larınız <strong>derhal</strong> iptal edilir ve sistemden silinir</li>
         <li>Yeni mesaj alınması ve gönderilmesi durur</li>
-        <li>Daha önce alınmış mesajlar, siz aksini talep etmedikçe gizlilik politikasındaki saklama süresi (24 ay)
-          boyunca panelinizde erişilebilir kalır</li>
+        <li>Daha önce alınmış asistan yazışmaları, siz aksini talep etmedikçe gizlilik politikasındaki saklama süresi
+          (180 gün) boyunca panelinizde erişilebilir kalır</li>
         <li>Bu mesajların da silinmesini istiyorsanız yukarıdaki yöntemlerden biriyle talep etmeniz yeterlidir; 30
           gün içinde silinir</li>
       </ul>
@@ -123,8 +138,8 @@
             <tr><th>Veri</th><th>Sebep</th><th>Süre</th></tr>
           </thead>
           <tbody>
-            <tr><td>Fatura ve muhasebe kayıtları</td><td>TTK m.82 ve Vergi Usul Kanunu</td><td>10 yıl</td></tr>
-            <tr><td>Silme talebinin kendisine ilişkin kayıt</td><td>Talebin karşılandığının ispatı</td><td>3 yıl</td></tr>
+            <tr><td>Adapptiv'in size kestiği abonelik faturaları</td><td>TTK m.82 ve Vergi Usul Kanunu</td><td>10 yıl</td></tr>
+            <tr><td>Silme talebinin kendisine ilişkin kayıt</td><td>Talebin karşılandığının ispatı</td><td>İşlendikten sonra 1 yıl</td></tr>
           </tbody>
         </table>
       </div>
@@ -148,19 +163,34 @@
       <h3>Method 1 — In the app</h3>
       <ol>
         <li>Sign in to the Adapptiv web panel or mobile app</li>
-        <li>Go to <strong>Settings → Account → Delete my data</strong></li>
-        <li>Choose the scope:
-          <ul>
-            <li>WhatsApp / Instagram message history only</li>
-            <li>Customer and appointment records only</li>
-            <li>The entire account (account closure)</li>
-          </ul>
-        </li>
-        <li>Confirm the request</li>
+        <li>Go to <strong>Settings → Delete my account</strong> and confirm</li>
       </ol>
-      <p>You will receive an email confirmation.</p>
+      <p>When the only administrator of a business deletes their account, all of that business's data (customers,
+        appointments, message history) is deleted <strong>immediately and permanently</strong>. Before deleting, you
+        can export your data as an Excel file via <strong>Settings → Download my data</strong>.</p>
+      <p>To erase a single customer's data as a business: open the customer card and choose <strong>Delete personal
+        data (KVKK)</strong>.</p>
 
-      <h3>Method 2 — By email</h3>
+      <h3>Method 2 — Request form (if you cannot sign in, or you are a customer of a business)</h3>
+      <form class="deletion-form" data-lang="en" novalidate>
+        <label for="kind-en">Request type</label>
+        <select id="kind-en" name="kind">
+          <option value="account">Delete my Adapptiv account</option>
+          <option value="customer">I am a customer of a business, delete my data</option>
+        </select>
+        <label for="contact-en">Email or phone</label>
+        <input id="contact-en" name="contact" maxlength="254" autocomplete="email" required>
+        <label for="name-en">Full name (optional)</label>
+        <input id="name-en" name="full_name" maxlength="120" autocomplete="name">
+        <label for="biz-en">Business name (required if you are a customer of a business)</label>
+        <input id="biz-en" name="business_name" maxlength="120">
+        <label for="note-en">Note (optional)</label>
+        <textarea id="note-en" name="note" rows="3" maxlength="1000"></textarea>
+        <button type="submit" class="btn btn-primary">Send deletion request</button>
+        <p class="deletion-msg" role="status"></p>
+      </form>
+
+      <h3>Method 3 — By email</h3>
       <p>Email <a href="mailto:info@adapptivdigital.com">info@adapptivdigital.com</a> with:</p>
       <ul>
         <li>Subject: <code>Data Deletion Request</code></li>
@@ -171,15 +201,15 @@
       </ul>
       <p>We may contact you to verify your identity.</p>
 
-      <h3>Method 3 — By post</h3>
+      <h3>Method 4 — By post</h3>
       <p>Büyükkolpınar Mah. Şehit Can Şencan Cad. No: 23, Interior No: 1, Atakum / Samsun, Türkiye</p>
 
       <h3>What happens when you disconnect a Meta account</h3>
       <ul>
         <li>Your access tokens are revoked and deleted <strong>immediately</strong></li>
         <li>Message sending and receiving stops</li>
-        <li>Previously received messages remain available in your panel for the retention period stated in the
-          privacy policy (24 months) unless you request otherwise</li>
+        <li>Previously received assistant conversations remain available in your panel for the retention period
+          stated in the privacy policy (180 days) unless you request otherwise</li>
         <li>To delete those messages too, submit a request using any method above; deletion completes within 30
           days</li>
       </ul>
@@ -193,8 +223,8 @@
             <tr><th>Data</th><th>Reason</th><th>Period</th></tr>
           </thead>
           <tbody>
-            <tr><td>Invoice and accounting records</td><td>Turkish Commercial Code Art. 82 and Tax Procedure Law</td><td>10 years</td></tr>
-            <tr><td>Record of the deletion request itself</td><td>To evidence the request was fulfilled</td><td>3 years</td></tr>
+            <tr><td>Subscription invoices issued by Adapptiv to you</td><td>Turkish Commercial Code Art. 82 and Tax Procedure Law</td><td>10 years</td></tr>
+            <tr><td>Record of the deletion request itself</td><td>To evidence the request was fulfilled</td><td>1 year after it is handled</td></tr>
           </tbody>
         </table>
       </div>
@@ -214,7 +244,7 @@
           <div class="brand"><img src="/assets/logo-mark.png" alt="" class="brand-logo-mark">Adapptiv</div>
           <p class="foot-about">Randevu ile çalışan her işletme için randevu, müşteri, chatbot, reklam ve muhasebe
             yönetimi. Tek uygulama.</p>
-          <p style="margin-top:16px"><a href="mailto:merhaba@adapptiv.app">merhaba@adapptiv.app</a></p>
+          <p style="margin-top:16px"><a href="mailto:info@adapptivdigital.com">info@adapptivdigital.com</a></p>
         </div>
         <div>
           <h4>Ürün</h4>
@@ -251,6 +281,48 @@
       <div class="foot-bottom"> <span>© 2026 Adapptiv</span> <span>Android · iOS · Web paneli</span> </div>
     </div>
   </footer>
+
+  <script>
+    // Silme talebi formu: Adapptiv sunucusundaki account-deletion-request
+    // fonksiyonuna gider (uygulamadaki /hesap-silme ile ayni uc nokta).
+    document.querySelectorAll('.deletion-form').forEach(function (f) {
+      var en = f.dataset.lang === 'en'
+      var msg = f.querySelector('.deletion-msg')
+      f.addEventListener('submit', async function (e) {
+        e.preventDefault()
+        var v = function (n) { return (f.elements[n].value || '').trim() }
+        var btn = f.querySelector('button')
+        btn.disabled = true
+        msg.className = 'deletion-msg'
+        msg.textContent = en ? 'Sending…' : 'Gönderiliyor…'
+        try {
+          var res = await fetch('https://rllvmyriopaulcmmynbe.supabase.co/functions/v1/account-deletion-request', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              kind: v('kind'),
+              contact: v('contact'),
+              full_name: v('full_name') || undefined,
+              business_name: v('business_name') || undefined,
+              note: v('note') || undefined,
+              turnstile_token: '',
+            }),
+          })
+          var body = await res.json().catch(function () { return {} })
+          if (!res.ok) throw new Error(body.error || (en ? 'The request could not be sent.' : 'Talep gönderilemedi.'))
+          f.querySelectorAll('input, textarea, select').forEach(function (el) { el.disabled = true })
+          msg.className = 'deletion-msg ok'
+          msg.textContent = en
+            ? 'Your request has been received. We will contact you to verify your identity.'
+            : 'Talebiniz alındı. Kimliğinizi doğrulamak için size ulaşacağız.'
+        } catch (err) {
+          msg.className = 'deletion-msg err'
+          msg.textContent = err.message || (en ? 'Could not reach the server, please try again.' : 'Sunucuya ulaşılamadı, tekrar deneyin.')
+          btn.disabled = false
+        }
+      })
+    })
+  </script>
   <script src="/js/script.js"></script>
 </body>
 
