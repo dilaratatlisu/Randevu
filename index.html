@@ -612,42 +612,68 @@
         </div>
       </div>
     </section> <!-- ================= FİYAT ================= -->
-    <!-- NOT: fiyat rakamları örnek. Kendi paket yapınızla değiştirin. -->
+    <!-- Paketler: 18 Ekim 2026'da onaylanan 3 paket. Fiyat/sinir degisirse uygulamadaki
+         plan_definitions tablosuyla birlikte guncelleyin. -->
     <section class="section-sm" id="fiyat">
       <div class="wrap">
         <div class="head center">
           <h2 class="anim-line-reveal">Planınız hangisi?</h2>
-          <p class="lead" data-r>Tek şubeyle başlayın, büyüdükçe genişletin. İstediğiniz zaman iptal edebilirsiniz.</p>
+          <p class="lead" data-r>Ücretsiz başlayın, işletmeniz büyüdükçe paketinizi yükseltin. İstediğiniz zaman
+            iptal edebilirsiniz.</p>
         </div>
-        <div class="plans">
+        <div class="plans plans-3">
           <div class="plan" data-r>
-            <h3>Başlangıç</h3>
-            <p class="sub">Tek şube, 3 çalışana kadar</p>
-            <div class="price">₺0<small> / ilk 14 gün</small></div>
-            <p class="sub">Sonrasında ₺X / ay</p>
+            <h3>Ücretsiz</h3>
+            <p class="sub">Tek başına çalışanlar için</p>
+            <div class="price">₺0<small> / ay</small></div>
+            <p class="sub">Süresiz ücretsiz</p>
             <ul>
-              <li><i>✓</i>Sınırsız randevu ve müşteri kartı</li>
-              <li><i>✓</i>Müşteri kartı ve paket takibi</li>
-              <li><i>✓</i>Muhasebe ve PDF rapor</li>
-              <li><i>✓</i>Android, iOS ve web paneli</li>
+              <li><i>✓</i><span>1 kullanıcı (işletme sahibi)</span></li>
+              <li><i>✓</i><span>Ayda 100 randevu, 150 müşteri</span></li>
+              <li><i>✓</i><span>Takvim, müşteri kartı, borç ve paket takibi</span></li>
+              <li><i>✓</i><span>Kasa, gün sonu ve gider takibi</span></li>
+              <li><i>✓</i><span>Online randevu sayfası</span></li>
+              <li><i>✓</i><span>Ayda 50 randevu hatırlatması</span></li>
+              <li><i>✓</i><span>Android, iOS ve web paneli</span></li>
+              <li class="no"><i>✕</i><span>WhatsApp ve Instagram asistanı</span></li>
             </ul> <a href="#" class="btn btn-outline">Ücretsiz başla</a>
           </div>
-          <div class="plan hi" data-r> <span class="plan-flag">En çok tercih edilen</span>
-            <h3>Pro</h3>
-            <p class="sub">Sınırsız çalışan, çoklu şube</p>
-            <div class="price">₺X<small> / ay</small></div>
-            <p class="sub">Yıllık ödemede 2 ay hediye</p>
+          <div class="plan" data-r>
+            <h3>Salon</h3>
+            <p class="sub">Ekibiyle çalışan salonlar için</p>
+            <div class="price">₺1.750<small> / ay</small></div>
+            <p class="sub">Yıllık ödemede ₺17.500 (2 ay hediye) · 14 gün ücretsiz deneyin</p>
             <ul>
-              <li><i>✓</i>Başlangıç'taki her şey</li>
-              <li><i>✓</i>WhatsApp &amp; Instagram AI asistan</li>
-              <li><i>✓</i>Meta reklam entegrasyonu ve gelir takibi</li>
-              <li><i>✓</i>Çoklu şube ve rol bazlı yetki</li>
-              <li><i>✓</i>Öncelikli destek</li>
-            </ul> <a href="#" class="btn btn-primary">Pro'yu başlat</a>
+              <li><i>✓</i><span>5 kullanıcı</span></li>
+              <li><i>✓</i><span>Sınırsız randevu ve müşteri</span></li>
+              <li><i>✓</i><span>Ücretsiz paketteki her şey</span></li>
+              <li><i>✓</i><span>PDF raporlar</span></li>
+              <li><i>✓</i><span>Ayda 500 randevu hatırlatması</span></li>
+              <li><i>✓</i><span>Yazarak randevu oluşturma (yapay zekâ, günde 30)</span></li>
+              <li><i>✓</i><span>Yapay zekâ işletme analizi (günde 3)</span></li>
+              <li class="no"><i>✕</i><span>WhatsApp ve Instagram asistanı</span></li>
+            </ul> <a href="#" class="btn btn-outline">14 gün ücretsiz deneyin</a>
+          </div>
+          <div class="plan hi" data-r> <span class="plan-flag">WhatsApp + Instagram asistanı dahil</span>
+            <h3>Salon + Asistan</h3>
+            <p class="sub">Mesajlara 7/24 cevap veren asistanla</p>
+            <div class="price">₺4.500<small> / ay</small></div>
+            <p class="sub">Yıllık ödemede ₺45.000 (2 ay hediye) · 14 gün ücretsiz deneyin</p>
+            <ul>
+              <li><i>✓</i><span>Salon paketindeki her şey</span></li>
+              <li><i>✓</i><span>10 kullanıcı</span></li>
+              <li><i>✓</i><span><strong>WhatsApp ve Instagram yapay zekâ asistanı</strong> (ayda 10.000 mesaja kadar)</span></li>
+              <li><i>✓</i><span>Hatırlatmalar salonunuzun kendi WhatsApp numarasından, sınırsız</span></li>
+              <li><i>✓</i><span>Mesajlar ekranı, konuşmayı tek dokunuşla devralma</span></li>
+              <li><i>✓</i><span>Toplu kampanya mesajı ve yapay zekâ ile metin önerisi</span></li>
+              <li><i>✓</i><span>Meta reklam raporu</span></li>
+              <li><i>✓</i><span>Yazarak randevu (günde 100), işletme analizi (günde 10)</span></li>
+            </ul> <a href="#" class="btn btn-primary">14 gün ücretsiz deneyin</a>
           </div>
         </div>
-        <p class="plan-note">Daha büyük bir zincir mi işletiyorsunuz? <a href="#"
-            style="color:var(--blue);font-weight:600">Bizimle konuşun</a>.</p>
+        <p class="plan-note">Paket süresi bittiğinde verileriniz silinmez, Ücretsiz pakete geçersiniz. WhatsApp mesaj
+          ücretleri Meta tarafından ayrıca faturalandırılır.<br>Daha büyük bir zincir mi işletiyorsunuz? <a
+            href="mailto:info@adapptivdigital.com" style="color:var(--blue);font-weight:600">Bizimle konuşun</a>.</p>
       </div>
     </section> <!-- ================= SSS ================= -->
     <section class="section">
@@ -658,8 +684,9 @@
         <div class="faq" id="faq">
           <div class="item"> <button class="q">Mevcut müşteri listemi aktarabilir miyim? <i>+</i></button>
             <div class="a">
-              <p>Evet. Excel dosyanızı ya da telefon rehberinizi tek seferde yükleyebilirsiniz. Geçmiş randevu ve
-                harcama bilgisi varsa o da aktarılır; yoksa müşteri kartları kullandıkça kendiliğinden dolar.</p>
+              <p>Evet. Excel ya da CSV dosyanızdaki ad, telefon, e-posta, doğum günü ve etiketleri bilgisayardan tek
+                seferde aktarabilirsiniz; aynı kişinin tekrar eden kayıtları otomatik ayıklanır. Randevu ve harcama
+                geçmişi kullandıkça müşteri kartında kendiliğinden birikir.</p>
             </div>
           </div>
           <div class="item"> <button class="q">Chatbot yanlış bir şey söylerse ne olur? <i>+</i></button>
@@ -683,10 +710,11 @@
                 şey uygulama.</p>
             </div>
           </div>
-          <div class="item"> <button class="q">Birden fazla şubem var, hepsi tek hesapta mı? <i>+</i></button>
+          <div class="item"> <button class="q">Birden fazla şubem var, ne yapmalıyım? <i>+</i></button>
             <div class="a">
-              <p>Evet. Her şubenin takvimi, ekibi ve muhasebesi ayrı tutulur; işletme sahibi hepsini tek yerden görür.
-                Çalışanlar yalnızca kendi şubelerini ve kendi yetkileri dahilindeki bilgileri görür.</p>
+              <p>Şu an her şube ayrı bir hesap olarak kullanılıyor; her birinin takvimi, ekibi ve kasası kendi içinde
+                tutulur. Zincir işletmeler için
+                <a href="mailto:info@adapptivdigital.com" style="color:var(--blue);font-weight:600">bizimle konuşun</a>.</p>
             </div>
           </div>
           <div class="item"> <button class="q">Verilerim bana mı ait? <i>+</i></button>

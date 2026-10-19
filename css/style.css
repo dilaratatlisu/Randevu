@@ -3205,3 +3205,33 @@ body.custom-cursor .card {
   color: #c2410c;
   font-weight: 600;
 }
+
+/* ---------- Uc paketli fiyat tablosu ---------- */
+.plans.plans-3 {
+  max-width: 1140px;
+}
+
+@media(min-width:1000px) {
+  .plans.plans-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.plans-3 .plan .sub {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.plans-3 .plan ul {
+  flex: 1;
+  align-content: start;
+}
+
+.plan li.no {
+  color: var(--muted);
+}
+
+.plan li.no i {
+  color: var(--muted);
+  font-weight: 600;
+}
