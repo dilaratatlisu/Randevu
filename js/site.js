@@ -204,22 +204,60 @@
     else addEventListener('resize', drawWires)
   }
 
-  // Telefonda yana kayan bento: alttaki noktalar hangi kartta oldugunu gosterir
-  var bento = document.querySelector('.bento')
-  var dots = document.querySelectorAll('.bento-hint i')
-  if (bento && dots.length) {
-    bento.addEventListener(
-      'scroll',
-      function () {
-        var first = bento.firstElementChild
-        var w = first ? first.getBoundingClientRect().width + 12 : 1
-        var idx = Math.round(bento.scrollLeft / w)
-        dots.forEach(function (d, i) {
-          d.classList.toggle('on', i === idx)
-        })
-      },
-      { passive: true },
-    )
+  // Gunun tamami: sekmeli vitrin. Sekmeler sirayla kendiliginden ilerler;
+  // kullanici bir sekmeye dokununca durur. Ekrandan cikinca bekler.
+  var sc = document.querySelector('.showcase')
+  if (sc) {
+    var tabs = [].slice.call(sc.querySelectorAll('.sc-tab'))
+    var panels = sc.querySelectorAll('.sc-panel')
+    var row = sc.querySelector('.sc-tabs')
+    var current = 0
+    var select = function (i, focus) {
+      current = (i + tabs.length) % tabs.length
+      tabs.forEach(function (t, k) {
+        var on = k === current
+        t.setAttribute('aria-selected', String(on))
+        t.tabIndex = on ? 0 : -1
+        panels[k].classList.toggle('is-active', on)
+        if (on) panels[k].removeAttribute('aria-hidden')
+        else panels[k].setAttribute('aria-hidden', 'true')
+        panels[k].inert = !on
+      })
+      if (focus) tabs[current].focus({ preventScroll: true })
+      // telefonda secili sekme yatay listede gorunur kalsin
+      if (row.scrollWidth > row.clientWidth) {
+        row.scrollTo({ left: tabs[current].offsetLeft - 24, behavior: reduce ? 'auto' : 'smooth' })
+      }
+    }
+    tabs.forEach(function (t, k) {
+      t.addEventListener('click', function () {
+        sc.classList.remove('is-auto')
+        select(k)
+      })
+    })
+    row.addEventListener('keydown', function (e) {
+      var keys = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }
+      if (e.key in keys) select(current + keys[e.key], true)
+      else if (e.key === 'Home') select(0, true)
+      else if (e.key === 'End') select(tabs.length - 1, true)
+      else return
+      e.preventDefault()
+      sc.classList.remove('is-auto')
+    })
+    if (!reduce) {
+      sc.classList.add('is-auto', 'is-paused')
+      sc.addEventListener('animationend', function (e) {
+        if (e.animationName === 'sc-progress' && sc.classList.contains('is-auto')) select(current + 1)
+      })
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(
+          function (entries) {
+            sc.classList.toggle('is-paused', !entries[0].isIntersecting)
+          },
+          { threshold: 0.5 },
+        ).observe(sc)
+      } else sc.classList.remove('is-paused')
+    }
   }
 
   // Sohbet ornegi: bolum gorununce bir kez oynar

@@ -50,7 +50,7 @@
   <main id="icerik">
     <!-- Giris: ekran boyunda -->
     <section class="hero">
-      <div class="wrap">
+      <div class="wrap hero-main">
         <div class="hero-grid">
           <div class="hero-copy">
             <h1>
@@ -92,21 +92,20 @@
           </div>
         </div>
       </div>
-    </section>
-
-    <div class="wrap">
-      <div class="audience reveal">
-        <strong>Randevuyla çalışan işletmeler için:</strong>
-        <ul>
-          <li>Kuaför</li>
-          <li>Güzellik merkezi</li>
-          <li>Tırnak stüdyosu</li>
-          <li>Lazer ve cilt bakımı</li>
-          <li>Berber</li>
-          <li>Klinik</li>
-        </ul>
+      <div class="wrap">
+        <div class="audience">
+          <strong>Randevuyla çalışan işletmeler için:</strong>
+          <ul>
+            <li>Kuaför</li>
+            <li>Güzellik merkezi</li>
+            <li>Tırnak stüdyosu</li>
+            <li>Lazer ve cilt bakımı</li>
+            <li>Berber</li>
+            <li>Klinik</li>
+          </ul>
+        </div>
       </div>
-    </div>
+    </section>
 
     <!-- Moduller (eski sitedeki kutular, odaklanma efektiyle) -->
     <section class="section" id="ozellikler">
@@ -117,51 +116,37 @@
         </div>
         <div class="mods focus-grid">
           <a class="mod focus-card reveal" href="#gun">
-            <span class="mod-ico t-blue"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Zm-38.34-85.66a8,8,0,0,1,0,11.32l-48,48a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L116,164.69l42.34-42.35A8,8,0,0,1,169.66,122.34Z"/></svg></span>
+            <span class="mod-top"><span class="mod-ico t-blue"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Zm-38.34-85.66a8,8,0,0,1,0,11.32l-48,48a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L116,164.69l42.34-42.35A8,8,0,0,1,169.66,122.34Z"/></svg></span><span class="mod-go"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></span></span>
             <h3>Randevu takvimi</h3>
-            <p>Müşterilerinizin ne zaman, hangi hizmet için geleceğini tek ekranda görün. Yeni randevu açarken çakışma
-              kendiliğinden kontrol edilir; randevuları bekliyor, onaylandı, tamamlandı, iptal ve gelmedi durumlarıyla
-              yönetin.</p>
-            <span class="mod-more">Ayrıntılar <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></span>
+            <p>Kim, ne zaman, hangi hizmete geliyor; tek ekranda. Çakışan randevu açılamaz, her randevunun durumu görünür.</p>
           </a>
           <a class="mod focus-card reveal" style="--i: 1" href="#gun">
-            <span class="mod-ico t-lilac"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M200,112a8,8,0,0,1-8,8H152a8,8,0,0,1,0-16h40A8,8,0,0,1,200,112Zm-8,24H152a8,8,0,0,0,0,16h40a8,8,0,0,0,0-16Zm40-80V200a16,16,0,0,1-16,16H40a16,16,0,0,1-16-16V56A16,16,0,0,1,40,40H216A16,16,0,0,1,232,56ZM216,200V56H40V200H216Zm-80.26-34a8,8,0,1,1-15.5,4c-2.63-10.26-13.06-18-24.25-18s-21.61,7.74-24.25,18a8,8,0,1,1-15.5-4,39.84,39.84,0,0,1,17.19-23.34,32,32,0,1,1,45.12,0A39.76,39.76,0,0,1,135.75,166ZM96,136a16,16,0,1,0-16-16A16,16,0,0,0,96,136Z"/></svg></span>
+            <span class="mod-top"><span class="mod-ico t-lilac"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M200,112a8,8,0,0,1-8,8H152a8,8,0,0,1,0-16h40A8,8,0,0,1,200,112Zm-8,24H152a8,8,0,0,0,0,16h40a8,8,0,0,0,0-16Zm40-80V200a16,16,0,0,1-16,16H40a16,16,0,0,1-16-16V56A16,16,0,0,1,40,40H216A16,16,0,0,1,232,56ZM216,200V56H40V200H216Zm-80.26-34a8,8,0,1,1-15.5,4c-2.63-10.26-13.06-18-24.25-18s-21.61,7.74-24.25,18a8,8,0,1,1-15.5-4,39.84,39.84,0,0,1,17.19-23.34,32,32,0,1,1,45.12,0A39.76,39.76,0,0,1,135.75,166ZM96,136a16,16,0,1,0-16-16A16,16,0,0,0,96,136Z"/></svg></span><span class="mod-go"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></span></span>
             <h3>Müşteri kartı</h3>
-            <p>Toplam harcama, son ziyaret, borç, paket seansları, notlar ve sadakat kartı. Her müşterinizin geçmişi ve
-              tercihleri tek bir kartta.</p>
-            <span class="mod-more">Ayrıntılar <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></span>
+            <p>Harcama, son ziyaret, borç, paket seansları, notlar ve sadakat kartı. Her müşterinin geçmişi tek kartta.</p>
           </a>
           <a class="mod mod-featured focus-card reveal" style="--i: 2" href="#chatbot">
-            <span class="mod-badge">En popüler</span>
-            <span class="mod-ico t-green"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M172,112a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h68A8,8,0,0,1,172,112Zm-8,24H96a8,8,0,0,0,0,16h68a8,8,0,0,0,0-16Zm68-12A100.11,100.11,0,0,1,132,224H48a16,16,0,0,1-16-16V124a100,100,0,0,1,200,0Zm-16,0a84,84,0,0,0-168,0v84h84A84.09,84.09,0,0,0,216,124Z"/></svg></span>
+            <span class="mod-top"><span class="mod-ico t-green"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M172,112a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h68A8,8,0,0,1,172,112Zm-8,24H96a8,8,0,0,0,0,16h68a8,8,0,0,0,0-16Zm68-12A100.11,100.11,0,0,1,132,224H48a16,16,0,0,1-16-16V124a100,100,0,0,1,200,0Zm-16,0a84,84,0,0,0-168,0v84h84A84.09,84.09,0,0,0,216,124Z"/></svg></span><span class="mod-badge">En popüler</span><span class="mod-go"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></span></span>
             <h3>WhatsApp ve Instagram</h3>
-            <p>Asistan mesajları salonunuzun hizmet, fiyat ve saatlerine göre anında yanıtlar; onaylanan randevuyu
-              takviminize kendisi işler.</p>
-            <span class="mod-stat">Salon + Asistan paketinde</span>
-            <span class="mod-more">Ayrıntılar <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></span>
+            <p>Asistan mesajlara hizmet, fiyat ve saatlerinize göre anında cevap verir, randevuyu takvime kendisi işler.</p>
           </a>
           <a class="mod focus-card reveal" href="#entegrasyon">
-            <span class="mod-ico t-amber"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M248,120a48.05,48.05,0,0,0-48-48H160.2c-2.91-.17-53.62-3.74-101.91-44.24A16,16,0,0,0,32,40V200a16,16,0,0,0,26.29,12.25c37.77-31.68,77-40.76,93.71-43.3v31.72A16,16,0,0,0,159.12,214l11,7.33A16,16,0,0,0,194.5,212l11.77-44.36A48.07,48.07,0,0,0,248,120ZM48,199.93V40h0c42.81,35.91,86.63,45,104,47.24v65.48C134.65,155,90.84,164.07,48,199.93Zm131,8,0,.11-11-7.33V168h21.6ZM200,152H168V88h32a32,32,0,1,1,0,64Z"/></svg></span>
+            <span class="mod-top"><span class="mod-ico t-amber"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M248,120a48.05,48.05,0,0,0-48-48H160.2c-2.91-.17-53.62-3.74-101.91-44.24A16,16,0,0,0,32,40V200a16,16,0,0,0,26.29,12.25c37.77-31.68,77-40.76,93.71-43.3v31.72A16,16,0,0,0,159.12,214l11,7.33A16,16,0,0,0,194.5,212l11.77-44.36A48.07,48.07,0,0,0,248,120ZM48,199.93V40h0c42.81,35.91,86.63,45,104,47.24v65.48C134.65,155,90.84,164.07,48,199.93Zm131,8,0,.11-11-7.33V168h21.6ZM200,152H168V88h32a32,32,0,1,1,0,64Z"/></svg></span><span class="mod-go"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></span></span>
             <h3>Meta reklamları</h3>
-            <p>Bağladığınız reklam hesabının harcama, gösterim, tıklama ve getiri verileri her gün uygulamaya gelir.
-              Hangi reklamın işe yaradığını tek ekranda görün.</p>
-            <span class="mod-more">Ayrıntılar <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></span>
+            <p>Reklam hesabınızın harcama, tıklama ve getiri verileri her gün uygulamaya gelir.</p>
           </a>
           <a class="mod focus-card reveal" style="--i: 1" href="#gun">
-            <span class="mod-ico t-pink"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M72,104a8,8,0,0,1,8-8h96a8,8,0,0,1,0,16H80A8,8,0,0,1,72,104Zm8,40h96a8,8,0,0,0,0-16H80a8,8,0,0,0,0,16ZM232,56V208a8,8,0,0,1-11.58,7.15L192,200.94l-28.42,14.21a8,8,0,0,1-7.16,0L128,200.94,99.58,215.15a8,8,0,0,1-7.16,0L64,200.94,35.58,215.15A8,8,0,0,1,24,208V56A16,16,0,0,1,40,40H216A16,16,0,0,1,232,56Zm-16,0H40V195.06l20.42-10.22a8,8,0,0,1,7.16,0L96,199.06l28.42-14.22a8,8,0,0,1,7.16,0L160,199.06l28.42-14.22a8,8,0,0,1,7.16,0L216,195.06Z"/></svg></span>
+            <span class="mod-top"><span class="mod-ico t-pink"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M72,104a8,8,0,0,1,8-8h96a8,8,0,0,1,0,16H80A8,8,0,0,1,72,104Zm8,40h96a8,8,0,0,0,0-16H80a8,8,0,0,0,0,16ZM232,56V208a8,8,0,0,1-11.58,7.15L192,200.94l-28.42,14.21a8,8,0,0,1-7.16,0L128,200.94,99.58,215.15a8,8,0,0,1-7.16,0L64,200.94,35.58,215.15A8,8,0,0,1,24,208V56A16,16,0,0,1,40,40H216A16,16,0,0,1,232,56Zm-16,0H40V195.06l20.42-10.22a8,8,0,0,1,7.16,0L96,199.06l28.42-14.22a8,8,0,0,1,7.16,0L160,199.06l28.42-14.22a8,8,0,0,1,7.16,0L216,195.06Z"/></svg></span><span class="mod-go"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></span></span>
             <h3>Muhasebe</h3>
-            <p>Vergi ve prim oranlarınızı bir kez tanımlayın; ciro, gider ve net kârınız kendiliğinden hesaplansın.
-              İhtiyaç duyduğunuzda tek tıkla PDF raporu indirin.</p>
-            <span class="mod-more">Ayrıntılar <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></span>
+            <p>Vergi ve prim oranlarını bir kez girin; ciro, gider ve net kâr kendiliğinden hesaplansın. PDF rapor tek tıkla.</p>
           </a>
           <a class="mod focus-card reveal" style="--i: 2" href="#demo">
-            <span class="mod-ico t-blue"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M244.8,150.4a8,8,0,0,1-11.2-1.6A51.6,51.6,0,0,0,192,128a8,8,0,0,1-7.37-4.89,8,8,0,0,1,0-6.22A8,8,0,0,1,192,112a24,24,0,1,0-23.24-30,8,8,0,1,1-15.5-4A40,40,0,1,1,219,117.51a67.94,67.94,0,0,1,27.43,21.68A8,8,0,0,1,244.8,150.4ZM190.92,212a8,8,0,1,1-13.84,8,57,57,0,0,0-98.16,0,8,8,0,1,1-13.84-8,72.06,72.06,0,0,1,33.74-29.92,48,48,0,1,1,58.36,0A72.06,72.06,0,0,1,190.92,212ZM128,176a32,32,0,1,0-32-32A32,32,0,0,0,128,176ZM72,120a8,8,0,0,0-8-8A24,24,0,1,1,87.24,82a8,8,0,1,0,15.5-4A40,40,0,1,0,37,117.51,67.94,67.94,0,0,0,9.6,139.19a8,8,0,1,0,12.8,9.61A51.6,51.6,0,0,1,64,128,8,8,0,0,0,72,120Z"/></svg></span>
+            <span class="mod-top"><span class="mod-ico t-blue"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M244.8,150.4a8,8,0,0,1-11.2-1.6A51.6,51.6,0,0,0,192,128a8,8,0,0,1-7.37-4.89,8,8,0,0,1,0-6.22A8,8,0,0,1,192,112a24,24,0,1,0-23.24-30,8,8,0,1,1-15.5-4A40,40,0,1,1,219,117.51a67.94,67.94,0,0,1,27.43,21.68A8,8,0,0,1,244.8,150.4ZM190.92,212a8,8,0,1,1-13.84,8,57,57,0,0,0-98.16,0,8,8,0,1,1-13.84-8,72.06,72.06,0,0,1,33.74-29.92,48,48,0,1,1,58.36,0A72.06,72.06,0,0,1,190.92,212ZM128,176a32,32,0,1,0-32-32A32,32,0,0,0,128,176ZM72,120a8,8,0,0,0-8-8A24,24,0,1,1,87.24,82a8,8,0,1,0,15.5-4A40,40,0,1,0,37,117.51,67.94,67.94,0,0,0,9.6,139.19a8,8,0,1,0,12.8,9.61A51.6,51.6,0,0,1,64,128,8,8,0,0,0,72,120Z"/></svg></span><span class="mod-go"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></span></span>
             <h3>Ekip ve prim</h3>
-            <p>Çalışanlarınızın çalışma saatleri, izinleri ve prim hakedişleri tek panelde. Her randevu ilgili çalışana
-              bağlanır, prim kendiliğinden hesaplanır.</p>
-            <span class="mod-more">Ayrıntılar <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></span>
+            <p>Çalışma saatleri, izinler ve prim hakedişleri tek panelde. Her randevu ilgili çalışana bağlanır.</p>
           </a>
         </div>
+        <p class="swipe-hint" aria-hidden="true">Kaydırarak inceleyin <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></p>
       </div>
     </section>
 
@@ -215,78 +200,69 @@
       </div>
     </section>
 
-    <!-- Bento: gunun tamami -->
+    <!-- Gunun tamami: sekmeli vitrin (tek ekranda bes ozellik) -->
     <section class="section" id="gun">
       <div class="wrap">
         <div class="section-head reveal">
           <h2>Salonun bütün günü, tek ekranda.</h2>
           <p>Takvimden kasaya, müşteri kartından randevu sayfanıza kadar her şey birbirine bağlı.</p>
         </div>
-
-        <div class="bento">
-          <article class="tile t-takvim reveal">
-            <div class="tile-head">
-              <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M244.8,150.4a8,8,0,0,1-11.2-1.6A51.6,51.6,0,0,0,192,128a8,8,0,0,1-7.37-4.89,8,8,0,0,1,0-6.22A8,8,0,0,1,192,112a24,24,0,1,0-23.24-30,8,8,0,1,1-15.5-4A40,40,0,1,1,219,117.51a67.94,67.94,0,0,1,27.43,21.68A8,8,0,0,1,244.8,150.4ZM190.92,212a8,8,0,1,1-13.84,8,57,57,0,0,0-98.16,0,8,8,0,1,1-13.84-8,72.06,72.06,0,0,1,33.74-29.92,48,48,0,1,1,58.36,0A72.06,72.06,0,0,1,190.92,212ZM128,176a32,32,0,1,0-32-32A32,32,0,0,0,128,176ZM72,120a8,8,0,0,0-8-8A24,24,0,1,1,87.24,82a8,8,0,1,0,15.5-4A40,40,0,1,0,37,117.51,67.94,67.94,0,0,0,9.6,139.19a8,8,0,1,0,12.8,9.61A51.6,51.6,0,0,1,64,128,8,8,0,0,0,72,120Z"/></svg>
-              <h3>Potansiyel müşteri takibi</h3>
-              <p>Arayan, yazan ama henüz gelmeyen kişileri kaybetmeyin. Kim hangi aşamada, tek bakışta görün.</p>
+        <div class="showcase reveal">
+          <div class="sc-tabs" role="tablist" aria-label="Uygulamadan ekranlar">
+            <button class="sc-tab" type="button" role="tab" id="sc-t1" aria-controls="sc-p1" aria-selected="true">
+              <span class="sc-ico"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M244.8,150.4a8,8,0,0,1-11.2-1.6A51.6,51.6,0,0,0,192,128a8,8,0,0,1-7.37-4.89,8,8,0,0,1,0-6.22A8,8,0,0,1,192,112a24,24,0,1,0-23.24-30,8,8,0,1,1-15.5-4A40,40,0,1,1,219,117.51a67.94,67.94,0,0,1,27.43,21.68A8,8,0,0,1,244.8,150.4ZM190.92,212a8,8,0,1,1-13.84,8,57,57,0,0,0-98.16,0,8,8,0,1,1-13.84-8,72.06,72.06,0,0,1,33.74-29.92,48,48,0,1,1,58.36,0A72.06,72.06,0,0,1,190.92,212ZM128,176a32,32,0,1,0-32-32A32,32,0,0,0,128,176ZM72,120a8,8,0,0,0-8-8A24,24,0,1,1,87.24,82a8,8,0,1,0,15.5-4A40,40,0,1,0,37,117.51,67.94,67.94,0,0,0,9.6,139.19a8,8,0,1,0,12.8,9.61A51.6,51.6,0,0,1,64,128,8,8,0,0,0,72,120Z"/></svg></span>
+              <span class="sc-txt"><strong>Potansiyel müşteri takibi</strong><span class="sc-desc"><span>Arayan, yazan ama henüz gelmeyen kişileri kaybetmeyin. Kim hangi aşamada, tek bakışta.</span></span></span>
+              <span class="sc-bar" aria-hidden="true"></span>
+            </button>
+            <button class="sc-tab" type="button" role="tab" id="sc-t2" aria-controls="sc-p2" aria-selected="false" tabindex="-1">
+              <span class="sc-ico"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M240,88.23a54.43,54.43,0,0,1-16,37L189.25,160a54.27,54.27,0,0,1-38.63,16h-.05A54.63,54.63,0,0,1,96,119.84a8,8,0,0,1,16,.45A38.62,38.62,0,0,0,150.58,160h0a38.39,38.39,0,0,0,27.31-11.31l34.75-34.75a38.63,38.63,0,0,0-54.63-54.63l-11,11A8,8,0,0,1,135.7,59l11-11A54.65,54.65,0,0,1,224,48,54.86,54.86,0,0,1,240,88.23ZM109,185.66l-11,11A38.41,38.41,0,0,1,70.6,208h0a38.63,38.63,0,0,1-27.29-65.94L78,107.31A38.63,38.63,0,0,1,144,135.71a8,8,0,0,0,16,.45A54.86,54.86,0,0,0,144,96a54.65,54.65,0,0,0-77.27,0L32,130.75A54.62,54.62,0,0,0,70.56,224h0a54.28,54.28,0,0,0,38.64-16l11-11A8,8,0,0,0,109,185.66Z"/></svg></span>
+              <span class="sc-txt"><strong>Kendi randevu sayfanız</strong><span class="sc-desc"><span>Müşterileriniz bağlantınızdan hizmeti ve saati kendileri seçer, randevu takviminize düşer.</span></span></span>
+              <span class="sc-bar" aria-hidden="true"></span>
+            </button>
+            <button class="sc-tab" type="button" role="tab" id="sc-t3" aria-controls="sc-p3" aria-selected="false" tabindex="-1">
+              <span class="sc-ico"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M239.76,158.06,217.28,68.12A16,16,0,0,0,201.75,56H136V40a16,16,0,0,0-16-16H80A16,16,0,0,0,64,40V56H54.25A16,16,0,0,0,38.72,68.12L16.24,158.06A7.93,7.93,0,0,0,16,160v32a16,16,0,0,0,16,16H224a16,16,0,0,0,16-16V160A7.93,7.93,0,0,0,239.76,158.06ZM80,40h40V56H80ZM54.25,72h147.5l20,80H34.25ZM32,192V168H224v24ZM64,96a8,8,0,0,1,8-8H88a8,8,0,0,1,0,16H72A8,8,0,0,1,64,96Zm48,0a8,8,0,0,1,8-8h16a8,8,0,0,1,0,16H120A8,8,0,0,1,112,96Zm48,0a8,8,0,0,1,8-8h16a8,8,0,0,1,0,16H168A8,8,0,0,1,160,96ZM64,128a8,8,0,0,1,8-8H88a8,8,0,0,1,0,16H72A8,8,0,0,1,64,128Zm48,0a8,8,0,0,1,8-8h16a8,8,0,0,1,0,16H120A8,8,0,0,1,112,128Zm48,0a8,8,0,0,1,8-8h16a8,8,0,0,1,0,16H168A8,8,0,0,1,160,128Z"/></svg></span>
+              <span class="sc-txt"><strong>Kasa ve gün sonu</strong><span class="sc-desc"><span>Nakit, kart ve havale ayrı ayrı. Gün sonunda kasayı sayın, farkı görün.</span></span></span>
+              <span class="sc-bar" aria-hidden="true"></span>
+            </button>
+            <button class="sc-tab" type="button" role="tab" id="sc-t4" aria-controls="sc-p4" aria-selected="false" tabindex="-1">
+              <span class="sc-ico"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,71.1a8,8,0,0,1-10.78-3.42,94.13,94.13,0,0,0-33.46-36.91,8,8,0,1,1,8.54-13.54,111.46,111.46,0,0,1,39.12,43.09A8,8,0,0,1,224,71.1ZM35.71,72a8,8,0,0,0,7.1-4.32A94.13,94.13,0,0,1,76.27,30.77a8,8,0,1,0-8.54-13.54A111.46,111.46,0,0,0,28.61,60.32,8,8,0,0,0,35.71,72Zm186.1,103.94A16,16,0,0,1,208,200H167.2a40,40,0,0,1-78.4,0H48a16,16,0,0,1-13.79-24.06C43.22,160.39,48,138.28,48,112a80,80,0,0,1,160,0C208,138.27,212.78,160.38,221.81,175.94ZM150.62,200H105.38a24,24,0,0,0,45.24,0ZM208,184c-10.64-18.27-16-42.49-16-72a64,64,0,0,0-128,0c0,29.52-5.38,53.74-16,72Z"/></svg></span>
+              <span class="sc-txt"><strong>Otomatik hatırlatma</strong><span class="sc-desc"><span>Randevudan önce müşterinize WhatsApp'tan hatırlatma gider, unutulan randevular azalır.</span></span></span>
+              <span class="sc-bar" aria-hidden="true"></span>
+            </button>
+            <button class="sc-tab" type="button" role="tab" id="sc-t5" aria-controls="sc-p5" aria-selected="false" tabindex="-1">
+              <span class="sc-ico"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M221.35,104.11a8,8,0,0,0-6.57,9.21A88.85,88.85,0,0,1,216,128a87.62,87.62,0,0,1-22.24,58.41,79.66,79.66,0,0,0-36.06-28.75,48,48,0,1,0-59.4,0,79.66,79.66,0,0,0-36.06,28.75A88,88,0,0,1,128,40a88.76,88.76,0,0,1,14.68,1.22,8,8,0,0,0,2.64-15.78,103.92,103.92,0,1,0,85.24,85.24A8,8,0,0,0,221.35,104.11ZM96,120a32,32,0,1,1,32,32A32,32,0,0,1,96,120ZM74.08,197.5a64,64,0,0,1,107.84,0,87.83,87.83,0,0,1-107.84,0ZM237.66,45.66l-32,32a8,8,0,0,1-11.32,0l-16-16a8,8,0,0,1,11.32-11.32L200,60.69l26.34-26.35a8,8,0,0,1,11.32,11.32Z"/></svg></span>
+              <span class="sc-txt"><strong>Müşterinin tam hikâyesi</strong><span class="sc-desc"><span>Geçmiş randevular, ödemeler, borç, paketler, notlar ve alerji gibi önemli bilgiler tek kartta.</span></span></span>
+              <span class="sc-bar" aria-hidden="true"></span>
+            </button>
+          </div>
+          <div class="sc-stage">
+            <div class="sc-panel p-wide is-active" role="tabpanel" id="sc-p1" aria-labelledby="sc-t1">
+              <div class="sc-window"><img src="/assets/screens/crop-potansiyel.jpg" width="1984" height="1120" loading="lazy" alt="Potansiyel müşteriler panosu: yeni, iletişime geçildi, teklif verildi, kazanıldı sütunları" /></div>
+              <p class="sc-cap">Arayan, yazan ama henüz gelmeyen kişileri kaybetmeyin. Kim hangi aşamada, tek bakışta.</p>
             </div>
-            <div class="tile-shot">
-              <img src="/assets/screens/crop-potansiyel.jpg" width="1984" height="1120" loading="lazy"
-                alt="Potansiyel müşteriler panosu: yeni, iletişime geçildi, teklif verildi, kazanıldı sütunları" />
+            <div class="sc-panel p-phone" role="tabpanel" id="sc-p2" aria-labelledby="sc-t2" aria-hidden="true" inert>
+              <div class="sc-phone"><div class="sc-phone-screen"><img src="/assets/screens/tel-online-randevu.jpg" width="1170" height="3645" loading="lazy" alt="Salonun online randevu sayfası: hizmetler, süreler ve fiyatlar" /></div></div>
+              <p class="sc-cap">Müşterileriniz bağlantınızdan hizmeti ve saati kendileri seçer, randevu takviminize düşer.</p>
             </div>
-          </article>
-
-          <article class="tile t-online reveal" style="--i: 1">
-            <div class="tile-head">
-              <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M240,88.23a54.43,54.43,0,0,1-16,37L189.25,160a54.27,54.27,0,0,1-38.63,16h-.05A54.63,54.63,0,0,1,96,119.84a8,8,0,0,1,16,.45A38.62,38.62,0,0,0,150.58,160h0a38.39,38.39,0,0,0,27.31-11.31l34.75-34.75a38.63,38.63,0,0,0-54.63-54.63l-11,11A8,8,0,0,1,135.7,59l11-11A54.65,54.65,0,0,1,224,48,54.86,54.86,0,0,1,240,88.23ZM109,185.66l-11,11A38.41,38.41,0,0,1,70.6,208h0a38.63,38.63,0,0,1-27.29-65.94L78,107.31A38.63,38.63,0,0,1,144,135.71a8,8,0,0,0,16,.45A54.86,54.86,0,0,0,144,96a54.65,54.65,0,0,0-77.27,0L32,130.75A54.62,54.62,0,0,0,70.56,224h0a54.28,54.28,0,0,0,38.64-16l11-11A8,8,0,0,0,109,185.66Z"/></svg>
-              <h3>Kendi randevu sayfanız</h3>
-              <p>Müşterileriniz bağlantınızdan hizmeti ve saati kendileri seçer.</p>
+            <div class="sc-panel p-wide" role="tabpanel" id="sc-p3" aria-labelledby="sc-t3" aria-hidden="true" inert>
+              <div class="sc-window"><img src="/assets/screens/crop-kasa.jpg" width="1984" height="940" loading="lazy" alt="Kasa ekranı: toplam tahsilat, ödeme yöntemlerine göre dağılım" /></div>
+              <p class="sc-cap">Nakit, kart ve havale ayrı ayrı. Gün sonunda kasayı sayın, farkı görün.</p>
             </div>
-            <div class="tile-phone">
-              <img src="/assets/screens/tel-online-randevu.jpg" width="1170" height="3645" loading="lazy"
-                alt="Salonun online randevu sayfası: hizmetler, süreler ve fiyatlar" />
+            <div class="sc-panel p-remind" role="tabpanel" id="sc-p4" aria-labelledby="sc-t4" aria-hidden="true" inert>
+              <div class="sc-remind" aria-label="Örnek hatırlatma mesajı">
+                <div class="sc-remind-head"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M187.58,144.84l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88,40,40,0,0,0,40-40A8,8,0,0,0,187.58,144.84ZM152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.47,56.47,0,0,0,30.15,30.15A8,8,0,0,0,138,155l14.61-9.74,23,11.48A24,24,0,0,1,152,176ZM128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216Z"/></svg><span><strong>Güzel Salon</strong><small>Hatırlatma</small></span></div>
+                <div class="reminder-bubble">Merhaba Elif, yarın 14:30'da boya randevunuz var. Görüşmek üzere.<small>10:00</small></div>
+                <div class="reminder-reply">Teşekkürler, geleceğim</div>
+                <span class="sc-ok"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg> Müşteri onayladı</span>
+              </div>
+              <p class="sc-cap">Randevudan önce müşterinize WhatsApp'tan hatırlatma gider, unutulan randevular azalır.</p>
             </div>
-          </article>
-
-          <article class="tile t-kasa reveal">
-            <div class="tile-head">
-              <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M239.76,158.06,217.28,68.12A16,16,0,0,0,201.75,56H136V40a16,16,0,0,0-16-16H80A16,16,0,0,0,64,40V56H54.25A16,16,0,0,0,38.72,68.12L16.24,158.06A7.93,7.93,0,0,0,16,160v32a16,16,0,0,0,16,16H224a16,16,0,0,0,16-16V160A7.93,7.93,0,0,0,239.76,158.06ZM80,40h40V56H80ZM54.25,72h147.5l20,80H34.25ZM32,192V168H224v24ZM64,96a8,8,0,0,1,8-8H88a8,8,0,0,1,0,16H72A8,8,0,0,1,64,96Zm48,0a8,8,0,0,1,8-8h16a8,8,0,0,1,0,16H120A8,8,0,0,1,112,96Zm48,0a8,8,0,0,1,8-8h16a8,8,0,0,1,0,16H168A8,8,0,0,1,160,96ZM64,128a8,8,0,0,1,8-8H88a8,8,0,0,1,0,16H72A8,8,0,0,1,64,128Zm48,0a8,8,0,0,1,8-8h16a8,8,0,0,1,0,16H120A8,8,0,0,1,112,128Zm48,0a8,8,0,0,1,8-8h16a8,8,0,0,1,0,16H168A8,8,0,0,1,160,128Z"/></svg>
-              <h3>Kasa ve gün sonu</h3>
-              <p>Nakit, kart ve havale ayrı ayrı. Gün sonunda kasayı sayın, farkı görün.</p>
+            <div class="sc-panel p-wide" role="tabpanel" id="sc-p5" aria-labelledby="sc-t5" aria-hidden="true" inert>
+              <div class="sc-window"><img src="/assets/screens/crop-musteri-karti.jpg" width="1984" height="1520" loading="lazy" alt="Müşteri kartı: bilgiler, sadakat kartı, görevler ve zaman çizelgesi" /></div>
+              <p class="sc-cap">Geçmiş randevular, ödemeler, borç, paketler, notlar ve alerji gibi önemli bilgiler tek kartta.</p>
             </div>
-            <div class="tile-shot">
-              <img src="/assets/screens/crop-kasa.jpg" width="1984" height="940" loading="lazy"
-                alt="Kasa ekranı: toplam tahsilat, ödeme yöntemlerine göre dağılım" />
-            </div>
-          </article>
-
-          <article class="tile t-hatirlatma reveal" style="--i: 1">
-            <div class="tile-head">
-              <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,71.1a8,8,0,0,1-10.78-3.42,94.13,94.13,0,0,0-33.46-36.91,8,8,0,1,1,8.54-13.54,111.46,111.46,0,0,1,39.12,43.09A8,8,0,0,1,224,71.1ZM35.71,72a8,8,0,0,0,7.1-4.32A94.13,94.13,0,0,1,76.27,30.77a8,8,0,1,0-8.54-13.54A111.46,111.46,0,0,0,28.61,60.32,8,8,0,0,0,35.71,72Zm186.1,103.94A16,16,0,0,1,208,200H167.2a40,40,0,0,1-78.4,0H48a16,16,0,0,1-13.79-24.06C43.22,160.39,48,138.28,48,112a80,80,0,0,1,160,0C208,138.27,212.78,160.38,221.81,175.94ZM150.62,200H105.38a24,24,0,0,0,45.24,0ZM208,184c-10.64-18.27-16-42.49-16-72a64,64,0,0,0-128,0c0,29.52-5.38,53.74-16,72Z"/></svg>
-              <h3>Otomatik hatırlatma</h3>
-              <p>Randevudan önce müşterinize WhatsApp'tan hatırlatma gider, unutulan randevular azalır.</p>
-            </div>
-            <div class="reminder" aria-label="Örnek hatırlatma mesajı">
-              <div class="reminder-bubble">Güzel Salon: Merhaba Elif, yarın 14:30'da boya randevunuz var. Görüşmek
-                üzere.<small>10:00</small></div>
-              <div class="reminder-reply">Teşekkürler, geleceğim</div>
-            </div>
-          </article>
-
-          <article class="tile t-kart reveal">
-            <div class="tile-head">
-              <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M221.35,104.11a8,8,0,0,0-6.57,9.21A88.85,88.85,0,0,1,216,128a87.62,87.62,0,0,1-22.24,58.41,79.66,79.66,0,0,0-36.06-28.75,48,48,0,1,0-59.4,0,79.66,79.66,0,0,0-36.06,28.75A88,88,0,0,1,128,40a88.76,88.76,0,0,1,14.68,1.22,8,8,0,0,0,2.64-15.78,103.92,103.92,0,1,0,85.24,85.24A8,8,0,0,0,221.35,104.11ZM96,120a32,32,0,1,1,32,32A32,32,0,0,1,96,120ZM74.08,197.5a64,64,0,0,1,107.84,0,87.83,87.83,0,0,1-107.84,0ZM237.66,45.66l-32,32a8,8,0,0,1-11.32,0l-16-16a8,8,0,0,1,11.32-11.32L200,60.69l26.34-26.35a8,8,0,0,1,11.32,11.32Z"/></svg>
-              <h3>Her müşterinin tam hikâyesi</h3>
-              <p>Geçmiş randevular, ödemeler, borç, paket seansları, notlar ve sadakat kartı tek kartta. Alerji gibi
-                önemli bilgiler de unutulmaz.</p>
-            </div>
-            <div class="tile-shot">
-              <img src="/assets/screens/crop-musteri-karti.jpg" width="1984" height="1520" loading="lazy"
-                alt="Müşteri kartı: bilgiler, sadakat kartı, görevler ve zaman çizelgesi" />
-            </div>
-          </article>
+          </div>
         </div>
-        <div class="bento-hint" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i></div>
       </div>
     </section>
 
@@ -326,7 +302,7 @@
 
     <!-- Telefon ve bilgisayar -->
     <section class="section" id="panel">
-      <div class="wrap">
+      <div class="wrap devices-grid">
         <div class="devices-head reveal">
           <h2 class="h2">Telefonda hızlı, bilgisayarda ayrıntılı.</h2>
           <p>Gün içinde randevuyu telefondan girin. Akşam bilgisayarda müşteri listenizi, raporları ve kasayı
@@ -504,6 +480,7 @@
             <a class="btn btn-primary" href="#fiyat">Paketi seç</a>
           </article>
         </div>
+        <p class="swipe-hint" aria-hidden="true">Kaydırarak inceleyin <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></p>
         <p class="plans-note reveal">Paket süresi bittiğinde verileriniz silinmez, Ücretsiz pakete geçersiniz. WhatsApp
           mesaj ücretleri Meta tarafından ayrıca faturalandırılır.</p>
       </div>

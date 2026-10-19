@@ -1111,150 +1111,7 @@ p {
   }
 }
 
-/* ---------- Ozellikler (bento) ---------- */
-.bento {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-template-areas:
-    'takvim takvim online'
-    'kasa hatirlatma online'
-    'kart kart kart';
-  gap: 16px;
-}
-
-.tile {
-  position: relative;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: var(--r-card);
-  padding: 28px 28px 0;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition:
-    transform 0.4s var(--ease),
-    box-shadow 0.4s var(--ease);
-}
-
-.tile:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow);
-}
-
-.tile-head .icon {
-  width: 26px;
-  height: 26px;
-  color: var(--accent);
-  margin-bottom: 14px;
-}
-
-.tile h3 {
-  font-size: 22px;
-  letter-spacing: -0.025em;
-}
-
-.tile p {
-  margin-top: 8px;
-  color: var(--ink-2);
-  font-size: 15.5px;
-  max-width: 46ch;
-}
-
-.tile-shot {
-  margin-top: 26px;
-  border-radius: var(--r-img) var(--r-img) 0 0;
-  border: 1px solid var(--line);
-  border-bottom: 0;
-  overflow: hidden;
-  flex: 1;
-  min-height: 0;
-  background: var(--surface-2);
-}
-
-.tile-shot img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 1.2s var(--ease);
-}
-
-.tile:hover .tile-shot img {
-  transform: scale(1.025);
-}
-
-.t-takvim {
-  grid-area: takvim;
-}
-
-.t-takvim .tile-shot {
-  height: 340px;
-}
-
-.t-takvim .tile-shot img {
-  object-position: 50% 82%;
-}
-
-.t-online {
-  grid-area: online;
-  background: var(--accent-soft);
-  border-color: transparent;
-}
-
-.t-online .tile-phone {
-  margin: 28px auto 0;
-  width: min(250px, 80%);
-  border-radius: 30px 30px 0 0;
-  padding: 7px 7px 0;
-  background: #0d1424;
-  flex: 1;
-  min-height: 400px;
-  overflow: hidden;
-}
-
-.t-online .tile-phone {
-  position: relative;
-}
-
-.t-online .tile-phone img {
-  position: absolute;
-  inset: 7px 7px 0;
-  width: calc(100% - 14px);
-  height: calc(100% - 7px);
-  border-radius: 23px 23px 0 0;
-  object-fit: cover;
-  object-position: top;
-}
-
-.t-kasa {
-  grid-area: kasa;
-}
-
-.t-kasa .tile-shot {
-  height: 210px;
-}
-
-.t-kasa .tile-shot img {
-  width: 150%;
-  max-width: none;
-  height: auto;
-  object-fit: initial;
-}
-
-.t-hatirlatma {
-  grid-area: hatirlatma;
-  padding-bottom: 28px;
-}
-
-.reminder {
-  margin-top: 24px;
-  padding: 16px;
-  border-radius: 16px;
-  background: var(--surface-2);
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
+/* ---------- Hatirlatma balonlari (vitrinde) ---------- */
 .reminder-bubble {
   align-self: flex-start;
   max-width: 92%;
@@ -1281,157 +1138,6 @@ p {
   background: var(--ink);
   color: var(--bg);
   font-size: 14.5px;
-}
-
-.t-kart {
-  grid-area: kart;
-  display: grid;
-  grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
-  gap: 40px;
-  padding: 36px 0 0 36px;
-}
-
-.t-kart .tile-head {
-  padding-bottom: 36px;
-  align-self: center;
-}
-
-.t-kart .tile-shot {
-  margin-top: 0;
-  height: 330px;
-  border-right: 0;
-  border-radius: var(--r-img) 0 0 0;
-}
-
-.t-kart .tile-shot img {
-  object-position: 0 0;
-}
-
-@media (max-width: 960px) {
-  .bento {
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-      'takvim takvim'
-      'kasa online'
-      'hatirlatma online'
-      'kart kart';
-  }
-
-  .t-kart {
-    grid-template-columns: 1fr;
-    gap: 0;
-    padding: 28px 28px 0;
-  }
-
-  .t-kart .tile-head {
-    padding-bottom: 0;
-  }
-
-  .t-kart .tile-shot {
-    margin-top: 26px;
-    border-right: 1px solid var(--line);
-    border-radius: var(--r-img) var(--r-img) 0 0;
-  }
-}
-
-.bento-hint {
-  display: none;
-}
-
-@media (max-width: 640px) {
-  .bento {
-    grid-template-columns: none;
-    grid-template-areas: none;
-    grid-auto-flow: column;
-    grid-auto-columns: 84%;
-    gap: 12px;
-    overflow-x: auto;
-    overscroll-behavior-x: contain;
-    scroll-snap-type: x mandatory;
-    scroll-padding-inline: 24px;
-    margin-inline: -24px;
-    padding: 4px 24px 12px;
-    scrollbar-width: none;
-  }
-
-  .bento::-webkit-scrollbar {
-    display: none;
-  }
-
-  .bento > .tile {
-    grid-area: auto;
-    scroll-snap-align: start;
-    height: 430px;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    padding: 22px 20px 0;
-  }
-
-  /* yatay kaydirmada gorunme animasyonu beklenmez */
-  .bento > .tile.reveal {
-    opacity: 1;
-    transform: none;
-  }
-
-  .bento .tile-head {
-    padding-bottom: 0;
-    align-self: auto;
-  }
-
-  .bento .tile p {
-    font-size: 15px;
-  }
-
-  .bento .tile-shot,
-  .bento .t-takvim .tile-shot,
-  .bento .t-kasa .tile-shot,
-  .bento .t-kart .tile-shot {
-    height: auto;
-    flex: 1;
-    margin-top: 20px;
-  }
-
-  .bento .t-takvim .tile-shot img {
-    object-position: 0 50%;
-  }
-
-  .bento .t-online .tile-phone {
-    min-height: 0;
-    height: auto;
-    width: 62%;
-    margin-top: 18px;
-  }
-
-  .t-hatirlatma {
-    padding-bottom: 20px;
-  }
-
-  .bento .reminder {
-    margin-top: auto;
-  }
-
-  .bento-hint {
-    display: flex;
-    justify-content: center;
-    gap: 6px;
-    margin-top: 14px;
-  }
-
-  .bento-hint i {
-    width: 6px;
-    height: 6px;
-    border-radius: 999px;
-    background: var(--line);
-    transition:
-      width 0.3s var(--ease),
-      background 0.3s;
-  }
-
-  .bento-hint i.on {
-    width: 20px;
-    background: var(--accent);
-  }
 }
 
 /* ---------- Telefon + bilgisayar ---------- */
@@ -2693,11 +2399,7 @@ dl.legal-info dd:last-of-type {
   color: var(--on-navy-2);
 }
 
-@media (max-width: 420px) {
-  .as-cards {
-    grid-template-columns: 1fr;
-  }
-}
+
 
 /* ---------- Entegrasyon: kanallar merkeze akar ---------- */
 .hub {
@@ -3045,6 +2747,1053 @@ body.custom-cursor .focus-card {
   border-bottom-right-radius: 3px;
 }
 
+/* ---------- Gunun tamami: sekmeli vitrin ---------- */
+.showcase {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(24px, 4vw, 56px);
+  align-items: center;
+}
+
+.sc-tabs {
+  position: relative;
+  display: grid;
+  gap: 6px;
+}
+
+.sc-tab {
+  position: relative;
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+  width: 100%;
+  padding: 14px 18px;
+  border: 1px solid transparent;
+  border-radius: 18px;
+  background: none;
+  font: inherit;
+  text-align: left;
+  color: var(--ink-2);
+  cursor: pointer;
+  overflow: hidden;
+  transition:
+    background 0.3s,
+    border-color 0.3s,
+    color 0.3s,
+    box-shadow 0.3s;
+}
+
+.sc-tab:hover {
+  color: var(--ink);
+  background: color-mix(in srgb, var(--surface) 55%, transparent);
+}
+
+.sc-tab[aria-selected='true'] {
+  color: var(--ink);
+  background: var(--surface);
+  border-color: var(--line);
+  box-shadow: var(--shadow-sm);
+}
+
+.sc-tab:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.sc-ico {
+  width: 44px;
+  height: 44px;
+  border-radius: 13px;
+  display: grid;
+  place-items: center;
+  background: var(--surface-2);
+  color: var(--muted);
+  transition:
+    background 0.3s,
+    color 0.3s;
+}
+
+.sc-ico .icon {
+  width: 22px;
+  height: 22px;
+}
+
+.sc-tab[aria-selected='true'] .sc-ico {
+  background: var(--accent-soft);
+  color: var(--accent-ink);
+}
+
+.sc-txt strong {
+  display: block;
+  padding-top: 10px;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.4;
+}
+
+/* aciklama yalniz secili sekmede acilir */
+.sc-desc {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.5s var(--ease);
+}
+
+.sc-desc > span {
+  overflow: hidden;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+
+.sc-desc > span::before {
+  content: '';
+  display: block;
+  height: 6px;
+}
+
+.sc-tab[aria-selected='true'] .sc-desc {
+  grid-template-rows: 1fr;
+}
+
+/* sekme sirayla kendiliginden ilerler; alttaki cizgi ne kadar kaldigini gosterir */
+.sc-bar {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 0;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--line);
+  opacity: 0;
+  overflow: hidden;
+}
+
+.sc-bar::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  transform-origin: left;
+  transform: scaleX(0);
+}
+
+.showcase.is-auto .sc-tab[aria-selected='true'] .sc-bar {
+  opacity: 1;
+}
+
+.showcase.is-auto .sc-tab[aria-selected='true'] .sc-bar::after {
+  animation: sc-progress 6.5s linear forwards;
+}
+
+.showcase.is-paused .sc-bar::after {
+  animation-play-state: paused !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .showcase:hover .sc-bar::after {
+    animation-play-state: paused !important;
+  }
+}
+
+@keyframes sc-progress {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.sc-stage {
+  position: relative;
+  aspect-ratio: 16 / 11;
+  max-height: calc(100svh - 68px - 230px);
+  min-height: 340px;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background:
+    radial-gradient(110% 80% at 90% 0%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 62%),
+    var(--surface-2);
+}
+
+.sc-panel {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: clamp(20px, 3vw, 40px);
+  opacity: 0;
+  transform: translateY(16px) scale(0.985);
+  transition:
+    opacity 0.5s var(--ease),
+    transform 0.8s var(--ease);
+  pointer-events: none;
+}
+
+.sc-panel.is-active {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+.sc-cap {
+  display: none;
+}
+
+/* genis ekran goruntusu: sahnenin sag altindan tasar */
+.p-wide {
+  place-items: stretch;
+  padding: clamp(24px, 3.4vw, 44px) 0 0 clamp(24px, 3.4vw, 44px);
+}
+
+.sc-window {
+  min-height: 0;
+  border-radius: 14px 0 0 0;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-right: 0;
+  border-bottom: 0;
+  box-shadow: var(--shadow);
+}
+
+.sc-window img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 0 0;
+}
+
+/* telefon: uzun sayfa icinde yavasca kayar */
+.p-phone {
+  align-items: end;
+  padding-bottom: 0;
+}
+
+.sc-phone {
+  height: calc(100% - 4px);
+  aspect-ratio: 9 / 18;
+  padding: 7px 7px 0;
+  border-radius: 34px 34px 0 0;
+  background: #0d1424;
+  box-shadow: 0 30px 60px -18px rgb(15 26 46 / 0.45);
+}
+
+.sc-phone-screen {
+  position: relative;
+  height: 100%;
+  border-radius: 27px 27px 0 0;
+  overflow: hidden;
+  container-type: size;
+  background: #fff;
+}
+
+.sc-phone-screen img {
+  width: 100%;
+  height: auto;
+}
+
+.p-phone.is-active .sc-phone-screen img {
+  animation: sc-scroll 10s ease-in-out 0.8s infinite alternate;
+}
+
+@keyframes sc-scroll {
+  0%,
+  12% {
+    transform: translateY(0);
+  }
+  88%,
+  100% {
+    transform: translateY(calc(-100% + 100cqh));
+  }
+}
+
+/* hatirlatma: WhatsApp mesaji, sirayla gelir */
+.sc-remind {
+  width: min(400px, 100%);
+  padding: 18px;
+  border-radius: 22px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sc-remind-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.sc-remind-head .icon {
+  width: 30px;
+  height: 30px;
+  color: var(--t-green);
+}
+
+.sc-remind-head strong {
+  display: block;
+  font-size: 15px;
+  line-height: 1.2;
+}
+
+.sc-remind-head small {
+  color: var(--muted);
+  font-size: 12.5px;
+}
+
+.sc-remind .reminder-bubble {
+  background: var(--surface-2);
+  border-color: transparent;
+}
+
+.sc-ok {
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--t-green-bg);
+  color: var(--t-green);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.sc-ok .icon {
+  width: 15px;
+  height: 15px;
+}
+
+.p-remind.is-active .reminder-bubble {
+  animation: rise 0.7s var(--ease) 0.15s both;
+}
+
+.p-remind.is-active .reminder-reply {
+  animation: rise 0.7s var(--ease) 0.9s both;
+}
+
+.p-remind.is-active .sc-ok {
+  animation: rise 0.7s var(--ease) 1.5s both;
+}
+
+@media (max-width: 860px) {
+  .showcase {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  /* sekmeler yana kayan kucuk dugmeler */
+  .sc-tabs {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    margin-inline: -24px;
+    padding: 2px 24px 6px;
+    scrollbar-width: none;
+  }
+
+  .sc-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .sc-tab {
+    flex: none;
+    width: auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px 6px 6px;
+    border-radius: 999px;
+    border-color: var(--line);
+    background: var(--surface);
+  }
+
+  .sc-tab[aria-selected='true'] {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--bg);
+    box-shadow: none;
+  }
+
+  .sc-ico {
+    width: 30px;
+    height: 30px;
+    border-radius: 999px;
+  }
+
+  .sc-ico .icon {
+    width: 17px;
+    height: 17px;
+  }
+
+  .sc-tab[aria-selected='true'] .sc-ico {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  .sc-txt strong {
+    padding: 0;
+    font-size: 14.5px;
+    white-space: nowrap;
+  }
+
+  .sc-desc,
+  .sc-bar {
+    display: none;
+  }
+
+  .sc-stage {
+    aspect-ratio: auto;
+    height: min(420px, calc(100svh - 68px - 300px));
+    min-height: 360px;
+    max-height: none;
+    border-radius: 24px;
+  }
+
+  /* telefonda aciklama sahnenin ustunde */
+  .sc-panel {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .sc-cap {
+    display: block;
+    flex: none;
+    padding: 18px 20px 14px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--ink-2);
+  }
+
+  .sc-panel > :not(.sc-cap) {
+    order: 1;
+    flex: 1;
+    min-height: 0;
+  }
+
+  .p-wide .sc-window {
+    margin-left: 20px;
+  }
+
+  .p-phone .sc-phone {
+    align-self: center;
+    flex: 1;
+    height: auto;
+  }
+
+  .p-remind .sc-remind {
+    flex: none;
+    align-self: center;
+    width: calc(100% - 32px);
+    margin: auto 0;
+    padding: 14px;
+  }
+}
+
+/* ---------- Telefon + bilgisayar yan yana ---------- */
+.devices-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
+  gap: clamp(32px, 5vw, 72px);
+  align-items: center;
+}
+
+.devices-grid .devices-head {
+  margin-bottom: 0;
+}
+
+.devices-grid .devices-stage {
+  padding-bottom: 8%;
+}
+
+@media (max-width: 960px) {
+  .devices-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Moduller: kisa kutular ---------- */
+.mod {
+  padding: 24px;
+}
+
+.mod-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.mod-top .mod-ico {
+  margin-bottom: 0;
+}
+
+.mod-go {
+  margin-left: auto;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  display: grid;
+  place-items: center;
+  color: var(--ink-2);
+  transition:
+    background 0.3s,
+    border-color 0.3s,
+    color 0.3s,
+    transform 0.4s var(--ease);
+}
+
+.mod-go .icon {
+  width: 16px;
+  height: 16px;
+}
+
+.mod:hover .mod-go {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  transform: rotate(-45deg);
+}
+
+.mod-featured .mod-go {
+  border-color: rgb(255 255 255 / 0.18);
+  color: var(--on-navy);
+}
+
+.mod-top .mod-badge {
+  position: static;
+}
+
+.mod p {
+  margin-top: 8px;
+  font-size: 15px;
+}
+
+/* ---------- Her bolum bir ekran ---------- */
+.section,
+.closing {
+  min-height: calc(100vh - 68px);
+  min-height: calc(100svh - 68px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-block: clamp(36px, 7vh, 88px);
+}
+
+.section > .wrap,
+.closing > .wrap {
+  width: 100%;
+}
+
+.section-head,
+.devices-head {
+  margin-bottom: clamp(24px, 4.5vh, 52px);
+}
+
+.hero {
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: clamp(16px, 3vh, 32px);
+}
+
+.hero-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.hero-main > .hero-grid {
+  width: 100%;
+}
+
+.hero .audience {
+  margin-top: clamp(20px, 4vh, 40px);
+  padding-top: 18px;
+}
+
+/* fiyatlar tek ekrana sigsin */
+.pricing-head {
+  margin-bottom: clamp(20px, 3.5vh, 36px);
+}
+
+.plan {
+  padding: 26px;
+}
+
+.price {
+  margin-top: 16px;
+}
+
+.price strong {
+  font-size: 40px;
+}
+
+.plan ul {
+  margin: 16px 0 22px;
+  padding-top: 16px;
+  gap: 8px;
+}
+
+.plan li {
+  font-size: 14.5px;
+  line-height: 1.45;
+}
+
+.plans-note {
+  margin-top: 16px;
+}
+
+/* alcak ekranli dizustu bilgisayarlar (1366x768, 1280x720) */
+@media (min-width: 961px) and (max-height: 820px) {
+  .hero h1 {
+    font-size: clamp(36px, 6.6vh, 54px);
+  }
+
+  .hero-sub {
+    margin-top: 14px;
+    font-size: 16.5px;
+  }
+
+  .hero-ticks {
+    margin-top: 16px;
+    gap: 6px;
+  }
+
+  .hero-ticks li {
+    font-size: 14.5px;
+  }
+
+  .hero-cta {
+    margin-top: 20px;
+  }
+
+  .stores {
+    margin-top: 14px;
+  }
+
+  .section-head h2,
+  .h2,
+  .assistant h2 {
+    font-size: clamp(28px, 5vh, 40px);
+  }
+
+  .section-head p,
+  .devices-head p,
+  .assistant .lead {
+    margin-top: 10px;
+    font-size: 16.5px;
+  }
+
+  .points {
+    margin-top: 20px;
+    gap: 8px;
+  }
+
+  .as-cards {
+    margin-top: 20px;
+  }
+
+  .as-card {
+    padding: 14px 16px;
+  }
+
+  .as-ico {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 8px;
+  }
+
+  .mod {
+    padding: 20px;
+  }
+
+  .mod-top {
+    margin-bottom: 12px;
+  }
+
+  .mod-ico {
+    width: 42px;
+    height: 42px;
+  }
+
+  .mod h3 {
+    font-size: 18.5px;
+  }
+
+  .mod p {
+    font-size: 14.5px;
+  }
+
+  .mods {
+    gap: 14px;
+  }
+
+  .sc-tab {
+    padding: 10px 16px;
+  }
+
+  .sc-stage {
+    max-height: calc(100svh - 68px - 190px);
+  }
+
+  .plan {
+    padding: 20px 22px;
+  }
+
+  .plan .for,
+  .plans-note {
+    font-size: 13.5px;
+  }
+
+  .price strong {
+    font-size: 34px;
+  }
+
+  .price-note {
+    min-height: 0;
+    font-size: 13px;
+  }
+
+  .plan ul {
+    margin: 12px 0 16px;
+    padding-top: 12px;
+    gap: 5px;
+  }
+
+  .plan li {
+    font-size: 13.5px;
+  }
+
+  .plan .btn {
+    padding-block: 10px;
+  }
+}
+
+@media (max-width: 700px) {
+  .section,
+  .closing {
+    padding-block: 56px;
+  }
+}
+
+/* Masaustunde tekerlek durunca en yakin bolume hafifce oturur */
+@media (min-width: 961px) and (min-height: 600px) {
+  html {
+    scroll-snap-type: y proximity;
+    scroll-padding-top: 68px;
+  }
+
+  .hero,
+  .section,
+  .closing {
+    scroll-snap-align: start;
+  }
+
+  .foot {
+    scroll-snap-align: end;
+  }
+}
+
+/* ---------- Ince ayar: tek ekrana sigdirma ---------- */
+#gun .section-head {
+  max-width: none;
+}
+
+#fiyat {
+  padding-block: clamp(20px, 4vh, 56px);
+}
+
+#fiyat .h2 {
+  font-size: clamp(30px, 3vw, 46px);
+}
+
+.plan ul {
+  gap: 7px;
+}
+
+@media (min-width: 961px) and (max-height: 820px) {
+  .hero {
+    padding-top: 12px;
+  }
+
+  #fiyat .label {
+    display: none;
+  }
+
+  #fiyat .h2 {
+    font-size: 32px;
+  }
+
+  .plan h3 {
+    font-size: 19px;
+  }
+
+  .price {
+    margin-top: 10px;
+  }
+}
+
+/* Telefonda: uzun listeler yana kayar, kucuk kutular ikili dizilir */
+@media (max-width: 700px) {
+  .mods,
+  .plans {
+    display: grid;
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: 86%;
+    gap: 12px;
+    max-width: none;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 24px;
+    margin-inline: -24px;
+    padding: 16px 24px 10px;
+    scrollbar-width: none;
+  }
+
+  .mods::-webkit-scrollbar,
+  .plans::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mods > *,
+  .plans > * {
+    scroll-snap-align: start;
+  }
+
+  /* yatay listede gorunme animasyonu beklenmez */
+  .mods > .reveal,
+  .plans > .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .wrap .swipe-hint {
+    display: flex;
+  }
+
+  .perks {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .perk {
+    display: block;
+    padding: 16px 14px;
+  }
+
+  .perk .mod-ico {
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+  }
+
+  .perk .mod-ico .icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .perk h3 {
+    font-size: 15.5px;
+  }
+
+  .perk p {
+    margin-top: 6px;
+    font-size: 13.5px;
+    line-height: 1.45;
+  }
+
+  .hub-side {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .hub .node,
+  .hub-side:not(.hub-side-right) .node {
+    flex-direction: column;
+    gap: 10px;
+    padding: 14px;
+  }
+
+  .node-ico {
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+  }
+
+  .node-ico .icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .node h3 {
+    font-size: 15.5px;
+  }
+
+  .node p {
+    margin-top: 4px;
+    font-size: 13.5px;
+    line-height: 1.45;
+  }
+
+  .hub-core {
+    width: 120px;
+  }
+
+  .hub-ring {
+    inset: 26px;
+  }
+
+  .hub-mark {
+    width: 68px;
+    height: 68px;
+  }
+
+  .hub-mark img {
+    width: 34px;
+    height: 34px;
+  }
+
+  .as-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .as-card {
+    padding: 14px;
+  }
+
+  .as-card strong {
+    font-size: 16px;
+  }
+
+  .as-card p {
+    font-size: 13.5px;
+  }
+}
+
+.swipe-hint {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.swipe-hint .icon {
+  width: 15px;
+  height: 15px;
+}
+
+/* fiyatlar 1536x864 gibi orta yukseklikte de sigsin */
+@media (min-width: 961px) and (max-height: 880px) {
+  #fiyat {
+    padding-block: clamp(16px, 3vh, 28px);
+  }
+
+  #fiyat .label {
+    display: none;
+  }
+
+  #fiyat .h2 {
+    font-size: 34px;
+  }
+}
+
+/* cok alcak ekranlar (1280x720) */
+@media (min-width: 961px) and (max-height: 740px) {
+  .section,
+  .closing {
+    padding-block: clamp(16px, 3.6vh, 32px);
+  }
+
+  .plan .for {
+    display: none;
+  }
+
+  .plan ul {
+    gap: 3px;
+  }
+
+  .plan li {
+    font-size: 13px;
+  }
+
+  .plans-note {
+    margin-top: 10px;
+    font-size: 12.5px;
+  }
+}
+
+@media (max-width: 700px) {
+  .section,
+  .closing {
+    padding-block: 44px;
+  }
+
+  .plan {
+    padding: 22px 20px;
+  }
+
+  .price strong {
+    font-size: 36px;
+  }
+
+  .plan ul {
+    margin: 14px 0 18px;
+    padding-top: 14px;
+    gap: 6px;
+  }
+
+  .plan li {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 700px) {
+  .section,
+  .closing {
+    padding-block: 36px;
+  }
+
+  .section-head h2,
+  .h2,
+  .assistant h2 {
+    font-size: clamp(28px, 7.6vw, 34px);
+  }
+
+  .section-head p,
+  .devices-head p,
+  .assistant .lead {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+
+  .section-head,
+  .devices-head {
+    margin-bottom: 22px;
+  }
+
+  .sc-stage {
+    min-height: 340px;
+  }
+
+  .faq summary {
+    font-size: 16px;
+  }
+}
+
 /* ---------- Azaltilmis hareket ---------- */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -3076,6 +3825,8 @@ body.custom-cursor .focus-card {
   }
 
   .hl-caret,
+  .sc-bar::after,
+  .p-phone.is-active .sc-phone-screen img,
   .steps.is-on li::after,
   .steps.is-on .step-dot,
   .hub-ring,
