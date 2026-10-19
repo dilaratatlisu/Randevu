@@ -533,40 +533,6 @@ p {
   color: var(--accent);
 }
 
-.stores {
-  margin-top: 22px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.store {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  padding: 7px 15px 7px 12px;
-  border-radius: 12px;
-  background: var(--ink);
-  color: var(--bg);
-  font-size: 15px;
-  font-weight: 600;
-  line-height: 1.1;
-  letter-spacing: -0.01em;
-}
-
-.store .icon {
-  width: 22px;
-  height: 22px;
-}
-
-.store small {
-  display: block;
-  font-size: 10.5px;
-  font-weight: 500;
-  opacity: 0.75;
-  letter-spacing: 0.02em;
-}
-
 .hero h1 em {
   font-style: normal;
   position: relative;
@@ -703,40 +669,6 @@ p {
     opacity: 1;
     transform: none;
   }
-}
-
-.audience {
-  padding-top: 26px;
-  border-top: 1px solid var(--line);
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px 28px;
-  color: var(--muted);
-  font-size: 15px;
-}
-
-.audience strong {
-  color: var(--ink);
-  font-weight: 600;
-}
-
-.audience ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.audience li {
-  padding: 6px 13px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: var(--surface);
-  color: var(--ink-2);
-  font-size: 14px;
 }
 
 @media (max-width: 960px) {
@@ -3270,6 +3202,7 @@ body.custom-cursor .focus-card {
 
 .mod-top .mod-badge {
   position: static;
+  white-space: nowrap;
 }
 
 .mod p {
@@ -3312,11 +3245,6 @@ body.custom-cursor .focus-card {
 
 .hero-main > .hero-grid {
   width: 100%;
-}
-
-.hero .audience {
-  margin-top: clamp(20px, 4vh, 40px);
-  padding-top: 18px;
 }
 
 /* fiyatlar tek ekrana sigsin */
@@ -3373,10 +3301,6 @@ body.custom-cursor .focus-card {
 
   .hero-cta {
     margin-top: 20px;
-  }
-
-  .stores {
-    margin-top: 14px;
   }
 
   .section-head h2,
@@ -3543,7 +3467,6 @@ body.custom-cursor .focus-card {
 
 /* Telefonda: uzun listeler yana kayar, kucuk kutular ikili dizilir */
 @media (max-width: 700px) {
-  .mods,
   .plans {
     display: grid;
     grid-template-columns: none;
@@ -3560,18 +3483,15 @@ body.custom-cursor .focus-card {
     scrollbar-width: none;
   }
 
-  .mods::-webkit-scrollbar,
   .plans::-webkit-scrollbar {
     display: none;
   }
 
-  .mods > *,
   .plans > * {
     scroll-snap-align: start;
   }
 
   /* yatay listede gorunme animasyonu beklenmez */
-  .mods > .reveal,
   .plans > .reveal {
     opacity: 1;
     transform: none;
@@ -3581,9 +3501,56 @@ body.custom-cursor .focus-card {
     display: flex;
   }
 
-  .perks {
+  .perks,
+  .mods {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px;
+  }
+
+  .mods .mod {
+    padding: 14px;
+  }
+
+  .mods .mod-top {
+    margin-bottom: 10px;
+  }
+
+  .mods .mod-ico {
+    width: 36px;
+    height: 36px;
+    border-radius: 11px;
+  }
+
+  .mods .mod-ico .icon {
+    width: 19px;
+    height: 19px;
+  }
+
+  /* kutunun tamami baglanti; dar ekranda ok gereksiz */
+  .mods .mod-go {
+    display: none;
+  }
+
+  .mods .mod-badge {
+    margin-left: auto;
+    padding: 3px 8px;
+    font-size: 11px;
+  }
+
+  .mods .mod h3 {
+    font-size: 15px;
+    letter-spacing: -0.015em;
+  }
+
+  .mods .mod p {
+    margin-top: 5px;
+    font-size: 12.5px;
+    line-height: 1.42;
+  }
+
+  /* "kutulara tiklayin" yonergesi dar ekranda yer kaplamasin */
+  #ozellikler .section-head p {
+    display: none;
   }
 
   .perk {
