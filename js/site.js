@@ -336,6 +336,7 @@
 
   // Tek tekerlek hamlesi = sonraki/onceki bolum (masaustu fare kullanicilari).
   // Ekrandan uzun bolumde once icerik normal kayar, bolumun tamami gorulunce gecilir.
+  // Canli sitedekinden tek farki: arada kalinca takilmadan en yakin bolume oturur.
   ;(function () {
     // yalniz ana sayfada (yasal sayfalar normal kayar)
     if (!document.querySelector('.hero') || !matchMedia('(pointer: fine)').matches) return
@@ -371,9 +372,16 @@
         var dir = e.deltaY > 0 ? 1 : -1
         var idx = currentIndex()
         var rect = stops[idx].getBoundingClientRect()
-        if (dir > 0 && rect.bottom > window.innerHeight + 4) return // bolumun alti henuz gorunmuyor
-        if (dir < 0 && rect.top < NAV_H - 4) return // bolumun ustu henuz gorunmuyor
+        // ekrana sigan bolumde iki bolum arasinda kalindiysa (kaydirma cubugu,
+        // klavye, baglanti) hamle dogrudan en yakin bolume oturtur; yalniz
+        // ekrandan uzun bolumde icerik once normal kayar
+        var fits = rect.height <= window.innerHeight - NAV_H + 4
         var next = idx + dir
+        if (dir > 0 && !fits && rect.bottom > window.innerHeight + 4) return // bolumun alti henuz gorunmuyor
+        if (dir < 0 && rect.top < NAV_H - 4) {
+          if (!fits) return // uzun bolumun ustu henuz gorunmuyor
+          next = idx // arada kalindi: bu bolumun basina don
+        }
         if (next < 0 || next > stops.length - 1) return
         e.preventDefault()
         locked = true
