@@ -298,6 +298,97 @@
   var year = document.querySelector('[data-year]')
   if (year) year.textContent = String(new Date().getFullYear())
 
+  // Yumusak kaydirma ve bolum bolum gecis (canli siteden, ayni sure ve egriyle)
+  var NAV_H = 68
+  var animateScrollTo = function (top, cb) {
+    var startY = window.scrollY
+    var delta = top - startY
+    if (reduce || Math.abs(delta) < 2) {
+      window.scrollTo(0, top)
+      if (cb) cb()
+      return
+    }
+    var duration = 520
+    var startTime = null
+    var ease = function (t) {
+      return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2
+    }
+    var step = function (ts) {
+      if (!startTime) startTime = ts
+      var p = Math.min((ts - startTime) / duration, 1)
+      window.scrollTo(0, Math.round(startY + delta * ease(p)))
+      if (p < 1) requestAnimationFrame(step)
+      else if (cb) cb()
+    }
+    requestAnimationFrame(step)
+  }
+
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var id = a.getAttribute('href').slice(1)
+      if (!id) return
+      var target = document.getElementById(id)
+      if (!target) return
+      e.preventDefault()
+      animateScrollTo(Math.max(0, Math.round(target.getBoundingClientRect().top + window.scrollY - NAV_H)))
+    })
+  })
+
+  // Tek tekerlek hamlesi = sonraki/onceki bolum (masaustu fare kullanicilari).
+  // Ekrandan uzun bolumde once icerik normal kayar, bolumun tamami gorulunce gecilir.
+  ;(function () {
+    // yalniz ana sayfada (yasal sayfalar normal kayar)
+    if (!document.querySelector('.hero') || !matchMedia('(pointer: fine)').matches) return
+    var stops = [].slice.call(document.querySelectorAll('main > section'))
+    var foot = document.querySelector('.foot')
+    if (foot) stops.push(foot)
+    if (stops.length < 2) return
+    var locked = false
+
+    var currentIndex = function () {
+      var y = window.scrollY + NAV_H + 2
+      var idx = 0
+      for (var i = 0; i < stops.length; i++) {
+        if (stops[i].offsetTop <= y) idx = i
+      }
+      return idx
+    }
+
+    var goTo = function (idx) {
+      idx = Math.max(0, Math.min(stops.length - 1, idx))
+      var target = stops[idx]
+      animateScrollTo(Math.max(0, Math.round(target.getBoundingClientRect().top + window.scrollY - NAV_H)))
+    }
+
+    window.addEventListener(
+      'wheel',
+      function (e) {
+        if (window.innerWidth < 980) return // dar ekranlarda normal kaydirma serbest
+        if (locked) {
+          e.preventDefault()
+          return
+        }
+        var dir = e.deltaY > 0 ? 1 : -1
+        var idx = currentIndex()
+        var rect = stops[idx].getBoundingClientRect()
+        if (dir > 0 && rect.bottom > window.innerHeight + 4) return // bolumun alti henuz gorunmuyor
+        if (dir < 0 && rect.top < NAV_H - 4) return // bolumun ustu henuz gorunmuyor
+        var next = idx + dir
+        if (next < 0 || next > stops.length - 1) return
+        e.preventDefault()
+        locked = true
+        goTo(next)
+        setTimeout(
+          function () {
+            locked = false
+          },
+          reduce ? 250 : 700,
+        )
+      },
+      { passive: false },
+    )
+  })()
+
   // Ozel imlec: hedef kilidi (eski siteden). Bosta kucuk dort koseli bir
   // retikul fareyi yumusakca takip edip doner; tiklanabilir bir ogenin ustune
   // gelince durur, dort kose o ogenin kenarlarina kilitlenir.
