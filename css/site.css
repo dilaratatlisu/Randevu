@@ -3124,6 +3124,131 @@ body.custom-cursor .focus-card {
   }
 }
 
+/* ---------- Vitrin, telefonda: yana kayan ekranlar + oklar ve noktalar ---------- */
+.sc-nav {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .sc-tabs {
+    display: none;
+  }
+
+  .sc-stage {
+    touch-action: pan-y;
+  }
+
+  /* paneller yan yana dizili bir serit gibi kayar; parmakla surukleme --drag */
+  .sc-stage .sc-panel,
+  .sc-stage .sc-panel.is-active {
+    opacity: 1;
+    transform: translateX(calc((var(--k) - var(--cur, 0)) * 100% + var(--drag, 0px)));
+    transition: transform 0.55s var(--ease);
+  }
+
+  .sc-stage.is-dragging .sc-panel {
+    transition: none;
+  }
+
+  .sc-cap strong {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+
+  .sc-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .sc-arrow {
+    width: 44px;
+    height: 44px;
+    flex: none;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--ink);
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+  .sc-arrow:active {
+    transform: scale(0.92);
+  }
+
+  .sc-arrow .icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .sc-prev .icon {
+    transform: rotate(180deg);
+  }
+
+  .sc-dots {
+    display: flex;
+    align-items: center;
+  }
+
+  /* dokunma alani 28px, gorunen nokta kucuk */
+  .sc-dot {
+    height: 28px;
+    padding: 0 4px;
+    border: 0;
+    background: none;
+    cursor: pointer;
+  }
+
+  .sc-dot i {
+    position: relative;
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    overflow: hidden;
+    background: var(--line);
+    transition:
+      width 0.4s var(--ease),
+      background 0.3s;
+  }
+
+  .sc-dot[aria-current='true'] i {
+    width: 30px;
+    background: color-mix(in srgb, var(--accent) 22%, var(--line));
+  }
+
+  .sc-dot i::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--accent);
+    transform-origin: left;
+    transform: scaleX(0);
+  }
+
+  .sc-dot[aria-current='true'] i::after {
+    transform: scaleX(1);
+  }
+
+  /* kendiliginden ilerlerken etkin nokta dolar, dolunca siradaki ekran gelir */
+  .showcase.is-auto .sc-dot[aria-current='true'] i::after {
+    transform: scaleX(0);
+    animation: sc-progress 6.5s linear forwards;
+  }
+
+  .showcase.is-paused .sc-dot i::after {
+    animation-play-state: paused !important;
+  }
+}
+
 /* ---------- Telefon + bilgisayar yan yana ---------- */
 .devices-grid {
   display: grid;
@@ -4019,6 +4144,7 @@ body.custom-cursor .focus-card {
 
   .hl-caret,
   .sc-bar::after,
+  .sc-dot i::after,
   .p-phone.is-active .sc-phone-screen img,
   .steps.is-on li::after,
   .steps.is-on .step-dot,

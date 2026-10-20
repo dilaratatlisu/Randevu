@@ -211,9 +211,17 @@
     var tabs = [].slice.call(sc.querySelectorAll('.sc-tab'))
     var panels = sc.querySelectorAll('.sc-panel')
     var row = sc.querySelector('.sc-tabs')
+    var stage = sc.querySelector('.sc-stage')
+    var dots = [].slice.call(sc.querySelectorAll('.sc-dot'))
     var current = 0
     var select = function (i, focus) {
       current = (i + tabs.length) % tabs.length
+      // telefonda paneller yan yana serit; --cur hangisinin ortada oldugunu soyler
+      stage.style.setProperty('--cur', String(current))
+      dots.forEach(function (d, k) {
+        if (k === current) d.setAttribute('aria-current', 'true')
+        else d.removeAttribute('aria-current')
+      })
       tabs.forEach(function (t, k) {
         var on = k === current
         t.setAttribute('aria-selected', String(on))
@@ -244,6 +252,75 @@
       e.preventDefault()
       sc.classList.remove('is-auto')
     })
+
+    // telefon: oklar, noktalar ve parmakla yana kaydirma
+    var userGo = function (i) {
+      sc.classList.remove('is-auto')
+      select(i)
+    }
+    sc.querySelectorAll('.sc-arrow').forEach(function (b) {
+      b.addEventListener('click', function () {
+        userGo(current + Number(b.dataset.step))
+      })
+    })
+    dots.forEach(function (d, k) {
+      d.addEventListener('click', function () {
+        userGo(k)
+      })
+    })
+    var sx = 0
+    var sy = 0
+    var dx = 0
+    var dragging = false
+    var tracking = false
+    stage.addEventListener(
+      'touchstart',
+      function (e) {
+        sx = e.touches[0].clientX
+        sy = e.touches[0].clientY
+        dx = 0
+        tracking = true
+        dragging = false
+      },
+      { passive: true },
+    )
+    stage.addEventListener(
+      'touchmove',
+      function (e) {
+        if (!tracking) return
+        var mx = e.touches[0].clientX - sx
+        var my = e.touches[0].clientY - sy
+        if (!dragging) {
+          if (Math.abs(my) > Math.abs(mx) && Math.abs(my) > 8) {
+            tracking = false // dikey: sayfa kaysin
+            return
+          }
+          if (Math.abs(mx) < 8) return
+          dragging = true
+          stage.classList.add('is-dragging')
+        }
+        dx = mx
+        // ilk ve son ekranda yaylanir
+        var edge = (current === 0 && dx > 0) || (current === tabs.length - 1 && dx < 0)
+        stage.style.setProperty('--drag', (edge ? dx / 3 : dx) + 'px')
+      },
+      { passive: true },
+    )
+    var endDrag = function () {
+      if (!tracking) return
+      tracking = false
+      stage.classList.remove('is-dragging')
+      stage.style.setProperty('--drag', '0px')
+      if (!dragging) return
+      var w = stage.clientWidth
+      var next = current
+      if (dx < -Math.min(60, w * 0.18) && current < tabs.length - 1) next = current + 1
+      else if (dx > Math.min(60, w * 0.18) && current > 0) next = current - 1
+      if (next !== current) userGo(next)
+    }
+    stage.addEventListener('touchend', endDrag)
+    stage.addEventListener('touchcancel', endDrag)
+
     if (!reduce) {
       sc.classList.add('is-auto', 'is-paused')
       sc.addEventListener('animationend', function (e) {
