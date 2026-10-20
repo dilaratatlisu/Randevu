@@ -4116,6 +4116,626 @@ body.custom-cursor .focus-card {
   }
 }
 
+/* ---------- One cikanlar: ortak etiket ---------- */
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 16px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-ink);
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.kicker .icon {
+  width: 15px;
+  height: 15px;
+}
+
+.assistant .kicker {
+  background: rgb(255 255 255 / 0.08);
+  border: 1px solid rgb(255 255 255 / 0.14);
+  color: #ffc39f;
+}
+
+/* ---------- Asistan: isletmeye ozel ---------- */
+.assistant-grid {
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+}
+
+.knows {
+  margin-top: 24px;
+}
+
+.knows-label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--on-navy-2);
+}
+
+.knows ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.knows li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.07);
+  border: 1px solid rgb(255 255 255 / 0.12);
+  font-size: 14px;
+  color: var(--on-navy);
+}
+
+.knows .icon {
+  width: 14px;
+  height: 14px;
+  color: #8fe0b6;
+}
+
+.as-cards {
+  margin-top: 24px;
+}
+
+/* gercek Mesajlar ekrani + uzerinde musterinin gordugu WhatsApp konusmasi */
+/* ekran goruntusu ustte buyuk, musterinin WhatsApp'i sol alt kosesine biner */
+.as-visual {
+  display: flex;
+  flex-direction: column;
+}
+
+.assistant h2 {
+  font-size: clamp(30px, 3.3vw, 46px);
+}
+
+.as-visual .window {
+  animation: none;
+  border-color: rgb(255 255 255 / 0.1);
+  box-shadow: 0 40px 80px -30px rgb(0 0 0 / 0.6);
+}
+
+.as-visual .window img {
+  aspect-ratio: 2304 / 1380;
+}
+
+.as-visual .chat {
+  position: relative;
+  align-self: flex-start;
+  width: min(280px, 48%);
+  margin: -34% 0 0 -5%;
+  border-radius: 22px;
+}
+
+.as-visual .chat-avatar {
+  width: 32px;
+  height: 32px;
+  font-size: 13px;
+}
+
+.as-visual .chat-head {
+  padding: 12px 14px;
+}
+
+.as-visual .chat-body {
+  padding: 12px 12px 0;
+}
+
+.as-visual .msg {
+  font-size: 13px;
+  padding: 8px 11px;
+}
+
+.knows li {
+  font-size: 13.5px;
+  padding: 6px 11px;
+}
+
+.assistant .as-card {
+  padding: 14px 16px 16px;
+}
+
+.assistant .as-ico {
+  margin-bottom: 10px;
+}
+
+/* ---------- Reklam analizi ---------- */
+.ads-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: clamp(40px, 5vw, 72px);
+  align-items: center;
+}
+
+.ads-grid h2,
+.remind-grid h2 {
+  font-size: clamp(32px, 3.8vw, 50px);
+  letter-spacing: -0.04em;
+  line-height: 1.06;
+}
+
+.ads-grid .lead,
+.remind-grid .lead {
+  margin-top: 16px;
+  font-size: 18px;
+  color: var(--ink-2);
+  max-width: 50ch;
+}
+
+.ads-grid .points {
+  margin-top: 24px;
+}
+
+.ads-grid .points li {
+  color: var(--ink);
+  font-size: 16px;
+}
+
+.ad-report {
+  padding: 24px 26px 26px;
+  border-radius: 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.ad-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 13.5px;
+  color: var(--muted);
+}
+
+.ad-sample {
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px dashed color-mix(in srgb, var(--ink) 30%, transparent);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+
+.ad-roas {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 16px 0 20px;
+}
+
+.ad-roas strong {
+  font-size: clamp(52px, 5vw, 68px);
+  font-weight: 650;
+  letter-spacing: -0.045em;
+  line-height: 1;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.ad-roas small {
+  font-size: 0.45em;
+  margin-left: 2px;
+}
+
+.ad-roas > span {
+  font-size: 14.5px;
+  line-height: 1.45;
+  color: var(--ink-2);
+}
+
+.ad-roas b {
+  color: var(--ink);
+}
+
+.funnel {
+  display: grid;
+  gap: 11px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.funnel li {
+  display: grid;
+  grid-template-columns: 78px minmax(0, 1fr) 82px;
+  align-items: center;
+  gap: 12px;
+  font-size: 14.5px;
+}
+
+.funnel span {
+  color: var(--ink-2);
+}
+
+.funnel b {
+  order: 2;
+  text-align: right;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+
+.funnel i {
+  order: 1;
+  position: relative;
+  height: 12px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: var(--surface-2);
+}
+
+/* cubuklar rapor gorununce soldan dolar */
+.funnel i::after {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: var(--w);
+  border-radius: inherit;
+  background: color-mix(in srgb, var(--ink) 72%, transparent);
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 1.1s var(--ease);
+}
+
+.funnel li:nth-child(2) i::after {
+  transition-delay: 0.1s;
+}
+
+.funnel li:nth-child(3) i::after {
+  transition-delay: 0.2s;
+}
+
+.funnel li:nth-child(4) i::after {
+  transition-delay: 0.3s;
+}
+
+.funnel li:nth-child(5) i::after {
+  transition-delay: 0.45s;
+}
+
+.ad-report.is-in .funnel i::after,
+.no-js .funnel i::after {
+  transform: scaleX(1);
+}
+
+.funnel .hot span,
+.funnel .hot b {
+  color: var(--accent-ink);
+  font-weight: 650;
+}
+
+.funnel .hot i::after {
+  background: var(--accent);
+}
+
+.ad-src {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.ad-src-label {
+  display: block;
+  margin-bottom: 9px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.src-bar {
+  height: 10px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: var(--t-green);
+}
+
+.src-bar i {
+  display: block;
+  height: 100%;
+  width: var(--p);
+  background: var(--accent);
+}
+
+.src-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  margin-top: 9px;
+  font-size: 13.5px;
+  color: var(--ink-2);
+}
+
+.src-legend em {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin-right: 6px;
+  border-radius: 50%;
+  vertical-align: 0;
+}
+
+.src-legend .d1 {
+  background: var(--accent);
+}
+
+.src-legend .d2 {
+  background: var(--t-green);
+}
+
+/* ---------- Hatirlatma ---------- */
+.remind-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+  gap: clamp(40px, 5vw, 72px);
+  align-items: center;
+}
+
+.remind-visual {
+  display: flex;
+  flex-direction: column;
+}
+
+.remind-visual .window {
+  animation: none;
+}
+
+.remind-visual .window img {
+  aspect-ratio: 2304 / 860;
+}
+
+.wa-card {
+  --wa-bg: #ece5dd;
+  --wa-msg: #fff;
+  position: relative;
+  align-self: flex-end;
+  width: min(320px, 56%);
+  margin: -9% -3% 0 0;
+  padding: 14px;
+  border-radius: 22px;
+  background: var(--wa-bg);
+  box-shadow: var(--shadow);
+}
+
+:root[data-theme='dark'] .wa-card {
+  --wa-bg: #1a2436;
+  --wa-msg: #22304a;
+}
+
+.wa-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 2px 4px;
+}
+
+.wa-head .icon {
+  width: 26px;
+  height: 26px;
+  color: var(--t-green);
+}
+
+.wa-head strong {
+  display: block;
+  font-size: 14.5px;
+  line-height: 1.2;
+}
+
+.wa-head small {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.wa-msg {
+  position: relative;
+  margin-top: 10px;
+  padding: 9px 12px 20px;
+  border-radius: 14px 14px 14px 4px;
+  background: var(--wa-msg);
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+.wa-tag {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--t-green);
+}
+
+.wa-msg time {
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.remind-visual.is-in .wa-msg {
+  animation: rise 0.7s var(--ease) 0.3s both;
+}
+
+.remind-visual.is-in .wa-msg + .wa-msg {
+  animation-delay: 1s;
+}
+
+.r-steps {
+  margin: 26px 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: r;
+}
+
+.r-steps li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  column-gap: 14px;
+  padding-bottom: 18px;
+  counter-increment: r;
+}
+
+.r-steps li::before {
+  content: counter(r);
+  grid-row: span 2;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--accent-soft);
+  color: var(--accent-ink);
+  font-weight: 650;
+  font-size: 14.5px;
+}
+
+.r-steps li:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 16px;
+  top: 40px;
+  bottom: 4px;
+  width: 2px;
+  border-radius: 2px;
+  background: var(--line);
+}
+
+.r-steps b {
+  font-size: 16.5px;
+  font-weight: 600;
+  padding-top: 5px;
+}
+
+.r-steps span {
+  grid-column: 2;
+  font-size: 15px;
+  color: var(--ink-2);
+}
+
+.r-note {
+  margin-top: 6px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: var(--surface-2);
+  font-size: 14px;
+  color: var(--ink-2);
+}
+
+@media (min-width: 961px) and (max-height: 820px) {
+  .ads-grid h2,
+  .remind-grid h2 {
+    font-size: clamp(28px, 5vh, 40px);
+  }
+
+  .ads-grid .lead,
+  .remind-grid .lead {
+    font-size: 16.5px;
+  }
+
+  .knows,
+  .as-cards {
+    margin-top: 14px;
+  }
+
+  .assistant h2 {
+    font-size: clamp(28px, 5vh, 38px);
+  }
+
+  .knows-label {
+    margin-bottom: 7px;
+  }
+
+  .assistant .as-card p {
+    font-size: 13.5px;
+  }
+
+  .as-visual .chat {
+    width: min(250px, 44%);
+    margin-top: -42%;
+  }
+
+  .as-visual .msg {
+    font-size: 12.5px;
+  }
+
+  .r-steps {
+    margin-top: 18px;
+  }
+
+  .r-steps li {
+    padding-bottom: 12px;
+  }
+
+  .ad-roas {
+    margin: 10px 0 14px;
+  }
+
+  .funnel {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 960px) {
+  .assistant-grid,
+  .ads-grid,
+  .remind-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .as-visual .chat {
+    align-self: flex-end;
+    width: min(320px, 88%);
+    margin: -16% 0 0 0;
+  }
+
+  .remind-grid > .remind-visual {
+    order: 2;
+  }
+
+  .wa-card {
+    width: min(340px, 90%);
+    margin: -6% 0 0 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .ads-grid h2,
+  .remind-grid h2 {
+    font-size: clamp(28px, 7.6vw, 34px);
+  }
+
+  .ads-grid .lead,
+  .remind-grid .lead {
+    font-size: 16px;
+  }
+
+  .ad-report {
+    padding: 18px;
+  }
+
+  .funnel li {
+    grid-template-columns: 70px minmax(0, 1fr) 70px;
+    gap: 8px;
+    font-size: 13.5px;
+  }
+}
+
 /* ---------- Azaltilmis hareket ---------- */
 @media (prefers-reduced-motion: reduce) {
   *,

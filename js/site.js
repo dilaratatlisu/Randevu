@@ -123,15 +123,21 @@
   var counters = document.querySelectorAll('.count-up')
   var runCount = function (el) {
     var to = Number(el.dataset.count) || 0
+    // data-decimals: "6,4" gibi ondalikli sayilar (Turkce virgul)
+    var dec = Number(el.dataset.decimals) || 0
+    var fmt = function (v) {
+      return v.toLocaleString('tr-TR', { minimumFractionDigits: dec, maximumFractionDigits: dec })
+    }
     if (reduce) {
-      el.textContent = String(to)
+      el.textContent = fmt(to)
       return
     }
     var t0 = performance.now()
     var dur = 1300
     var step = function (now) {
       var p = Math.min(1, (now - t0) / dur)
-      el.textContent = String(Math.round(to * (1 - Math.pow(1 - p, 3))))
+      var v = to * (1 - Math.pow(1 - p, 3))
+      el.textContent = fmt(dec ? v : Math.round(v))
       if (p < 1) requestAnimationFrame(step)
     }
     requestAnimationFrame(step)
