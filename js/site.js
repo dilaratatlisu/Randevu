@@ -276,36 +276,6 @@
     chat.classList.add('is-playing')
   }
 
-  // Fiyat: aylik / yillik
-  var billing = document.querySelector('.billing')
-  if (billing) {
-    var buttons = billing.querySelectorAll('button')
-    var pricing = document.getElementById('fiyat')
-    var set = function (mode) {
-      if (pricing) pricing.classList.toggle('is-yearly', mode === 'yearly')
-      buttons.forEach(function (b) {
-        b.setAttribute('aria-checked', String(b.dataset.mode === mode))
-      })
-      document.querySelectorAll('[data-monthly]').forEach(function (el) {
-        el.textContent = mode === 'yearly' ? el.dataset.yearly : el.dataset.monthly
-      })
-    }
-    var plansRow = document.querySelector('.plans')
-    buttons.forEach(function (b) {
-      b.addEventListener('click', function () {
-        set(b.dataset.mode)
-        // telefonda paketler yana kayar: yillik secilince indirimli ilk paket gorunsun
-        if (b.dataset.mode === 'yearly' && plansRow && plansRow.scrollWidth > plansRow.clientWidth) {
-          var paid = plansRow.querySelector('.plan:has(.save)')
-          if (paid) {
-            var left = paid.getBoundingClientRect().left - plansRow.getBoundingClientRect().left + plansRow.scrollLeft - 24
-            plansRow.scrollTo({ left: left, behavior: reduce ? 'auto' : 'smooth' })
-          }
-        }
-      })
-    })
-  }
-
   var year = document.querySelector('[data-year]')
   if (year) year.textContent = String(new Date().getFullYear())
 

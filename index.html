@@ -383,18 +383,16 @@
             <h2 class="h2">Ücretsiz başlayın, büyüdükçe yükseltin.</h2>
             <p class="pricing-sub">Yıllık ödemede <strong>2 ay bedava</strong>: 12 ay kullanın, 10 ay ödeyin.</p>
           </div>
-          <div class="billing" role="radiogroup" aria-label="Ödeme dönemi">
-            <button type="button" role="radio" aria-checked="true" data-mode="monthly">Aylık</button>
-            <button type="button" role="radio" aria-checked="false" data-mode="yearly">Yıllık <small>2 ay bedava</small></button>
-          </div>
         </div>
 
         <div class="plans">
           <article class="plan reveal">
             <h3>Ücretsiz</h3>
             <p class="for">Tek başına çalışanlar için</p>
-            <div class="price"><strong>₺0</strong><span data-monthly="/ ay" data-yearly="/ yıl">/ ay</span></div>
-            <p class="price-note">Süresiz ücretsiz. Kredi kartı gerekmez.</p>
+            <div class="price"><strong>₺0</strong><span>/ ay</span></div>
+            <div class="yearly yearly-free">
+              <p>Süresiz ücretsiz. Kredi kartı gerekmez.</p>
+            </div>
             <ul>
               <li><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>1 kullanıcı (işletme sahibi)</span></li>
               <li><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>Ayda 100 randevu, 150 müşteri</span></li>
@@ -410,11 +408,11 @@
           <article class="plan reveal" style="--i: 1">
             <h3>Salon</h3>
             <p class="for">Ekibiyle çalışan salonlar için</p>
-            <span class="save" aria-hidden="true">2 ay bedava</span>
-            <div class="price"><s class="was" aria-label="Normal fiyat ₺21.000">₺21.000</s><strong data-monthly="₺1.750"
-                data-yearly="₺17.500">₺1.750</strong><span data-monthly="/ ay" data-yearly="/ yıl">/ ay</span></div>
-            <p class="price-note" data-monthly="Yıllık öderseniz ₺17.500: 2 ay bedava. 14 gün ücretsiz deneyin."
-              data-yearly="12 ay yerine 10 ay ödersiniz, ₺3.500 kazancınız. Aylık ₺1.458'e denk gelir.">Yıllık öderseniz ₺17.500: 2 ay bedava. 14 gün ücretsiz deneyin.</p>
+            <div class="price"><strong>₺1.750</strong><span>/ ay</span></div>
+            <div class="yearly">
+              <div class="yearly-row"><span class="yearly-label">Yıllık</span><s class="was"><span class="sr-only">Normal fiyat </span>₺21.000</s><strong>₺17.500</strong><span class="per">/ yıl</span></div>
+              <p><span class="save">2 ay bedava</span>₺3.500 kazancınız, aylık ₺1.458</p>
+            </div>
             <ul>
               <li><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>5 kullanıcı</span></li>
               <li><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>Sınırsız randevu ve müşteri</span></li>
@@ -425,18 +423,18 @@
               <li><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>Yapay zekâ işletme analizi (günde 3)</span></li>
               <li class="no"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></svg><span>WhatsApp ve Instagram asistanı</span></li>
             </ul>
-            <a class="btn btn-ghost" href="#fiyat">Paketi seç</a>
+            <a class="btn btn-ghost" href="#fiyat">14 gün ücretsiz dene</a>
           </article>
 
           <article class="plan plan-featured reveal" style="--i: 2">
             <span class="plan-flag">Asistan dahil</span>
             <h3>Salon + Asistan</h3>
             <p class="for">Mesajlara 7/24 cevap veren asistanla</p>
-            <span class="save" aria-hidden="true">2 ay bedava</span>
-            <div class="price"><s class="was" aria-label="Normal fiyat ₺54.000">₺54.000</s><strong data-monthly="₺4.500"
-                data-yearly="₺45.000">₺4.500</strong><span data-monthly="/ ay" data-yearly="/ yıl">/ ay</span></div>
-            <p class="price-note" data-monthly="Yıllık öderseniz ₺45.000: 2 ay bedava. 14 gün ücretsiz deneyin."
-              data-yearly="12 ay yerine 10 ay ödersiniz, ₺9.000 kazancınız. Aylık ₺3.750'e denk gelir.">Yıllık öderseniz ₺45.000: 2 ay bedava. 14 gün ücretsiz deneyin.</p>
+            <div class="price"><strong>₺4.500</strong><span>/ ay</span></div>
+            <div class="yearly">
+              <div class="yearly-row"><span class="yearly-label">Yıllık</span><s class="was"><span class="sr-only">Normal fiyat </span>₺54.000</s><strong>₺45.000</strong><span class="per">/ yıl</span></div>
+              <p><span class="save">2 ay bedava</span>₺9.000 kazancınız, aylık ₺3.750</p>
+            </div>
             <ul>
               <li><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>Salon paketindeki her şey</span></li>
               <li><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>10 kullanıcı</span></li>
@@ -447,7 +445,7 @@
               <li><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>Toplu kampanya mesajı ve yapay zekâ ile metin önerisi</span></li>
               <li><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>Meta reklam raporu</span></li>
             </ul>
-            <a class="btn btn-primary" href="#fiyat">Paketi seç</a>
+            <a class="btn btn-primary" href="#fiyat">14 gün ücretsiz dene</a>
           </article>
         </div>
         <p class="swipe-hint" aria-hidden="true">Kaydırarak inceleyin <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></p>
