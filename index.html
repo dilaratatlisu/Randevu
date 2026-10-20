@@ -26,8 +26,8 @@
       <a class="brand" href="/" aria-label="Adapptiv ana sayfa"><img src="/assets/logo-mark.png" alt="" width="30" height="30" />Adapptiv</a>
       <nav class="nav-links" aria-label="Ana menü">
           <a href="#chatbot">Asistan</a>
-          <a href="#reklam">Reklam analizi</a>
           <a href="#hatirlatma">Hatırlatma</a>
+          <a href="#reklam">Reklam analizi</a>
           <a href="#ozellikler">Özellikler</a>
           <a href="#fiyat">Fiyatlar</a>
       </nav>
@@ -39,8 +39,8 @@
       <div>
         <nav aria-label="Mobil menü">
           <a href="#chatbot">Asistan</a>
-          <a href="#reklam">Reklam analizi</a>
           <a href="#hatirlatma">Hatırlatma</a>
+          <a href="#reklam">Reklam analizi</a>
           <a href="#ozellikler">Özellikler</a>
           <a href="#fiyat">Fiyatlar</a>
           <a class="btn btn-primary" href="#fiyat">Ücretsiz başla</a>
@@ -154,6 +154,45 @@
       </div>
     </section>
 
+    <!-- Hatirlatma: uygulamanin gercek ayar ekrani + gercek mesaj metinleri -->
+    <section class="section" id="hatirlatma">
+      <div class="wrap remind-grid">
+        <div class="remind-visual reveal">
+          <div class="window remind-shot">
+            <img src="/assets/screens/crop-hatirlatma.jpg" width="2304" height="860" loading="lazy"
+              alt="Uygulamadaki hatırlatma ayarı: 1 saatten 2 güne kadar seçenekler ve müşteriye giden örnek mesaj" />
+          </div>
+          <div class="wa-card" aria-label="Müşteriye giden örnek mesajlar">
+            <div class="wa-head"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M187.58,144.84l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88,40,40,0,0,0,40-40A8,8,0,0,0,187.58,144.84ZM152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.47,56.47,0,0,0,30.15,30.15A8,8,0,0,0,138,155l14.61-9.74,23,11.48A24,24,0,0,1,152,176ZM128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216Z"/></svg><span><strong>Güzel Salon</strong><small>WhatsApp</small></span></div>
+            <div class="wa-msg">
+              <small class="wa-tag">Randevu alınınca</small>
+              Merhaba Elif, Güzel Salon randevunuz oluşturuldu: Boya, 23 Ekim 14:30. Görüşmek üzere!
+              <time>10:12</time>
+            </div>
+            <div class="wa-msg">
+              <small class="wa-tag">1 saat önce</small>
+              Merhaba Elif, hatırlatma: Güzel Salon'daki randevunuz 23 Ekim 14:30 — Boya.
+              <time>13:30</time>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal" style="--i: 1">
+          <span class="kicker"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,71.1a8,8,0,0,1-10.78-3.42,94.13,94.13,0,0,0-33.46-36.91,8,8,0,1,1,8.54-13.54,111.46,111.46,0,0,1,39.12,43.09A8,8,0,0,1,224,71.1ZM35.71,72a8,8,0,0,0,7.1-4.32A94.13,94.13,0,0,1,76.27,30.77a8,8,0,1,0-8.54-13.54A111.46,111.46,0,0,0,28.61,60.32,8,8,0,0,0,35.71,72Zm186.1,103.94A16,16,0,0,1,208,200H167.2a40,40,0,0,1-78.4,0H48a16,16,0,0,1-13.79-24.06C43.22,160.39,48,138.28,48,112a80,80,0,0,1,160,0C208,138.27,212.78,160.38,221.81,175.94ZM150.62,200H105.38a24,24,0,0,0,45.24,0ZM208,184c-10.64-18.27-16-42.49-16-72a64,64,0,0,0-128,0c0,29.52-5.38,53.74-16,72Z"/></svg> Otomatik hatırlatma</span>
+          <h2>Unutulan randevu kalmaz.</h2>
+          <p class="lead">Randevu alınınca müşterinize WhatsApp'tan onay gider, randevudan önce de hatırlatma. Ne zaman
+            gideceğini siz seçersiniz, gerisini Adapptiv halleder.</p>
+          <ol class="r-steps">
+            <li><b>Randevu alındı</b><span>Onay mesajı hemen gider</span></li>
+            <li><b>Seçtiğiniz süre kala</b><span>1 saatten 2 güne kadar; hatırlatma kendiliğinden gider</span></li>
+            <li><b>Müşteri gelmediyse</b><span>Otomasyonla arayıp yeni randevu vermeniz için görev açılır</span></li>
+          </ol>
+          <p class="r-note">Ücretsiz pakette ayda 50, Salon paketinde 500 hatırlatma. Salon + Asistan'da kendi WhatsApp
+            numaranızdan, sınırsız.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- Reklam analizi (test salonunda reklam verisi yok: ekran goruntusu yerine ornek rapor) -->
     <section class="section" id="reklam">
       <div class="wrap ads-grid">
@@ -193,45 +232,6 @@
               <span><em class="d2"></em>WhatsApp reklamı · 14</span>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Hatirlatma: uygulamanin gercek ayar ekrani + gercek mesaj metinleri -->
-    <section class="section" id="hatirlatma">
-      <div class="wrap remind-grid">
-        <div class="remind-visual reveal">
-          <div class="window remind-shot">
-            <img src="/assets/screens/crop-hatirlatma.jpg" width="2304" height="860" loading="lazy"
-              alt="Uygulamadaki hatırlatma ayarı: 1 saatten 2 güne kadar seçenekler ve müşteriye giden örnek mesaj" />
-          </div>
-          <div class="wa-card" aria-label="Müşteriye giden örnek mesajlar">
-            <div class="wa-head"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M187.58,144.84l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88,40,40,0,0,0,40-40A8,8,0,0,0,187.58,144.84ZM152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.47,56.47,0,0,0,30.15,30.15A8,8,0,0,0,138,155l14.61-9.74,23,11.48A24,24,0,0,1,152,176ZM128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216Z"/></svg><span><strong>Güzel Salon</strong><small>WhatsApp</small></span></div>
-            <div class="wa-msg">
-              <small class="wa-tag">Randevu alınınca</small>
-              Merhaba Elif, Güzel Salon randevunuz oluşturuldu: Boya, 23 Ekim 14:30. Görüşmek üzere!
-              <time>10:12</time>
-            </div>
-            <div class="wa-msg">
-              <small class="wa-tag">1 saat önce</small>
-              Merhaba Elif, hatırlatma: Güzel Salon'daki randevunuz 23 Ekim 14:30 — Boya.
-              <time>13:30</time>
-            </div>
-          </div>
-        </div>
-
-        <div class="reveal" style="--i: 1">
-          <span class="kicker"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,71.1a8,8,0,0,1-10.78-3.42,94.13,94.13,0,0,0-33.46-36.91,8,8,0,1,1,8.54-13.54,111.46,111.46,0,0,1,39.12,43.09A8,8,0,0,1,224,71.1ZM35.71,72a8,8,0,0,0,7.1-4.32A94.13,94.13,0,0,1,76.27,30.77a8,8,0,1,0-8.54-13.54A111.46,111.46,0,0,0,28.61,60.32,8,8,0,0,0,35.71,72Zm186.1,103.94A16,16,0,0,1,208,200H167.2a40,40,0,0,1-78.4,0H48a16,16,0,0,1-13.79-24.06C43.22,160.39,48,138.28,48,112a80,80,0,0,1,160,0C208,138.27,212.78,160.38,221.81,175.94ZM150.62,200H105.38a24,24,0,0,0,45.24,0ZM208,184c-10.64-18.27-16-42.49-16-72a64,64,0,0,0-128,0c0,29.52-5.38,53.74-16,72Z"/></svg> Otomatik hatırlatma</span>
-          <h2>Unutulan randevu kalmaz.</h2>
-          <p class="lead">Randevu alınınca müşterinize WhatsApp'tan onay gider, randevudan önce de hatırlatma. Ne zaman
-            gideceğini siz seçersiniz, gerisini Adapptiv halleder.</p>
-          <ol class="r-steps">
-            <li><b>Randevu alındı</b><span>Onay mesajı hemen gider</span></li>
-            <li><b>Seçtiğiniz süre kala</b><span>1 saatten 2 güne kadar; hatırlatma kendiliğinden gider</span></li>
-            <li><b>Müşteri gelmediyse</b><span>Otomasyonla arayıp yeni randevu vermeniz için görev açılır</span></li>
-          </ol>
-          <p class="r-note">Ücretsiz pakette ayda 50, Salon paketinde 500 hatırlatma. Salon + Asistan'da kendi WhatsApp
-            numaranızdan, sınırsız.</p>
         </div>
       </div>
     </section>
