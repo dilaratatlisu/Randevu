@@ -2561,6 +2561,91 @@ dl.legal-info dd:last-of-type {
   }
 }
 
+/* ---------- Tanitim videosu penceresi ---------- */
+html.video-open {
+  overflow: hidden;
+}
+
+.vdialog {
+  border: none;
+  padding: 0;
+  background: transparent;
+  max-width: none;
+  max-height: none;
+  overflow: visible;
+}
+
+.vdialog::backdrop {
+  background: rgba(8, 13, 24, 0.78);
+  backdrop-filter: blur(6px);
+}
+
+.vdialog-box {
+  position: relative;
+  /* dikey video: ekran yuksekligine sigar, telefonda kenarlardan 16px bosluk */
+  height: min(86dvh, calc((100vw - 32px) * 16 / 9));
+  aspect-ratio: 9 / 16;
+}
+
+.vdialog-video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 22px;
+  background: #0b1222;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+}
+
+.vdialog-close {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  color: #0f1a2e;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.vdialog-close .icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* pencere en ust katmanda: ozel imlec onun altinda kalir, burada normal imlec */
+body.custom-cursor .vdialog,
+body.custom-cursor .vdialog video {
+  cursor: auto;
+}
+
+body.custom-cursor .vdialog-close {
+  cursor: pointer;
+}
+
+@media (max-width: 560px) {
+  .vdialog-close {
+    top: 8px;
+    right: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .vdialog[open] .vdialog-box {
+    animation: vdialog-in 0.32s var(--ease);
+  }
+}
+
+@keyframes vdialog-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.97);
+  }
+}
+
 /* ---------- Ozel imlec: hedef kilidi (eski siteden, aynen) ---------- */
 body.custom-cursor,
 body.custom-cursor a,

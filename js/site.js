@@ -398,6 +398,34 @@
     })
   })
 
+  // Tanitim videosu: butona basinca pencerede sesli oynar; kapaninca durur.
+  // Video ancak acilinca iner (preload=none), sayfa yavaslamasin.
+  ;(function () {
+    var dlg = document.getElementById('tanitim-video')
+    var openers = document.querySelectorAll('[data-video-open]')
+    if (!dlg || !openers.length || typeof dlg.showModal !== 'function') return
+    var video = dlg.querySelector('video')
+    openers.forEach(function (b) {
+      b.addEventListener('click', function () {
+        dlg.showModal()
+        document.documentElement.classList.add('video-open')
+        var p = video.play()
+        if (p && p.catch) p.catch(function () {})
+      })
+    })
+    dlg.querySelector('[data-video-close]').addEventListener('click', function () {
+      dlg.close()
+    })
+    // videonun disina (karartilmis alana) basinca kapanir
+    dlg.addEventListener('click', function (e) {
+      if (e.target === dlg) dlg.close()
+    })
+    dlg.addEventListener('close', function () {
+      video.pause()
+      document.documentElement.classList.remove('video-open')
+    })
+  })()
+
   // Tek tekerlek hamlesi = sonraki/onceki bolum (masaustu fare kullanicilari).
   // Ekrandan uzun bolumde once icerik normal kayar, bolumun tamami gorulunce gecilir.
   // Canli sitedekinden tek farki: arada kalinca takilmadan en yakin bolume oturur.
@@ -429,6 +457,7 @@
       'wheel',
       function (e) {
         if (window.innerWidth < 980) return // dar ekranlarda normal kaydirma serbest
+        if (document.documentElement.classList.contains('video-open')) return // video acikken sayfa kaymaz
         if (locked) {
           e.preventDefault()
           return
