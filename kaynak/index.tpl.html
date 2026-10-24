@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="tr" class="no-js">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Adapptiv | Randevu ile çalışan işletmeler için tek uygulama</title>
+  <meta name="description"
+    content="Randevu takvimi, müşteri kartı, kasa ve WhatsApp asistanı tek uygulamada. Telefonda ve bilgisayarda aynı anda." />
+  {{theme-head}}
+  <meta property="og:title" content="Adapptiv | İşletmenizin tamamı tek uygulamada" />
+  <meta property="og:description" content="Randevu, müşteri, kasa ve WhatsApp asistanı. Telefonda ve bilgisayarda." />
+  <meta property="og:image" content="/assets/screens/web-takvim.jpg" />
+  <link rel="icon" href="/assets/logo-mark.png" type="image/png" />
+  <link rel="preload" href="/assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/screens/web-takvim.jpg" as="image" />
+  <link rel="stylesheet" href="/css/site.css" />
+</head>
+
+<body>
+  <a class="skip" href="#icerik">İçeriğe geç</a>
+  <div class="nav-sentinel" aria-hidden="true"></div>
+  {{header:home}}
+
+  <main id="icerik">
+    <!-- Giris: ekran boyunda -->
+    <section class="hero">
+      <div class="wrap hero-main">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <h1>
+              <span class="hl-visual" aria-hidden="true">
+                <span class="hl-line">İşletmenizin</span>
+                <span class="hl-line hl-word"><span id="hero-hl-text">tamamı</span><span class="hl-caret"></span></span>
+                <span class="hl-line"><em>tek uygulamada</em></span>
+              </span>
+              <span class="sr-only">İşletmenizin tamamı tek uygulamada</span>
+            </h1>
+            <p class="hero-sub">Randevu takviminden müşteri geçmişine, mesajlara otomatik cevap veren asistandan
+              reklamınızın gerçek getirisine kadar işletmenizi çalıştıran her şey tek uygulamada; telefonunuzda ve
+              bilgisayarınızda aynı anda.</p>
+            <ul class="hero-ticks">
+              <li>{{i:check}}<span>Randevu, müşteri kartı ve ekip takvimi aynı ekranda</span></li>
+              <li>{{i:check}}<span>İşletmenize özel eğitilmiş yapay zekâ asistanı mesajlara cevap verir, randevuyu kendisi
+                  oluşturur</span></li>
+              <li>{{i:check}}<span>Reklamdan gelen kişiden tahsilata, cirodan net kâra kadar her adım görünür</span>
+              </li>
+            </ul>
+            <div class="hero-cta">
+              <a class="btn btn-primary" href="#fiyat">Ücretsiz başla {{i:arrow-right}}</a>
+              <button class="btn btn-ghost" type="button" data-video-open aria-haspopup="dialog">{{i:play}} Tanıtım videosu</button>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="window">
+              <img src="/assets/screens/web-takvim.jpg" width="2880" height="1800"
+                alt="Adapptiv randevu takvimi: çalışanlar yan yana sütunlarda, günün randevuları saat saat" />
+            </div>
+            <div class="phone">
+              <img src="/assets/screens/tel-takvim.jpg" width="1170" height="2532"
+                alt="Telefonda günün randevu listesi" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Asistan: isletmeye ozel yapay zeka -->
+    <section class="section assistant" id="chatbot">
+      <div class="wrap assistant-grid">
+        <div class="reveal">
+          <span class="kicker">{{i:sparkle}} Yapay zekâ asistanı</span>
+          <h2>İşletmenize özel eğitilmiş yapay zekâ asistanı.</h2>
+          <p class="lead">Hizmetlerinizi, fiyatlarınızı, çalışma saatlerinizi ve ekibinizi bilir. WhatsApp ve Instagram'dan
+            yazan müşterinize salonunuzun ağzından cevap verir, boş saati bulup randevuyu takviminize kendisi yazar.</p>
+          <div class="knows">
+            <span class="knows-label">Salonunuzdan öğrendikleri</span>
+            <ul>
+              <li>{{i:check}} Hizmet ve fiyat listeniz</li>
+              <li>{{i:check}} Süreler ve boş saatler</li>
+              <li>{{i:check}} Çalışma saatleri</li>
+              <li>{{i:check}} Ekibiniz ve izinleri</li>
+              <li>{{i:check}} Kayıtlı müşterileriniz</li>
+            </ul>
+          </div>
+          <div class="as-cards">
+            <div class="as-card">
+              <span class="as-ico">{{i:chart-line-up}}</span>
+              <strong>Bugün <span class="count-up" data-count="38">0</span> görüşme</strong>
+              <p>11 randevu oluşturdu, 6 yeni müşteri kartı açtı.</p>
+            </div>
+            <div class="as-card">
+              <span class="as-ico as-ico-warm">{{i:hand-palm}}</span>
+              <strong><span class="count-up" data-count="2">0</span> konuşma sizde</strong>
+              <p>Emin olamadığı konuşmayı size bırakır, tek dokunuşla devralırsınız.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="as-visual reveal" style="--i: 1">
+          <div class="window as-shot">
+            <img src="/assets/screens/crop-mesajlar.jpg" width="2304" height="1380" loading="lazy"
+              alt="Uygulamadaki Mesajlar ekranı: asistanın müşteriyle konuşması ve randevuyu oluşturması" />
+          </div>
+          <div class="chat" aria-label="Örnek WhatsApp konuşması">
+            <div class="chat-head">
+              <div class="chat-avatar" aria-hidden="true">GS</div>
+              <div>
+                <strong>Güzel Salon</strong>
+                <span>çevrimiçi</span>
+              </div>
+              {{i:whatsapp-logo}}
+            </div>
+            <div class="chat-body">
+              <p class="msg msg-in" style="--t: 0.2s">Merhaba, cumartesi fön için yeriniz var mı?</p>
+              <span class="typing" style="--t: 0.9s; --d: 1.1s" aria-hidden="true"><i></i><i></i><i></i></span>
+              <p class="msg msg-out" style="--t: 2s">Merhaba! Cumartesi 11:00 ve 14:30 boş. Fön 30 dakika, 250 ₺.
+                Hangisini ayırayım?</p>
+              <p class="msg msg-in" style="--t: 3.4s">14:30 olsun</p>
+              <span class="typing" style="--t: 4s; --d: 1s" aria-hidden="true"><i></i><i></i><i></i></span>
+              <p class="msg msg-out" style="--t: 5s">Tamamdır, cumartesi 14:30 fön randevunuz oluşturuldu. Görüşmek
+                üzere!</p>
+              <span class="msg-note" style="--t: 5.8s">{{i:calendar-dots}} Randevu takvime eklendi</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hatirlatma: uygulamanin gercek ayar ekrani + gercek mesaj metinleri -->
+    <section class="section" id="hatirlatma">
+      <div class="wrap remind-grid">
+        <div class="remind-visual reveal">
+          <div class="window remind-shot">
+            <img src="/assets/screens/crop-hatirlatma.jpg" width="2304" height="860" loading="lazy"
+              alt="Uygulamadaki hatırlatma ayarı: 1 saatten 2 güne kadar seçenekler ve müşteriye giden örnek mesaj" />
+          </div>
+          <div class="wa-card" aria-label="Müşteriye giden örnek mesajlar">
+            <div class="wa-head">{{i:whatsapp-logo}}<span><strong>Güzel Salon</strong><small>WhatsApp</small></span></div>
+            <div class="wa-msg">
+              <small class="wa-tag">Randevu alınınca</small>
+              Merhaba Elif, Güzel Salon randevunuz oluşturuldu: Boya, 23 Ekim 14:30. Görüşmek üzere!
+              <time>10:12</time>
+            </div>
+            <div class="wa-msg">
+              <small class="wa-tag">1 saat önce</small>
+              Merhaba Elif, hatırlatma: Güzel Salon'daki randevunuz 23 Ekim 14:30 — Boya.
+              <time>13:30</time>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal" style="--i: 1">
+          <span class="kicker">{{i:bell-ringing}} Otomatik hatırlatma</span>
+          <h2>Unutulan randevu kalmaz.</h2>
+          <p class="lead">Randevu alınınca müşterinize WhatsApp'tan onay gider, randevudan önce de hatırlatma. Ne zaman
+            gideceğini siz seçersiniz, gerisini Adapptiv halleder.</p>
+          <ol class="r-steps">
+            <li><b>Randevu alındı</b><span>Onay mesajı hemen gider</span></li>
+            <li><b>Seçtiğiniz süre kala</b><span>1 saatten 2 güne kadar; hatırlatma kendiliğinden gider</span></li>
+            <li><b>Müşteri gelmediyse</b><span>Otomasyonla arayıp yeni randevu vermeniz için görev açılır</span></li>
+          </ol>
+          <p class="r-note">Ücretsiz pakette ayda 50, Salon paketinde 500 hatırlatma. Salon + Asistan'da kendi WhatsApp
+            numaranızdan, sınırsız.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reklam analizi (test salonunda reklam verisi yok: ekran goruntusu yerine ornek rapor) -->
+    <section class="section" id="reklam">
+      <div class="wrap ads-grid">
+        <div class="reveal">
+          <span class="kicker">{{i:megaphone}} Reklam analizi</span>
+          <h2>Reklamınız kaç randevu getirdi, görün.</h2>
+          <p class="lead">Instagram ve Facebook reklam hesabınızı tek tıkla bağlayın. Harcadığınız para salona gelen
+            müşterilerle eşleşir; hangi reklamın kazandırdığını, hangisinin boşa gittiğini bilirsiniz.</p>
+          <ul class="points">
+            <li>{{i:check}}<span>Harcama, gösterim, tıklama ve getiri her gün kendiliğinden güncellenir</span></li>
+            <li>{{i:check}}<span>Randevunun nereden geldiğini görürsünüz: Instagram reklamı mı, WhatsApp reklamı mı</span></li>
+            <li>{{i:check}}<span>Yalnızca okuma izni istenir; reklamlarınıza dokunulmaz</span></li>
+          </ul>
+        </div>
+
+        <div class="ad-report reveal" style="--i: 1" aria-label="Örnek reklam raporu">
+          <div class="ad-head">
+            <span>Son 30 gün · Instagram ve Facebook</span>
+            <span class="ad-sample">Örnek rapor</span>
+          </div>
+          <div class="ad-roas">
+            <strong><span class="count-up" data-count="6.4" data-decimals="1">0</span><small>x</small></strong>
+            <span>reklama harcanan her 1 ₺ için<br /><b>6,4 ₺ ciro</b> geldi</span>
+          </div>
+          <ol class="funnel">
+            <li style="--w: 100%"><span>Harcama</span><b>₺4.850</b><i></i></li>
+            <li style="--w: 84%"><span>Gösterim</span><b>61.240</b><i></i></li>
+            <li style="--w: 58%"><span>Tıklama</span><b>1.874</b><i></i></li>
+            <li style="--w: 34%"><span>Randevu</span><b>38</b><i></i></li>
+            <li class="hot" style="--w: 76%"><span>Ciro</span><b>₺31.040</b><i></i></li>
+          </ol>
+          <div class="ad-src">
+            <span class="ad-src-label">Reklamdan gelen randevular</span>
+            <div class="src-bar"><i style="--p: 63%"></i></div>
+            <div class="src-legend">
+              <span><em class="d1"></em>Instagram reklamı · 24</span>
+              <span><em class="d2"></em>WhatsApp reklamı · 14</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Moduller (eski sitedeki kutular, odaklanma efektiyle) -->
+    <section class="section" id="ozellikler">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <h2>Platformda sizi neler bekliyor?</h2>
+          <p><strong>Defteri kapatın, telefonu bırakın.</strong> Randevu WhatsApp'ta, ciro Excel'de, reklam ayrı panelde
+            olmasın; Adapptiv hepsini birbirine bağlar.</p>
+        </div>
+        <div class="mods focus-grid">
+          <a class="mod focus-card reveal" href="#gun">
+            <span class="mod-top"><span class="mod-ico t-blue">{{i:calendar-check}}</span><span class="mod-go">{{i:arrow-right}}</span></span>
+            <h3>Randevu takvimi</h3>
+            <p>Kim, ne zaman, hangi hizmete geliyor; tek ekranda. Çakışan randevu açılamaz, her randevunun durumu görünür.</p>
+          </a>
+          <a class="mod focus-card reveal" style="--i: 1" href="#gun">
+            <span class="mod-top"><span class="mod-ico t-lilac">{{i:identification-card}}</span><span class="mod-go">{{i:arrow-right}}</span></span>
+            <h3>Müşteri kartı</h3>
+            <p>Harcama, son ziyaret, borç, paket seansları, notlar ve sadakat kartı. Her müşterinin geçmişi tek kartta.</p>
+          </a>
+          <a class="mod mod-featured focus-card reveal" style="--i: 2" href="#chatbot">
+            <span class="mod-top"><span class="mod-ico t-green">{{i:chat-teardrop-text}}</span><span class="mod-badge">En popüler</span><span class="mod-go">{{i:arrow-right}}</span></span>
+            <h3>WhatsApp ve Instagram</h3>
+            <p>İşletmenize özel eğitilmiş asistan mesajlara anında cevap verir, randevuyu takvime kendisi işler.</p>
+          </a>
+          <a class="mod focus-card reveal" href="#reklam">
+            <span class="mod-top"><span class="mod-ico t-amber">{{i:megaphone}}</span><span class="mod-go">{{i:arrow-right}}</span></span>
+            <h3>Meta reklamları</h3>
+            <p>Reklamınızın kaç randevu getirdiğini görün: harcama, tıklama ve getiri her gün uygulamada.</p>
+          </a>
+          <a class="mod focus-card reveal" style="--i: 1" href="#gun">
+            <span class="mod-top"><span class="mod-ico t-pink">{{i:receipt}}</span><span class="mod-go">{{i:arrow-right}}</span></span>
+            <h3>Muhasebe</h3>
+            <p>Vergi ve prim oranlarını bir kez girin; ciro, gider ve net kâr kendiliğinden hesaplansın.</p>
+          </a>
+          <a class="mod focus-card reveal" style="--i: 2" href="#demo">
+            <span class="mod-top"><span class="mod-ico t-blue">{{i:users-three}}</span><span class="mod-go">{{i:arrow-right}}</span></span>
+            <h3>Ekip ve prim</h3>
+            <p>Çalışma saatleri, izinler ve prim hakedişleri tek panelde. Her randevu ilgili çalışana bağlanır.</p>
+          </a>
+        </div>
+        <div class="perks perks-strip focus-grid">
+          <div class="perk focus-card reveal">
+            <span class="mod-ico t-blue">{{i:calendar-dots}}</span>
+            <h3>Çifte rezervasyon olmaz</h3>
+            <p>Aynı çalışana aynı saate ikinci randevu açılamaz.</p>
+          </div>
+          <div class="perk focus-card reveal" style="--i: 1">
+            <span class="mod-ico t-pink">{{i:prohibit}}</span>
+            <h3>Gelmeyen müşteriyi tespit edin</h3>
+            <p>"İptal" ile "Gelmedi" ayrı tutulur, istatistiklerde görünür.</p>
+          </div>
+          <div class="perk focus-card reveal" style="--i: 2">
+            <span class="mod-ico t-green">{{i:chat-circle-dots}}</span>
+            <h3>Mesaj trafiğini asistana bırakın</h3>
+            <p>Sosyal medyadan gelen sorular anında yanıtlanır.</p>
+          </div>
+          <div class="perk focus-card reveal" style="--i: 3">
+            <span class="mod-ico t-amber">{{i:currency-circle-dollar}}</span>
+            <h3>Gerçek tahsilata dayalı ciro</h3>
+            <p>Ciro liste fiyatından değil, tahsil edilen tutardan hesaplanır.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gunun tamami: sekmeli vitrin (tek ekranda bes ozellik) -->
+    <section class="section" id="gun">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2>Salonun bütün günü, tek ekranda.</h2>
+          <p>Takvimden kasaya, müşteri kartından randevu sayfanıza kadar her şey birbirine bağlı.</p>
+        </div>
+        <div class="showcase reveal">
+          <div class="sc-tabs" role="tablist" aria-label="Uygulamadan ekranlar">
+            <button class="sc-tab" type="button" role="tab" id="sc-t1" aria-controls="sc-p1" aria-selected="true">
+              <span class="sc-ico">{{i:users-three}}</span>
+              <span class="sc-txt"><strong>Potansiyel müşteri takibi</strong><span class="sc-desc"><span>Arayan, yazan ama henüz gelmeyen kişileri kaybetmeyin. Kim hangi aşamada, tek bakışta.</span></span></span>
+              <span class="sc-bar" aria-hidden="true"></span>
+            </button>
+            <button class="sc-tab" type="button" role="tab" id="sc-t2" aria-controls="sc-p2" aria-selected="false" tabindex="-1">
+              <span class="sc-ico">{{i:link}}</span>
+              <span class="sc-txt"><strong>Kendi randevu sayfanız</strong><span class="sc-desc"><span>Müşterileriniz bağlantınızdan hizmeti ve saati kendileri seçer, randevu takviminize düşer.</span></span></span>
+              <span class="sc-bar" aria-hidden="true"></span>
+            </button>
+            <button class="sc-tab" type="button" role="tab" id="sc-t3" aria-controls="sc-p3" aria-selected="false" tabindex="-1">
+              <span class="sc-ico">{{i:cash-register}}</span>
+              <span class="sc-txt"><strong>Kasa ve gün sonu</strong><span class="sc-desc"><span>Nakit, kart ve havale ayrı ayrı. Gün sonunda kasayı sayın, farkı görün.</span></span></span>
+              <span class="sc-bar" aria-hidden="true"></span>
+            </button>
+            <button class="sc-tab" type="button" role="tab" id="sc-t5" aria-controls="sc-p5" aria-selected="false" tabindex="-1">
+              <span class="sc-ico">{{i:user-circle-check}}</span>
+              <span class="sc-txt"><strong>Müşterinin tam hikâyesi</strong><span class="sc-desc"><span>Geçmiş randevular, ödemeler, borç, paketler, notlar ve alerji gibi önemli bilgiler tek kartta.</span></span></span>
+              <span class="sc-bar" aria-hidden="true"></span>
+            </button>
+          </div>
+          <div class="sc-stage">
+            <div style="--k: 0" class="sc-panel p-wide is-active" role="tabpanel" id="sc-p1" aria-labelledby="sc-t1">
+              <div class="sc-window"><img src="/assets/screens/crop-potansiyel.jpg" width="2304" height="1120" alt="Potansiyel müşteriler panosu: yeni, iletişime geçildi, teklif verildi, kazanıldı sütunları" /></div>
+              <p class="sc-cap"><strong>Potansiyel müşteri takibi</strong>Arayan, yazan ama henüz gelmeyen kişileri kaybetmeyin. Kim hangi aşamada, tek bakışta.</p>
+            </div>
+            <div style="--k: 1" class="sc-panel p-phone" role="tabpanel" id="sc-p2" aria-labelledby="sc-t2" aria-hidden="true" inert>
+              <div class="sc-phone"><div class="sc-phone-screen"><img src="/assets/screens/tel-online-randevu.jpg" width="1170" height="3645" alt="Salonun online randevu sayfası: hizmetler, süreler ve fiyatlar" /></div></div>
+              <p class="sc-cap"><strong>Kendi randevu sayfanız</strong>Müşterileriniz bağlantınızdan hizmeti ve saati kendileri seçer, randevu takviminize düşer.</p>
+            </div>
+            <div style="--k: 2" class="sc-panel p-wide" role="tabpanel" id="sc-p3" aria-labelledby="sc-t3" aria-hidden="true" inert>
+              <div class="sc-window"><img src="/assets/screens/crop-kasa.jpg" width="2304" height="940" alt="Kasa ekranı: toplam tahsilat, ödeme yöntemlerine göre dağılım" /></div>
+              <p class="sc-cap"><strong>Kasa ve gün sonu</strong>Nakit, kart ve havale ayrı ayrı. Gün sonunda kasayı sayın, farkı görün.</p>
+            </div>
+            <div style="--k: 3" class="sc-panel p-wide" role="tabpanel" id="sc-p5" aria-labelledby="sc-t5" aria-hidden="true" inert>
+              <div class="sc-window"><img src="/assets/screens/crop-musteri-karti.jpg" width="2304" height="1520" alt="Müşteri kartı: bilgiler, sadakat kartı, görevler ve zaman çizelgesi" /></div>
+              <p class="sc-cap"><strong>Müşterinin tam hikâyesi</strong>Geçmiş randevular, ödemeler, borç, paketler, notlar ve alerji gibi önemli bilgiler tek kartta.</p>
+            </div>
+          </div>
+          <div class="sc-nav">
+            <button class="sc-arrow sc-prev" type="button" data-step="-1" aria-label="Önceki ekran">{{i:arrow-right}}</button>
+            <div class="sc-dots">
+              <button class="sc-dot" type="button" aria-label="1. ekran: Potansiyel müşteri takibi" aria-current="true"><i></i></button>
+              <button class="sc-dot" type="button" aria-label="2. ekran: Kendi randevu sayfanız"><i></i></button>
+              <button class="sc-dot" type="button" aria-label="3. ekran: Kasa ve gün sonu"><i></i></button>
+              <button class="sc-dot" type="button" aria-label="4. ekran: Müşterinin tam hikâyesi"><i></i></button>
+            </div>
+            <button class="sc-arrow" type="button" data-step="1" aria-label="Sonraki ekran">{{i:arrow-right}}</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Telefon ve bilgisayar -->
+    <section class="section" id="panel">
+      <div class="wrap devices-grid">
+        <div class="devices-head reveal">
+          <h2 class="h2">Telefonda hızlı, bilgisayarda ayrıntılı.</h2>
+          <p>Gün içinde randevuyu telefondan girin. Akşam bilgisayarda müşteri listenizi, raporları ve kasayı
+            inceleyin. Aynı hesap, her yerde aynı bilgi.</p>
+          <div class="platforms">
+            <span>{{i:device-mobile}} Android ve iOS</span>
+            <span>{{i:desktop}} Web paneli</span>
+          </div>
+        </div>
+        <div class="devices-stage">
+          <div class="window">
+            <img src="/assets/screens/web-musteriler.jpg" width="2880" height="1800" loading="lazy"
+              alt="Bilgisayarda müşteri listesi: harcama, son geliş ve borca göre sıralanabilir tablo" />
+          </div>
+          <div class="phone">
+            <img src="/assets/screens/tel-anasayfa.jpg" width="1170" height="2532" loading="lazy"
+              alt="Telefonda günün özeti" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Entegrasyon: kanallar merkeze akar -->
+    <section class="section" id="entegrasyon">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <h2>Kullandığınız kanallarla kusursuz entegrasyon.</h2>
+          <p>Yeni bir düzen kurmanıza gerek yok. Müşterileriniz hangi kanaldan yazarsa yazsın, her şey tek merkezde
+            toplanır.</p>
+        </div>
+        <div class="hub reveal">
+          <div class="hub-side">
+            <div class="node">
+              <span class="node-ico n-wa">{{i:whatsapp-logo}}</span>
+              <div>
+                <h3>WhatsApp</h3>
+                <p>Müşteri yazar, asistan yanıtlar ve randevuyu açar. Hatırlatmalar da buradan gider.</p>
+              </div>
+            </div>
+            <div class="node">
+              <span class="node-ico n-ig">{{i:instagram-logo}}</span>
+              <div>
+                <h3>Instagram</h3>
+                <p>DM'ler aynı asistana düşer; konuşmalar uygulamada tek listede.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="hub-core" aria-hidden="true">
+            <span class="hub-ring"></span>
+            <span class="hub-ring hub-ring-2"></span>
+            <span class="hub-mark"><img src="/assets/logo-mark.png" alt="" width="56" height="56" /></span>
+          </div>
+
+          <div class="hub-side hub-side-right">
+            <div class="node">
+              <span class="node-ico n-meta">{{i:meta-logo}}</span>
+              <div>
+                <h3>Meta reklamları</h3>
+                <p>Reklam harcaması, tıklama ve getiri her gün uygulamaya gelir.</p>
+              </div>
+            </div>
+            <div class="node">
+              <span class="node-ico n-dev">{{i:devices}}</span>
+              <div>
+                <h3>Android, iOS ve web</h3>
+                <p>Aynı hesap telefonda ve bilgisayarda; bir yerde yaptığınız değişiklik diğerinde hemen görünür.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kurulum -->
+    <section class="section" id="demo">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2>Kurulum birkaç adım.</h2>
+          <p>Teknik bilgi gerekmez. İsterseniz ilk kurulumu birlikte yaparız.</p>
+        </div>
+        <ol class="steps">
+          <li class="reveal">
+            <span class="step-dot">{{i:clock}}</span>
+            <h3>Hizmetlerinizi girin</h3>
+            <p>Süre ve fiyatlarıyla. Asistan da müşterilere bu listeden cevap verir.</p>
+          </li>
+          <li class="reveal" style="--i: 1">
+            <span class="step-dot">{{i:users-three}}</span>
+            <h3>Ekibinizi ekleyin</h3>
+            <p>Çalışma saatleri ve verdikleri hizmetlerle. Herkes kendi takvimini görür.</p>
+          </li>
+          <li class="reveal" style="--i: 2">
+            <span class="step-dot">{{i:link}}</span>
+            <h3>Bağlantınızı paylaşın</h3>
+            <p>Randevu sayfanızı Instagram profilinize ekleyin, randevular gelmeye başlasın.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Fiyatlar -->
+    <section class="section" id="fiyat">
+      <div class="wrap">
+        <div class="pricing-head reveal">
+          <div>
+            <h2 class="h2">Ücretsiz başlayın, büyüdükçe yükseltin.</h2>
+            <p class="pricing-sub">Yıllık ödemede <strong>2 ay bedava</strong>: 12 ay kullanın, 10 ay ödeyin.</p>
+          </div>
+        </div>
+
+        <div class="plans">
+          <article class="plan reveal">
+            <h3>Ücretsiz</h3>
+            <p class="for">Tek başına çalışanlar için</p>
+            <div class="price"><strong>₺0</strong><span>/ ay</span></div>
+            <div class="yearly yearly-free">
+              <p>Süresiz ücretsiz. Kredi kartı gerekmez.</p>
+            </div>
+            <ul>
+              <li>{{i:check}}<span>1 kullanıcı (işletme sahibi)</span></li>
+              <li>{{i:check}}<span>Ayda 100 randevu, 150 müşteri</span></li>
+              <li>{{i:check}}<span>Takvim, müşteri kartı, borç ve paket takibi</span></li>
+              <li>{{i:check}}<span>Kasa, gün sonu ve gider takibi</span></li>
+              <li>{{i:check}}<span>Online randevu sayfası</span></li>
+              <li>{{i:check}}<span>Ayda 50 randevu hatırlatması</span></li>
+              <li class="no">{{i:x}}<span>WhatsApp ve Instagram asistanı</span></li>
+            </ul>
+            <a class="btn btn-ghost" href="#fiyat">Ücretsiz başla</a>
+          </article>
+
+          <article class="plan reveal" style="--i: 1">
+            <h3>Salon</h3>
+            <p class="for">Ekibiyle çalışan salonlar için</p>
+            <div class="price"><strong>₺1.750</strong><span>/ ay</span></div>
+            <div class="yearly">
+              <div class="yearly-row"><span class="yearly-label">Yıllık</span><s class="was"><span class="sr-only">Normal fiyat </span>₺21.000</s><strong>₺17.500</strong><span class="per">/ yıl</span></div>
+              <p><span class="save">2 ay bedava</span>₺3.500 kazancınız, aylık ₺1.458</p>
+            </div>
+            <ul>
+              <li>{{i:check}}<span>5 kullanıcı</span></li>
+              <li>{{i:check}}<span>Sınırsız randevu ve müşteri</span></li>
+              <li>{{i:check}}<span>Ücretsiz paketteki her şey</span></li>
+              <li>{{i:check}}<span>PDF raporlar</span></li>
+              <li>{{i:check}}<span>Ayda 500 randevu hatırlatması</span></li>
+              <li>{{i:check}}<span>Yazarak randevu oluşturma (yapay zekâ, günde 30)</span></li>
+              <li>{{i:check}}<span>Yapay zekâ işletme analizi (günde 3)</span></li>
+              <li class="no">{{i:x}}<span>WhatsApp ve Instagram asistanı</span></li>
+            </ul>
+            <a class="btn btn-ghost" href="#fiyat">14 gün ücretsiz dene</a>
+          </article>
+
+          <article class="plan plan-featured reveal" style="--i: 2">
+            <span class="plan-flag">Asistan dahil</span>
+            <h3>Salon + Asistan</h3>
+            <p class="for">Mesajlara 7/24 cevap veren asistanla</p>
+            <div class="price"><strong>₺4.500</strong><span>/ ay</span></div>
+            <div class="yearly">
+              <div class="yearly-row"><span class="yearly-label">Yıllık</span><s class="was"><span class="sr-only">Normal fiyat </span>₺54.000</s><strong>₺45.000</strong><span class="per">/ yıl</span></div>
+              <p><span class="save">2 ay bedava</span>₺9.000 kazancınız, aylık ₺3.750</p>
+            </div>
+            <ul>
+              <li>{{i:check}}<span>Salon paketindeki her şey</span></li>
+              <li>{{i:check}}<span>10 kullanıcı</span></li>
+              <li>{{i:check}}<span><strong>WhatsApp ve Instagram yapay zekâ asistanı</strong> (ayda 10.000 mesaja
+                  kadar)</span></li>
+              <li>{{i:check}}<span>Hatırlatmalar salonunuzun kendi WhatsApp numarasından, sınırsız</span></li>
+              <li>{{i:check}}<span>Mesajlar ekranı, konuşmayı tek dokunuşla devralma</span></li>
+              <li>{{i:check}}<span>Toplu kampanya mesajı ve yapay zekâ ile metin önerisi</span></li>
+              <li>{{i:check}}<span>Meta reklam raporu</span></li>
+            </ul>
+            <a class="btn btn-primary" href="#fiyat">14 gün ücretsiz dene</a>
+          </article>
+        </div>
+        <p class="swipe-hint" aria-hidden="true">Kaydırarak inceleyin {{i:arrow-right}}</p>
+        <p class="plans-note reveal">Paket süresi bittiğinde verileriniz silinmez, Ücretsiz pakete geçersiniz. WhatsApp
+          mesaj ücretleri Meta tarafından ayrıca faturalandırılır.</p>
+      </div>
+    </section>
+
+    <!-- SSS -->
+    <section class="section" id="sss">
+      <div class="wrap faq-grid">
+        <div class="section-head">
+          <h2>Sık sorulanlar</h2>
+          <p>Başka bir sorunuz varsa <a href="mailto:info@adapptivdigital.com">info@adapptivdigital.com</a> adresine
+            yazın.</p>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>Asistan salonumu nasıl öğreniyor? {{i:plus}}</summary>
+            <p>Uygulamaya girdiğiniz hizmetler, fiyatlar, süreler, çalışma saatleri ve ekibiniz asistanın bilgi
+              kaynağıdır. Bir fiyatı değiştirdiğinizde asistan da hemen yeni fiyatla cevap verir; ayrıca bir şey
+              öğretmeniz gerekmez.</p>
+          </details>
+          <details>
+            <summary>Mevcut müşteri listemi aktarabilir miyim? {{i:plus}}</summary>
+            <p>Evet. Excel ya da CSV dosyanızdaki ad, telefon, e-posta, doğum günü ve etiketleri bilgisayardan tek
+              seferde aktarabilirsiniz. Aynı kişinin tekrar eden kayıtları otomatik ayıklanır.</p>
+          </details>
+          <details>
+            <summary>Asistan yanlış bir şey söylerse ne olur? {{i:plus}}</summary>
+            <p>Asistan yalnızca sizin girdiğiniz hizmet, fiyat ve çalışma saatlerini kullanır. Her konuşmayı uygulamada
+              görürsünüz ve istediğiniz an devralıp yazışmayı kendiniz sürdürürsünüz.</p>
+          </details>
+          <details>
+            <summary>Telefonda ve bilgisayarda aynı hesabı mı kullanırım? {{i:plus}}</summary>
+            <p>Evet. Android, iOS ve web panelinde aynı hesapla girersiniz. Bir yerde yaptığınız değişiklik diğerinde
+              hemen görünür.</p>
+          </details>
+          <details>
+            <summary>Kurulumu kim yapıyor? {{i:plus}}</summary>
+            <p>Kendiniz birkaç dakikada kurabilirsiniz. İsterseniz hizmet listenizi ve ekibinizi birlikte gireriz;
+              WhatsApp ve Instagram bağlantısında da yardımcı oluruz.</p>
+          </details>
+          <details>
+            <summary>Birden fazla şubem var, ne yapmalıyım? {{i:plus}}</summary>
+            <p>Şu an her şube ayrı bir hesap olarak kullanılıyor; her birinin takvimi, ekibi ve kasası kendi içinde
+              tutulur. Zincir işletmeler için <a href="mailto:info@adapptivdigital.com">bizimle konuşun</a>.</p>
+          </details>
+          <details>
+            <summary>Verilerim bana mı ait? {{i:plus}}</summary>
+            <p>Evet. Müşteri listeniz, randevularınız ve kasa kayıtlarınız size aittir. Ayarlar bölümünden hepsini tek
+              Excel dosyası olarak indirebilirsiniz.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <dialog class="vdialog" id="tanitim-video" aria-label="Adapptiv tanıtım videosu">
+    <div class="vdialog-box">
+      <button class="vdialog-close" type="button" data-video-close aria-label="Videoyu kapat">{{i:x}}</button>
+      <video class="vdialog-video" controls playsinline preload="none" width="720" height="1280"
+        poster="/assets/video/adapptiv-tanitim-kapak.jpg">
+        <source src="/assets/video/adapptiv-tanitim.mp4" type="video/mp4" />
+      </video>
+    </div>
+  </dialog>
+
+  {{footer:home}}
+  <script src="/js/site.js" defer></script>
+</body>
+
+</html>
