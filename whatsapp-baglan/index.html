@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f4f6f9" />
+  <meta name="robots" content="noindex" />
+  <script>try{if(localStorage.getItem('adapptiv-tema')==='koyu')document.documentElement.setAttribute('data-theme','dark')}catch(e){}</script>
+  <title>WhatsApp Bağlantısı | Adapptiv</title>
+  <link rel="icon" href="/assets/logo-mark.png" type="image/png" />
+  <link rel="stylesheet" href="/css/site.css" />
+  <style>
+    .wa-page { min-height: 100dvh; display: flex; align-items: flex-start; justify-content: center; padding: 32px 16px 48px; }
+    .wa-card { width: 100%; max-width: 480px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-card); box-shadow: var(--shadow-sm); padding: 24px 20px; display: flex; flex-direction: column; gap: 18px; }
+    .wa-brand { display: flex; align-items: center; gap: 10px; font-weight: 700; color: var(--ink); text-decoration: none; }
+    .wa-card h1 { font-size: 22px; line-height: 1.25; color: var(--ink); margin: 0; text-wrap: balance; }
+    .wa-lead { color: var(--ink-2); font-size: 15px; line-height: 1.5; margin: 0; }
+    .wa-steps { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; counter-reset: s; }
+    .wa-steps li { counter-increment: s; display: grid; grid-template-columns: 26px 1fr; gap: 10px; font-size: 14px; line-height: 1.45; color: var(--ink-2); }
+    .wa-steps li::before { content: counter(s); width: 26px; height: 26px; border-radius: 50%; background: var(--accent-soft); color: var(--accent-ink); font-weight: 700; font-size: 13px; display: grid; place-items: center; }
+    .wa-steps strong { color: var(--ink); }
+    .wa-btn { width: 100%; justify-content: center; min-height: 48px; font-size: 16px; }
+    .wa-btn[disabled] { opacity: 0.6; cursor: default; }
+    .wa-status { font-size: 14px; line-height: 1.5; border-radius: 12px; padding: 12px 14px; margin: 0; }
+    .wa-status[hidden] { display: none; }
+    .wa-status.info { background: var(--surface-2); color: var(--ink-2); }
+    .wa-status.ok { background: #e6f6ef; color: #12603f; }
+    .wa-status.err { background: #fdecec; color: #9b1c1c; }
+    .wa-note { font-size: 12.5px; color: var(--muted); line-height: 1.5; margin: 0; }
+    [data-theme="dark"] .wa-status.ok { background: rgb(18 96 63 / 0.25); color: #8fe0b8; }
+    [data-theme="dark"] .wa-status.err { background: rgb(155 28 28 / 0.25); color: #f5a3a3; }
+  </style>
+</head>
+
+<body>
+  <main class="wa-page">
+    <div class="wa-card">
+      <a class="wa-brand" href="/"><img src="/assets/logo-mark.png" alt="" width="28" height="28" />Adapptiv</a>
+      <h1>WhatsApp numaranızı bağlayın</h1>
+      <p class="wa-lead">Bağladıktan sonra asistan müşterilerinize bu numaradan cevap verir. WhatsApp Business uygulamanızı telefonda kullanmaya devam edersiniz.</p>
+
+      <ol class="wa-steps" id="steps">
+        <li><span>Telefonunuzdaki <strong>WhatsApp Business</strong> uygulaması güncel olsun.</span></li>
+        <li><span>Uygulamadaki <strong>karşılama</strong> ve <strong>uzakta</strong> mesajlarını kapatın; açık kalırsa asistan o müşteriye cevap vermez.</span></li>
+        <li><span>Aşağıdaki butonla Facebook hesabınıza girin, işletmenizi seçin ve WhatsApp numaranızı yazın.</span></li>
+        <li><span>WhatsApp'a gelen mesajda <strong>Bağlan</strong>'a basın ve ekrandaki kodu girin.</span></li>
+      </ol>
+
+      <button type="button" class="btn btn-primary wa-btn" id="connect" disabled>Facebook ile bağla</button>
+      <p class="wa-status info" id="status" role="status" aria-live="polite" hidden></p>
+      <p class="wa-note">Bağlantı Meta'nın resmi WhatsApp Business Platformu üzerinden yapılır; Facebook şifrenizi Adapptiv görmez.</p>
+    </div>
+  </main>
+
+  <script>
+    (function () {
+      var APP_ID = '1873944480636741'
+      var CONFIG_ID = '1022022753949141'
+      var API = 'https://rllvmyriopaulcmmynbe.supabase.co/functions/v1/whatsapp-connect-complete'
+      var PUBLISHABLE_KEY = 'sb_publishable_CqpxvhHpayp_4Ad45ZZYHw_ti3Vo9ak'
+      var APP_RETURN = 'com.adapptiv.panel://whatsapp-callback'
+
+      var params = new URLSearchParams(location.search)
+      var session = params.get('s') || ''
+      var returnToApp = params.get('r') === 'app'
+      var btn = document.getElementById('connect')
+      var statusEl = document.getElementById('status')
+      var signup = null
+      var busy = false
+
+      function show(kind, text) {
+        statusEl.hidden = false
+        statusEl.className = 'wa-status ' + kind
+        statusEl.textContent = text
+      }
+
+      function backToApp(status) {
+        if (returnToApp) location.href = APP_RETURN + '?status=' + status
+      }
+
+      if (!/^[0-9a-f]{64}$/.test(session)) {
+        show('err', 'Bu sayfayı Adapptiv uygulamasında Ayarlar > WhatsApp hesabı ekranındaki "WhatsApp\'ı bağla" butonuyla açın.')
+        return
+      }
+
+      // Meta penceresi bitince secilen hesap ve numara buraya mesajla gelir.
+      window.addEventListener('message', function (event) {
+        var host = ''
+        try { host = new URL(event.origin).hostname } catch (e) { return }
+        if (!/(^|\.)facebook\.com$/.test(host)) return
+        var data
+        try { data = JSON.parse(event.data) } catch (e) { return }
+        if (!data || data.type !== 'WA_EMBEDDED_SIGNUP') return
+        if (typeof data.event === 'string' && data.event.indexOf('FINISH') === 0) {
+          signup = data.data || null
+        } else if (data.event === 'CANCEL' || data.event === 'ERROR') {
+          busy = false
+          btn.disabled = false
+          show('err', 'Bağlantı tamamlanmadı. İsterseniz yeniden deneyebilirsiniz.')
+        }
+      })
+
+      window.fbAsyncInit = function () {
+        FB.init({ appId: APP_ID, autoLogAppEvents: true, xfbml: true, version: 'v26.0' })
+        btn.disabled = false
+      }
+
+      // Meta'nin kodu 30 sn gecerli; numara bilgisi kod ile ayni anda ya da
+      // hemen ardindan gelir, en fazla birkac saniye beklenir.
+      function waitForSignup(cb, triesLeft) {
+        if (signup || triesLeft <= 0) return cb(signup)
+        setTimeout(function () { waitForSignup(cb, triesLeft - 1) }, 250)
+      }
+
+      function finish(code) {
+        show('info', 'Bağlantı tamamlanıyor…')
+        waitForSignup(function (info) {
+          if (!info || !info.waba_id || !info.phone_number_id) {
+            busy = false
+            btn.disabled = false
+            show('err', 'Numara seçilmedi. Lütfen yeniden deneyip WhatsApp numaranızı seçin.')
+            return
+          }
+          fetch(API, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', apikey: PUBLISHABLE_KEY },
+            body: JSON.stringify({ session: session, code: code, waba_id: info.waba_id, phone_number_id: info.phone_number_id }),
+          })
+            .then(function (res) { return res.json().then(function (body) { return { ok: res.ok, body: body } }) })
+            .then(function (r) {
+              if (!r.ok) {
+                show('err', (r.body && r.body.error) || 'Bağlantı tamamlanamadı. Uygulamadan yeniden başlatın.')
+                return
+              }
+              var number = (r.body.data && r.body.data.display_phone_number) || ''
+              btn.hidden = true
+              document.getElementById('steps').hidden = true
+              show('ok', 'WhatsApp bağlandı' + (number ? ' (' + number + ')' : '') + '. ' + (returnToApp ? 'Uygulamaya dönülüyor…' : 'Bu sekmeyi kapatıp panele dönebilirsiniz.'))
+              setTimeout(function () { backToApp('ok') }, 1200)
+            })
+            .catch(function () {
+              show('err', 'Sunucuya ulaşılamadı. İnternet bağlantınızı kontrol edip uygulamadan yeniden başlatın.')
+            })
+        }, 20)
+      }
+
+      btn.addEventListener('click', function () {
+        if (busy || !window.FB) return
+        busy = true
+        btn.disabled = true
+        signup = null
+        show('info', 'Facebook penceresi açılıyor…')
+        FB.login(function (response) {
+          var code = response && response.authResponse && response.authResponse.code
+          if (code) return finish(code)
+          busy = false
+          btn.disabled = false
+          show('err', 'Bağlantı tamamlanmadı. İsterseniz yeniden deneyebilirsiniz.')
+        }, {
+          config_id: CONFIG_ID,
+          response_type: 'code',
+          override_default_response_type: true,
+          // featureType: telefondaki WhatsApp Business numarasiyla baglama (Coexistence)
+          extras: { setup: {}, featureType: 'whatsapp_business_app_onboarding', sessionInfoVersion: '3' },
+        })
+      })
+    })()
+  </script>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/tr_TR/sdk.js"></script>
+</body>
+
+</html>
