@@ -1,0 +1,713 @@
+/* Adapptiv Digital sirket sayfasi (www.adapptivdigital.com). Urun sitesinin
+   site.css'i uzerine yalniz bu sayfaya ozgu parcalar: giris dizini, her urun/
+   hizmet icin tek ekranlik "farklarimiz" bolumu ve gorselleri. */
+
+/* ---------- Giris ---------- */
+.co-hero {
+  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+}
+
+/* Arkada yavasca kayan iki isik; giris durgun durmasin */
+.co-hero-sec {
+  position: relative;
+  isolation: isolate;
+}
+
+.co-glow {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.co-glow::before,
+.co-glow::after {
+  content: '';
+  position: absolute;
+  width: 46vw;
+  height: 46vw;
+  max-width: 640px;
+  max-height: 640px;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.55;
+}
+
+.co-glow::before {
+  top: -14%;
+  right: -10%;
+  background: radial-gradient(closest-side, rgb(238 106 36 / 0.34), transparent 72%);
+  animation: glow-a 16s ease-in-out infinite alternate;
+}
+
+.co-glow::after {
+  bottom: -26%;
+  left: -12%;
+  background: radial-gradient(closest-side, rgb(44 107 242 / 0.22), transparent 72%);
+  animation: glow-b 19s ease-in-out infinite alternate;
+}
+
+:root[data-theme='dark'] .co-glow::before,
+:root[data-theme='dark'] .co-glow::after {
+  opacity: 0.8;
+}
+
+@keyframes glow-a {
+  to {
+    transform: translate(-18%, 22%) scale(1.15);
+  }
+}
+
+@keyframes glow-b {
+  to {
+    transform: translate(24%, -16%) scale(0.9);
+  }
+}
+
+.idx {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  border-radius: var(--r-card);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  animation: rise 0.9s var(--ease) 0.2s both;
+}
+
+.idx-row {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  text-decoration: none;
+  color: var(--ink);
+  transition: background 0.2s;
+}
+
+.idx-row {
+  position: relative;
+}
+
+.idx-row + .idx-row::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 76px;
+  right: 16px;
+  height: 1px;
+  background: var(--line);
+}
+
+.idx-row:hover {
+  background: var(--surface-2);
+}
+
+.idx-row .mod-ico {
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  border-radius: 13px;
+}
+
+.idx-row .mod-ico .icon {
+  width: 22px;
+  height: 22px;
+}
+
+.idx-row strong {
+  display: block;
+  font-size: 16.5px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+.idx-row small {
+  display: block;
+  margin-top: 2px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+.idx-row > .icon {
+  color: var(--muted);
+  transition:
+    transform 0.25s var(--ease),
+    color 0.2s;
+}
+
+.idx-row:hover > .icon,
+.idx-row.is-active > .icon {
+  color: var(--ink);
+  transform: translateX(3px);
+}
+
+/* Sirayla one cikan satir: zemin + dolan alt cizgi (js/sirket.js) */
+.idx-row.is-active {
+  background: var(--surface-2);
+}
+
+.idx-row::after {
+  content: '';
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 6px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  opacity: 0;
+}
+
+.idx-row.is-active::after {
+  opacity: 0.85;
+  animation: idx-fill var(--idx-step, 2800ms) linear both;
+}
+
+.idx-row .mod-ico {
+  transition: transform 0.35s var(--ease);
+}
+
+.idx-row.is-active .mod-ico {
+  transform: scale(1.08);
+}
+
+@keyframes idx-fill {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* ---------- Tek ekranlik urun/hizmet bolumu ---------- */
+.feat {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: clamp(40px, 5vw, 80px);
+  align-items: center;
+}
+
+.feat.flip {
+  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+}
+
+.feat.flip .feat-copy {
+  order: 2;
+}
+
+.feat h2 {
+  font-size: clamp(30px, 3.4vw, 46px);
+  letter-spacing: -0.04em;
+  line-height: 1.06;
+}
+
+.feat .lead {
+  margin-top: 16px;
+  font-size: 17.5px;
+  color: var(--ink-2);
+  max-width: 52ch;
+}
+
+.kicker.k-green {
+  background: var(--t-green-bg);
+  color: var(--t-green);
+}
+
+.kicker.k-pink {
+  background: var(--t-pink-bg);
+  color: var(--t-pink);
+}
+
+.kicker.k-blue {
+  background: var(--t-blue-bg);
+  color: var(--t-blue);
+}
+
+.kicker.k-ink {
+  background: var(--surface-2);
+  color: var(--ink-2);
+}
+
+.t-ink {
+  background: var(--surface-2);
+  color: var(--ink-2);
+}
+
+.kicker.k-lilac {
+  background: var(--t-lilac-bg);
+  color: var(--t-lilac);
+}
+
+/* Farklarimiz: dort kisa madde, 2x2 */
+.diffs {
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 28px;
+}
+
+.diffs li {
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+.diffs b {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+.diffs span {
+  display: block;
+  margin-top: 4px;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+
+.feat-cta {
+  margin-top: 30px;
+}
+
+.feat-visual {
+  position: relative;
+  margin: 0;
+}
+
+/* site.css'teki giris animasyonlari bu bolumlerde calismasin */
+.feat-visual .window,
+.feat-visual .phone {
+  animation: none;
+}
+
+/* Adapptiv Isletme: bilgisayar + telefon */
+.v-isletme {
+  padding: 0 0 8% 8%;
+}
+
+.v-isletme .phone {
+  width: 27%;
+  left: 0;
+  bottom: 0;
+}
+
+/* Kapsul360: panel karti + veliye giden mesaj */
+.v-kapsul {
+  display: flex;
+  flex-direction: column;
+}
+
+.shot-card {
+  width: 82%;
+  padding: 20px;
+  border-radius: var(--r-card);
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
+}
+
+.shot-card img {
+  width: 100%;
+  aspect-ratio: 6 / 5;
+  object-fit: contain;
+}
+
+.v-kapsul .wa-card {
+  margin: -24% 0 0;
+  width: min(340px, 64%);
+}
+
+.v-kapsul.is-in .wa-msg {
+  animation: rise 0.7s var(--ease) 0.3s both;
+}
+
+.v-kapsul.is-in .wa-msg + .wa-msg {
+  animation-delay: 1s;
+}
+
+/* Reklam videosu: ornek kurgu plani (zaman cizelgesi) */
+.story {
+  padding: 26px;
+  border-radius: 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.story-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink-2);
+}
+
+.story-tag {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.story-bar {
+  display: flex;
+  gap: 4px;
+  margin: 20px 0 6px;
+}
+
+.story-bar i {
+  flex: 0 0 var(--w);
+  height: 8px;
+  border-radius: 999px;
+  background: var(--t-pink);
+  opacity: 0.35;
+}
+
+.story-bar i:first-child {
+  opacity: 1;
+}
+
+.story-bar i:nth-child(2) {
+  opacity: 0.6;
+}
+
+.story-steps {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.story-steps li {
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr);
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.story-steps time {
+  padding-top: 2px;
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 13px;
+  color: var(--t-pink);
+  font-variant-numeric: tabular-nums;
+}
+
+.story-steps b {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+.story-steps span {
+  display: block;
+  margin-top: 3px;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+
+.story-formats {
+  margin-top: 20px;
+}
+
+/* Web sitesi: tarayici penceresi */
+.browser {
+  border-radius: var(--r-img);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.browser-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface-2);
+}
+
+.browser-bar i {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--line);
+}
+
+.browser-bar span {
+  margin-left: 10px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+.browser img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* Mobil uygulama: iki telefon */
+.phones {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(16px, 2.4vw, 32px);
+  max-width: 440px;
+  margin-inline: auto;
+}
+
+.phones .phone {
+  position: relative;
+  left: auto;
+  bottom: auto;
+  width: auto;
+}
+
+.phones .phone + .phone {
+  transform: translateY(36px);
+}
+
+.v-mobil .platforms {
+  justify-content: center;
+  margin-top: 56px;
+}
+
+/* ---------- Iletisim ---------- */
+.co-closing {
+  min-height: 0;
+}
+
+.co-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding: clamp(36px, 5vw, 64px);
+  border-radius: 32px;
+  background: var(--navy);
+  color: var(--on-navy);
+  position: relative;
+  overflow: hidden;
+}
+
+.co-cta::before {
+  content: '';
+  position: absolute;
+  inset: -40% -10% auto 45%;
+  height: 160%;
+  background: radial-gradient(closest-side, rgb(238 106 36 / 0.2), transparent 70%);
+  pointer-events: none;
+}
+
+.co-cta > * {
+  position: relative;
+}
+
+.co-cta h2 {
+  font-size: clamp(30px, 3.4vw, 46px);
+  letter-spacing: -0.04em;
+}
+
+.co-cta p {
+  margin-top: 12px;
+  max-width: 50ch;
+  color: var(--on-navy-2);
+}
+
+.btn-light {
+  background: #fff;
+  color: #0f1a2e;
+}
+
+.btn-light:hover {
+  transform: translateY(-1px);
+}
+
+/* ---------- Dar ekranlar ---------- */
+@media (max-width: 960px) {
+  .co-hero,
+  .feat,
+  .feat.flip {
+    grid-template-columns: 1fr;
+    gap: 44px;
+  }
+
+  .feat.flip .feat-copy {
+    order: 0;
+  }
+
+  .co-cta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 560px) {
+  .diffs {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .idx-row {
+    gap: 12px;
+    padding: 12px 10px;
+  }
+
+  .idx-row + .idx-row::before {
+    left: 66px;
+    right: 10px;
+  }
+
+  .v-isletme {
+    padding-left: 10%;
+  }
+
+  .v-isletme .phone {
+    width: 32%;
+  }
+
+
+  .co-cta .btn {
+    width: 100%;
+    white-space: normal;
+  }
+}
+
+.brand-sub {
+  font-weight: 450;
+  color: var(--muted);
+}
+
+/* Meta reklamlari: urun sitesindeki ornek rapor */
+.feat-visual .ad-report {
+  max-width: 520px;
+  margin-inline: auto;
+}
+
+@media (max-width: 560px) {
+  .story {
+    padding: 20px;
+  }
+
+  .story-steps li {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .co-glow::before,
+  .co-glow::after {
+    animation: none;
+  }
+}
+
+/* ---------- Kutularin ustune gelince hafif hareket ---------- */
+@media (hover: hover) and (pointer: fine) {
+  .feat-visual .window,
+  .feat-visual .phone,
+  .shot-card,
+  .v-kapsul .wa-card,
+  .story,
+  .browser,
+  .feat-visual .ad-report,
+  .co-cta {
+    transition:
+      transform 0.45s var(--ease),
+      box-shadow 0.45s var(--ease);
+  }
+
+  .feat-visual .window:hover,
+  .shot-card:hover,
+  .story:hover,
+  .browser:hover,
+  .feat-visual .ad-report:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 2px 4px rgb(15 26 46 / 0.06), 0 28px 60px -16px rgb(15 26 46 / 0.24);
+  }
+
+  .feat-visual .phone:hover,
+  .v-kapsul .wa-card:hover {
+    transform: translateY(-8px) rotate(-1deg);
+  }
+
+  .phones .phone + .phone:hover {
+    transform: translateY(28px) rotate(1deg);
+  }
+
+  .co-cta:hover {
+    transform: translateY(-3px);
+  }
+
+  /* Farklarimiz: ustune gelince ust cizgi turuncuyla dolar */
+  .diffs li {
+    position: relative;
+  }
+
+  .diffs li::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s var(--ease);
+  }
+
+  .diffs li:hover::before {
+    transform: scaleX(1);
+  }
+
+  .diffs b {
+    transition: color 0.25s;
+  }
+
+  .diffs li:hover b {
+    color: var(--accent-ink);
+  }
+
+  /* Giris dizini: satir icerigi hafifce saga kayar */
+  .idx-row > span:nth-child(2) {
+    transition: transform 0.35s var(--ease);
+  }
+
+  .idx-row:hover > span:nth-child(2) {
+    transform: translateX(4px);
+  }
+
+  .idx-row:hover .mod-ico {
+    transform: scale(1.08) rotate(-4deg);
+  }
+
+  .story-steps li {
+    transition: background 0.25s;
+    border-radius: 10px;
+  }
+
+  .story-steps li:hover time {
+    color: var(--accent);
+  }
+}

@@ -83,6 +83,78 @@ function footer(kind) {
   </footer>`
 }
 
+// Sirket sayfasi (www.adapptivdigital.com, middleware.js / -> /sirket/)
+function headerSirket() {
+  const links = [
+    ['#isletme', 'İşletme'],
+    ['#kapsul360', 'Kapsül360'],
+    ['#video', 'Video'],
+    ['#meta', 'Meta reklam'],
+    ['#web', 'Web'],
+    ['#mobil', 'Mobil'],
+  ]
+  const a = links.map(([h, t]) => `<a href="${h}">${t}</a>`).join('\n          ')
+  return `<header class="nav">
+    <div class="wrap nav-in">
+      <a class="brand" href="/" aria-label="Adapptiv Digital ana sayfa"><img src="/assets/logo-mark.png" alt="" width="30" height="30" />Adapptiv <span class="brand-sub" lang="en">Digital</span></a>
+      <nav class="nav-links" aria-label="Ana menü">
+          ${a}
+      </nav>
+      <button class="theme-btn" type="button" aria-pressed="false" aria-label="Koyu temaya geç">${icon('moon').replace('class="icon"', 'class="icon i-moon"')}${icon('sun').replace('class="icon"', 'class="icon i-sun"')}</button>
+      <a class="btn btn-primary btn-sm nav-cta" href="#iletisim">Bize yazın</a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-label="Menüyü aç" aria-controls="menu-sheet">${icon('list')}</button>
+    </div>
+    <div class="sheet" id="menu-sheet">
+      <div>
+        <nav aria-label="Mobil menü">
+          ${a}
+          <a class="btn btn-primary" href="#iletisim">Bize yazın</a>
+        </nav>
+      </div>
+    </div>
+  </header>`
+}
+
+function footerSirket() {
+  return `<footer class="foot">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <a class="brand" href="/"><img src="/assets/logo-mark.png" alt="" width="30" height="30" />Adapptiv <span class="brand-sub" lang="en">Digital</span></a>
+          <p>Yazılım ürünleri, web sitesi, mobil uygulama, reklam videosu ve Meta reklamları.</p>
+        </div>
+        <div>
+          <h4>Ürünler</h4>
+          <ul>
+            <li><a href="https://isletme.adapptivdigital.com">Adapptiv İşletme</a></li>
+            <li><a href="https://kapsul360.com">Kapsül360</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Hizmetler</h4>
+          <ul>
+            <li><a href="#video">Reklam videosu</a></li>
+            <li><a href="#meta">Meta reklamları</a></li>
+            <li><a href="#web">Web sitesi</a></li>
+            <li><a href="#mobil">Mobil uygulama</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>İletişim</h4>
+          <ul>
+            <li><a href="mailto:info@adapptivdigital.com">info@adapptivdigital.com</a></li>
+            <li><a href="https://isletme.adapptivdigital.com/gizlilik">Gizlilik ve KVKK</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© <span data-year>2026</span> Sis İnternet ve Yazılım Hizmetleri San. Tic. Ltd. Şti.</span>
+        <span>MERSİS 0771064202700001 · Derecik Mah. 747. Sok. No: 2/3, İlkadım / Samsun</span>
+      </div>
+    </div>
+  </footer>`
+}
+
 // Varsayilan acik tema; kullanici koyu secerse hatirlanir. Boyamadan once calisir.
 const THEME_HEAD = `<meta name="theme-color" content="#f4f6f9" />
   <script>try{if(localStorage.getItem('adapptiv-tema')==='koyu')document.documentElement.setAttribute('data-theme','dark')}catch(e){}</script>`
@@ -93,7 +165,14 @@ function render(s, kind) {
     .replace(/\{\{i:([a-z0-9-]+)\}\}/g, (_, n) => icon(n))
     .replace('{{header:home}}', header(kind))
     .replace('{{footer:home}}', footer(kind))
+    .replace('{{header:sirket}}', headerSirket())
+    .replace('{{footer:sirket}}', footerSirket())
 }
+
+// 0) Sirket sayfasi
+const sirketTpl = fs.readFileSync(path.join(__dirname, 'sirket.tpl.html'), 'utf8')
+fs.writeFileSync(path.join(SITE, 'sirket/index.html'), render(sirketTpl, 'sirket'))
+console.log('ok sirket/index.html')
 
 // 1) Ana sayfa
 const tpl = fs.readFileSync(path.join(__dirname, 'index.tpl.html'), 'utf8')

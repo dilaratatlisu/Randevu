@@ -88,10 +88,13 @@
     })
   }
 
-  // Giris basligi: donen kelime (eski siteden)
+  // Giris basligi: donen kelime (eski siteden). Sirket sayfasi kendi
+  // kelimelerini data-words ile verir.
   var hlText = document.getElementById('hero-hl-text')
   if (hlText && !reduce) {
-    var words = ['tamamı', 'randevuları', 'müşterileri', 'ekibi', 'satışları']
+    var words = hlText.dataset.words
+      ? hlText.dataset.words.split('|')
+      : ['tamamı', 'randevuları', 'müşterileri', 'ekibi', 'satışları']
     var wi = 0
     var ci = words[0].length
     var deleting = true
@@ -493,7 +496,8 @@
   // Ozel imlec: hedef kilidi (eski siteden). Bosta kucuk dort koseli bir
   // retikul fareyi yumusakca takip edip doner; tiklanabilir bir ogenin ustune
   // gelince durur, dort kose o ogenin kenarlarina kilitlenir.
-  if (matchMedia('(pointer: fine)').matches && !reduce) {
+  // data-normal-imlec olan sayfada (sirket sayfasi) normal fare imleci kalir.
+  if (matchMedia('(pointer: fine)').matches && !reduce && !document.body.hasAttribute('data-normal-imlec')) {
     var tc = document.createElement('div')
     tc.className = 'tcursor spin'
     ;['tl', 'tr', 'bl', 'br'].forEach(function (c) {

@@ -1,131 +1,342 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" class="no-js">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <script>try{var t=localStorage.getItem('adapptiv-tema');if(t==='koyu')document.documentElement.setAttribute('data-theme','dark');else if(t==='acik')document.documentElement.setAttribute('data-theme','light')}catch(e){}</script>
-  <title>Adapptiv Digital | Yazılım, web ve dijital içerik</title>
-  <meta name="description" content="Adapptiv Digital; işletmeler ve eğitim kurumları için yazılım ürünleri geliştirir, web siteleri tasarlar ve sosyal medya reklam içerikleri hazırlar. Ürünlerimiz: Adapptiv İşletme ve Kapsül360." />
+  <title>Adapptiv Digital | Yazılım, web, mobil uygulama ve reklam videosu</title>
+  <meta name="description"
+    content="Adapptiv İşletme ve Kapsül360'ı geliştiren ekip. İşletmeler için web sitesi, mobil uygulama ve sosyal medya reklam videoları." />
+  <meta name="theme-color" content="#f4f6f9" />
+  <script>try{if(localStorage.getItem('adapptiv-tema')==='koyu')document.documentElement.setAttribute('data-theme','dark')}catch(e){}</script>
   <meta property="og:title" content="Adapptiv Digital" />
-  <meta property="og:description" content="İşletmeler ve eğitim kurumları için yazılım, web ve dijital içerik." />
-  <link rel="icon" href="assets/logo-mark.png" type="image/png" />
-  <link rel="preload" href="assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="css/site.css" />
+  <meta property="og:description" content="Kendi ürünlerini geliştiren yazılım ekibi: yazılım, web, mobil uygulama ve reklam videosu." />
+  <meta property="og:image" content="/assets/screens/web-takvim.jpg" />
+  <link rel="icon" href="/assets/logo-mark.png" type="image/png" />
+  <link rel="preload" href="/assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/css/site.css" />
+  <link rel="stylesheet" href="/css/sirket.css" />
 </head>
 
-<body>
+<body class="co" data-normal-imlec>
+  <a class="skip" href="#icerik">İçeriğe geç</a>
+  <div class="nav-sentinel" aria-hidden="true"></div>
   <header class="nav">
     <div class="wrap nav-in">
-      <a class="brand" href="./" aria-label="Adapptiv Digital ana sayfa"><img src="assets/logo-mark.png" alt="" width="26" height="26" />Adapptiv<small lang="en">Digital</small></a>
+      <a class="brand" href="/" aria-label="Adapptiv Digital ana sayfa"><img src="/assets/logo-mark.png" alt="" width="30" height="30" />Adapptiv <span class="brand-sub" lang="en">Digital</span></a>
       <nav class="nav-links" aria-label="Ana menü">
-        <a href="#urunler">Ürünler</a>
-        <a href="#hizmetler">Hizmetler</a>
-        <a href="#iletisim">İletişim</a>
+          <a href="#isletme">İşletme</a>
+          <a href="#kapsul360">Kapsül360</a>
+          <a href="#video">Video</a>
+          <a href="#meta">Meta reklam</a>
+          <a href="#web">Web</a>
+          <a href="#mobil">Mobil</a>
       </nav>
-      <button class="theme-btn" type="button" aria-label="Koyu temaya geç">
-        <svg class="i-moon" aria-hidden="true" viewBox="0 0 256 256" fill="currentColor"><path d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56,104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z"/></svg>
-        <svg class="i-sun" aria-hidden="true" viewBox="0 0 256 256" fill="currentColor"><path d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"/></svg>
-      </button>
+      <button class="theme-btn" type="button" aria-pressed="false" aria-label="Koyu temaya geç"><svg class="icon i-moon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56,104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z"/></svg><svg class="icon i-sun" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"/></svg></button>
+      <a class="btn btn-primary btn-sm nav-cta" href="#iletisim">Bize yazın</a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-label="Menüyü aç" aria-controls="menu-sheet"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"/></svg></button>
+    </div>
+    <div class="sheet" id="menu-sheet">
+      <div>
+        <nav aria-label="Mobil menü">
+          <a href="#isletme">İşletme</a>
+          <a href="#kapsul360">Kapsül360</a>
+          <a href="#video">Video</a>
+          <a href="#meta">Meta reklam</a>
+          <a href="#web">Web</a>
+          <a href="#mobil">Mobil</a>
+          <a class="btn btn-primary" href="#iletisim">Bize yazın</a>
+        </nav>
+      </div>
     </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="wrap">
-        <span class="tag">Yazılım ve dijital hizmetler · Samsun</span>
-        <h1>İşletmeler için yazılım, web ve <span>dijital içerik.</span></h1>
-        <p class="hero-lead">İşletmelerin ve eğitim kurumlarının günlük işini kolaylaştıran yazılım ürünleri geliştiriyor; web siteleri ve sosyal medya içerikleri hazırlıyoruz.</p>
-        <div class="hero-actions">
-          <a class="btn btn-dark" href="#urunler">Ürünlerimizi inceleyin <span class="arrow" aria-hidden="true">→</span></a>
-          <a class="btn btn-line" href="#iletisim">İletişime geçin</a>
-        </div>
-        <ul class="areas" aria-label="Çalışma alanlarımız">
-          <li><b>Yazılım ürünleri</b>İşletme ve eğitim</li>
-          <li><b>Web tasarım</b>Kurumsal siteler</li>
-          <li><b>Eğitim otomasyonu</b>Dershane ve kurslar</li>
-          <li><b>Dijital içerik</b>Reklam ve kurgu</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section alt" id="urunler">
-      <div class="wrap">
-        <div class="section-head">
-          <span class="tag">Ürünler</span>
-          <h2>Geliştirdiğimiz yazılımlar</h2>
-          <p>Abonelikle sunduğumuz iki ürün. Ayrıntılar, fiyatlar ve deneme bilgisi kendi sitelerinde.</p>
-        </div>
-        <div class="products">
-          <article class="product p-isletme">
-            <div class="product-shot"><img src="assets/work/isletme-web-takvim.webp" alt="Adapptiv İşletme randevu takvimi ekranı" width="1400" height="875" loading="lazy" /></div>
-            <div class="product-body">
-              <span class="product-name">Adapptiv İşletme</span>
-              <h3>Randevuyla çalışan işletmeler için</h3>
-              <p>Kuaför ve güzellik salonları için randevu, müşteri ve kasa yönetimi; müşterilere WhatsApp'tan cevap veren asistanla birlikte.</p>
-              <a class="link" href="https://isletme.adapptivdigital.com">Ürünü inceleyin <span class="arrow" aria-hidden="true">→</span></a>
+  <main id="icerik">
+    <!-- Giris: kim oldugumuz + alti bolumun dizini (sirayla one cikar) -->
+    <section class="hero co-hero-sec">
+      <div class="co-glow" aria-hidden="true"></div>
+      <div class="wrap hero-main">
+        <div class="hero-grid co-hero">
+          <div class="hero-copy">
+            <span class="kicker"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M197.58,129.06,146,110l-19-51.62a15.92,15.92,0,0,0-29.88,0L78,110l-51.62,19a15.92,15.92,0,0,0,0,29.88L78,178l19,51.62a15.92,15.92,0,0,0,29.88,0L146,178l51.62-19a15.92,15.92,0,0,0,0-29.88ZM137,164.22a8,8,0,0,0-4.74,4.74L112,223.85,91.78,169A8,8,0,0,0,87,164.22L32.15,144,87,123.78A8,8,0,0,0,91.78,119L112,64.15,132.22,119a8,8,0,0,0,4.74,4.74L191.85,144ZM144,40a8,8,0,0,1,8-8h16V16a8,8,0,0,1,16,0V32h16a8,8,0,0,1,0,16H184V64a8,8,0,0,1-16,0V48H152A8,8,0,0,1,144,40ZM248,88a8,8,0,0,1-8,8h-8v8a8,8,0,0,1-16,0V96h-8a8,8,0,0,1,0-16h8V72a8,8,0,0,1,16,0v8h8A8,8,0,0,1,248,88Z"/></svg> Adapptiv Digital</span>
+            <h1>
+              <span class="hl-visual" aria-hidden="true">
+                <span class="hl-line">İşinizi</span>
+                <span class="hl-line hl-word"><span id="hero-hl-text" data-words="dijitalde|yazılımla|reklamla|web sitesiyle|uygulamayla">dijitalde</span><span class="hl-caret"></span></span>
+                <span class="hl-line">büyütüyoruz.</span>
+              </span>
+              <span class="sr-only">İşinizi dijitalde büyütüyoruz.</span>
+            </h1>
+            <p class="hero-sub">Yazılım, web sitesi, mobil uygulama, reklam videosu ve Meta reklamları tek ekipten.
+              Salonlar için Adapptiv İşletme'yi, dershaneler için Kapsül360'ı da biz geliştirdik.</p>
+            <div class="hero-cta">
+              <a class="btn btn-primary" href="#isletme">Neler yaptığımızı görün <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a>
+              <a class="btn btn-ghost" href="mailto:info@adapptivdigital.com">Bize yazın</a>
             </div>
-          </article>
-          <article class="product p-kapsul">
-            <div class="product-shot"><img src="assets/work/kapsul360-panel.webp" alt="Kapsül360 öğrenci ve deneme analizi kartları" width="600" height="500" loading="lazy" /></div>
-            <div class="product-body">
-              <span class="product-name">Kapsül360</span>
-              <h3>Dershane ve eğitim kurumları için</h3>
-              <p>Kuruma özel mobil uygulama ve yönetim paneli: yoklama, deneme analizi, öğrenci takibi ve veliye otomatik bildirim.</p>
-              <a class="link" href="https://kapsul360.com">Ürünü inceleyin <span class="arrow" aria-hidden="true">→</span></a>
+          </div>
+
+          <nav class="idx" aria-label="Ürünler ve hizmetler">
+            <a class="idx-row" href="#isletme">
+              <span class="mod-ico t-amber"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Zm-38.34-85.66a8,8,0,0,1,0,11.32l-48,48a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L116,164.69l42.34-42.35A8,8,0,0,1,169.66,122.34Z"/></svg></span>
+              <span><strong>Adapptiv İşletme</strong><small>Salonlar için randevu, kasa ve yapay zekâ asistanı</small></span>
+              <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg>
+            </a>
+            <a class="idx-row" href="#kapsul360">
+              <span class="mod-ico t-green"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,200h-8V40a8,8,0,0,0-8-8H152a8,8,0,0,0-8,8V80H96a8,8,0,0,0-8,8v40H48a8,8,0,0,0-8,8v64H32a8,8,0,0,0,0,16H224a8,8,0,0,0,0-16ZM160,48h40V200H160ZM104,96h40V200H104ZM56,144H88v56H56Z"/></svg></span>
+              <span><strong>Kapsül360</strong><small>Dershaneler için yönetim paneli ve kuruma özel uygulama</small></span>
+              <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg>
+            </a>
+            <a class="idx-row" href="#video">
+              <span class="mod-ico t-pink"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M232.4,114.49,88.32,26.35a16,16,0,0,0-16.2-.3A15.86,15.86,0,0,0,64,39.87V216.13A15.94,15.94,0,0,0,80,232a16.07,16.07,0,0,0,8.36-2.35L232.4,141.51a15.81,15.81,0,0,0,0-27ZM80,215.94V40l143.83,88Z"/></svg></span>
+              <span><strong>Reklam videosu</strong><small>Reels, TikTok ve Shorts için dikey reklamlar</small></span>
+              <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg>
+            </a>
+            <a class="idx-row" href="#meta">
+              <span class="mod-ico t-blue"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M240,149.31c0,16.11-3.17,29.89-9.17,39.84-7.43,12.33-19,18.85-33.39,18.85-27.94,0-47.78-37-68.78-76.22C111.64,100,92.35,64,74,64c-9.38,0-19.94,10-28.25,26.67A138.18,138.18,0,0,0,32,149.31c0,13.2,2.38,24.12,6.88,31.58S49.82,192,58.56,192c15.12,0,30.85-24.54,44.23-48.55a8,8,0,0,1,14,7.8C101.46,178.71,83.07,208,58.56,208c-14.41,0-26-6.52-33.39-18.85-6-10-9.17-23.73-9.17-39.84A154.81,154.81,0,0,1,31.42,83.54C42.82,60.62,57.94,48,74,48c27.94,0,47.77,37,68.78,76.22C159.79,156,179.08,192,197.44,192c8.74,0,15.18-3.63,19.68-11.11S224,162.51,224,149.31a138.18,138.18,0,0,0-13.74-58.64C202,74,191.39,64,182,64c-8.36,0-17.68,7.48-28.51,22.88a8,8,0,1,1-13.08-9.21c9-12.74,23-29.67,41.59-29.67,16.05,0,31.17,12.62,42.57,35.54A154.81,154.81,0,0,1,240,149.31Z"/></svg></span>
+              <span><strong>Meta reklamları</strong><small>Instagram ve Facebook reklam kurulumu ve takibi</small></span>
+              <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg>
+            </a>
+            <a class="idx-row" href="#web">
+              <span class="mod-ico t-lilac"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M208,40H48A24,24,0,0,0,24,64V176a24,24,0,0,0,24,24h72v16H96a8,8,0,0,0,0,16h64a8,8,0,0,0,0-16H136V200h72a24,24,0,0,0,24-24V64A24,24,0,0,0,208,40ZM48,56H208a8,8,0,0,1,8,8v80H40V64A8,8,0,0,1,48,56ZM208,184H48a8,8,0,0,1-8-8V160H216v16A8,8,0,0,1,208,184Z"/></svg></span>
+              <span><strong>Web sitesi</strong><small>Markaya özel, hızlı kurumsal siteler</small></span>
+              <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg>
+            </a>
+            <a class="idx-row" href="#mobil">
+              <span class="mod-ico t-ink"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M176,16H80A24,24,0,0,0,56,40V216a24,24,0,0,0,24,24h96a24,24,0,0,0,24-24V40A24,24,0,0,0,176,16ZM72,64H184V192H72Zm8-32h96a8,8,0,0,1,8,8v8H72V40A8,8,0,0,1,80,32Zm96,192H80a8,8,0,0,1-8-8v-8H184v8A8,8,0,0,1,176,224Z"/></svg></span>
+              <span><strong>Mobil uygulama</strong><small>Android, iOS ve web paneli tek sistemde</small></span>
+              <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg>
+            </a>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <!-- Adapptiv Isletme -->
+    <section class="section" id="isletme">
+      <div class="wrap feat">
+        <div class="feat-copy reveal">
+          <span class="kicker"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Zm-38.34-85.66a8,8,0,0,1,0,11.32l-48,48a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L116,164.69l42.34-42.35A8,8,0,0,1,169.66,122.34Z"/></svg> Adapptiv İşletme · Salonlar için</span>
+          <h2>Randevudan reklama, salonun tamamı tek uygulamada.</h2>
+          <p class="lead">Kuaför ve güzellik salonları için geliştirdiğimiz uygulama. Defter, WhatsApp yazışmaları ve Excel
+            tabloları yerine her şey tek yerde, telefonda ve bilgisayarda.</p>
+          <ul class="diffs">
+            <li><b>Salona özel yapay zekâ asistanı</b><span>WhatsApp ve Instagram'dan yazana salonun fiyat ve saatleriyle cevap
+                verir, randevuyu kendisi açar.</span></li>
+            <li><b>Reklamın getirisi görünür</b><span>Meta reklam harcaması, gelen randevu ve ciroyla eşleşir.</span></li>
+            <li><b>Gerçek tahsilata dayalı ciro</b><span>Kasa, borç, paket seansları ve prim hesabı aynı yerde.</span></li>
+            <li><b>Ücretsiz başlangıç</b><span>Telefonda ve bilgisayarda aynı hesap; ücretsiz paketle denenir.</span></li>
+          </ul>
+          <a class="btn btn-primary feat-cta" href="https://isletme.adapptivdigital.com">Adapptiv İşletme'yi inceleyin <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a>
+        </div>
+        <div class="feat-visual v-isletme reveal" style="--i: 1">
+          <div class="window">
+            <img src="/assets/screens/web-takvim.jpg" width="2880" height="1800" loading="lazy"
+              alt="Adapptiv İşletme randevu takvimi: çalışanlar yan yana, günün randevuları saat saat" />
+          </div>
+          <div class="phone">
+            <img src="/assets/screens/tel-takvim.jpg" width="1170" height="2532" loading="lazy" alt="Telefonda günün randevu listesi" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kapsul360 -->
+    <section class="section" id="kapsul360">
+      <div class="wrap feat flip">
+        <div class="feat-copy reveal">
+          <span class="kicker k-green"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,200h-8V40a8,8,0,0,0-8-8H152a8,8,0,0,0-8,8V80H96a8,8,0,0,0-8,8v40H48a8,8,0,0,0-8,8v64H32a8,8,0,0,0,0,16H224a8,8,0,0,0,0-16ZM160,48h40V200H160ZM104,96h40V200H104ZM56,144H88v56H56Z"/></svg> Kapsül360 · Dershaneler için</span>
+          <h2>Dershanenin tamamı, kurumun kendi uygulamasında.</h2>
+          <p class="lead">Dershane ve eğitim kurumları için yönetim paneli ve mobil uygulama. Yoklama, deneme analizi, ödev,
+            etüt, rehberlik ve veli iletişimi tek sistemde.</p>
+          <ul class="diffs">
+            <li><b>Kurumun kendi uygulaması</b><span>App Store ve Google Play'de kurumun adı, logosu ve renkleriyle yayınlanır.</span></li>
+            <li><b>Yapay zekâ ile deneme analizi</b><span>Toplu karne PDF'inden her öğrencinin zayıf konuları çıkarılır.</span></li>
+            <li><b>Her kuruma ayrı sunucu</b><span>Ortak veritabanı yok; kurumun verisi başka kurumla paylaşılmaz.</span></li>
+            <li><b>Mesaj başına ücret yok</b><span>Yoklama, duyuru ve rapor bildirimleri WhatsApp'tan, pakete dahil.</span></li>
+          </ul>
+          <a class="btn btn-primary feat-cta" href="https://kapsul360.com">Kapsül360'ı inceleyin <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a>
+        </div>
+        <div class="feat-visual v-kapsul reveal" style="--i: 1">
+          <div class="shot-card">
+            <img src="/assets/sirket/kapsul360-panel.webp" width="600" height="500" loading="lazy"
+              alt="Kapsül360 panelinden aktif öğrenci sayısı ve ders bazında deneme analizi kartları" />
+          </div>
+          <div class="wa-card" aria-label="Veliye giden örnek mesajlar">
+            <div class="wa-head"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M187.58,144.84l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88,40,40,0,0,0,40-40A8,8,0,0,0,187.58,144.84ZM152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.47,56.47,0,0,0,30.15,30.15A8,8,0,0,0,138,155l14.61-9.74,23,11.48A24,24,0,0,1,152,176ZM128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216Z"/></svg><span><strong>Kapsül360</strong><small>Veli bilgilendirme · örnek</small></span></div>
+            <div class="wa-msg">
+              <small class="wa-tag">Deneme sonucu</small>
+              Merhaba, Elif'in TYT Deneme 3 sonucu hazır: 84,5 net. Geometri ve paragraf için çalışma önerisi raporda.
+              <time>18:40</time>
             </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="hizmetler">
-      <div class="wrap">
-        <div class="section-head">
-          <span class="tag">Hizmetler</span>
-          <h2>Neler yapıyoruz</h2>
-        </div>
-        <div class="services">
-          <div class="service">
-            <h3>Yazılım ürünleri</h3>
-            <p>İşletmeler için randevu, müşteri ve kasa yönetimi; WhatsApp otomasyonu. Hazır ürünlerimiz ya da işinize özel geliştirme.</p>
-          </div>
-          <div class="service">
-            <h3>Web tasarım</h3>
-            <p>Markanıza özel, hızlı ve telefonda sorunsuz çalışan kurumsal web siteleri.</p>
-          </div>
-          <div class="service">
-            <h3>Eğitim otomasyonu</h3>
-            <p>Dershane ve kurslar için öğrenci takibi, yoklama, deneme analizi ve veli bilgilendirme.</p>
-          </div>
-          <div class="service">
-            <h3>Dijital içerik</h3>
-            <p>Sosyal medya için reklam videoları; kurgu, altyazı ve yayın hazırlığı.</p>
+            <div class="wa-msg">
+              <small class="wa-tag">Yoklama</small>
+              Elif bugün 09:02'de kuruma giriş yaptı.
+              <time>09:02</time>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section ref-section">
+    <!-- Reklam videosu -->
+    <section class="section" id="video">
+      <div class="wrap feat">
+        <div class="feat-copy reveal">
+          <span class="kicker k-pink"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M232.4,114.49,88.32,26.35a16,16,0,0,0-16.2-.3A15.86,15.86,0,0,0,64,39.87V216.13A15.94,15.94,0,0,0,80,232a16.07,16.07,0,0,0,8.36-2.35L232.4,141.51a15.81,15.81,0,0,0,0-27ZM80,215.94V40l143.83,88Z"/></svg> Reklam videosu</span>
+          <h2>Kaydırırken durduran reklam videoları.</h2>
+          <p class="lead">Instagram, TikTok ve YouTube Shorts için dikey reklam videoları. Fikirden yayına hazır dosyaya
+            kadar tek ekip.</p>
+          <ul class="diffs">
+            <li><b>Telefona göre kurgu</b><span>Dikey format; sesi kapalı izleyen de altyazıdan anlar.</span></li>
+            <li><b>İlk saniyeler önce düşünülür</b><span>Mesaj, izleyici kaydırıp geçmeden ilk saniyelerde verilir.</span></li>
+            <li><b>Senaryodan yayına tek elden</b><span>Metin, görüntü, seslendirme, müzik, altyazı ve kurgu.</span></li>
+            <li><b>Markanıza uygun</b><span>Renk, yazı tipi ve logo her videoda aynı; hesabınız tutarlı görünür.</span></li>
+          </ul>
+          <a class="btn btn-ghost feat-cta" href="mailto:info@adapptivdigital.com?subject=Reklam%20videosu">Video için yazın <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a>
+        </div>
+        <div class="feat-visual reveal" style="--i: 1">
+          <div class="story" aria-label="Örnek kurgu planı: 30 saniyelik dikey reklam">
+            <div class="story-head">
+              <span>Örnek kurgu planı</span>
+              <span class="story-tag">30 sn · 9:16</span>
+            </div>
+            <div class="story-bar" aria-hidden="true"><i style="--w: 10%"></i><i style="--w: 50%"></i><i style="--w: 40%"></i></div>
+            <ol class="story-steps">
+              <li>
+                <time>0–3 sn</time>
+                <div><b>Durduran açılış</b><span>Kaydıran kişiyi tutan ilk görüntü ve tek cümlelik soru.</span></div>
+              </li>
+              <li>
+                <time>3–18 sn</time>
+                <div><b>Sorun ve çözüm</b><span>Müşterinin derdi, sizin farkınız; her cümle altyazılı.</span></div>
+              </li>
+              <li>
+                <time>18–30 sn</time>
+                <div><b>Teklif ve çağrı</b><span>Kampanya, adres ya da "WhatsApp'tan yazın" ile net bir son.</span></div>
+              </li>
+            </ol>
+            <div class="platforms story-formats">
+              <span><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"/></svg> Reels</span>
+              <span><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M232.4,114.49,88.32,26.35a16,16,0,0,0-16.2-.3A15.86,15.86,0,0,0,64,39.87V216.13A15.94,15.94,0,0,0,80,232a16.07,16.07,0,0,0,8.36-2.35L232.4,141.51a15.81,15.81,0,0,0,0-27ZM80,215.94V40l143.83,88Z"/></svg> TikTok ve Shorts</span>
+              <span><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M240,149.31c0,16.11-3.17,29.89-9.17,39.84-7.43,12.33-19,18.85-33.39,18.85-27.94,0-47.78-37-68.78-76.22C111.64,100,92.35,64,74,64c-9.38,0-19.94,10-28.25,26.67A138.18,138.18,0,0,0,32,149.31c0,13.2,2.38,24.12,6.88,31.58S49.82,192,58.56,192c15.12,0,30.85-24.54,44.23-48.55a8,8,0,0,1,14,7.8C101.46,178.71,83.07,208,58.56,208c-14.41,0-26-6.52-33.39-18.85-6-10-9.17-23.73-9.17-39.84A154.81,154.81,0,0,1,31.42,83.54C42.82,60.62,57.94,48,74,48c27.94,0,47.77,37,68.78,76.22C159.79,156,179.08,192,197.44,192c8.74,0,15.18-3.63,19.68-11.11S224,162.51,224,149.31a138.18,138.18,0,0,0-13.74-58.64C202,74,191.39,64,182,64c-8.36,0-17.68,7.48-28.51,22.88a8,8,0,1,1-13.08-9.21c9-12.74,23-29.67,41.59-29.67,16.05,0,31.17,12.62,42.57,35.54A154.81,154.81,0,0,1,240,149.31Z"/></svg> Reklam için hazır</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Meta reklamlari -->
+    <section class="section" id="meta">
+      <div class="wrap feat flip">
+        <div class="feat-copy reveal">
+          <span class="kicker k-blue"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M240,149.31c0,16.11-3.17,29.89-9.17,39.84-7.43,12.33-19,18.85-33.39,18.85-27.94,0-47.78-37-68.78-76.22C111.64,100,92.35,64,74,64c-9.38,0-19.94,10-28.25,26.67A138.18,138.18,0,0,0,32,149.31c0,13.2,2.38,24.12,6.88,31.58S49.82,192,58.56,192c15.12,0,30.85-24.54,44.23-48.55a8,8,0,0,1,14,7.8C101.46,178.71,83.07,208,58.56,208c-14.41,0-26-6.52-33.39-18.85-6-10-9.17-23.73-9.17-39.84A154.81,154.81,0,0,1,31.42,83.54C42.82,60.62,57.94,48,74,48c27.94,0,47.77,37,68.78,76.22C159.79,156,179.08,192,197.44,192c8.74,0,15.18-3.63,19.68-11.11S224,162.51,224,149.31a138.18,138.18,0,0,0-13.74-58.64C202,74,191.39,64,182,64c-8.36,0-17.68,7.48-28.51,22.88a8,8,0,1,1-13.08-9.21c9-12.74,23-29.67,41.59-29.67,16.05,0,31.17,12.62,42.57,35.54A154.81,154.81,0,0,1,240,149.31Z"/></svg> Meta reklamları · Instagram ve Facebook</span>
+          <h2>Reklam bütçeniz müşteriye dönüşsün.</h2>
+          <p class="lead">Instagram ve Facebook reklamlarınızı kurar, yönetir ve sonucunu raporlarız. Hangi reklamın müşteri
+            getirdiğini, hangisinin boşa gittiğini bilirsiniz.</p>
+          <ul class="diffs">
+            <li><b>Doğru kuruluş</b><span>Reklam hesabı, Meta Pixel ve hedef kitle ayarları baştan doğru yapılır.</span></li>
+            <li><b>Video ve metin aynı ekipten</b><span>Reklamın görseli de yazısı da kampanyayı yöneten ekipten çıkar.</span></li>
+            <li><b>Sonuca göre bütçe</b><span>Kazandıran reklam büyütülür, getirmeyen durdurulur.</span></li>
+            <li><b>Anlaşılır rapor</b><span>Harcama, tıklama ve gelen müşteri; teknik terim olmadan.</span></li>
+          </ul>
+          <a class="btn btn-ghost feat-cta" href="mailto:info@adapptivdigital.com?subject=Meta%20reklamlar%C4%B1">Reklamlarınız için yazın <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a>
+        </div>
+        <div class="feat-visual">
+          <div class="ad-report reveal" style="--i: 1" aria-label="Örnek reklam raporu">
+            <div class="ad-head">
+              <span>Son 30 gün · Instagram ve Facebook</span>
+              <span class="ad-sample">Örnek rapor</span>
+            </div>
+            <div class="ad-roas">
+              <strong><span class="count-up" data-count="6.4" data-decimals="1">0</span><small>x</small></strong>
+              <span>reklama harcanan her 1 ₺ için<br /><b>6,4 ₺ ciro</b> geldi</span>
+            </div>
+            <ol class="funnel">
+              <li style="--w: 100%"><span>Harcama</span><b>₺4.850</b><i></i></li>
+              <li style="--w: 84%"><span>Gösterim</span><b>61.240</b><i></i></li>
+              <li style="--w: 58%"><span>Tıklama</span><b>1.874</b><i></i></li>
+              <li style="--w: 34%"><span>Müşteri</span><b>38</b><i></i></li>
+              <li class="hot" style="--w: 76%"><span>Ciro</span><b>₺31.040</b><i></i></li>
+            </ol>
+            <div class="ad-src">
+              <span class="ad-src-label">Reklamdan gelen müşteriler</span>
+              <div class="src-bar"><i style="--p: 63%"></i></div>
+              <div class="src-legend">
+                <span><em class="d1"></em>Instagram · 24</span>
+                <span><em class="d2"></em>Facebook · 14</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Web sitesi -->
+    <section class="section" id="web">
+      <div class="wrap feat">
+        <div class="feat-copy reveal">
+          <span class="kicker k-lilac"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M208,40H48A24,24,0,0,0,24,64V176a24,24,0,0,0,24,24h72v16H96a8,8,0,0,0,0,16h64a8,8,0,0,0,0-16H136V200h72a24,24,0,0,0,24-24V64A24,24,0,0,0,208,40ZM48,56H208a8,8,0,0,1,8,8v80H40V64A8,8,0,0,1,48,56ZM208,184H48a8,8,0,0,1-8-8V160H216v16A8,8,0,0,1,208,184Z"/></svg> Web sitesi</span>
+          <h2>Hızlı açılan, telefonda kusursuz kurumsal siteler.</h2>
+          <p class="lead">İşletmenizi ilk kez duyan kişi çoğu zaman sitenize telefondan bakar. Siteyi o ilk birkaç saniye için
+            tasarlarız.</p>
+          <ul class="diffs">
+            <li><b>Hazır tema değil</b><span>Markanıza özel tasarlanır, gereksiz eklentisiz kodlanır; sayfa hızlı açılır.</span></li>
+            <li><b>Önce telefon</b><span>Tasarım önce telefonda kurulur, sonra büyük ekrana genişler.</span></li>
+            <li><b>Yasal sayfalar ve iletişim</b><span>KVKK ve gizlilik metinleri, iletişim formu, WhatsApp butonu.</span></li>
+            <li><b>Alan adından yayına</b><span>Alan adı, kurumsal e-posta, sunucu ve Google'da görünme ayarları.</span></li>
+          </ul>
+          <a class="btn btn-ghost feat-cta" href="https://www.farkvipegitim.com" rel="noopener">Örnek: farkvipegitim.com <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a>
+        </div>
+        <div class="feat-visual v-web reveal" style="--i: 1">
+          <div class="browser">
+            <div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>farkvipegitim.com</span></div>
+            <img src="/assets/sirket/fark-site.webp" width="1200" height="750" loading="lazy"
+              alt="Fark Eğitim web sitesinin ana sayfası" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mobil uygulama -->
+    <section class="section" id="mobil">
+      <div class="wrap feat flip">
+        <div class="feat-copy reveal">
+          <span class="kicker k-ink"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M176,16H80A24,24,0,0,0,56,40V216a24,24,0,0,0,24,24h96a24,24,0,0,0,24-24V40A24,24,0,0,0,176,16ZM72,64H184V192H72Zm8-32h96a8,8,0,0,1,8,8v8H72V40A8,8,0,0,1,80,32Zm96,192H80a8,8,0,0,1-8-8v-8H184v8A8,8,0,0,1,176,224Z"/></svg> Mobil uygulama</span>
+          <h2>Android, iOS ve web; tek sistem, aynı veriler.</h2>
+          <p class="lead">İşinize özel mobil uygulama ve yönetim paneli. Adapptiv İşletme ve Kapsül360'ı geliştirdiğimiz
+            altyapıyla.</p>
+          <ul class="diffs">
+            <li><b>Tek kod, üç platform</b><span>Android, iOS ve web paneli aynı altyapıdan; bir yerdeki değişiklik hepsinde görünür.</span></li>
+            <li><b>Mağazaya kadar biz</b><span>Google Play ve App Store hesabı, inceleme ve yayın süreci.</span></li>
+            <li><b>Bildirim ve WhatsApp</b><span>Anlık bildirim, WhatsApp Business API ve abonelik altyapısı.</span></li>
+            <li><b>Kendi ürünlerimizde denenmiş</b><span>Önerdiğimiz altyapıyı her gün kendi uygulamalarımızda kullanıyoruz.</span></li>
+          </ul>
+          <a class="btn btn-ghost feat-cta" href="mailto:info@adapptivdigital.com?subject=Mobil%20uygulama">Uygulama için yazın <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a>
+        </div>
+        <div class="feat-visual v-mobil reveal" style="--i: 1">
+          <div class="phones">
+            <div class="phone"><img src="/assets/screens/tel-anasayfa.jpg" width="1170" height="2532" loading="lazy" alt="Adapptiv İşletme uygulamasında günün özeti" /></div>
+            <div class="phone"><img src="/assets/screens/tel-online-randevu.jpg" width="1170" height="3645" loading="lazy" alt="Uygulamadan oluşturulan online randevu sayfası" /></div>
+          </div>
+          <div class="platforms">
+            <span><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M239.82,114.19,72,18.16a16,16,0,0,0-16.12,0A15.68,15.68,0,0,0,48,31.87V224.13a15.68,15.68,0,0,0,7.92,13.67,16,16,0,0,0,16.12,0l167.78-96a15.75,15.75,0,0,0,0-27.62ZM64,212.67V43.33L148.69,128Zm96-73.36,18.92,18.92-88.5,50.66ZM90.4,47.1l88.53,50.67L160,116.69ZM193.31,150l-22-22,22-22,38.43,22Z"/></svg> Google Play</span>
+            <span><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M223.3,169.59a8.07,8.07,0,0,0-2.8-3.4C203.53,154.53,200,134.64,200,120c0-17.67,13.47-33.06,21.5-40.67a8,8,0,0,0,0-11.62C208.82,55.74,187.82,48,168,48a72.2,72.2,0,0,0-40,12.13,71.56,71.56,0,0,0-90.71,9.09A74.63,74.63,0,0,0,16,123.4a127.06,127.06,0,0,0,40.14,89.73A39.8,39.8,0,0,0,83.59,224h87.68a39.84,39.84,0,0,0,29.12-12.57,125,125,0,0,0,17.82-24.6C225.23,174,224.33,172,223.3,169.59Zm-34.63,30.94a23.76,23.76,0,0,1-17.4,7.47H83.59a23.82,23.82,0,0,1-16.44-6.51A111.14,111.14,0,0,1,32,123,58.5,58.5,0,0,1,48.65,80.47,54.81,54.81,0,0,1,88,64h.78A55.45,55.45,0,0,1,123,76.28a8,8,0,0,0,10,0A55.44,55.44,0,0,1,168,64a70.64,70.64,0,0,1,36,10.35c-13,14.52-20,30.47-20,45.65,0,23.77,7.64,42.73,22.18,55.3A105.82,105.82,0,0,1,188.67,200.53ZM128.23,30A40,40,0,0,1,167,0h1a8,8,0,0,1,0,16h-1a24,24,0,0,0-23.24,18,8,8,0,1,1-15.5-4Z"/></svg> App Store</span>
+            <span><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M208,40H48A24,24,0,0,0,24,64V176a24,24,0,0,0,24,24h72v16H96a8,8,0,0,0,0,16h64a8,8,0,0,0,0-16H136V200h72a24,24,0,0,0,24-24V64A24,24,0,0,0,208,40ZM48,56H208a8,8,0,0,1,8,8v80H40V64A8,8,0,0,1,48,56ZM208,184H48a8,8,0,0,1-8-8V160H216v16A8,8,0,0,1,208,184Z"/></svg> Web paneli</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Iletisim -->
+    <section class="closing co-closing" id="iletisim">
       <div class="wrap">
-        <div class="ref">
+        <div class="co-cta reveal">
           <div>
-            <span class="tag">Referans</span>
-            <h3>Fark Eğitim · Anamur</h3>
-            <p>YKS ve LGS kurs merkezinin web sitesini ve sosyal medya reklam içeriklerini hazırladık.</p>
+            <h2>Projenizi konuşalım.</h2>
+            <p>Yazılım, web sitesi, mobil uygulama ya da reklam videosu. Ne yapmak istediğinizi yazın, size dönelim.</p>
           </div>
-          <a class="link" href="https://www.farkvipegitim.com" rel="noopener">farkvipegitim.com <span class="arrow" aria-hidden="true">→</span></a>
+          <a class="btn btn-light" href="mailto:info@adapptivdigital.com">info@adapptivdigital.com <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a>
         </div>
-      </div>
-    </section>
-
-    <section class="cta" id="iletisim">
-      <div class="wrap">
-        <div>
-          <h2>Projenizi konuşalım</h2>
-          <p>Bir yazılım, web sitesi ya da dijital içerik ihtiyacınız varsa bize yazın.</p>
-        </div>
-        <a class="btn" href="mailto:info@adapptivdigital.com">info@adapptivdigital.com</a>
       </div>
     </section>
   </main>
@@ -134,8 +345,8 @@
     <div class="wrap">
       <div class="foot-grid">
         <div>
-          <a class="brand" href="./"><img src="assets/logo-mark.png" alt="" width="24" height="24" />Adapptiv<small lang="en">Digital</small></a>
-          <p class="foot-about">Yazılım, web ve dijital içerik. Samsun.</p>
+          <a class="brand" href="/"><img src="/assets/logo-mark.png" alt="" width="30" height="30" />Adapptiv <span class="brand-sub" lang="en">Digital</span></a>
+          <p>Yazılım ürünleri, web sitesi, mobil uygulama, reklam videosu ve Meta reklamları.</p>
         </div>
         <div>
           <h4>Ürünler</h4>
@@ -145,43 +356,30 @@
           </ul>
         </div>
         <div>
-          <h4>Şirket</h4>
+          <h4>Hizmetler</h4>
           <ul>
-            <li><a href="#hizmetler">Hizmetler</a></li>
-            <li><a href="mailto:info@adapptivdigital.com">İletişim</a></li>
-            <li><a href="https://isletme.adapptivdigital.com/gizlilik/">Gizlilik</a></li>
+            <li><a href="#video">Reklam videosu</a></li>
+            <li><a href="#meta">Meta reklamları</a></li>
+            <li><a href="#web">Web sitesi</a></li>
+            <li><a href="#mobil">Mobil uygulama</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>İletişim</h4>
+          <ul>
+            <li><a href="mailto:info@adapptivdigital.com">info@adapptivdigital.com</a></li>
+            <li><a href="https://isletme.adapptivdigital.com/gizlilik">Gizlilik ve KVKK</a></li>
           </ul>
         </div>
       </div>
-      <div class="foot-legal">
-        <span>© <span data-year>2026</span> Adapptiv Digital</span>
-        <span>Sis İnternet ve Yazılım Hizmetleri San. Tic. Ltd. Şti. · MERSİS 0771064202700001 · Derecik Mah. 747. Sok. No: 2/3, İlkadım / Samsun</span>
+      <div class="foot-bottom">
+        <span>© <span data-year>2026</span> Sis İnternet ve Yazılım Hizmetleri San. Tic. Ltd. Şti.</span>
+        <span>MERSİS 0771064202700001 · Derecik Mah. 747. Sok. No: 2/3, İlkadım / Samsun</span>
       </div>
     </div>
   </footer>
-
-  <script>
-    (function () {
-      var root = document.documentElement
-      var btn = document.querySelector('.theme-btn')
-      function isDark() {
-        var t = root.getAttribute('data-theme')
-        return t ? t === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches
-      }
-      function sync() {
-        btn.setAttribute('aria-label', isDark() ? 'Açık temaya geç' : 'Koyu temaya geç')
-        if (!root.getAttribute('data-theme')) root.setAttribute('data-theme', isDark() ? 'dark' : 'light')
-      }
-      sync()
-      btn.addEventListener('click', function () {
-        var next = isDark() ? 'light' : 'dark'
-        root.setAttribute('data-theme', next)
-        try { localStorage.setItem('adapptiv-tema', next === 'dark' ? 'koyu' : 'acik') } catch (e) {}
-        sync()
-      })
-      document.querySelectorAll('[data-year]').forEach(function (el) { el.textContent = new Date().getFullYear() })
-    })()
-  </script>
+  <script src="/js/site.js" defer></script>
+  <script src="/js/sirket.js" defer></script>
 </body>
 
 </html>
