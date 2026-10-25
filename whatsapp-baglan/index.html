@@ -67,6 +67,7 @@
       var btn = document.getElementById('connect')
       var statusEl = document.getElementById('status')
       var signup = null
+      var lastError = ''
       var busy = false
 
       function show(kind, text) {
@@ -95,9 +96,16 @@
         if (typeof data.event === 'string' && data.event.indexOf('FINISH') === 0) {
           signup = data.data || null
         } else if (data.event === 'CANCEL' || data.event === 'ERROR') {
+          // Meta yarida kalan adimi ya da hatanin sebebini de gonderir; destek
+          // icin ekranda gosterilir.
+          var d = data.data || {}
+          var detail = d.error_message
+            ? ' Meta: ' + d.error_message + (d.error_code ? ' (kod ' + d.error_code + ')' : '')
+            : d.current_step ? ' Kalınan adım: ' + d.current_step : ''
+          lastError = (data.event === 'ERROR' ? 'Meta bağlantıyı tamamlamadı.' : 'Bağlantı yarıda kaldı.') + detail
           busy = false
           btn.disabled = false
-          show('err', 'Bağlantı tamamlanmadı. İsterseniz yeniden deneyebilirsiniz.')
+          show('err', lastError + ' İsterseniz yeniden deneyebilirsiniz.')
         }
       })
 
@@ -150,13 +158,15 @@
         busy = true
         btn.disabled = true
         signup = null
+        lastError = ''
         show('info', 'Facebook penceresi açılıyor…')
         FB.login(function (response) {
           var code = response && response.authResponse && response.authResponse.code
           if (code) return finish(code)
           busy = false
           btn.disabled = false
-          show('err', 'Bağlantı tamamlanmadı. İsterseniz yeniden deneyebilirsiniz.')
+          // Meta'nin gonderdigi sebep varsa onu ezmeden goster
+          show('err', (lastError || 'Bağlantı tamamlanmadı.' + (response && response.status ? ' Durum: ' + response.status : '')) + ' İsterseniz yeniden deneyebilirsiniz.')
         }, {
           config_id: CONFIG_ID,
           response_type: 'code',
