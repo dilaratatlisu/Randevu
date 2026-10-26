@@ -171,8 +171,9 @@
           config_id: CONFIG_ID,
           response_type: 'code',
           override_default_response_type: true,
-          // featureType: telefondaki WhatsApp Business numarasiyla baglama (Coexistence)
-          extras: { setup: {}, featureType: 'whatsapp_business_app_onboarding', sessionInfoVersion: '3' },
+          // featureType: telefondaki WhatsApp Business numarasiyla baglama (Coexistence).
+          // version: Embedded Signup v4 (v2 2026-10-15'te kapandi; Meta'nin hazir baglama linkiyle ayni ayar).
+          extras: { setup: {}, featureType: 'whatsapp_business_app_onboarding', sessionInfoVersion: '3', version: 'v4' },
         })
       })
     })()
