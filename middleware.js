@@ -9,7 +9,7 @@
 
 const COMPANY_HOSTS = new Set(['www.adapptivdigital.com', 'adapptivdigital.com'])
 const PRODUCT_SITE = 'https://isletme.adapptivdigital.com'
-const PRODUCT_PATHS = /^\/(gizlilik|privacy|veri-silme|data-deletion|whatsapp-baglan)(\/|$)|^\/kullanim-sozlesmesi\.html$/
+const PRODUCT_PATHS = /^\/(gizlilik|privacy|veri-silme|data-deletion|whatsapp-baglan|instagram-baglan)(\/|$)|^\/kullanim-sozlesmesi\.html$/
 
 export default function middleware(request) {
   const url = new URL(request.url)

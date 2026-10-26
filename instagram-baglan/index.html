@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f4f6f9" />
+  <meta name="robots" content="noindex" />
+  <script>try{if(localStorage.getItem('adapptiv-tema')==='koyu')document.documentElement.setAttribute('data-theme','dark')}catch(e){}</script>
+  <title>Instagram Bağlantısı | Adapptiv</title>
+  <link rel="icon" href="/assets/logo-mark.png" type="image/png" />
+  <link rel="stylesheet" href="/css/site.css" />
+  <style>
+    .ig-page { min-height: 100dvh; display: flex; align-items: flex-start; justify-content: center; padding: 32px 16px 48px; }
+    .ig-card { width: 100%; max-width: 480px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-card); box-shadow: var(--shadow-sm); padding: 24px 20px; display: flex; flex-direction: column; gap: 18px; }
+    .ig-brand { display: flex; align-items: center; gap: 10px; font-weight: 700; color: var(--ink); text-decoration: none; }
+    .ig-card h1 { font-size: 22px; line-height: 1.25; color: var(--ink); margin: 0; text-wrap: balance; }
+    .ig-status { font-size: 14px; line-height: 1.5; border-radius: 12px; padding: 12px 14px; margin: 0; }
+    .ig-status.info { background: var(--surface-2); color: var(--ink-2); }
+    .ig-status.ok { background: #e6f6ef; color: #12603f; }
+    .ig-status.err { background: #fdecec; color: #9b1c1c; }
+    .ig-btn { width: 100%; justify-content: center; min-height: 48px; font-size: 16px; }
+    .ig-btn[hidden] { display: none; }
+    .ig-note { font-size: 12.5px; color: var(--muted); line-height: 1.5; margin: 0; }
+    [data-theme="dark"] .ig-status.ok { background: rgb(18 96 63 / 0.25); color: #8fe0b8; }
+    [data-theme="dark"] .ig-status.err { background: rgb(155 28 28 / 0.25); color: #f5a3a3; }
+  </style>
+</head>
+
+<body>
+  <main class="ig-page">
+    <div class="ig-card">
+      <a class="ig-brand" href="/"><img src="/assets/logo-mark.png" alt="" width="28" height="28" />Adapptiv</a>
+      <h1>Instagram hesabınızı bağlıyoruz</h1>
+      <p class="ig-status info" id="status" role="status" aria-live="polite">Bağlantı tamamlanıyor…</p>
+      <a class="btn btn-primary ig-btn" id="back" href="com.adapptiv.panel://instagram-callback" hidden>Uygulamaya dön</a>
+      <p class="ig-note">Bağlantı Meta'nın resmi Instagram API'si üzerinden yapılır; Instagram şifrenizi Adapptiv görmez.</p>
+    </div>
+  </main>
+
+  <script>
+    // Instagram girisi bitince buraya ?code=...&state=... ile donulur (state:
+    // uygulamanin actigi tek kullanimlik baglama oturumu). Kod sunucuya
+    // iletilir; uygulamadan acildiysa sonuc derin baglantiyla uygulamaya doner.
+    (function () {
+      var API = 'https://rllvmyriopaulcmmynbe.supabase.co/functions/v1/instagram-connect-complete'
+      var PUBLISHABLE_KEY = 'sb_publishable_CqpxvhHpayp_4Ad45ZZYHw_ti3Vo9ak'
+      var APP_RETURN = 'com.adapptiv.panel://instagram-callback'
+
+      var params = new URLSearchParams(location.search)
+      var code = params.get('code') || ''
+      var session = params.get('state') || ''
+      var statusEl = document.getElementById('status')
+      var backEl = document.getElementById('back')
+
+      function show(kind, text) {
+        statusEl.className = 'ig-status ' + kind
+        statusEl.textContent = text
+      }
+
+      function finish(kind, text, status, returnTo) {
+        show(kind, text + (returnTo === 'app' ? ' Uygulamaya dönülüyor…' : ' Bu sekmeyi kapatıp panele dönebilirsiniz.'))
+        if (returnTo === 'app') {
+          backEl.href = APP_RETURN + '?status=' + status
+          backEl.hidden = false
+          setTimeout(function () { location.href = APP_RETURN + '?status=' + status }, 1200)
+        }
+      }
+
+      // Kullanici Instagram penceresinde vazgecti ya da izin vermedi; uygulamadan
+      // mi webden mi gelindigi bilinmedigi icin otomatik yonlendirilmez.
+      if (params.get('error')) {
+        show('err', 'Instagram bağlantısı tamamlanmadı (izin verilmedi). Uygulamadan yeniden deneyebilirsiniz.')
+        backEl.href = APP_RETURN + '?status=cancel'
+        backEl.hidden = false
+        return
+      }
+      if (!code || !/^[0-9a-f]{64}$/.test(session)) {
+        show('err', 'Bu sayfayı Adapptiv uygulamasında Ayarlar > Instagram hesabı ekranındaki "Instagram\'ı bağla" butonuyla açın.')
+        return
+      }
+      // adres cubugunda kod kalmasin
+      history.replaceState(null, '', location.pathname)
+
+      fetch(API, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', apikey: PUBLISHABLE_KEY },
+        body: JSON.stringify({ session: session, code: code }),
+      })
+        .then(function (res) { return res.json().then(function (body) { return { ok: res.ok, body: body } }) })
+        .then(function (r) {
+          var returnTo = (r.body && (r.body.data && r.body.data.return_to)) || (r.body && r.body.return_to) || 'web'
+          if (!r.ok) {
+            finish('err', (r.body && r.body.error) || 'Bağlantı tamamlanamadı.', 'error', returnTo)
+            return
+          }
+          var user = r.body.data && r.body.data.username
+          finish('ok', 'Instagram bağlandı' + (user ? ' (@' + user + ')' : '') + '.', 'ok', returnTo)
+        })
+        .catch(function () {
+          show('err', 'Sunucuya ulaşılamadı. İnternet bağlantınızı kontrol edip uygulamadan yeniden başlatın.')
+        })
+    })()
+  </script>
+</body>
+
+</html>
